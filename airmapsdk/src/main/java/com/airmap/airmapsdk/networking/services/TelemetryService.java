@@ -3,9 +3,9 @@ package com.airmap.airmapsdk.networking.services;
 import android.support.annotation.Nullable;
 import android.support.v4.util.Pair;
 
+import com.airmap.airmapsdk.models.Coordinate;
 import com.airmap.airmapsdk.models.Telemetry;
 import com.airmap.airmapsdk.models.comm.AirMapComm;
-import com.airmap.airmapsdk.models.flight.AirMapFlight;
 import com.google.protobuf.Message;
 
 import java.io.ByteArrayOutputStream;
@@ -43,7 +43,6 @@ import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
 import timber.log.Timber;
 
-@SuppressWarnings("unused")
 public class TelemetryService extends BaseService {
 
     // frequencies in milliseconds
@@ -54,9 +53,16 @@ public class TelemetryService extends BaseService {
 
     private PublishSubject<Pair<String, Message>> telemetry;
 
+    private List<Listener> listeners;
+
     public TelemetryService() {
         telemetry = PublishSubject.create();
+        listeners = new ArrayList<>();
         setupBindings();
+    }
+
+    public void addListener(Listener listener) {
+        listeners.add(listener);
     }
 
     public void sendPositionMessage(String flightId, double latitude, double longitude, @Nullable float altitudeAGL, @Nullable float altitudeMSL, @Nullable float horizontalAccuracy) {
@@ -72,6 +78,10 @@ public class TelemetryService extends BaseService {
                 .build();
 
         sendTelemetry(flightId, positionMessage);
+
+        for (Listener listener : listeners) {
+            listener.onPositionChanged(new Coordinate(latitude, longitude), altitudeMSL, altitudeAGL);
+        }
     }
 
     public void sendAttitudeMessage(String flightId, float yaw, float pitch, float roll) {
@@ -85,6 +95,10 @@ public class TelemetryService extends BaseService {
                 .build();
 
         sendTelemetry(flightId, attitudeMessage);
+
+        for (Listener listener : listeners) {
+            listener.onAttitudeChanged(yaw, pitch, roll);
+        }
     }
 
     public void sendSpeedMessage(String flightId, float velocityX, float velocityY, float velocityZ) {
@@ -98,6 +112,10 @@ public class TelemetryService extends BaseService {
                 .build();
 
         sendTelemetry(flightId, speedMessage);
+
+        for (Listener listener : listeners) {
+            listener.onSpeedChanged(velocityX, velocityY, velocityZ);
+        }
     }
 
     public void setBarometerMessage(String flightId, float pressure) {
@@ -239,6 +257,12 @@ public class TelemetryService extends BaseService {
     private void onException(Exception e) {
         Timber.e(e);
         e.printStackTrace();
+    }
+
+    public interface Listener {
+        void onPositionChanged(Coordinate position, double altitudeMSL, double altitudeAGL);
+        void onSpeedChanged(double velocityX, double velocityY, double velocityZ);
+        void onAttitudeChanged(float yaw, float pitch, float roll);
     }
 
     private enum Encryption {
