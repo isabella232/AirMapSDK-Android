@@ -5,41 +5,20 @@
 			function init() {
 				WebViewJavascriptBridge.init(function(message, responseCallback) {
                         var json = JSON.parse(message);
-                        var buffered = buffer(json.line, json.buffer, 'meters');
-                        var coordinates = buffered.geometry.coordinates;
-                        var tunnel = json.tunnel;
+                        var features = json.features;
 
-                        // if coordinates array is bigger than 1, it has an inner polygon (hole)
-                        if (coordinates.length < 2) {
-				           responseCallback(buffered);
-				        } else {
-				            var total = buffered;
-
-                            if (tunnel) {
-                                // calculate bounding box
-                                var bbox = bboxpolygon(buffered);
-
-                                // create a tunnel from the polygon hole to bounding box to form a polygon(s) without holes
-                                for (i = 1; i < coordinates.length; i++) {
-                                    var innerPolygon = buffered.geometry.coordinates[i];
-
-                                    var tunnelStart = innerPolygon[0];
-
-                                    // find closest corner of bounding box
-                                    var closestLat = (Math.abs(bbox[0] - tunnelStart[0]) < Math.abs(bbox[2] - tunnelStart[0])) ? bbox[0] : bbox[2];
-                                    var closestLong = (Math.abs(bbox[1] - tunnelStart[1]) < Math.abs(bbox[3] - tunnelStart[1])) ? bbox[1] : bbox[3];
-
-                                    var tunnelEnd = [closestLat, closestLong];
-                                    var tunnel = linestring([tunnelStart, tunnelEnd]);
-
-                                    var bufferedTunnel = buffer(tunnel, 0.1, 'meters');
-
-                                    total = erase(total, bufferedTunnel);
-                                }
-                            }
-
-                            responseCallback(total);
+                        var result = {
+                        	"type": "FeatureCollection",
+                        	"features": []
                         }
+
+                        features.forEach(function(feature) {
+                        	var featureBuffer = feature.properties.buffer;
+							var buffered = buffer(feature, featureBuffer, 'meters');
+							result.features.push(buffered);
+                        });
+
+                        responseCallback(result);
                     });
 			}
 
