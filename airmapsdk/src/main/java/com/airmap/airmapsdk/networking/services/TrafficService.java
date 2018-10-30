@@ -142,7 +142,7 @@ public class TrafficService extends BaseService {
         if (listeners.isEmpty()) {
             listeners.add(listener);
             connect();
-        } else {
+        } else if (!listeners.contains(listener)) {
             listeners.add(listener);
         }
     }
