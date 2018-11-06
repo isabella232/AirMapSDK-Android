@@ -436,7 +436,9 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
 
     // callbacks
     public void addOnMapLoadListener(OnMapLoadListener listener) {
-        mapLoadListeners.add(listener);
+        if (!mapLoadListeners.contains(listener)) {
+            mapLoadListeners.add(listener);
+        }
 
         if (getMap() != null) {
             listener.onMapLoaded();
