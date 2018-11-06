@@ -1,6 +1,8 @@
 package com.airmap.airmapsdk.networking.services;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.models.Coordinate;
@@ -47,6 +49,8 @@ public class TrafficService extends BaseService {
     private IMqttActionListener actionListener;
     private String flightId;
     private boolean checkForUpdatedFlight;
+    private Handler handler;
+
 
     /**
      * Initialize an TrafficService to receive traffic alerts and situational awareness
@@ -95,6 +99,8 @@ public class TrafficService extends BaseService {
                 }
             }
         }, 0, 1000 * 60); //Update current flight every minute
+
+        handler = new Handler(Looper.getMainLooper());
     }
 
     /**
@@ -343,16 +349,21 @@ public class TrafficService extends BaseService {
      *
      * @param removed a list of all traffic that was removed
      */
-    private void notifyRemoved(List<AirMapTraffic> removed) {
-        if (removed == null) {
+    private void notifyRemoved(final List<AirMapTraffic> removed) {
+        if (removed == null || removed.isEmpty()) {
             return;
         }
 
-        for (AirMapTrafficListener listener : listeners) {
-            if (listener != null) {
-                listener.onRemoveTraffic(removed);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (AirMapTrafficListener listener : listeners) {
+                    if (listener != null) {
+                        listener.onRemoveTraffic(removed);
+                    }
+                }
             }
-        }
+        });
     }
 
     /**
@@ -360,16 +371,21 @@ public class TrafficService extends BaseService {
      *
      * @param added a list of all traffic that was added
      */
-    private void notifyAdded(List<AirMapTraffic> added) {
-        if (added == null) {
+    private void notifyAdded(final List<AirMapTraffic> added) {
+        if (added == null || added.isEmpty()) {
             return;
         }
 
-        for (AirMapTrafficListener listener : listeners) {
-            if (listener != null) {
-                listener.onAddTraffic(added);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (AirMapTrafficListener listener : listeners) {
+                    if (listener != null) {
+                        listener.onAddTraffic(added);
+                    }
+                }
             }
-        }
+        });
     }
 
     /**
@@ -377,16 +393,21 @@ public class TrafficService extends BaseService {
      *
      * @param updated a list of all traffic that was updated
      */
-    private void notifyUpdated(List<AirMapTraffic> updated) {
-        if (updated == null) {
+    private void notifyUpdated(final List<AirMapTraffic> updated) {
+        if (updated == null || updated.isEmpty()) {
             return;
         }
 
-        for (AirMapTrafficListener listener : listeners) {
-            if (listener != null) {
-                listener.onUpdateTraffic(updated);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (AirMapTrafficListener listener : listeners) {
+                    if (listener != null) {
+                        listener.onUpdateTraffic(updated);
+                    }
+                }
             }
-        }
+        });
     }
 
     private class CurrentFlightAirMapCallback extends AirMapCallback<AirMapFlight> {
