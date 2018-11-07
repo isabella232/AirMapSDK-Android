@@ -251,7 +251,6 @@ public class TelemetryService extends BaseService {
             messages.add(p.second);
         }
         session.send(messages);
-        Timber.d("Sending telemetry messages");
     }
 
     private void onException(Exception e) {
