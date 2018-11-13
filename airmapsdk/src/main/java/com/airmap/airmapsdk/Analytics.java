@@ -108,6 +108,7 @@ public class Analytics {
         public static final String flightDetails = "flightDetails";
         public static final String insurance = "insurance";
         public static final String mainMenu = "main_menu";
+        public static final String fly_settings = "in_flight_settings";
     }
 
     public static class Action {
@@ -256,6 +257,16 @@ public class Analytics {
         public static final String SUBMIT_CLAIM = "Submit Claim";
         public static final String DIALOG_NO_COVERAGE = "Dialog No Flight Coverage";
         public static final String DIALOG_ADD_COVERAGE = "Dialog Add Coverage";
+
+        public static final String IN_FLIGHT_SETTINGS_BUTTON = "In Flight Settings Button";
+        public static final String FLIGHT_STATUS_AUDIBLE_ALERTS = "Flight Status Audible Alerts";
+        public static final String FLIGHT_STATUS_VISUAL_ALERTS = "Flight Status Visual Alerts";
+        public static final String TRAFFIC_AUDIBLE_ALERTS = "Traffic Audible Alerts";
+        public static final String TRAFFIC_VISUAL_ALERTS = "Traffic Visual Alerts";
+        public static final String GEO_AWARENESS_AUDIBLE_ALERTS = "Geo-Awareness Audible Alerts";
+        public static final String GEO_AWARENESS_VISUAL_ALERTS = "Geo-Awareness Visual Alerts";
+        public static final String GEOFENCE = "Keep Aircraft From Entering No-Fly Zones";
+        public static final String GEOCAGE = "Keep Aircraft From Leaving Flight Plan";
     }
 
     public static final class Value {
@@ -264,5 +275,7 @@ public class Analytics {
         public static final String ADVISORIES = "Advisories";
         public static final String YES = "Yes";
         public static final String NO = "No";
+        public static final String ENABLED = "Enabled";
+        public static final String DISABLED = "Disabled";
     }
 }

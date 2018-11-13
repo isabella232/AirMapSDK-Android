@@ -6,6 +6,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 import timber.log.Timber;
 
 public class AirMapConfig {
@@ -106,7 +108,7 @@ public class AirMapConfig {
             return AirMap.getConfig().getJSONObject("app").getString("faq_url");
         } catch (JSONException e) {
             Timber.w(e, "No FAQ in airmap.config.json using fallback");
-            return "https://airmap.typeform.com/to/ljGZpe";
+            return "https://airmap.typeform.com/to/XDkePS?language=" + Locale.getDefault().getLanguage();
         }
     }
 
