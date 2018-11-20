@@ -1,745 +1,748 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- 1Password Extension Error Message -->
-  <string name="end_flight_title">Zakończenie lotu</string>
-  <string name="submit_title">Prześlij</string>
-  <string name="review_flight_plan">Przegląd planu lotu</string>
-  <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
-  <string name="airmap_airspace_advisories">Wskazówki dotyczące przestrzeni powietrznej</string>
-  <!-- Label for advisories that are stup to receive digital notice -->
-  <string name="accepts_digital_notice">Akceptuje powiadomienia cyfrowe</string>
-  <!-- Displayed when an advisory has not provided a contact phone -->
-  <string name="no_known_number">Brak numeru telefonu</string>
-  <!-- Label and format for displaying the end time of temporary flight restriction -->
-  <string name="advisory_tfr_ends_format">Kończy się: %1$s</string>
-  <!-- Never ending duration for a TFR -->
-  <string name="advisory_tfr_permanent">Stałe</string>
-  <!-- Label and format for displaying the start time of temporary flight restriction -->
-  <string name="airmap_starts">Zaczyna się: %1$s</string>
-  <!-- Format and unit for wildfire advisory in the area unit acres -->
-  <string name="advisory_wildfire_size_format_acres">%1$s Akrów</string>
-  <!-- Format and unit for wildfire advisory in the area unit hectares -->
-  <string name="advisory_wildfire_size_format_hectares">%1$s Hektarów</string>
-  <!-- Label for wildfire advisory cells where size is unknown -->
-  <string name="unknown_size">Rozmiar nieznany</string>
-  <!-- Call to action when a user has not selected an aircraft -->
-  <string name="aircraft_select_aircraft">Wybierz samolot</string>
-  <!-- Title to display for the view creating a new aircraft -->
-  <string name="airmap_title_activity_create_aircraft">Stwórz samolot</string>
-  <!-- Title to display for the view when updating an existing aircraft -->
-  <string name="airmap_edit_aircraft">Aktualizacja samolotów</string>
-  <!-- Name for airspace type Aerial Recreational Area -->
-  <string name="airspace_type_aerial_rec_area">Antena terenu rekreacyjnego</string>
-  <!-- Name for airspace type Airport -->
-  <string name="airspace_type_airport">Lotnisko</string>
-  <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
-  <string name="airspace_type_ama_field">Pole AMA</string>
-  <!-- Name for airspace type City -->
-  <string name="airspace_type_city">Miasta</string>
-  <!-- Name for airspace type Controlled Airspace -->
-  <string name="airspace_type_controlled">Kontrolowana przestrzeń</string>
-  <!-- Name for airspace type Country -->
-  <string name="airspace_type_country">Kraju</string>
-  <!-- Name for airspace type County -->
-  <string name="airspace_type_county">County</string>
-  <!-- Name for airspace type Custom -->
-  <string name="airspace_type_custom">Niestandardowe</string>
-  <!-- Name for airspace type Embassy -->
-  <string name="airspace_type_embassy">Ambasada</string>
-  <!-- Name for airspace type Emergency -->
-  <string name="airspace_type_emergency">Aktywność pierwszego obiektu odpowiadającego</string>
-  <!-- Name for airspace type Federal Building -->
-  <string name="airspace_type_federal_building">Budynek Federalny</string>
-  <!-- Name for airspace type Flight Information Region -->
-  <string name="airspace_type_fir">Region informacji o lotach</string>
-  <!-- Name for airspace type Fire -->
-  <string name="airspace_type_fire">Ognia</string>
-  <!-- Name for airspace type Gliderport -->
-  <string name="airspace_type_gliderport">Gliderport</string>
-  <!-- Name for airspace type Hazard Area -->
-  <string name="airspace_type_hazard_area">Obszar zagrożenia</string>
-  <!-- Name for airspace type Heliport -->
-  <string name="airspace_type_heliport">Heliport</string>
-  <!-- Name for airspace type Highway -->
-  <string name="airspace_type_highway">Autostrady</string>
-  <!-- Name for airspace type Hospital -->
-  <string name="airspace_type_hospital">Szpital</string>
-  <!-- Name for airspace type Industrial Property -->
-  <string name="airspace_type_industrial_property">Własność przemysłowa</string>
-  <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
-  <string name="airspace_type_japan_base">Japonia Base admin</string>
-  <!-- Name for airspace type Military Property -->
-  <string name="airspace_type_military_property">Właściwość militarna</string>
-  <!-- Name for airspace type National Park -->
-  <string name="airspace_type_national_park">Park Narodowy</string>
-  <!-- Name for airspace type NOTAM -->
-  <string name="airspace_type_notam">NOTAM</string>
-  <!-- Name for airspace type Police Station -->
-  <string name="airspace_type_police_station">Policji</string>
-  <!-- Name for airspace type Powerline -->
-  <string name="airspace_type_powerline">Powerline</string>
-  <!-- Name for airspace type Power Plant -->
-  <string name="airspace_type_power_plant">Elektrowni</string>
-  <!-- Name for airspace type Prison -->
-  <string name="airspace_type_prison">Więzienia</string>
-  <!-- Name for airspace type Railway -->
-  <string name="airspace_type_railway">Kolejowa</string>
-  <!-- Name for airspace type Residential Property -->
-  <string name="airspace_type_residential_property">Nieruchomości mieszkaniowe</string>
-  <!-- Name for airspace type School -->
-  <string name="airspace_type_school">Szkoła</string>
-  <!-- Name for airspace type Seaplane Base -->
-  <string name="airspace_type_seaplane_base">Baza hydroplanem</string>
-  <!-- Name for airspace type Special Use Airspace -->
-  <string name="airspace_type_special_use">Przestrzeń powietrzną do użytku specjalnego</string>
-  <!-- Name for airspace type Stadium -->
-  <string name="airspace_type_stadium">Stadium</string>
-  <!-- Name for airspace type State -->
-  <string name="airspace_type_state">Państwa</string>
-  <!-- Name for airspace type Subprefecture -->
-  <string name="airspace_type_subprefecture">Podprefektura</string>
-  <!-- Name for airspace type Supercity (Japan related) -->
-  <string name="airspace_type_supercity">Supercity</string>
-  <!-- Name for airspace type FAA Temporary Flight Restriction -->
-  <string name="airspace_type_tfr_faa">Tymczasowe ograniczenie lotu</string>
-  <!-- Name for airspace type Ultralight Field -->
-  <string name="airspace_type_ulm_field">Pole</string>
-  <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
-  <string name="airspace_type_unclassified">Niesklasyfikowane</string>
-  <!-- Name for airspace type University -->
-  <string name="airspace_type_university">Uniwersytet</string>
-  <!-- Name for airspace type Waterway -->
-  <string name="airspace_type_waterway">Śródlądowej</string>
-  <!-- Name for airspace type WildFire -->
-  <string name="airspace_type_wildfire">Wildfire</string>
-  <!-- No comment provided by engineer. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- The request with the authority has been accepted -->
-  <string name="authorization_accepted">Zatwierdzone</string>
-  <!-- The request with the authority has been cancelled -->
-  <string name="authorization_cancelled_submission">Anulowano autoryzację</string>
-  <!-- The request with the authority has not been requested -->
-  <string name="authorization_not_requested">Nie zażądano autoryzacji</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="authorization_pending">Autoryzacja oczekująca</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="authorization_rejected">Upoważnienie odrzucone</string>
-  <!-- The request with the authority will be rejected once the flight plan is submitted -->
-  <string name="authorization_rejected_upon_submission">Odrzucone po złożeniu</string>
-  <!-- The request with the authority will be accepted once the flight plan is submitted -->
-  <string name="authorization_upon_submission">Autoryzacja po złożeniu</string>
-  <!-- Login message when a user's account has been blacklisted. -->
-  <string name="invalid_email_domain">Twoje konto zostało wciągnięty na czarną listę. Prosimy o kontakt z Security@airmap.com</string>
-  <!-- Login message when a user must verify their email address -->
-  <string name="verify_email_log_in_again">Twój adres e-mail musi zostać zweryfikowany. Proszę sprawdzić swoją skrzynkę odbiorczą.</string>
-  <!-- Login message when a user failed to authenticate -->
-  <string name="auth_error_unauthorized">Nieautoryzowanych</string>
-  <!-- Navigation title for failed login attempt -->
-  <string name="auth_failed_login_title">Alert</string>
-  <!-- Abbreviation for East -->
-  <string name="cardinal_direction_e">E</string>
-  <!-- Abbreviation for East North East -->
-  <string name="cardinal_direction_ene">Ene</string>
-  <!-- Abbreviation for East South East -->
-  <string name="cardinal_direction_ese">Ese</string>
-  <!-- Abbreviation for North -->
-  <string name="cardinal_direction_n">N</string>
-  <!-- Abbreviation for North East -->
-  <string name="cardinal_direction_ne">Ne</string>
-  <!-- Abbreviation for North North East -->
-  <string name="cardinal_direction_nnne">NNE</string>
-  <!-- Abbreviation for North North West -->
-  <string name="cardinal_direction_nnw">Nnw</string>
-  <!-- Abbreviation for North West -->
-  <string name="cardinal_direction_nw">Nw</string>
-  <!-- Abbreviation for South -->
-  <string name="cardinal_direction_s">S</string>
-  <!-- Abbreviation for South East -->
-  <string name="cardinal_direction_se">Se</string>
-  <!-- Abbreviation for South South East -->
-  <string name="cardinal_direction_sse">Sse</string>
-  <!-- Abbreviation for South South West -->
-  <string name="cardinal_direction_ssw">Ssw</string>
-  <!-- Abbreviation for South West -->
-  <string name="cardinal_direction_sw">Sw</string>
-  <!-- Abbreviation for West -->
-  <string name="cardinal_direction_w">W</string>
-  <!-- Abbreviation for West North West -->
-  <string name="cardinal_direction_wnw">WNW</string>
-  <!-- Abbreviation for West South West -->
-  <string name="cardinal_direction_wsw">Wsw</string>
-  <!-- Forgot password -->
-  <string name="com_auth0_lock_action_forgot_password">Nie pamiętasz hasła?</string>
-  <!-- tos & privacy -->
-  <string name="com_auth0_lock_sign_up_terms">Rejestrując się, zgadzasz się z naszymi warunkami of\n usługi i Polityka prywatności</string>
-  <!-- forgot password email sent -->
-  <string name="com_auth0_lock_db_change_password_message_success">Właśnie wysłałem Ci e-mail, aby zresetować hasło</string>
-  <!-- User logged in -->
-  <string name="com_auth0_lock_database_login_success_message">Użytkownik zalogował się pomyślnie.</string>
-  <!-- Login Switch -->
-  <string name="com_auth0_lock_mode_log_in">Zaloguj się</string>
-  <!-- Signup Switch -->
-  <string name="com_auth0_lock_mode_sign_up">Zarejestruj się</string>
-  <!-- Social separator -->
-  <string name="com_auth0_lock_forms_separator">Lub</string>
-  <!-- User signed up -->
-  <string name="com.auth0.lock.database.signup.success.message">Dziękujemy za rejestrację.</string>
-  <!-- Cancel -->
-  <string name="com.auth0.lock.database.tos.sheet.cancel">Anuluj</string>
-  <!-- Privacy -->
-  <string name="com.auth0.lock.database.tos.sheet.privacy">Polityka prywatności</string>
-  <!-- ToS -->
-  <string name="com.auth0.lock.database.tos.sheet.title">Warunki korzystania z usług</string>
-  <!-- enter corporate credentials -->
-  <string name="com.auth0.lock.enterprise.sso.message">Podaj swoje dane firmowe</string>
-  <!-- enter corporate credentials of domain %@{email domain} -->
-  <string name="com.auth0.lock.enterprise.sso.message_at">Podaj swoje dane firmowe na %1$s</string>
-  <!-- SSO Header -->
-  <string name="com.auth0.lock.enterprise.sso.title">Jednokrotne logowanie włączone</string>
-  <!-- user is blocked -->
-  <string name="com.auth0.lock.error.authentication.blocked_user">Użytkownik jest zablokowany.</string>
-  <!-- Generic login error -->
-  <string name="com.auth0.lock.error.authentication.fallback">Przykro nam, gdy próbuję się zalogować, coś poszło nie tak.</string>
-  <!-- invalid_user_password -->
-  <string name="com_auth0_lock_db_login_error_invalid_credentials_message">Nieprawidłowy adres e-mail lub hasło.</string>
-  <!-- a0.mfa_invalid_code -->
-  <string name="com.auth0.lock.error.authentication.mfa_invalid_code">Błędny kod.</string>
-  <!-- No valid connection -->
-  <string name="com.auth0.lock.error.authentication.no_connection">Przepraszamy, nie udało nam się znaleźć ważnego połączenia dla tego użytkownika.</string>
-  <!-- password_change_required -->
-  <string name="com.auth0.lock.error.authentication.password_change_required">Musisz zaktualizować hasło, ponieważ jest to pierwszy czas logowania lub hasło wygasło.</string>
-  <!-- password_leaked -->
-  <string name="com.auth0.lock.error.authentication.password_leaked">To logowanie zostało zablokowane, ponieważ hasło zostało przeciekły w innej witrynie sieci Web. Wysłaliśmy Ci e-mail z instrukcjami, jak go odblokować.</string>
-  <!-- too_many_attempts -->
-  <string name="com.auth0.lock.error.authentication.too_many_attempts">Twoje konto zostało zablokowane po wielu kolejnych próbach logowania.</string>
-  <!-- Generic error -->
-  <string name="com_auth0_lock_unrecoverable_error_title">Coś poszło nie tak. \ nProszę skontaktuj się z pomocą techniczną.</string>
-  <!-- Generic password error -->
-  <string name="com_auth0_lock_db_message_change_password_error">Przykro nam, coś poszło nie tak, gdy prośba o zmianę hasła.</string>
-  <!-- At least N characters -->
-  <string name="com_auth0_lock_password_strength_chars_length">Najmniej %d znaki długości</string>
-  <!-- At least n groups -->
-  <string name="com.auth0.lock.error.password.contain_at_least">Zawierać co najmniej %d z następujących %d rodzaje znaków:</string>
-  <!-- Lowercase letters -->
-  <string name="com_auth0_lock_password_strength_lowercase_letters">Małe litery (a-z)</string>
-  <!-- Must no be empty -->
-  <string name="com.auth0.lock.error.password.non_empty">Wymagane niepuste hasło</string>
-  <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
-  <string name="com_auth0_lock_password_strength_identical_chars">Nie więcej niż %1$d identyczne znaki w rzędzie (np. \'%2$s\' niedozwolone)</string>
-  <!-- Numbers -->
-  <string name="com_auth0_lock_password_strength_numbers">Numery (tj. 0-9)</string>
-  <!-- N groups -->
-  <string name="com_auth0_lock_password_strength_title_must_have">Powinny zawierać:</string>
-  <!-- Special Characters -->
-  <string name="com_auth0_lock_password_strength_special_chars">Znaki specjalne (np.! @ # $% ^ &amp; *)</string>
-  <!-- Uppercase letters -->
-  <string name="com_auth0_lock_password_strength_uppercase_letters">Wielkie litery (A-z)</string>
-  <!-- Passwordless link invalid. -->
-  <string name="com.auth0.lock.error.passwordless.invalid_link">Przepraszamy, wystąpił problem z Twoim linkiem. Prosimy o poproszenie nowego.</string>
-  <!-- Passwordless sign ups disabled. -->
-  <string name="com.auth0.lock.error.passwordless.signup_disabled">Nowe rejestracje są wyłączone dla tego konta, skontaktuj się z administratorem.</string>
-  <!-- Recoverable error button -->
-  <string name="com.auth0.lock.error.recoverable.button">Ponów próbę</string>
-  <!-- Recoverable error message -->
-  <string name="com.auth0.lock.error.recoverable.message">Proszę sprawdzić połączenie internetowe.</string>
-  <!-- Recoverable error title -->
-  <string name="com.auth0.lock.error.recoverable.title">Nie można załadować pola logowania</string>
-  <!-- Generic sign up error -->
-  <string name="com_auth0_lock_db_sign_up_error_message">Przykro nam, gdy próbuję się zarejestrować, coś poszło nie tak.</string>
-  <!-- invalid_password -->
-  <string name="com_auth0_lock_input_error_password">Hasło jest nieprawidłowe.</string>
-  <!-- password_dictionary_error -->
-  <string name="com.auth0.lock.error.signup.password_dictionary_error">Hasło jest zbyt częste.</string>
-  <!-- password_history -->
-  <string name="com_auth0_lock_db_signup_password_already_used_error_message">Hasło zostało wcześniej użyte.</string>
-  <!-- password_no_user_info_error -->
-  <string name="com.auth0.lock.error.signup.password_no_user_info_error">Hasło jest oparte na informacjach użytkownika.</string>
-  <!-- password_strength_error -->
-  <string name="com_auth0_lock_db_signup_password_not_strong_error_message">Hasło jest za słabe.</string>
-  <!-- user_exists -->
-  <string name="com_auth0_lock_db_signup_user_already_exists_error_message">Użytkownik już istnieje.</string>
-  <!-- Unrecoverable error button -->
-  <string name="com.auth0.lock.error.unrecoverable.button">Skontaktuj się z obsługą</string>
-  <!-- Default error -->
-  <string name="com.auth0.lock.error.unrecoverable.default">Coś poszło nie tak. \ nProszę skontaktuj się z pomocą techniczną.</string>
-  <!-- Invalid client or domain -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">Twoje Auth0 poświadczenia ClientId i/lub domena są nieprawidłowe.</string>
-  <!-- Your options configuration failed with: %@{error} -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_options">Konfiguracja opcji nie powiodła się: %1$s</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message">Wystąpił nieoczekiwany błąd podczas rozpoznawania konfiguracji pola logowania.</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message.no_action">Wystąpił nieoczekiwany błąd podczas rozpoznawania konfiguracji pola logowania, skontaktuj się z obsługą.</string>
-  <!-- No connections -->
-  <string name="com.auth0.lock.error.unrecoverable.no_connections">Dla tego klienta nie znaleziono żadnych metod uwierzytelniania. Proszę sprawdzić konfigurację klienta.</string>
-  <!-- Unrecoverable error title -->
-  <string name="com.auth0.lock.error.unrecoverable.title">Nie można rozpoznać żądania</string>
-  <!-- Forgot Password message -->
-  <string name="com_auth0_lock_forgot_message">Podaj swój adres e-mail i nowe hasło. Wyślemy Ci wiadomość e-mail z potwierdzeniem zmiany hasła.</string>
-  <!-- Forgot Password title -->
-  <string name="com_auth0_lock_title_change_password">Resetuj hasło</string>
-  <!-- Header Title -->
-  <string name="com.auth0.lock.header.default_title">Auth0</string>
-  <!-- invalid email -->
-  <string name="com_auth0_lock_input_error_email">Musi być prawidłowy adres e-mail</string>
-  <!-- Email placeholder -->
-  <string name="com_auth0_lock_hint_email">Adres e-mail</string>
-  <!-- Username or Email placeholder -->
-  <string name="com.auth0.lock.input.email_username.placeholder">Nazwa użytkownika/email</string>
-  <!-- empty input -->
-  <string name="com.auth0.lock.input.empty.error">Nie może być pusta</string>
-  <!-- generic input error -->
-  <string name="com.auth0.lock.input.generic.error">Nieprawidłowe dane wejściowe</string>
-  <!-- invalid otp -->
-  <string name="com.auth0.lock.input.otp.error">Musi być prawidłowym kodem numerycznym</string>
-  <!-- OTP placeholder -->
-  <string name="com.auth0.lock.input.otp.placeholder">Kod</string>
-  <!-- Password placeholder -->
-  <string name="com_auth0_lock_hint_password">Hasło</string>
-  <!-- invalid phone -->
-  <string name="com.auth0.lock.input.phone.error">Musi być ważnym numerem telefonu</string>
-  <!-- Phone placeholder -->
-  <string name="com.auth0.lock.input.phone.placeholder">Numer telefonu</string>
-  <!-- policy violation -->
-  <string name="com.auth0.lock.input.policy.error">Hasło nie spełnia zasad</string>
-  <!-- invalid username -->
-  <string name="com.auth0.lock.input.username.error">Może zawierać tylko między %d do %d znaków alfanumerycznych i \'_\'.</string>
-  <!-- Username placeholder -->
-  <string name="com.auth0.lock.input.username.placeholder">Nazwę użytkownika</string>
-  <!-- Multifactor message -->
-  <string name="com.auth0.lock.multifactor.message">Wprowadź kod weryfikacyjny wygenerowany przez aplikację mobilną.</string>
-  <!-- Multifactor title -->
-  <string name="com.auth0.lock.multifactor.title">Dwustopniowa weryfikacja</string>
-  <!-- Country tableview navigation header -->
-  <string name="com.auth0.lock.passwordless.sms.country.header">Wybierz swój kraj</string>
-  <!-- CountryCodes TableView searchbar placeholder -->
-  <string name="com.auth0.lock.passwordless.sms.country.search">Szukaj</string>
-  <!-- Amazon -->
-  <string name="com.auth0.lock.strategy.localized.amazon">Amazon</string>
-  <!-- Aol -->
-  <string name="com.auth0.lock.strategy.localized.aol">Aol</string>
-  <!-- Baidu -->
-  <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
-  <!-- Bitbucket -->
-  <string name="com.auth0.lock.strategy.localized.bitbucket">Bitbucket</string>
-  <!-- Dropbox -->
-  <string name="com.auth0.lock.strategy.localized.dropbox">Dropbox</string>
-  <!-- Dwolla -->
-  <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
-  <!-- Ebay -->
-  <string name="com.auth0.lock.strategy.localized.ebay">Ebay</string>
-  <!-- Evernote -->
-  <string name="com.auth0.lock.strategy.localized.evernote">Evernote</string>
-  <!-- EvernoteSandbox -->
-  <string name="com.auth0.lock.strategy.localized.evernote_sandbox">Evernote (piaskownica)</string>
-  <!-- Exact -->
-  <string name="com.auth0.lock.strategy.localized.exact">Dokładne</string>
-  <!-- Facebook -->
-  <string name="com.auth0.lock.strategy.localized.facebook">Facebook</string>
-  <!-- Fitbit -->
-  <string name="com.auth0.lock.strategy.localized.fitbit">Fitbit</string>
-  <!-- Github -->
-  <string name="com.auth0.lock.strategy.localized.github">Github</string>
-  <!-- Google -->
-  <string name="com.auth0.lock.strategy.localized.google">Google</string>
-  <!-- Instagram -->
-  <string name="com.auth0.lock.strategy.localized.instagram">Instagram</string>
-  <!-- Linkedin -->
-  <string name="com.auth0.lock.strategy.localized.linkedin">Linkedin</string>
-  <!-- Microsoft -->
-  <string name="com.auth0.lock.strategy.localized.microsoft">Konto Microsoft</string>
-  <!-- Miicard -->
-  <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
-  <!-- Paypal -->
-  <string name="com.auth0.lock.strategy.localized.paypal">PayPal</string>
-  <!-- PaypalSandbox -->
-  <string name="com.auth0.lock.strategy.localized.paypal_sandbox">PayPal (piaskownica)</string>
-  <!-- PlanningCenter -->
-  <string name="com.auth0.lock.strategy.localized.planning_center">Centrum planowania</string>
-  <!-- RenRen -->
-  <string name="com.auth0.lock.strategy.localized.renren">人人</string>
-  <!-- Salesforce -->
-  <string name="com.auth0.lock.strategy.localized.salesforce">Salesforce</string>
-  <!-- SalesforceCommunity -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE społeczność</string>
-  <!-- SalesforceSandbox -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (Sandbox)</string>
-  <!-- Shopify -->
-  <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
-  <!-- Soundcloud -->
-  <string name="com.auth0.lock.strategy.localized.soundcloud">Soundcloud</string>
-  <!-- TheCity -->
-  <string name="com.auth0.lock.strategy.localized.the_city">W mieście</string>
-  <!-- TheCitySandbox -->
-  <string name="com.auth0.lock.strategy.localized.the_city_sandbox">Miasto (piaskownica)</string>
-  <!-- ThirtySevenSignals -->
-  <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37 sygnały</string>
-  <!-- Twitter -->
-  <string name="com.auth0.lock.strategy.localized.twitter">Twitter</string>
-  <!-- Vkontakte -->
-  <string name="com.auth0.lock.strategy.localized.vkontakte">Vkontakte</string>
-  <!-- Weibo -->
-  <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
-  <!-- Wordpress -->
-  <string name="com.auth0.lock.strategy.localized.wordpress">Wordpress</string>
-  <!-- Yahoo -->
-  <string name="com.auth0.lock.strategy.localized.yahoo">Yahoo!</string>
-  <!-- Yammer -->
-  <string name="com.auth0.lock.strategy.localized.yammer">Yammer</string>
-  <!-- Yandex -->
-  <string name="com.auth0.lock.strategy.localized.yandex">Yandex</string>
-  <!-- Log in with %@{strategy} -->
-  <string name="com_auth0_lock_social_log_in">Zaloguj się za pomocą %1$s</string>
-  <!-- Sign up with %@{strategy} -->
-  <string name="com_auth0_lock_social_sign_up">Zarejestruj się z %1$s</string>
-  <!-- Login Button title -->
-  <string name="com_auth0_lock_action_log_in">Zaloguj się</string>
-  <!-- Send 2fa code -->
-  <string name="com.auth0.lock.submit.send_code.title">Wyślij</string>
-  <!-- Send Email button title -->
-  <string name="com_auth0_lock_action_send_email">Wyślij e-mail</string>
-  <!-- Signup Button title -->
-  <string name="com_auth0_lock_action_sign_up">Zarejestruj się</string>
-  <!-- Passwordless code reminder action -->
-  <string name="com.auth0.passwordless.code.reminder">Nie otrzymasz kodu?</string>
-  <!-- Passwordless code sent by email to %@{identifier} -->
-  <string name="com.auth0.passwordless.email.code.sent">Wiadomość e-mail z kodem została wysłana do %1$s</string>
-  <!-- Passwordless email title -->
-  <string name="com.auth0.passwordless.email.title">Wpisz swój adres e-mail, aby się zalogować lub utworzyć konto.</string>
-  <!-- Passwordless email title with social -->
-  <string name="com.auth0.passwordless.email.title.social">W przeciwnym razie wpisz swój adres e-mail, aby się zalogować lub utworzyć konto.</string>
-  <!-- Passwordless link reminder action -->
-  <string name="com.auth0.passwordless.link.reminder">Nie otrzymałeś linku?</string>
-  <!-- Passwordless link sent to %@{identifier} -->
-  <string name="com.auth0.passwordless.link.sent">Wysłaliśmy Ci link do logowania się na %1$s</string>
-  <!-- Passwordless code sent by sms to %@{identifier} -->
-  <string name="com.auth0.passwordless.sms.code.sent">SMS z kodem został wysłany do %1$s</string>
-  <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
-  <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
-  <!-- CountryCodes TableViewCell label %@{localizedName} -->
-  <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
-  <!-- Passwordless sms title -->
-  <string name="com.auth0.passwordless.sms.title">Wprowadź swój telefon, aby zalogować się lub utworzyć konto.</string>
-  <!-- Passwordless sms title with social -->
-  <string name="com.auth0.passwordless.sms.title.social">W przeciwnym razie wprowadź swój telefon, aby zalogować się lub utworzyć konto.</string>
-  <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
-  <string name="create_aircraft_make_and_model">Zrób &amp; model</string>
-  <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
-  <string name="airmap_nickname">Nick</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
-  <string name="create_aircraft_save_button">Zapisz</string>
-  <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
-  <string name="create_aircraft">Stwórz samolot</string>
-  <!-- Request cancelled error -->
-  <string name="error_cancelled">Żądanie anulowane przed jego ukończeniem</string>
-  <!-- A conflict exists with the attempted request -->
-  <string name="error_conflict">Istnieje konflikt</string>
-  <!-- A generic server error message with an associated error code -->
-  <string name="error_generic_format">Serwer zwrócił błąd. (%s)</string>
-  <!-- Response serialization failure error -->
-  <string name="error_serialization">Serwer zwrócił odpowiedź nieprzetworzonych.</string>
-  <!-- Server failure error -->
-  <string name="error_server">Serwer nie może ukończyć żądania.</string>
-  <!-- Authorization failure error -->
-  <string name="error_unauthorized">Nieautoryzowanych. Proszę sprawdzić dane logowania.</string>
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
-  <string name="faqs">Najczęściej zadawane pytania</string>
-  <string name="flight_data_cell_button_done">Zrobić</string>
-  <string name="now">Nwo</string>
-  <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
-  <string name="airmap_polygon">Obszar</string>
-  <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
-  <string name="airmap_path">Ścieżka</string>
-  <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
-  <string name="airmap_circle">Punkt</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
-  <string name="flight_drawing_next_button">Następny</string>
-  <!-- The radius around a point-based flight's center -->
-  <string name="airmap_buffer">Promień</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
-  <string name="flight_drawing_title">Utwórz lot</string>
-  <!-- Call to action to fine-tune the geometry of a flight. -->
-  <string name="airmap_done_drawing_tip">Przeciągnij dowolny punkt, aby przenieść. Przeciągnij dowolny punkt środkowy w celu dodania nowego punktu.</string>
-  <!-- Call to action to drag a point to the trash to delete. -->
-  <string name="airmap_delete_tip">Przeciągnij punkt do kosza, aby usunąć</string>
-  <!-- Call to action to draw an area-based flight. -->
-  <string name="airmap_draw_freehand_area">Rysowanie obszaru lotu</string>
-  <!-- Call to action to draw a path-based flight. -->
-  <string name="airmap_draw_freehand_path">Rysowanie ścieżki lotu</string>
-  <!-- Call to action to drag the center position of a point-based flight. -->
-  <string name="flight_drawing_tooltip_cta_postiion_point">Przeciągnij punkt środkowy, aby ustawić obszar lotu.</string>
-  <!-- Call to action to tap the icon to begin drawing a flight area. -->
-  <string name="airmap_freehand_tip_area">Dotknij ikony dłoni, aby narysować obszar lotu.</string>
-  <!-- Call to action to tap the icon to begin drawing a flight path. -->
-  <string name="airmap_freehand_tip_path">Stuknij ikonę rączki, aby narysować ścieżkę lotu.</string>
-  <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
-  <string name="airmap_flight_area_overlap_permit_conflict">Obszar lotów nie może pokrywać się ze strefami zapotrzebowania powodującymi konflikt.</string>
-  <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
-  <string name="airmap_error_overlap">Nieprawidłowy obszar lotu. Dostosuj obszar lotu tak, aby nie nakładał się na siebie.</string>
-  <!-- The width of a path-based flight extending outward from the centerline -->
-  <string name="airmap_width">Szerokość</string>
-  <!-- Title for the button to advance to the next screen -->
-  <string name="airmap_next">Następny</string>
-  <!-- Title for the button to save and create the flight -->
-  <string name="airmap_save">Zapisz</string>
-  <!-- Call to action title for the user to select an aircraft -->
-  <string name="flight_plan_row_title_aircraft">Wybierz samolot</string>
-  <!-- Title for the row displaying the name of the aircraft -->
-  <string name="flight_plan_row_title_aircraft_name">Samolot</string>
-  <!-- Title for the row displaying flight plan altitude -->
-  <string name="airmap_max_altitude">Wysokości</string>
-  <!-- Title for the row displaying flight plan buffer -->
-  <string name="flight_plan_row_title_buffer">Buforu</string>
-  <!-- Title for the row displaying flight plan duration -->
-  <string name="airmap_duration">Długość</string>
-  <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
-  <string name="flight_plan_row_title_max_altitude">Maksymalna wysokość AGL</string>
-  <!-- Call to action title for the user to select a pilot profile -->
-  <string name="select_pilot_profile">Wybierz profil pilotażowy</string>
-  <!-- Title for the row displaying flight plan radius -->
-  <string name="flight_plan_row_title_radius">Promień</string>
-  <!-- Title for the row displaying flight plan start time -->
-  <string name="starts">Zaczyna się</string>
-  <!-- Title for the section displaying the pilot and aircraft details -->
-  <string name="pilot_and_aircraft_header">Pilot &amp; samolot</string>
-  <!-- Title for the section displaying flight plan details -->
-  <string name="flight_details">Lotu</string>
-  <!-- Title for the section displaying social sharing features -->
-  <string name="airmap_share_my_flight">Udostępnij mój lot</string>
-  <string name="date_and_time">Data &amp; czas</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketclosederror">Gniazdo zamknięte przez równoprawny komputer zdalny</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketconnecttimeouterror">Próba połączenia z hostem upłynął limit czasu</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketothererror">Próba utworzenia gniazda z gniazda FD nie powiodła się. nie powiodło się</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadmaxedouterror">Osiągnięto maksymalną długość operacji odczytu</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadtimeouterror">Upłynął limit czasu operacji odczytu</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketwritetimeouterror">Upłynął limit czasu operacji zapisu</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketclosederror">Gniazdo zamknięte</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketsendtimeouterror">Upłynął limit czasu operacji wysyłania</string>
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
-  <string name="manual_authorization">Ręczna autoryzacja do czasu przesłania</string>
-  <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
-  <string name="manufacturers_title">Producentów</string>
-  <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
-  <string name="models_title">Modele</string>
-  <!-- No comment provided by engineer. -->
-  <!-- Table section title for other selectable countries -->
-  <string name="phone_country_section_other_country">Innych</string>
-  <!-- Table section title for the currently selected country -->
-  <string name="phone_country_section_selected_country">Wybrany kraj</string>
-  <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
-  <string name="phone_country_title">Wybierz kraj</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
-  <string name="phone_verification_code_header">Kod SMS</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
-  <string name="phone_verification_code_placeholder">Kod</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
-  <string name="phone_verification_code_title">Zweryfikuj numer telefonu</string>
-  <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
-  <string name="airmap_phone_number_disclaimer">"Podając swój numer, wyrażasz zgodę na otrzymywanie na ten numer tekstów o lotach. Mogą obowiązywać informacje o &amp; transmisji danych przez operatora. AirMap wyśle wiadomość tekstową, gdy powiadomienie cyfrowe zostało pomyślnie przesłane. "</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
-  <string name="phone_verification_phone">Numer telefonu</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
-  <string name="phone_verification_request_new_sms_code">Poproś o nowy kod SMS</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
-  <string name="phone_verification_save_button">Prześlij</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
-  <string name="phone_verification_submit_button">Prześlij</string>
-  <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
-  <string name="phone_number_verification">Weryfikacja numeru telefonu</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
-  <string name="phone_verification_try_again">Próbuj ponownie</string>
-  <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
-  <string name="phone_verification_verification_failed">Weryfikacja numeru telefonu nie powiodła się</string>
-  <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
-  <string name="pilot_full_name_format">%1$s %2$s</string>
-  <!-- Table row label for FAA registration number -->
-  <string name="pilot_profile_faa_registration">Numer rejestracyjny FAA</string>
-  <!-- Label for the pilot profile email -->
-  <string name="email">Adres e-mail</string>
-  <!-- Label for the pilot profile first name -->
-  <string name="first_name">Imię</string>
-  <!-- Label for the pilot profile last name -->
-  <string name="last_name">Nazwisko</string>
-  <!-- Label for the pilot profile phone -->
-  <string name="pilot_profile_label_phone">Telefon</string>
-  <!-- Label for the pilot profile username -->
-  <string name="pilot_profile_label_username">Nazwę użytkownika</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
-  <string name="pilot_profile_save_button">Zapisz</string>
-  <!-- Section header for the pilot profile additional info section -->
-  <string name="pilot_profile_section_additional">Dodatkowe informacje</string>
-  <!-- Section header for the pilot profile personal info section -->
-  <string name="airmap_personal_information">Informacje osobiste</string>
-  <!-- Format for displaying a user's number of aircraft and flights -->
-  <string name="pilot_profile_statistics_format">%1$s Samolot %2$s Loty</string>
-  <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
-  <string name="pilot_profile_title">Profil pilotażowy</string>
-  <string name="review_flight_plane_title">Plan lotu</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
-  <string name="review_flight_plan_details_next_button">Następny</string>
-  <string name="review_flight_plan_details_public_flight_value_true">Tak</string>
-  <string name="review_flight_plan_details_radius">Promień</string>
-  <string name="airmap_aircraft_stats">Samolot</string>
-  <string name="review_flight_plan_details_row_title_altitude">Wysokości</string>
-  <string name="review_flight_plan_details_row_title_duration">Kończy się</string>
-  <string name="review_flight_plan_details_row_title_ends">Kończy się</string>
-  <string name="review_flight_plan_details_row_title_public">Publicznego</string>
-  <string name="review_flight_plan_details_row_title_starts">Zaczyna się</string>
-  <string name="review_flight_plan_details_section_header_aircraft">Samolot</string>
-  <string name="review_flight_plan_details_section_header_details">Szczegóły</string>
-  <string name="review_flight_plan_details_section_header_social">Udostępnij mój lot</string>
-  <string name="review_flight_plan_details_start_time_now">Nwo</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
-  <string name="airmap_title_activity_create_flight">Utwórz lot</string>
-  <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
-  <string name="end_flight">Zakończenie lotu</string>
-  <!-- Displayed for authorities that are setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_accepts_notice">Akceptuje powiadomienia cyfrowe</string>
-  <!-- Displayed for authorities that are NOT setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_does_not_accept_notice">Następujące organy w tej dziedzinie nie akceptują informacji cyfrowych</string>
-  <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
-  <string name="review_flight_plan_notices_tab_section_header_no_notices">Nie ma żadnych powiadomień dotyczących tego lotu.</string>
-  <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
-  <string name="airmap_digital_notice_accepted">Powiadomienie cyfrowe akceptowane</string>
-  <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
-  <string name="airmap_not_accept_notice">Następujące organy w tej dziedzinie nie akceptują informacji cyfrowych</string>
-  <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
-  <string name="airmap_review">Który napisze recenzję</string>
-  <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
-  <string name="airmap_flight_notice">Powiadomienie o locie</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
-  <string name="submit">Prześlij</string>
-  <string name="review_flight_plan_tab_title_digital_notice">Powiadomienia</string>
-  <string name="review_flight_plan_tab_title_flight">Lotu</string>
-  <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
-  <string name="review_flight_plan_title">Przegląd planu lotu</string>
-  <!-- Label for the section header that displays all the Optional rulesets -->
-  <string name="rulesets_section_optional">Opcjonalne</string>
-  <!-- Label for the section header that displays all the Pick One rulesets -->
-  <string name="rulesets_section_pick_one">Wybrać jeden</string>
-  <!-- Label for the section header that displays all the Required rulesets -->
-  <string name="rulesets_section_required">Wymagane</string>
-  <!-- Label for rulesets that can be optionally enabled by the user -->
-  <string name="ruleset_selection_type_optional">Opcjonalne</string>
-  <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
-  <string name="ruleset_selection_type_pickone">Wybrać jeden</string>
-  <!-- Label for rulesets that must be enabled by the user -->
-  <string name="ruleset_selection_type_required">Wymagane</string>
-  <string name="rules_generic_title">Zasady miejscowości</string>
-  <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-  <string name="select_aircraft">Wybierz samolot</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
-  <string name="sms_login_code_header">Kod SMS</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
-  <string name="sms_login_code_placeholder">Kod</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
-  <string name="sms_login_code_submit_button">Prześlij</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
-  <string name="sms_login_code_title">Sprawdź kod</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
-  <string name="sms_login_phone_number_placeholder">Numer telefonu</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
-  <string name="sms_login_save_button">Zapisz</string>
-  <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
-  <string name="sms_login_title">Logowania</string>
-  <!-- Description for status advisory color Green -->
-  <string name="informational">Informacyjne</string>
-  <!-- Description for status advisory color Orange -->
-  <string name="status_orange_description">Wymagane działanie</string>
-  <!-- Description for status advisory color Red -->
-  <string name="flight_strictly_regulated">Ściśle regulowane loty</string>
-  <!-- Description for status advisory color Yellow -->
-  <string name="advisories">Klasyfikatory</string>
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <string name="tile_layer_aerial_rec_areas">Powietrzne tereny rekreacyjne</string>
-  <string name="tile_layer_airports">Lotniska</string>
-  <string name="tile_layer_cities">Miasta</string>
-  <string name="tile_layer_class_b">Kontrolowana przez klasę B przestrzeń powietrzna</string>
-  <string name="tile_layer_class_c">Kontrolowana przez klasę C przestrzeń powietrzna</string>
-  <string name="tile_layer_class_d">Kontrolowana przez klasę D przestrzeń powietrzna</string>
-  <string name="tile_layer_class_e">Kontrolowana przez klasę E przestrzeń powietrzna</string>
-  <string name="tile_layer_controlled_airspace">Kontrolowana przestrzeń powietrzna (B, C, D &amp; E)</string>
-  <string name="tile_layer_custom">Niestandardowe</string>
-  <string name="tile_layer_emergencies">Aktywność pierwszego obiektu odpowiadającego</string>
-  <string name="tile_layer_fires">Pożary</string>
-  <string name="tile_layer_hazard_areas">Obszary zagrożenia</string>
-  <string name="tile_layer_heliports">Posiada</string>
-  <string name="tile_layer_hospitals">Szpitale</string>
-  <string name="tile_layer_national_parks">Parki Narodowe</string>
-  <string name="tile_layer_noaa">Obszary ochrony morskiej NOAA</string>
-  <string name="tile_layer_power_plants">Elektrowni</string>
-  <string name="tile_layer_prisons">Więzieniach</string>
-  <string name="tile_layer_private_airports">Prywatne lotniska</string>
-  <string name="tile_layer_prohibited">Niedozwolona przestrzeń powietrzna</string>
-  <string name="tile_layer_restricted_airspace">Ograniczona przestrzeń powietrzna</string>
-  <string name="tile_layer_schools">Szkoły</string>
-  <string name="tile_layer_tfr_faa">Tymczasowe ograniczenia dotyczące lotu</string>
-  <string name="tile_layer_universities">Uniwersytety</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-  <string name="traffic_alert_with_aircraft_id_and_distance_format">Ruchu %1$s\nAltitude %2$s\n%3$s %4$s %5$s</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-  <string name="traffic_alert_with_aircraft_id_format">Ruchu %1$s\nAltitude %2$s\n%3$s</string>
-  <!-- Name for the imperial system of measurement -->
-  <string name="units_imperial">Imperial</string>
-  <!-- Name for the metric system of measurement -->
-  <string name="units_metric">Metrycznych</string>
-  <!-- Unit and format for displaying nautical miles -->
-  <string name="units_nautical_mile_format">%s Nm</string>
-  <!-- Unit and format for displaying speed in knots -->
-  <string name="units_speed_format_knots">%s Kts</string>
-  <!-- Unit and format for displaying speed in meters per second -->
-  <string name="units_speed_format_meters_per_second">%s m/s</string>
-  <!-- Unit and format for displaying speed in miles per hour -->
-  <string name="units_speed_format_miles_per_hour">%s Mph</string>
-  <!-- Unit and format for displaying a speed range in meters per second -->
-  <string name="units_speed_range_format_meters_per_second">%1$s-%2$s m/s</string>
-  <!-- Unit and format for displaying a speed range in miles per hour -->
-  <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s Mph</string>
-  <!-- Unit and format for displaying temperature in Celcius -->
-  <string name="units_temperature_celcius_format">%1$s°C</string>
-  <!-- Unit and format for displaying temperature in Fahrenheit -->
-  <string name="units_temperature_fahrenheit_format">%1$s°F</string>
-  <!-- Possible error from keychain. -->
-  <!-- The request with the authority has been accepted -->
-  <string name="validation_accepted">Sprawdzone</string>
-  <!-- No validation request has been filed -->
-  <string name="validation_not_requested">Nie zażądano sprawdzania poprawności</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="validation_pending">Walidacja oczekująca</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="validation_rejected">Odrzucone brakujące informacje</string>
+    <!-- 1Password Extension Error Message -->
+    <string name="end_flight_title">Koniec lotu</string>
+    <string name="submit_title">Wyślij</string>
+    <string name="review_flight_plan">Przejrzyj plan lotu</string>
+    <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
+    <string name="airmap_airspace_advisories">Zalecenia przestrzeni lotniczej</string>
+    <!-- Label for advisories that are stup to receive digital notice -->
+    <string name="accepts_digital_notice">Akceptuje powiadomienia cyfrowe</string>
+    <!-- Displayed when an advisory has not provided a contact phone -->
+    <string name="no_known_number">Nie podano numeru telefonu</string>
+    <!-- Label and format for displaying the end time of temporary flight restriction -->
+    <string name="advisory_tfr_ends_format">Koniec: %1$s</string>
+    <!-- Never ending duration for a TFR -->
+    <string name="advisory_tfr_permanent">Stały</string>
+    <!-- Label and format for displaying the start time of temporary flight restriction -->
+    <string name="airmap_starts">Start: %1$s</string>
+    <!-- Format and unit for wildfire advisory in the area unit acres -->
+    <string name="advisory_wildfire_size_format_acres">%1$s akry/akrów</string>
+    <!-- Format and unit for wildfire advisory in the area unit hectares -->
+    <string name="advisory_wildfire_size_format_hectares">%1$s hektary/hektarów</string>
+    <!-- Label for wildfire advisory cells where size is unknown -->
+    <string name="unknown_size">Rozmiar nieznany</string>
+    <!-- Call to action when a user has not selected an aircraft -->
+    <string name="aircraft_select_aircraft">Wybierz samolot</string>
+    <!-- Title to display for the view creating a new aircraft -->
+    <string name="airmap_title_activity_create_aircraft">Utwórz Samoloty</string>
+    <!-- Title to display for the view when updating an existing aircraft -->
+    <string name="airmap_edit_aircraft">Uaktualnij Samoloty</string>
+    <!-- Name for airspace type Aerial Recreational Area -->
+    <string name="airspace_type_aerial_rec_area">Rekreacyjny obszar lotniczy</string>
+    <!-- Name for airspace type Airport -->
+    <string name="airspace_type_airport">Lotnisko</string>
+    <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
+    <string name="airspace_type_ama_field">Pole AMA</string>
+    <!-- Name for airspace type City -->
+    <string name="airspace_type_city">Miasto</string>
+    <!-- Name for airspace type Controlled Airspace -->
+    <string name="airspace_type_controlled">Kontrolowana przestrzeń powietrzna</string>
+    <!-- Name for airspace type Country -->
+    <string name="airspace_type_country">Kraj</string>
+    <!-- Name for airspace type County -->
+    <string name="airspace_type_county">Powiat</string>
+    <!-- Name for airspace type Custom -->
+    <string name="airspace_type_custom">Niestandardowe</string>
+    <!-- Name for airspace type Embassy -->
+    <string name="airspace_type_embassy">Ambasada</string>
+    <!-- Name for airspace type Emergency -->
+    <string name="airspace_type_emergency">Aktywność pierwszego respondera</string>
+    <!-- Name for airspace type Federal Building -->
+    <string name="airspace_type_federal_building">Budynek fereralny</string>
+    <!-- Name for airspace type Flight Information Region -->
+    <string name="airspace_type_fir">Rejon Informacji Powietrznej</string>
+    <!-- Name for airspace type Fire -->
+    <string name="airspace_type_fire">Pożary</string>
+    <!-- Name for airspace type Gliderport -->
+    <string name="airspace_type_gliderport">Lotnisko dla paralotni</string>
+    <!-- Name for airspace type Hazard Area -->
+    <string name="airspace_type_hazard_area">Obszary zagrożenia</string>
+    <!-- Name for airspace type Heliport -->
+    <string name="airspace_type_heliport">Heliport</string>
+    <!-- Name for airspace type Highway -->
+    <string name="airspace_type_highway">Autostrada</string>
+    <!-- Name for airspace type Hospital -->
+    <string name="airspace_type_hospital">Szpital</string>
+    <!-- Name for airspace type Industrial Property -->
+    <string name="airspace_type_industrial_property">Nieruchomość przemysłowa</string>
+    <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
+    <string name="airspace_type_japan_base">Japońska baza administracyjna</string>
+    <!-- Name for airspace type Military Property -->
+    <string name="airspace_type_military_property">Nieruchomość wojskowa</string>
+    <!-- Name for airspace type National Park -->
+    <string name="airspace_type_national_park">Park Narodowy</string>
+    <!-- Name for airspace type NOTAM -->
+    <string name="airspace_type_notam">NOTAM</string>
+    <!-- Name for airspace type Police Station -->
+    <string name="airspace_type_police_station">Budynek policji</string>
+    <!-- Name for airspace type Powerline -->
+    <string name="airspace_type_powerline">Linie napięcia</string>
+    <!-- Name for airspace type Power Plant -->
+    <string name="airspace_type_power_plant">Elektrownia</string>
+    <!-- Name for airspace type Prison -->
+    <string name="airspace_type_prison">Więzienie</string>
+    <!-- Name for airspace type Railway -->
+    <string name="airspace_type_railway">Kolej</string>
+    <!-- Name for airspace type Residential Property -->
+    <string name="airspace_type_residential_property">Nieruchomość mieszkalna</string>
+    <!-- Name for airspace type School -->
+    <string name="airspace_type_school">Szkoła</string>
+    <!-- Name for airspace type Seaplane Base -->
+    <string name="airspace_type_seaplane_base">Baza hydroplanów</string>
+    <!-- Name for airspace type Special Use Airspace -->
+    <string name="airspace_type_special_use">Przestrzeń powietrzna specjalnego przeznaczenia</string>
+    <!-- Name for airspace type Stadium -->
+    <string name="airspace_type_stadium">Stadion</string>
+    <!-- Name for airspace type State -->
+    <string name="airspace_type_state">Stan</string>
+    <!-- Name for airspace type Subprefecture -->
+    <string name="airspace_type_subprefecture">Podprefektura</string>
+    <!-- Name for airspace type Supercity (Japan related) -->
+    <string name="airspace_type_supercity">Supercity</string>
+    <!-- Name for airspace type FAA Temporary Flight Restriction -->
+    <string name="airspace_type_tfr_faa">Tymczasowe ograniczenia lotów</string>
+    <!-- Name for airspace type Ultralight Field -->
+    <string name="airspace_type_ulm_field">Pole Ultralight</string>
+    <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
+    <string name="airspace_type_unclassified">Niesklasyfikowany</string>
+    <!-- Name for airspace type University -->
+    <string name="airspace_type_university">Uniwersytet</string>
+    <!-- Name for airspace type Waterway -->
+    <string name="airspace_type_waterway">Droga wodna</string>
+    <!-- Name for airspace type WildFire -->
+    <string name="airspace_type_wildfire">Pożar</string>
+    <!-- No comment provided by engineer. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- The request with the authority has been accepted -->
+    <string name="authorization_accepted">Zatwierdzone</string>
+    <!-- The request with the authority has been cancelled -->
+    <string name="authorization_cancelled_submission">Autoryzacja anulowana</string>
+    <!-- The request with the authority has not been requested -->
+    <string name="authorization_not_requested">Autoryzacja nieżądana</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="authorization_pending">Autoryzacja oczekująca</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="authorization_rejected">Autoryzacja odrzucona</string>
+    <!-- The request with the authority will be rejected once the flight plan is submitted -->
+    <string name="authorization_rejected_upon_submission">Odrzucono po złożeniu</string>
+    <!-- The request with the authority will be accepted once the flight plan is submitted -->
+    <string name="authorization_upon_submission">Autoryzacja po złożeniu</string>
+    <!-- Login message when a user's account has been blacklisted. -->
+    <string name="invalid_email_domain">Twoje konto zostało dodane na czarną listę. Prosimy o kontakt z security@airmap.com.</string>
+    <!-- Login message when a user must verify their email address -->
+    <string name="verify_email_log_in_again">Twój adres e-mail musi zostać zweryfikowany. Sprawdź swoją skrzynkę pocztową.</string>
+    <!-- Login message when a user failed to authenticate -->
+    <string name="auth_error_unauthorized">Nieautoryzowany</string>
+    <!-- Navigation title for failed login attempt -->
+    <string name="auth_failed_login_title">Komunikat</string>
+    <!-- Abbreviation for East -->
+    <string name="cardinal_direction_e">E</string>
+    <!-- Abbreviation for East North East -->
+    <string name="cardinal_direction_ene">ENE</string>
+    <!-- Abbreviation for East South East -->
+    <string name="cardinal_direction_ese">ESE</string>
+    <!-- Abbreviation for North -->
+    <string name="cardinal_direction_n">N</string>
+    <!-- Abbreviation for North East -->
+    <string name="cardinal_direction_ne">NE</string>
+    <!-- Abbreviation for North North East -->
+    <string name="cardinal_direction_nnne">NNE</string>
+    <!-- Abbreviation for North North West -->
+    <string name="cardinal_direction_nnw">NNW</string>
+    <!-- Abbreviation for North West -->
+    <string name="cardinal_direction_nw">NW</string>
+    <!-- Abbreviation for South -->
+    <string name="cardinal_direction_s">S</string>
+    <!-- Abbreviation for South East -->
+    <string name="cardinal_direction_se">SE</string>
+    <!-- Abbreviation for South South East -->
+    <string name="cardinal_direction_sse">SSE</string>
+    <!-- Abbreviation for South South West -->
+    <string name="cardinal_direction_ssw">SSW</string>
+    <!-- Abbreviation for South West -->
+    <string name="cardinal_direction_sw">SW</string>
+    <!-- Abbreviation for West -->
+    <string name="cardinal_direction_w">W</string>
+    <!-- Abbreviation for West North West -->
+    <string name="cardinal_direction_wnw">WNW</string>
+    <!-- Abbreviation for West South West -->
+    <string name="cardinal_direction_wsw">WSW</string>
+    <!-- Bundle name -->
+    <string name="cfbundlename">${PRODUCT_NAME}</string>
+    <!-- Forgot password -->
+    <string name="com_auth0_lock_action_forgot_password">NIe pamiętasz hasła?</string>
+    <!-- tos & privacy -->
+    <string name="com_auth0_lock_sign_up_terms">Rejestrując się, akceptujesz nasz\n regulamin i politykę prywatności.</string>
+    <!-- forgot password email sent -->
+    <string name="com_auth0_lock_db_change_password_message_success">Właśnie wysłaliśmy do Ciebie wiadomość e-mail z prośbą o zresetowanie hasła.</string>
+    <!-- User logged in -->
+    <string name="com_auth0_lock_database_login_success_message">Logowanie zakończone sukcesem.</string>
+    <!-- Login Switch -->
+    <string name="com_auth0_lock_mode_log_in">Zaloguj się</string>
+    <!-- Signup Switch -->
+    <string name="com_auth0_lock_mode_sign_up">Zarejestruj się</string>
+    <!-- Social separator -->
+    <string name="com_auth0_lock_forms_separator">lub</string>
+    <!-- User signed up -->
+    <string name="com.auth0.lock.database.signup.success.message">Dziękujemy za rejestrację.</string>
+    <!-- Cancel -->
+    <string name="com.auth0.lock.database.tos.sheet.cancel">Anuluj</string>
+    <!-- Privacy -->
+    <string name="com.auth0.lock.database.tos.sheet.privacy">Polityka prywatności</string>
+    <!-- ToS -->
+    <string name="com.auth0.lock.database.tos.sheet.title">Regulamin usług</string>
+    <!-- enter corporate credentials -->
+    <string name="com.auth0.lock.enterprise.sso.message">Podaj firmowe dane uwierzytelniające.</string>
+    <!-- enter corporate credentials of domain %@{email domain} -->
+    <string name="com.auth0.lock.enterprise.sso.message_at">Podaj firmowe dane uwierzytelniające  %1$s.</string>
+    <!-- SSO Header -->
+    <string name="com.auth0.lock.enterprise.sso.title">WŁĄCZONE POJEDYNCZE LOGOWANIE.</string>
+    <!-- user is blocked -->
+    <string name="com.auth0.lock.error.authentication.blocked_user">UŻYTKOWNIK ZABLOKOWANY.</string>
+    <!-- Generic login error -->
+    <string name="com.auth0.lock.error.authentication.fallback">PRZEPRASZAMY, COŚ SIĘ NIE POWIODŁO PODCZAS PRÓBY ZALOGOWANIA SIĘ.</string>
+    <!-- invalid_user_password -->
+    <string name="com_auth0_lock_db_login_error_invalid_credentials_message">BŁĘDNY E-MAIL LUB HASŁO</string>
+    <!-- a0.mfa_invalid_code -->
+    <string name="com.auth0.lock.error.authentication.mfa_invalid_code">NIEPOPRAWNY KOD.</string>
+    <!-- No valid connection -->
+    <string name="com.auth0.lock.error.authentication.no_connection">PRZEPRASZAMY, NIE MOŻEMY POŁĄCZYĆ TEGO UŻYTKOWNIKA.</string>
+    <!-- password_change_required -->
+    <string name="com.auth0.lock.error.authentication.password_change_required">MUSISZ ZAKTUALIZOWAĆ HASŁO, GDYŻ LOGUJESZ SIĘ PO RAZ PIERWSZY LUB TWOJE HASŁO WYGASŁO.</string>
+    <!-- password_leaked -->
+    <string name="com.auth0.lock.error.authentication.password_leaked">TEN LOGIN ZOSTAŁ ZABLOKOWANY, PONIEWAŻ TWOJE HASŁO ZOSTAŁO PRZEJĘTE PRZEZ INNĄ STRONĘ INTERNETOWĄ. PRZESŁALIŚMY DO CIEBIE WIADOMOŚĆ E-MAIL Z INSTRUKCJAMI, W JAKI SPOSÓB ODBLOKOWAĆ KONTO.</string>
+    <!-- too_many_attempts -->
+    <string name="com.auth0.lock.error.authentication.too_many_attempts">TWOJE KONTO ZOSTAŁO ZABLOKOWANE PO WIELOKROTNYCH PRÓBACH ZALOGOWANIA SIĘ.</string>
+    <!-- Generic error -->
+    <string name="com_auth0_lock_unrecoverable_error_title">COŚ SIĘ NIE POWIODŁO.\nPROSIMY O KONTAKT Z DZIAŁEM WSPARCIA TECHNICZNEGO.</string>
+    <!-- Generic password error -->
+    <string name="com_auth0_lock_db_message_change_password_error">PRZEPRASZAMY, COŚ SIĘ NIE POWIODŁO PODCZAS ŻĄDANIA ZMIANY HASŁA.</string>
+    <!-- At least N characters -->
+    <string name="com_auth0_lock_password_strength_chars_length">o długości przynajmniej %d znaków</string>
+    <!-- At least n groups -->
+    <string name="com.auth0.lock.error.password.contain_at_least">zawierać przynajmniej %d z następujących %d rodzajów znaków:</string>
+    <!-- Lowercase letters -->
+    <string name="com_auth0_lock_password_strength_lowercase_letters">Małe litery (a-z)</string>
+    <!-- Must no be empty -->
+    <string name="com.auth0.lock.error.password.non_empty">Puste hasło jest niedozwolone.</string>
+    <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
+    <string name="com_auth0_lock_password_strength_identical_chars">Nie więcej niż  %1$d identycznych znaków z rzędu (np. „%2$s\" jest niedozwolone)</string>
+    <!-- Numbers -->
+    <string name="com_auth0_lock_password_strength_numbers">Cyfry (np. 0-9)</string>
+    <!-- N groups -->
+    <string name="com_auth0_lock_password_strength_title_must_have">Powinno zawierać:</string>
+    <!-- Special Characters -->
+    <string name="com_auth0_lock_password_strength_special_chars">Znaki specjalne (np.! @ # $% ^ &amp; *)</string>
+    <!-- Uppercase letters -->
+    <string name="com_auth0_lock_password_strength_uppercase_letters">Wielkie litery (A-Z)</string>
+    <!-- Passwordless link invalid. -->
+    <string name="com.auth0.lock.error.passwordless.invalid_link">PRZEPRASZAMY, POJAWIŁ SIĘ PROBLEM Z TWOIM LINKIEM. POPROŚ O NOWY LINK.</string>
+    <!-- Passwordless sign ups disabled. -->
+    <string name="com.auth0.lock.error.passwordless.signup_disabled">WYŁĄCZONA MOŻLIWOŚĆ DOKONANIA NOWEJ REJESTRACJI DLA TEGO KONTA, PROSZĘ SKONTAKTOWAĆ SIĘ Z ADMINISTRATOREM.</string>
+    <!-- Recoverable error button -->
+    <string name="com.auth0.lock.error.recoverable.button">Spróbuj ponownie</string>
+    <!-- Recoverable error message -->
+    <string name="com.auth0.lock.error.recoverable.message">Sprawdź swoje połączenie z internetem.</string>
+    <!-- Recoverable error title -->
+    <string name="com.auth0.lock.error.recoverable.title">Nie można załadować okna logowania.</string>
+    <!-- Generic sign up error -->
+    <string name="com_auth0_lock_db_sign_up_error_message">PRZEPRASZAMY, COŚ SIĘ NIE POWIODŁO PODCZAS PRÓBY ZAREJESTROWANIA SIĘ.</string>
+    <!-- invalid_password -->
+    <string name="com_auth0_lock_input_error_password">NIEPOPRAWNE HASŁO</string>
+    <!-- password_dictionary_error -->
+    <string name="com.auth0.lock.error.signup.password_dictionary_error">HASŁO JEST ZBYT POSPOLITE</string>
+    <!-- password_history -->
+    <string name="com_auth0_lock_db_signup_password_already_used_error_message">TO HASŁO WCZEŚNIEJ JUŻ ZOSTAŁO WYKORZYSTANE.</string>
+    <!-- password_no_user_info_error -->
+    <string name="com.auth0.lock.error.signup.password_no_user_info_error">HASŁO JEST OPARTE NA INFORMACJACH UŻYTKOWNIKA.</string>
+    <!-- password_strength_error -->
+    <string name="com_auth0_lock_db_signup_password_not_strong_error_message">HASŁO JEST ZA SŁABE.</string>
+    <!-- user_exists -->
+    <string name="com_auth0_lock_db_signup_user_already_exists_error_message">TAKI UŻYTKOWNIK JUŻ ISTNIEJE.</string>
+    <!-- Unrecoverable error button -->
+    <string name="com.auth0.lock.error.unrecoverable.button">Skontaktuj się z działem pomocy.</string>
+    <!-- Default error -->
+    <string name="com.auth0.lock.error.unrecoverable.default">Coś się nie powiodło.\nSkontaktuj się z działem pomocy technicznej.</string>
+    <!-- Invalid client or domain -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">Twoje dane uwierzytelniające Auth0 ClientId i/lub domena są nieprawidłowe.</string>
+    <!-- Your options configuration failed with: %@{error} -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_options">Twoja konfiguracja opcji  %1$s nie powiodła się.</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message">Wystąpił nieoczekiwany błąd podczas rozwiązywania konfiguracji pola logowania.</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message.no_action">Wystąpił nieoczekiwany błąd podczas rozwiązywania konfiguracji pola logowania, skontaktuj się z działem pomocy technicznej.</string>
+    <!-- No connections -->
+    <string name="com.auth0.lock.error.unrecoverable.no_connections">Nie znaleziono metod uwierzytelniania dla tego klienta. Sprawdź ustawienia klienta.</string>
+    <!-- Unrecoverable error title -->
+    <string name="com.auth0.lock.error.unrecoverable.title">Nie można rozwiązać Twojego żądania.</string>
+    <!-- Forgot Password message -->
+    <string name="com_auth0_lock_forgot_message">Wpisz swój adres e-mail oraz hasło. Wyślemy Ci wiadomość e-mail z potwierdzeniem zmiany hasła.</string>
+    <!-- Forgot Password title -->
+    <string name="com_auth0_lock_title_change_password">Zresetuj hasło</string>
+    <!-- Header Title -->
+    <string name="com.auth0.lock.header.default_title">Auth0</string>
+    <!-- invalid email -->
+    <string name="com_auth0_lock_input_error_email">Musi to być prawidłowy adres e-mail</string>
+    <!-- Email placeholder -->
+    <string name="com_auth0_lock_hint_email">E-mail</string>
+    <!-- Username or Email placeholder -->
+    <string name="com.auth0.lock.input.email_username.placeholder">Nazwa użytkownika/e-mail</string>
+    <!-- empty input -->
+    <string name="com.auth0.lock.input.empty.error">Nie może być pusty.</string>
+    <!-- generic input error -->
+    <string name="com.auth0.lock.input.generic.error">Nieprawidłowe dane wejściowe</string>
+    <!-- invalid otp -->
+    <string name="com.auth0.lock.input.otp.error">Musi to być prawidłowy kod numeryczny.</string>
+    <!-- OTP placeholder -->
+    <string name="com.auth0.lock.input.otp.placeholder">Kod</string>
+    <!-- Password placeholder -->
+    <string name="com_auth0_lock_hint_password">Hasło</string>
+    <!-- invalid phone -->
+    <string name="com.auth0.lock.input.phone.error">Musi to być prawidłowy numer telefonu.</string>
+    <!-- Phone placeholder -->
+    <string name="com.auth0.lock.input.phone.placeholder">Numer telefonu</string>
+    <!-- policy violation -->
+    <string name="com.auth0.lock.input.policy.error">Hasło nie spełnia zasad polityki.</string>
+    <!-- invalid username -->
+    <string name="com.auth0.lock.input.username.error">Może zawierać tylko od %d do %d znaków alfanumerycznych i \'_\'.</string>
+    <!-- Username placeholder -->
+    <string name="com.auth0.lock.input.username.placeholder">Nazwa Użytkownika</string>
+    <!-- Multifactor message -->
+    <string name="com.auth0.lock.multifactor.message">Wprowadź kod weryfikacyjny wygenerowany przez aplikację mobilną.</string>
+    <!-- Multifactor title -->
+    <string name="com.auth0.lock.multifactor.title">Weryfikacja dwuetapowa</string>
+    <!-- Country tableview navigation header -->
+    <string name="com.auth0.lock.passwordless.sms.country.header">Wybierz swój kraj</string>
+    <!-- CountryCodes TableView searchbar placeholder -->
+    <string name="com.auth0.lock.passwordless.sms.country.search">Szukaj</string>
+    <!-- Amazon -->
+    <string name="com.auth0.lock.strategy.localized.amazon">AMAZON</string>
+    <!-- Aol -->
+    <string name="com.auth0.lock.strategy.localized.aol">AOL</string>
+    <!-- Baidu -->
+    <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
+    <!-- Bitbucket -->
+    <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
+    <!-- Dropbox -->
+    <string name="com.auth0.lock.strategy.localized.dropbox">DROPBOX</string>
+    <!-- Dwolla -->
+    <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
+    <!-- Ebay -->
+    <string name="com.auth0.lock.strategy.localized.ebay">EBAY</string>
+    <!-- Evernote -->
+    <string name="com.auth0.lock.strategy.localized.evernote">EVERNOTE</string>
+    <!-- EvernoteSandbox -->
+    <string name="com.auth0.lock.strategy.localized.evernote_sandbox">EVERNOTE (SANDBOX)</string>
+    <!-- Exact -->
+    <string name="com.auth0.lock.strategy.localized.exact">EXACT</string>
+    <!-- Facebook -->
+    <string name="com.auth0.lock.strategy.localized.facebook">FACEBOOK</string>
+    <!-- Fitbit -->
+    <string name="com.auth0.lock.strategy.localized.fitbit">FITBIT</string>
+    <!-- Github -->
+    <string name="com.auth0.lock.strategy.localized.github">GITHUB</string>
+    <!-- Google -->
+    <string name="com.auth0.lock.strategy.localized.google">GOOGLE</string>
+    <!-- Instagram -->
+    <string name="com.auth0.lock.strategy.localized.instagram">INSTAGRAM</string>
+    <!-- Linkedin -->
+    <string name="com.auth0.lock.strategy.localized.linkedin">LINKEDIN</string>
+    <!-- Microsoft -->
+    <string name="com.auth0.lock.strategy.localized.microsoft">MICROSOFT ACCOUNT</string>
+    <!-- Miicard -->
+    <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
+    <!-- Paypal -->
+    <string name="com.auth0.lock.strategy.localized.paypal">PAYPAL</string>
+    <!-- PaypalSandbox -->
+    <string name="com.auth0.lock.strategy.localized.paypal_sandbox">PAYPAL (SANDBOX)</string>
+    <!-- PlanningCenter -->
+    <string name="com.auth0.lock.strategy.localized.planning_center">PLANNING CENTER</string>
+    <!-- RenRen -->
+    <string name="com.auth0.lock.strategy.localized.renren">人人</string>
+    <!-- Salesforce -->
+    <string name="com.auth0.lock.strategy.localized.salesforce">SALESFORCE</string>
+    <!-- SalesforceCommunity -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE COMMUNITY</string>
+    <!-- SalesforceSandbox -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (SANDBOX)</string>
+    <!-- Shopify -->
+    <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
+    <!-- Soundcloud -->
+    <string name="com.auth0.lock.strategy.localized.soundcloud">SOUNDCLOUD</string>
+    <!-- TheCity -->
+    <string name="com.auth0.lock.strategy.localized.the_city">THE CITY</string>
+    <!-- TheCitySandbox -->
+    <string name="com.auth0.lock.strategy.localized.the_city_sandbox">THE CITY (SANDBOX)</string>
+    <!-- ThirtySevenSignals -->
+    <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37 SIGNALS</string>
+    <!-- Twitter -->
+    <string name="com.auth0.lock.strategy.localized.twitter">TWITTER</string>
+    <!-- Vkontakte -->
+    <string name="com.auth0.lock.strategy.localized.vkontakte">VKONTAKTE</string>
+    <!-- Weibo -->
+    <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
+    <!-- Wordpress -->
+    <string name="com.auth0.lock.strategy.localized.wordpress">WORDPRESS</string>
+    <!-- Yahoo -->
+    <string name="com.auth0.lock.strategy.localized.yahoo">YAHOO!</string>
+    <!-- Yammer -->
+    <string name="com.auth0.lock.strategy.localized.yammer">YAMMER</string>
+    <!-- Yandex -->
+    <string name="com.auth0.lock.strategy.localized.yandex">YANDEX</string>
+    <!-- Log in with %@{strategy} -->
+    <string name="com_auth0_lock_social_log_in">ZALOGUJ SIĘ, UŻYWAJĄC %1$s.</string>
+    <!-- Sign up with %@{strategy} -->
+    <string name="com_auth0_lock_social_sign_up">ZAREJESTRUJ SIĘ UŻYWAJĄC %1$s.</string>
+    <!-- Login Button title -->
+    <string name="com_auth0_lock_action_log_in">ZALOGUJ SIĘ</string>
+    <!-- Send 2fa code -->
+    <string name="com.auth0.lock.submit.send_code.title">WYŚLIJ</string>
+    <!-- Send Email button title -->
+    <string name="com_auth0_lock_action_send_email">WYŚLIJ WIADOMOŚĆ E-MAIL.</string>
+    <!-- Signup Button title -->
+    <string name="com_auth0_lock_action_sign_up">ZAREJESTRUJ SIĘ</string>
+    <!-- Passwordless code reminder action -->
+    <string name="com.auth0.passwordless.code.reminder">Nie otrzymałeś kodu?</string>
+    <!-- Passwordless code sent by email to %@{identifier} -->
+    <string name="com.auth0.passwordless.email.code.sent">Wiadomość e-mail z kodem została wysłana na adres %1$s.</string>
+    <!-- Passwordless email title -->
+    <string name="com.auth0.passwordless.email.title">Aby się zalogować lub założyć konto, podaj swój adres e-mail.</string>
+    <!-- Passwordless email title with social -->
+    <string name="com.auth0.passwordless.email.title.social">W przeciwnym razie wpisz swój adres e-mail, aby się zalogować lub utworzyć konto.</string>
+    <!-- Passwordless link reminder action -->
+    <string name="com.auth0.passwordless.link.reminder">Nie otrzymałeś linku?</string>
+    <!-- Passwordless link sent to %@{identifier} -->
+    <string name="com.auth0.passwordless.link.sent">Link do logowania został wysłany na adres %1$s.</string>
+    <!-- Passwordless code sent by sms to %@{identifier} -->
+    <string name="com.auth0.passwordless.sms.code.sent">Wiadomość sms została wysłana na numer %1$s.</string>
+    <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
+    <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
+    <!-- CountryCodes TableViewCell label %@{localizedName} -->
+    <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
+    <!-- Passwordless sms title -->
+    <string name="com.auth0.passwordless.sms.title">Aby się zalogować lub założyć konto, podaj swój numer telefonu.</string>
+    <!-- Passwordless sms title with social -->
+    <string name="com.auth0.passwordless.sms.title.social">W przeciwnym razie podaj swój numer telefonu, aby się zalogować lub utworzyć konto.</string>
+    <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
+    <string name="create_aircraft_make_and_model">Marka i Model</string>
+    <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
+    <string name="airmap_nickname">Nazwa</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
+    <string name="create_aircraft_save_button">Zapisz</string>
+    <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
+    <string name="create_aircraft">Utwórz Samoloty</string>
+    <!-- Request cancelled error -->
+    <string name="error_cancelled">Prośba anulowana przed jej ukończeniem.</string>
+    <!-- A conflict exists with the attempted request -->
+    <string name="error_conflict">Wystąpił konflikt.</string>
+    <!-- A generic server error message with an associated error code -->
+    <string name="error_generic_format">Serwer zwrócił błąd. (%s)</string>
+    <!-- Response serialization failure error -->
+    <string name="error_serialization">Serwer zwrócił nieprzetworzoną odpowiedź.</string>
+    <!-- Server failure error -->
+    <string name="error_server">Serwer nie mógł zakończyć Twojej prośby.</string>
+    <!-- Authorization failure error -->
+    <string name="error_unauthorized">Nieautoryzowany. Sprawdź dane logowania.</string>
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
+    <string name="faqs">FAQ</string>
+    <string name="flight_data_cell_button_done">WYKONANO</string>
+    <string name="now">Teraz</string>
+    <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
+    <string name="airmap_polygon">Obszar</string>
+    <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
+    <string name="airmap_path">Trasa</string>
+    <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
+    <string name="airmap_circle">Punkt</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
+    <string name="flight_drawing_next_button">Następny</string>
+    <!-- The radius around a point-based flight's center -->
+    <string name="airmap_buffer">Promień</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
+    <string name="flight_drawing_title">Utwórz lot</string>
+    <!-- Call to action to fine-tune the geometry of a flight. -->
+    <string name="airmap_done_drawing_tip">Przeciągnij dowolny punkt, aby go przenieść. Przeciągnij dowolny środkowy punkt, aby dodać nowy punkt.</string>
+    <!-- Call to action to drag a point to the trash to delete. -->
+    <string name="airmap_delete_tip">Przeciągnij punkt do kosza, aby go usunąć.</string>
+    <!-- Call to action to draw an area-based flight. -->
+    <string name="airmap_draw_freehand_area">Wyznacz obszar lotu.</string>
+    <!-- Call to action to draw a path-based flight. -->
+    <string name="airmap_draw_freehand_path">Wyznacz trasę lotu.</string>
+    <!-- Call to action to drag the center position of a point-based flight. -->
+    <string name="flight_drawing_tooltip_cta_postiion_point">Przeciągnij środkowy punkt, aby ustawić swój obszar lotu.</string>
+    <!-- Call to action to tap the icon to begin drawing a flight area. -->
+    <string name="airmap_freehand_tip_area">Dotknij ikonę rączki, aby wyznaczyć obszar lotu.</string>
+    <!-- Call to action to tap the icon to begin drawing a flight path. -->
+    <string name="airmap_freehand_tip_path">Dotknij ikonę rączki, aby wyznaczyć trasę lotu.</string>
+    <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
+    <string name="airmap_flight_area_overlap_permit_conflict">Strefa lotów nie może pokrywać się ze strefami wymagającymi kolidującego zezwolenia.</string>
+    <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
+    <string name="airmap_error_overlap">Błędny obszar lotu. Dostosuj obszar lotu tak, lotu, aby nie zachodził na siebie.</string>
+    <!-- The width of a path-based flight extending outward from the centerline -->
+    <string name="airmap_width">Szerokość</string>
+    <!-- Title for the button to advance to the next screen -->
+    <string name="airmap_next">Następny</string>
+    <!-- Title for the button to save and create the flight -->
+    <string name="airmap_save">Zapisz</string>
+    <!-- Call to action title for the user to select an aircraft -->
+    <string name="flight_plan_row_title_aircraft">Wybierz samolot.</string>
+    <!-- Title for the row displaying the name of the aircraft -->
+    <string name="flight_plan_row_title_aircraft_name">Lotnictwo</string>
+    <!-- Title for the row displaying flight plan altitude -->
+    <string name="airmap_max_altitude">Wysokość</string>
+    <!-- Title for the row displaying flight plan buffer -->
+    <string name="flight_plan_row_title_buffer">Bufor</string>
+    <!-- Title for the row displaying flight plan duration -->
+    <string name="airmap_duration">Czas trwania</string>
+    <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
+    <string name="flight_plan_row_title_max_altitude">Maksymalna wysokość nad lądem</string>
+    <!-- Call to action title for the user to select a pilot profile -->
+    <string name="select_pilot_profile">Wybierz profil pilota</string>
+    <!-- Title for the row displaying flight plan radius -->
+    <string name="flight_plan_row_title_radius">Promień</string>
+    <!-- Title for the row displaying flight plan start time -->
+    <string name="starts">Starty</string>
+    <!-- Title for the section displaying the pilot and aircraft details -->
+    <string name="pilot_and_aircraft_header">Pilot i Samolot</string>
+    <!-- Title for the section displaying flight plan details -->
+    <string name="flight_details">Lot</string>
+    <!-- Title for the section displaying social sharing features -->
+    <string name="airmap_share_my_flight">Udostępnij lot</string>
+    <string name="date_and_time">Data i godzina</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketclosederror">Gniazdo zamknięte zdalnie</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketconnecttimeouterror">Przekroczono czas próby połączenia z hostem</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketothererror">Nieudana próba utworzenia gniazda z gniazda FD getpeername() nieudany</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadmaxedouterror">Osiągnięto ustawioną maksymalną długość operacji odczytu.</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadtimeouterror">Przekroczono czas operacji odczytu.</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketwritetimeouterror">Przekroczono czas operacji zapisu.</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketclosederror">Gniazdo zamknięte.</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketsendtimeouterror">Przekroczono czas operacji wysyłania.</string>
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
+    <string name="manual_authorization">Autoryzacja manualna oczekująca po złożeniu</string>
+    <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
+    <string name="manufacturers_title">Producenci</string>
+    <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
+    <string name="models_title">Modele</string>
+    <!-- No comment provided by engineer. -->
+    <!-- Table section title for other selectable countries -->
+    <string name="phone_country_section_other_country">Inne</string>
+    <!-- Table section title for the currently selected country -->
+    <string name="phone_country_section_selected_country">Wybierz kraj</string>
+    <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
+    <string name="phone_country_title">Wybierz kraj</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
+    <string name="phone_verification_code_header">Kod SMS</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
+    <string name="phone_verification_code_placeholder">Kod</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
+    <string name="phone_verification_code_title">Zweryfikuj numer telefonu</string>
+    <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
+    <string name="airmap_phone_number_disclaimer">Podając swój numer telefonu, wyrażasz zgodę na otrzymywanie na ten numer powiadomień tekstowych dotyczących swoich lotów. Za wiadomości tekstowe i przesyłanie danych mogą być pobierane opłaty przez Twojego operatora telefonii komórkowej zgodnie z jego cennikiem.\n\nAirMap wyśle do Ciebie wiadomość tekstową po pomyślnym przesłaniu Twojego cyfrowego powiadomienia.\n</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
+    <string name="phone_verification_phone">Nuemr telefonu</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
+    <string name="phone_verification_request_new_sms_code">Żądaj nowej wiadomości z kodem</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
+    <string name="phone_verification_save_button">Zapisz</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
+    <string name="phone_verification_submit_button">Wyślij</string>
+    <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
+    <string name="phone_number_verification">Weryfikacja numeru telefonu</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
+    <string name="phone_verification_try_again">Spróbuj ponownie</string>
+    <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
+    <string name="phone_verification_verification_failed">Weryfikacja numeru telefonu sie nie powiodła</string>
+    <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
+    <string name="pilot_full_name_format">%1$s %2$s</string>
+    <!-- Table row label for FAA registration number -->
+    <string name="pilot_profile_faa_registration">Numer rejestracyjny FAA</string>
+    <!-- Label for the pilot profile email -->
+    <string name="email">E-mail</string>
+    <!-- Label for the pilot profile first name -->
+    <string name="first_name">Imię</string>
+    <!-- Label for the pilot profile last name -->
+    <string name="last_name">Nazwisko</string>
+    <!-- Label for the pilot profile phone -->
+    <string name="pilot_profile_label_phone">Telefon</string>
+    <!-- Label for the pilot profile username -->
+    <string name="pilot_profile_label_username">Nazwa użytkownika</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
+    <string name="pilot_profile_save_button">Zapisz</string>
+    <!-- Section header for the pilot profile additional info section -->
+    <string name="pilot_profile_section_additional">Dodatkowe informacje</string>
+    <!-- Section header for the pilot profile personal info section -->
+    <string name="airmap_personal_information">Osobiste informacje</string>
+    <!-- Format for displaying a user's number of aircraft and flights -->
+    <string name="pilot_profile_statistics_format">%1$s Samoloty, %2$s loty</string>
+    <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
+    <string name="pilot_profile_title">Profil pilota</string>
+    <string name="review_flight_plane_title">Plan lotu</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
+    <string name="review_flight_plan_details_next_button">Następny</string>
+    <string name="review_flight_plan_details_public_flight_value_true">Tak</string>
+    <string name="review_flight_plan_details_radius">Promień</string>
+    <string name="airmap_aircraft_stats">Samolot</string>
+    <string name="review_flight_plan_details_row_title_altitude">Wysokość</string>
+    <string name="review_flight_plan_details_row_title_duration">Koniec</string>
+    <string name="review_flight_plan_details_row_title_ends">Koniec</string>
+    <string name="review_flight_plan_details_row_title_public">Publiczny</string>
+    <string name="review_flight_plan_details_row_title_starts">Starty</string>
+    <string name="review_flight_plan_details_section_header_aircraft">Samolot</string>
+    <string name="review_flight_plan_details_section_header_details">Szczegóły</string>
+    <string name="review_flight_plan_details_section_header_social">Udostępnij lot</string>
+    <string name="review_flight_plan_details_start_time_now">Teraz</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
+    <string name="airmap_title_activity_create_flight">Utwórz lot</string>
+    <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
+    <string name="end_flight">Koniec lotu</string>
+    <!-- Displayed for authorities that are setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_accepts_notice">Akceptuje powiadomienia cyfrowe.</string>
+    <!-- Displayed for authorities that are NOT setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_does_not_accept_notice">Następujące władze nie akceptują powiadomień cyfrowych.</string>
+    <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
+    <string name="review_flight_plan_notices_tab_section_header_no_notices">Nie ma powiadomień dla tego lotu.</string>
+    <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
+    <string name="airmap_digital_notice_accepted">Powiadomienie cyfrowe zaakceptowane</string>
+    <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
+    <string name="airmap_not_accept_notice">Następujące władze w tym obszarze nie akceptują cyfrowych powiadomień.</string>
+    <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
+    <string name="airmap_review">Przejrzyj</string>
+    <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
+    <string name="airmap_flight_notice">Powiadomienie lotu</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
+    <string name="submit">Wyślij</string>
+    <string name="review_flight_plan_tab_title_digital_notice">Powiadomienia</string>
+    <string name="review_flight_plan_tab_title_flight">Lot</string>
+    <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
+    <string name="review_flight_plan_title">Przejrzyj plan lotu</string>
+    <!-- Label for the section header that displays all the Optional rulesets -->
+    <string name="rulesets_section_optional">Opcjonalnie</string>
+    <!-- Label for the section header that displays all the Pick One rulesets -->
+    <string name="rulesets_section_pick_one">Wybierz jeden</string>
+    <!-- Label for the section header that displays all the Required rulesets -->
+    <string name="rulesets_section_required">Wymagane</string>
+    <!-- Label for rulesets that can be optionally enabled by the user -->
+    <string name="ruleset_selection_type_optional">Opcjonalny</string>
+    <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
+    <string name="ruleset_selection_type_pickone">Wybierz jeden</string>
+    <!-- Label for rulesets that must be enabled by the user -->
+    <string name="ruleset_selection_type_required">Wymagany</string>
+    <string name="rules_generic_title">Lokalne zasady</string>
+    <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
+    <string name="select_aircraft">Wybierz samolot</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
+    <string name="sms_login_code_header">Kod SMS</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
+    <string name="sms_login_code_placeholder">Kod</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
+    <string name="sms_login_code_submit_button">Wyślij</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
+    <string name="sms_login_code_title">Weryfikuj kod</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
+    <string name="sms_login_phone_number_placeholder">Nuemr telefonu</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
+    <string name="sms_login_save_button">Zapisz</string>
+    <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
+    <string name="sms_login_title">Login</string>
+    <!-- Description for status advisory color Green -->
+    <string name="informational">Informacyjny</string>
+    <!-- Description for status advisory color Orange -->
+    <string name="status_orange_description">Wymagana akcja</string>
+    <!-- Description for status advisory color Red -->
+    <string name="flight_strictly_regulated">Lot ściśle regulowany</string>
+    <!-- Description for status advisory color Yellow -->
+    <string name="advisories">Zalecany</string>
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <string name="tile_layer_aerial_rec_areas">Powietrzne tereny rekreacyjne</string>
+    <string name="tile_layer_airports">Lotniska</string>
+    <string name="tile_layer_cities">Miasta</string>
+    <string name="tile_layer_class_b">Przestrzeń lotnicza kontrolowana Klasa B</string>
+    <string name="tile_layer_class_c">Przestrzeń lotnicza kontrolowana Klasa C</string>
+    <string name="tile_layer_class_d">Przestrzeń lotnicza kontrolowana Klasa D</string>
+    <string name="tile_layer_class_e">Przestrzeń lotnicza kontrolowana Klasa E</string>
+    <string name="tile_layer_controlled_airspace">Przestrzenie lotnicze kontrolowane (B, C, D, E)</string>
+    <string name="tile_layer_custom">Niestandardowy</string>
+    <string name="tile_layer_emergencies">Aktywność pierwszego respondera</string>
+    <string name="tile_layer_fires">Pożary</string>
+    <string name="tile_layer_hazard_areas">Obszary zagrożenia</string>
+    <string name="tile_layer_heliports">Heliporty</string>
+    <string name="tile_layer_hospitals">Szpitale</string>
+    <string name="tile_layer_national_parks">Parki Narodowe</string>
+    <string name="tile_layer_noaa">Morskie obszary objęte ochroną NOAA</string>
+    <string name="tile_layer_power_plants">Elektrownie</string>
+    <string name="tile_layer_prisons">Więzienia</string>
+    <string name="tile_layer_private_airports">Prywatne lotniska</string>
+    <string name="tile_layer_prohibited">Zabroniony ruch lotniczy</string>
+    <string name="tile_layer_restricted_airspace">Ograniczenia w ruchu lotniczym</string>
+    <string name="tile_layer_schools">Szkoły</string>
+    <string name="tile_layer_tfr_faa">Tymczasowe ograniczenia ruchu lotniczego</string>
+    <string name="tile_layer_universities">Uniwersytety</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">Natężenie ruchu %1$s\nWysokość %2$s\n%3$s %4$s %5$s</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
+    <string name="traffic_alert_with_aircraft_id_format">Natężenie ruchu %1$s\nWysokość %2$s\n%3$s</string>
+    <!-- Name for the imperial system of measurement -->
+    <string name="units_imperial">Imperialne</string>
+    <!-- Name for the metric system of measurement -->
+    <string name="units_metric">Metryczne</string>
+    <!-- Unit and format for displaying nautical miles -->
+    <string name="units_nautical_mile_format">%s NM</string>
+    <!-- Unit and format for displaying speed in knots -->
+    <string name="units_speed_format_knots">%s kts</string>
+    <!-- Unit and format for displaying speed in meters per second -->
+    <string name="units_speed_format_meters_per_second">%s m/s</string>
+    <!-- Unit and format for displaying speed in miles per hour -->
+    <string name="units_speed_format_miles_per_hour">%s mph</string>
+    <!-- Unit and format for displaying a speed range in meters per second -->
+    <string name="units_speed_range_format_meters_per_second">%1$s-%2$s m/s</string>
+    <!-- Unit and format for displaying a speed range in miles per hour -->
+    <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s mph</string>
+    <!-- Unit and format for displaying temperature in Celcius -->
+    <string name="units_temperature_celcius_format">%1$s°C</string>
+    <!-- Unit and format for displaying temperature in Fahrenheit -->
+    <string name="units_temperature_fahrenheit_format">%1$s°F</string>
+    <!-- Possible error from keychain. -->
+    <!-- No comment provided by engineer. -->
+    <!-- The request with the authority has been accepted -->
+    <string name="validation_accepted">Zatwierdzony</string>
+    <!-- No validation request has been filed -->
+    <string name="validation_not_requested">Walidacja nieżądana</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="validation_pending">Walidacja w oczekiwaniu</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="validation_rejected">Odrzucono brakujące informacje</string>
 </resources>

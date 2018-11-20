@@ -1,745 +1,748 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- 1Password Extension Error Message -->
-  <string name="end_flight_title">结束飞行</string>
-  <string name="submit_title">提交</string>
-  <string name="review_flight_plan">审查飞行计划</string>
-  <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
-  <string name="airmap_airspace_advisories">空域公告</string>
-  <!-- Label for advisories that are stup to receive digital notice -->
-  <string name="accepts_digital_notice">接受数字通知</string>
-  <!-- Displayed when an advisory has not provided a contact phone -->
-  <string name="no_known_number">没有提供电话号码</string>
-  <!-- Label and format for displaying the end time of temporary flight restriction -->
-  <string name="advisory_tfr_ends_format">结束： %1$s</string>
-  <!-- Never ending duration for a TFR -->
-  <string name="advisory_tfr_permanent">永久</string>
-  <!-- Label and format for displaying the start time of temporary flight restriction -->
-  <string name="airmap_starts">开始： %1$s</string>
-  <!-- Format and unit for wildfire advisory in the area unit acres -->
-  <string name="advisory_wildfire_size_format_acres">%1$s 亩</string>
-  <!-- Format and unit for wildfire advisory in the area unit hectares -->
-  <string name="advisory_wildfire_size_format_hectares">%1$s 公顷</string>
-  <!-- Label for wildfire advisory cells where size is unknown -->
-  <string name="unknown_size">山火大小未知</string>
-  <!-- Call to action when a user has not selected an aircraft -->
-  <string name="aircraft_select_aircraft">选择飞机</string>
-  <!-- Title to display for the view creating a new aircraft -->
-  <string name="airmap_title_activity_create_aircraft">创建无人机</string>
-  <!-- Title to display for the view when updating an existing aircraft -->
-  <string name="airmap_edit_aircraft">更新飞机</string>
-  <!-- Name for airspace type Aerial Recreational Area -->
-  <string name="airspace_type_aerial_rec_area">空中游乐区</string>
-  <!-- Name for airspace type Airport -->
-  <string name="airspace_type_airport">机场</string>
-  <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
-  <string name="airspace_type_ama_field">领域</string>
-  <!-- Name for airspace type City -->
-  <string name="airspace_type_city">城市</string>
-  <!-- Name for airspace type Controlled Airspace -->
-  <string name="airspace_type_controlled">管制空域</string>
-  <!-- Name for airspace type Country -->
-  <string name="airspace_type_country">国家</string>
-  <!-- Name for airspace type County -->
-  <string name="airspace_type_county">县</string>
-  <!-- Name for airspace type Custom -->
-  <string name="airspace_type_custom">自定义</string>
-  <!-- Name for airspace type Embassy -->
-  <string name="airspace_type_embassy">大使馆</string>
-  <!-- Name for airspace type Emergency -->
-  <string name="airspace_type_emergency">紧急救援人员活动</string>
-  <!-- Name for airspace type Federal Building -->
-  <string name="airspace_type_federal_building">联邦大厦</string>
-  <!-- Name for airspace type Flight Information Region -->
-  <string name="airspace_type_fir">飞行信息区域</string>
-  <!-- Name for airspace type Fire -->
-  <string name="airspace_type_fire">火灾</string>
-  <!-- Name for airspace type Gliderport -->
-  <string name="airspace_type_gliderport">Gliderport</string>
-  <!-- Name for airspace type Hazard Area -->
-  <string name="airspace_type_hazard_area">危险区域</string>
-  <!-- Name for airspace type Heliport -->
-  <string name="airspace_type_heliport">停机坪</string>
-  <!-- Name for airspace type Highway -->
-  <string name="airspace_type_highway">高速公路</string>
-  <!-- Name for airspace type Hospital -->
-  <string name="airspace_type_hospital">医院</string>
-  <!-- Name for airspace type Industrial Property -->
-  <string name="airspace_type_industrial_property">工业产权</string>
-  <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
-  <string name="airspace_type_japan_base">日本基地管理</string>
-  <!-- Name for airspace type Military Property -->
-  <string name="airspace_type_military_property">军事基地</string>
-  <!-- Name for airspace type National Park -->
-  <string name="airspace_type_national_park">国家公园</string>
-  <!-- Name for airspace type NOTAM -->
-  <string name="airspace_type_notam">NOTAM</string>
-  <!-- Name for airspace type Police Station -->
-  <string name="airspace_type_police_station">公安局</string>
-  <!-- Name for airspace type Powerline -->
-  <string name="airspace_type_powerline">电力线</string>
-  <!-- Name for airspace type Power Plant -->
-  <string name="airspace_type_power_plant">电厂</string>
-  <!-- Name for airspace type Prison -->
-  <string name="airspace_type_prison">监狱</string>
-  <!-- Name for airspace type Railway -->
-  <string name="airspace_type_railway">铁路</string>
-  <!-- Name for airspace type Residential Property -->
-  <string name="airspace_type_residential_property">住宅物业</string>
-  <!-- Name for airspace type School -->
-  <string name="airspace_type_school">学校</string>
-  <!-- Name for airspace type Seaplane Base -->
-  <string name="airspace_type_seaplane_base">水上飞机基地</string>
-  <!-- Name for airspace type Special Use Airspace -->
-  <string name="airspace_type_special_use">特别用途空域</string>
-  <!-- Name for airspace type Stadium -->
-  <string name="airspace_type_stadium">体育场</string>
-  <!-- Name for airspace type State -->
-  <string name="airspace_type_state">状态</string>
-  <!-- Name for airspace type Subprefecture -->
-  <string name="airspace_type_subprefecture">Subprefecture</string>
-  <!-- Name for airspace type Supercity (Japan related) -->
-  <string name="airspace_type_supercity">超级城市</string>
-  <!-- Name for airspace type FAA Temporary Flight Restriction -->
-  <string name="airspace_type_tfr_faa">临时飞行限制</string>
-  <!-- Name for airspace type Ultralight Field -->
-  <string name="airspace_type_ulm_field">超轻型领域</string>
-  <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
-  <string name="airspace_type_unclassified">机密</string>
-  <!-- Name for airspace type University -->
-  <string name="airspace_type_university">大学</string>
-  <!-- Name for airspace type Waterway -->
-  <string name="airspace_type_waterway">航道</string>
-  <!-- Name for airspace type WildFire -->
-  <string name="airspace_type_wildfire">野火</string>
-  <!-- No comment provided by engineer. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- The request with the authority has been accepted -->
-  <string name="authorization_accepted">申请批准了</string>
-  <!-- The request with the authority has been cancelled -->
-  <string name="authorization_cancelled_submission">申请已取消</string>
-  <!-- The request with the authority has not been requested -->
-  <string name="authorization_not_requested">未请求申请</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="authorization_pending">申请待定</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="authorization_rejected">申请拒绝了</string>
-  <!-- The request with the authority will be rejected once the flight plan is submitted -->
-  <string name="authorization_rejected_upon_submission">提交后会被自动拒绝</string>
-  <!-- The request with the authority will be accepted once the flight plan is submitted -->
-  <string name="authorization_upon_submission">提交后会被自动批准</string>
-  <!-- Login message when a user's account has been blacklisted. -->
-  <string name="invalid_email_domain">你的帐号被列入黑名单了。请联系 security@airmap.com security@airmap</string>
-  <!-- Login message when a user must verify their email address -->
-  <string name="verify_email_log_in_again">您的电子邮件地址需要验证。请检查您的收件箱。</string>
-  <!-- Login message when a user failed to authenticate -->
-  <string name="auth_error_unauthorized">未经申请</string>
-  <!-- Navigation title for failed login attempt -->
-  <string name="auth_failed_login_title">警报</string>
-  <!-- Abbreviation for East -->
-  <string name="cardinal_direction_e">电子邮件</string>
-  <!-- Abbreviation for East North East -->
-  <string name="cardinal_direction_ene">ENE</string>
-  <!-- Abbreviation for East South East -->
-  <string name="cardinal_direction_ese">ESE</string>
-  <!-- Abbreviation for North -->
-  <string name="cardinal_direction_n">N</string>
-  <!-- Abbreviation for North East -->
-  <string name="cardinal_direction_ne">NE</string>
-  <!-- Abbreviation for North North East -->
-  <string name="cardinal_direction_nnne">NNE</string>
-  <!-- Abbreviation for North North West -->
-  <string name="cardinal_direction_nnw">NNW</string>
-  <!-- Abbreviation for North West -->
-  <string name="cardinal_direction_nw">NW</string>
-  <!-- Abbreviation for South -->
-  <string name="cardinal_direction_s">S</string>
-  <!-- Abbreviation for South East -->
-  <string name="cardinal_direction_se">SE</string>
-  <!-- Abbreviation for South South East -->
-  <string name="cardinal_direction_sse">SSE</string>
-  <!-- Abbreviation for South South West -->
-  <string name="cardinal_direction_ssw">SSW</string>
-  <!-- Abbreviation for South West -->
-  <string name="cardinal_direction_sw">SW</string>
-  <!-- Abbreviation for West -->
-  <string name="cardinal_direction_w">W</string>
-  <!-- Abbreviation for West North West -->
-  <string name="cardinal_direction_wnw">WNW</string>
-  <!-- Abbreviation for West South West -->
-  <string name="cardinal_direction_wsw">WSW</string>
-  <!-- Forgot password -->
-  <string name="com_auth0_lock_action_forgot_password">不记得你的密码？</string>
-  <!-- tos & privacy -->
-  <string name="com_auth0_lock_sign_up_terms">通过注册, 您同意我们的服务条款和隐私政策</string>
-  <!-- forgot password email sent -->
-  <string name="com_auth0_lock_db_change_password_message_success">我们刚刚给您发了一封电子邮件重置您的密码</string>
-  <!-- User logged in -->
-  <string name="com_auth0_lock_database_login_success_message">您已成功登录。</string>
-  <!-- Login Switch -->
-  <string name="com_auth0_lock_mode_log_in">登录</string>
-  <!-- Signup Switch -->
-  <string name="com_auth0_lock_mode_sign_up">登记</string>
-  <!-- Social separator -->
-  <string name="com_auth0_lock_forms_separator">或</string>
-  <!-- User signed up -->
-  <string name="com.auth0.lock.database.signup.success.message">谢谢你报名了。</string>
-  <!-- Cancel -->
-  <string name="com.auth0.lock.database.tos.sheet.cancel">取消</string>
-  <!-- Privacy -->
-  <string name="com.auth0.lock.database.tos.sheet.privacy">隐私权政策</string>
-  <!-- ToS -->
-  <string name="com.auth0.lock.database.tos.sheet.title">服务条款</string>
-  <!-- enter corporate credentials -->
-  <string name="com.auth0.lock.enterprise.sso.message">请输入您的企业资质</string>
-  <!-- enter corporate credentials of domain %@{email domain} -->
-  <string name="com.auth0.lock.enterprise.sso.message_at">请输入您的公司资质 %1$s</string>
-  <!-- SSO Header -->
-  <string name="com.auth0.lock.enterprise.sso.title">启用单一登录</string>
-  <!-- user is blocked -->
-  <string name="com.auth0.lock.error.authentication.blocked_user">用户被阻止。</string>
-  <!-- Generic login error -->
-  <string name="com.auth0.lock.error.authentication.fallback">对不起, 尝试登录时出错。</string>
-  <!-- invalid_user_password -->
-  <string name="com_auth0_lock_db_login_error_invalid_credentials_message">错误的电子邮件或密码。</string>
-  <!-- a0.mfa_invalid_code -->
-  <string name="com.auth0.lock.error.authentication.mfa_invalid_code">错误的代码。</string>
-  <!-- No valid connection -->
-  <string name="com.auth0.lock.error.authentication.no_connection">对不起, 我们找不到此用户的有效连接。</string>
-  <!-- password_change_required -->
-  <string name="com.auth0.lock.error.authentication.password_change_required">您需要更新密码, 因为这是您第一次登录, 或者密码已过期。</string>
-  <!-- password_leaked -->
-  <string name="com.auth0.lock.error.authentication.password_leaked">此登录已被阻止, 因为您的密码已在其他网站中泄露。我们已经给你发了一封电子邮件, 上面有关于如何解除阻止的指示。</string>
-  <!-- too_many_attempts -->
-  <string name="com.auth0.lock.error.authentication.too_many_attempts">您的帐户在多次连续登录尝试后被阻止。</string>
-  <!-- Generic error -->
-  <string name="com_auth0_lock_unrecoverable_error_title">出错了 \n 请联系技术支持。</string>
-  <!-- Generic password error -->
-  <string name="com_auth0_lock_db_message_change_password_error">对不起, 请求密码更改时出错。</string>
-  <!-- At least N characters -->
-  <string name="com_auth0_lock_password_strength_chars_length">至少 %d 字符长度</string>
-  <!-- At least n groups -->
-  <string name="com.auth0.lock.error.password.contain_at_least">至少包含 %d 的下列 %d 字符类型:</string>
-  <!-- Lowercase letters -->
-  <string name="com_auth0_lock_password_strength_lowercase_letters">小写字母 (a-z)</string>
-  <!-- Must no be empty -->
-  <string name="com.auth0.lock.error.password.non_empty">需要非空密码</string>
-  <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
-  <string name="com_auth0_lock_password_strength_identical_chars">不超过 %1$d 一行中的相同字符 (例如, \'%2$s\' 不允许)</string>
-  <!-- Numbers -->
-  <string name="com_auth0_lock_password_strength_numbers">数字 (即 0-9)</string>
-  <!-- N groups -->
-  <string name="com_auth0_lock_password_strength_title_must_have">应包含:</string>
-  <!-- Special Characters -->
-  <string name="com_auth0_lock_password_strength_special_chars">特殊字符 (如: @ $% ^ 和 *)</string>
-  <!-- Uppercase letters -->
-  <string name="com_auth0_lock_password_strength_uppercase_letters">大写字母 (a-z)</string>
-  <!-- Passwordless link invalid. -->
-  <string name="com.auth0.lock.error.passwordless.invalid_link">对不起, 你的链接有问题。请申请一个新的。</string>
-  <!-- Passwordless sign ups disabled. -->
-  <string name="com.auth0.lock.error.passwordless.signup_disabled">此帐户禁用了新的标志 UPS, 请与管理员联系。</string>
-  <!-- Recoverable error button -->
-  <string name="com.auth0.lock.error.recoverable.button">重试</string>
-  <!-- Recoverable error message -->
-  <string name="com.auth0.lock.error.recoverable.message">请检查您的互联网连接。</string>
-  <!-- Recoverable error title -->
-  <string name="com.auth0.lock.error.recoverable.title">无法加载登录框</string>
-  <!-- Generic sign up error -->
-  <string name="com_auth0_lock_db_sign_up_error_message">很抱歉在尝试注册时出错了</string>
-  <!-- invalid_password -->
-  <string name="com_auth0_lock_input_error_password">密码无效。</string>
-  <!-- password_dictionary_error -->
-  <string name="com.auth0.lock.error.signup.password_dictionary_error">密码太常见。</string>
-  <!-- password_history -->
-  <string name="com_auth0_lock_db_signup_password_already_used_error_message">以前使用过密码。</string>
-  <!-- password_no_user_info_error -->
-  <string name="com.auth0.lock.error.signup.password_no_user_info_error">密码基于用户信息。</string>
-  <!-- password_strength_error -->
-  <string name="com_auth0_lock_db_signup_password_not_strong_error_message">密码太弱。</string>
-  <!-- user_exists -->
-  <string name="com_auth0_lock_db_signup_user_already_exists_error_message">用户已存在。</string>
-  <!-- Unrecoverable error button -->
-  <string name="com.auth0.lock.error.unrecoverable.button">联系支持</string>
-  <!-- Default error -->
-  <string name="com.auth0.lock.error.unrecoverable.default">出错了 \n 请联系技术支持。</string>
-  <!-- Invalid client or domain -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">您的 Auth0 凭据 ClientId 和/或域无效。</string>
-  <!-- Your options configuration failed with: %@{error} -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_options">您的选项配置失败: %1$s</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message">解析登录框配置时出现意外错误。</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message.no_action">解析登录框配置时出现意外错误, 请与支持人员联系。</string>
-  <!-- No connections -->
-  <string name="com.auth0.lock.error.unrecoverable.no_connections">找不到此客户端的身份验证方法。请检查您的客户端设置。</string>
-  <!-- Unrecoverable error title -->
-  <string name="com.auth0.lock.error.unrecoverable.title">无法解析您的请求</string>
-  <!-- Forgot Password message -->
-  <string name="com_auth0_lock_forgot_message">请输入您的电子邮件和新密码。我们将向您发送电子邮件以确认密码更改。</string>
-  <!-- Forgot Password title -->
-  <string name="com_auth0_lock_title_change_password">重置密码</string>
-  <!-- Header Title -->
-  <string name="com.auth0.lock.header.default_title">Auth0</string>
-  <!-- invalid email -->
-  <string name="com_auth0_lock_input_error_email">必须是有效的电子邮件地址</string>
-  <!-- Email placeholder -->
-  <string name="com_auth0_lock_hint_email">电子邮件</string>
-  <!-- Username or Email placeholder -->
-  <string name="com.auth0.lock.input.email_username.placeholder">用户名/电子邮件</string>
-  <!-- empty input -->
-  <string name="com.auth0.lock.input.empty.error">不能为空</string>
-  <!-- generic input error -->
-  <string name="com.auth0.lock.input.generic.error">无效输入</string>
-  <!-- invalid otp -->
-  <string name="com.auth0.lock.input.otp.error">必须是有效的数字代码</string>
-  <!-- OTP placeholder -->
-  <string name="com.auth0.lock.input.otp.placeholder">代码</string>
-  <!-- Password placeholder -->
-  <string name="com_auth0_lock_hint_password">密码</string>
-  <!-- invalid phone -->
-  <string name="com.auth0.lock.input.phone.error">必须是有效的电话号码</string>
-  <!-- Phone placeholder -->
-  <string name="com.auth0.lock.input.phone.placeholder">电话号码</string>
-  <!-- policy violation -->
-  <string name="com.auth0.lock.input.policy.error">密码不满足策略</string>
-  <!-- invalid username -->
-  <string name="com.auth0.lock.input.username.error">只能包含在 %d 自 %d 字母数字字符和 \'_\'。</string>
-  <!-- Username placeholder -->
-  <string name="com.auth0.lock.input.username.placeholder">用户</string>
-  <!-- Multifactor message -->
-  <string name="com.auth0.lock.multifactor.message">请输入您的移动应用程序生成的验证代码。</string>
-  <!-- Multifactor title -->
-  <string name="com.auth0.lock.multifactor.title">两步验证</string>
-  <!-- Country tableview navigation header -->
-  <string name="com.auth0.lock.passwordless.sms.country.header">选择您的国家</string>
-  <!-- CountryCodes TableView searchbar placeholder -->
-  <string name="com.auth0.lock.passwordless.sms.country.search">搜索</string>
-  <!-- Amazon -->
-  <string name="com.auth0.lock.strategy.localized.amazon">亚马逊</string>
-  <!-- Aol -->
-  <string name="com.auth0.lock.strategy.localized.aol">Aol</string>
-  <!-- Baidu -->
-  <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
-  <!-- Bitbucket -->
-  <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
-  <!-- Dropbox -->
-  <string name="com.auth0.lock.strategy.localized.dropbox">Dropbox</string>
-  <!-- Dwolla -->
-  <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
-  <!-- Ebay -->
-  <string name="com.auth0.lock.strategy.localized.ebay">易趣</string>
-  <!-- Evernote -->
-  <string name="com.auth0.lock.strategy.localized.evernote">EVERNOTE</string>
-  <!-- EvernoteSandbox -->
-  <string name="com.auth0.lock.strategy.localized.evernote_sandbox">笔记 (沙盒)</string>
-  <!-- Exact -->
-  <string name="com.auth0.lock.strategy.localized.exact">确切</string>
-  <!-- Facebook -->
-  <string name="com.auth0.lock.strategy.localized.facebook">Facebook</string>
-  <!-- Fitbit -->
-  <string name="com.auth0.lock.strategy.localized.fitbit">FITBIT</string>
-  <!-- Github -->
-  <string name="com.auth0.lock.strategy.localized.github">Github</string>
-  <!-- Google -->
-  <string name="com.auth0.lock.strategy.localized.google">谷歌</string>
-  <!-- Instagram -->
-  <string name="com.auth0.lock.strategy.localized.instagram">INSTAGRAM</string>
-  <!-- Linkedin -->
-  <string name="com.auth0.lock.strategy.localized.linkedin">领英</string>
-  <!-- Microsoft -->
-  <string name="com.auth0.lock.strategy.localized.microsoft">微软帐户</string>
-  <!-- Miicard -->
-  <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
-  <!-- Paypal -->
-  <string name="com.auth0.lock.strategy.localized.paypal">贝宝</string>
-  <!-- PaypalSandbox -->
-  <string name="com.auth0.lock.strategy.localized.paypal_sandbox">贝宝 (沙箱)</string>
-  <!-- PlanningCenter -->
-  <string name="com.auth0.lock.strategy.localized.planning_center">规划中心</string>
-  <!-- RenRen -->
-  <string name="com.auth0.lock.strategy.localized.renren">人人</string>
-  <!-- Salesforce -->
-  <string name="com.auth0.lock.strategy.localized.salesforce">SALESFORCE</string>
-  <!-- SalesforceCommunity -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE 社区</string>
-  <!-- SalesforceSandbox -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (沙箱)</string>
-  <!-- Shopify -->
-  <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
-  <!-- Soundcloud -->
-  <string name="com.auth0.lock.strategy.localized.soundcloud">SOUNDCLOUD</string>
-  <!-- TheCity -->
-  <string name="com.auth0.lock.strategy.localized.the_city">这个城市</string>
-  <!-- TheCitySandbox -->
-  <string name="com.auth0.lock.strategy.localized.the_city_sandbox">城市 (沙箱)</string>
-  <!-- ThirtySevenSignals -->
-  <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37 Signals</string>
-  <!-- Twitter -->
-  <string name="com.auth0.lock.strategy.localized.twitter">Twitter</string>
-  <!-- Vkontakte -->
-  <string name="com.auth0.lock.strategy.localized.vkontakte">VKONTAKTE</string>
-  <!-- Weibo -->
-  <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
-  <!-- Wordpress -->
-  <string name="com.auth0.lock.strategy.localized.wordpress">Wordpress</string>
-  <!-- Yahoo -->
-  <string name="com.auth0.lock.strategy.localized.yahoo">雅虎！</string>
-  <!-- Yammer -->
-  <string name="com.auth0.lock.strategy.localized.yammer">YAMMER</string>
-  <!-- Yandex -->
-  <string name="com.auth0.lock.strategy.localized.yandex">YANDEX</string>
-  <!-- Log in with %@{strategy} -->
-  <string name="com_auth0_lock_social_log_in">登录时使用 %1$s</string>
-  <!-- Sign up with %@{strategy} -->
-  <string name="com_auth0_lock_social_sign_up">注册与 %1$s</string>
-  <!-- Login Button title -->
-  <string name="com_auth0_lock_action_log_in">登录</string>
-  <!-- Send 2fa code -->
-  <string name="com.auth0.lock.submit.send_code.title">发送</string>
-  <!-- Send Email button title -->
-  <string name="com_auth0_lock_action_send_email">发送电子邮件</string>
-  <!-- Signup Button title -->
-  <string name="com_auth0_lock_action_sign_up">登记</string>
-  <!-- Passwordless code reminder action -->
-  <string name="com.auth0.passwordless.code.reminder">没有得到代码？</string>
-  <!-- Passwordless code sent by email to %@{identifier} -->
-  <string name="com.auth0.passwordless.email.code.sent">已将代码的电子邮件发送到 %1$s</string>
-  <!-- Passwordless email title -->
-  <string name="com.auth0.passwordless.email.title">输入您的电子邮件登录或创建帐户。</string>
-  <!-- Passwordless email title with social -->
-  <string name="com.auth0.passwordless.email.title.social">否则, 请输入您的电子邮件登录或创建帐户。</string>
-  <!-- Passwordless link reminder action -->
-  <string name="com.auth0.passwordless.link.reminder">没有收到链接？</string>
-  <!-- Passwordless link sent to %@{identifier} -->
-  <string name="com.auth0.passwordless.link.sent">我们给您发送了一个链接登录到 %1$s</string>
-  <!-- Passwordless code sent by sms to %@{identifier} -->
-  <string name="com.auth0.passwordless.sms.code.sent">已将代码的短信发送到 %1$s</string>
-  <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
-  <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
-  <!-- CountryCodes TableViewCell label %@{localizedName} -->
-  <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
-  <!-- Passwordless sms title -->
-  <string name="com.auth0.passwordless.sms.title">输入您的手机登录或创建帐户。</string>
-  <!-- Passwordless sms title with social -->
-  <string name="com.auth0.passwordless.sms.title.social">否则, 请输入您的电话以登录或创建帐户。</string>
-  <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
-  <string name="create_aircraft_make_and_model">生产厂家与型号</string>
-  <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
-  <string name="airmap_nickname">昵称</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
-  <string name="create_aircraft_save_button">保存</string>
-  <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
-  <string name="create_aircraft">创建无人机</string>
-  <!-- Request cancelled error -->
-  <string name="error_cancelled">请求在完成之前被取消</string>
-  <!-- A conflict exists with the attempted request -->
-  <string name="error_conflict">存在冲突</string>
-  <!-- A generic server error message with an associated error code -->
-  <string name="error_generic_format">服务器返回错误。(%s)</string>
-  <!-- Response serialization failure error -->
-  <string name="error_serialization">服务器返回了无法处理响应。</string>
-  <!-- Server failure error -->
-  <string name="error_server">服务器无法完成您的请求。</string>
-  <!-- Authorization failure error -->
-  <string name="error_unauthorized">未经申请。请检查登录凭据。</string>
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
-  <string name="faqs">常见问题 解答</string>
-  <string name="flight_data_cell_button_done">完成</string>
-  <string name="now">现在</string>
-  <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
-  <string name="airmap_polygon">地区</string>
-  <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
-  <string name="airmap_path">路径</string>
-  <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
-  <string name="airmap_circle">点</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
-  <string name="flight_drawing_next_button">下一步</string>
-  <!-- The radius around a point-based flight's center -->
-  <string name="airmap_buffer">半径</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
-  <string name="flight_drawing_title">创建飞行</string>
-  <!-- Call to action to fine-tune the geometry of a flight. -->
-  <string name="airmap_done_drawing_tip">拖动任意点移动。拖动任意中点以添加新点。</string>
-  <!-- Call to action to drag a point to the trash to delete. -->
-  <string name="airmap_delete_tip">拖动点到垃圾桶以删除</string>
-  <!-- Call to action to draw an area-based flight. -->
-  <string name="airmap_draw_freehand_area">绘制飞行区域</string>
-  <!-- Call to action to draw a path-based flight. -->
-  <string name="airmap_draw_freehand_path">绘制飞行路径</string>
-  <!-- Call to action to drag the center position of a point-based flight. -->
-  <string name="flight_drawing_tooltip_cta_postiion_point">拖动中心点以定位您的飞行区域。</string>
-  <!-- Call to action to tap the icon to begin drawing a flight area. -->
-  <string name="airmap_freehand_tip_area">点击手图标绘制一个飞行区域。</string>
-  <!-- Call to action to tap the icon to begin drawing a flight path. -->
-  <string name="airmap_freehand_tip_path">点击手图标绘制飞行路径。</string>
-  <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
-  <string name="airmap_flight_area_overlap_permit_conflict">飞行区域不能与相互冲突的许可证要求区域重叠。</string>
-  <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
-  <string name="airmap_error_overlap">无效的飞行区域。调整飞行区域, 使其不与自身重叠。</string>
-  <!-- The width of a path-based flight extending outward from the centerline -->
-  <string name="airmap_width">宽度</string>
-  <!-- Title for the button to advance to the next screen -->
-  <string name="airmap_next">下一步</string>
-  <!-- Title for the button to save and create the flight -->
-  <string name="airmap_save">保存</string>
-  <!-- Call to action title for the user to select an aircraft -->
-  <string name="flight_plan_row_title_aircraft">选择飞机</string>
-  <!-- Title for the row displaying the name of the aircraft -->
-  <string name="flight_plan_row_title_aircraft_name">无人机</string>
-  <!-- Title for the row displaying flight plan altitude -->
-  <string name="airmap_max_altitude">高度</string>
-  <!-- Title for the row displaying flight plan buffer -->
-  <string name="flight_plan_row_title_buffer">缓冲区</string>
-  <!-- Title for the row displaying flight plan duration -->
-  <string name="airmap_duration">时间</string>
-  <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
-  <string name="flight_plan_row_title_max_altitude">最大海拔 AGL</string>
-  <!-- Call to action title for the user to select a pilot profile -->
-  <string name="select_pilot_profile">选择先导配置文件</string>
-  <!-- Title for the row displaying flight plan radius -->
-  <string name="flight_plan_row_title_radius">半径</string>
-  <!-- Title for the row displaying flight plan start time -->
-  <string name="starts">开始</string>
-  <!-- Title for the section displaying the pilot and aircraft details -->
-  <string name="pilot_and_aircraft_header">飞行员和飞机</string>
-  <!-- Title for the section displaying flight plan details -->
-  <string name="flight_details">飞行</string>
-  <!-- Title for the section displaying social sharing features -->
-  <string name="airmap_share_my_flight">共享我的飞行计划</string>
-  <string name="date_and_time">日期和时间</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketclosederror">由远程对等方关闭的插座</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketconnecttimeouterror">尝试连接到主机超时</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketothererror">尝试从套接字 FD 创建套接字失败。getpeername () 失败</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadmaxedouterror">读取操作已达到设置最大长度</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadtimeouterror">读取操作超时</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketwritetimeouterror">写入操作超时</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketclosederror">连接已关闭</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketsendtimeouterror">发送操作超时</string>
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
-  <string name="manual_authorization">手动申请等待提交</string>
-  <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
-  <string name="manufacturers_title">厂家</string>
-  <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
-  <string name="models_title">模型</string>
-  <!-- No comment provided by engineer. -->
-  <!-- Table section title for other selectable countries -->
-  <string name="phone_country_section_other_country">其他</string>
-  <!-- Table section title for the currently selected country -->
-  <string name="phone_country_section_selected_country">选定的国家</string>
-  <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
-  <string name="phone_country_title">选择国家</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
-  <string name="phone_verification_code_header">短信代码</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
-  <string name="phone_verification_code_placeholder">代码</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
-  <string name="phone_verification_code_title">验证电话号码</string>
-  <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
-  <string name="airmap_phone_number_disclaimer">通过提供您的号码, 您同意接收有关您的飞行在这个数字的文本。可以应用载波消息和数据速率。当您的数字通知成功提交时, AirMap 将向您发送一条文本消息。</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
-  <string name="phone_verification_phone">电话号码</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
-  <string name="phone_verification_request_new_sms_code">请求新的短信代码</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
-  <string name="phone_verification_save_button">提交</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
-  <string name="phone_verification_submit_button">提交</string>
-  <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
-  <string name="phone_number_verification">电话号码验证</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
-  <string name="phone_verification_try_again">再试一次</string>
-  <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
-  <string name="phone_verification_verification_failed">电话号码验证失败</string>
-  <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
-  <string name="pilot_full_name_format">%1$s %2$s</string>
-  <!-- Table row label for FAA registration number -->
-  <string name="pilot_profile_faa_registration">联邦航空局注册号</string>
-  <!-- Label for the pilot profile email -->
-  <string name="email">电子邮件</string>
-  <!-- Label for the pilot profile first name -->
-  <string name="first_name">名</string>
-  <!-- Label for the pilot profile last name -->
-  <string name="last_name">姓</string>
-  <!-- Label for the pilot profile phone -->
-  <string name="pilot_profile_label_phone">电话</string>
-  <!-- Label for the pilot profile username -->
-  <string name="pilot_profile_label_username">用户</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
-  <string name="pilot_profile_save_button">保存</string>
-  <!-- Section header for the pilot profile additional info section -->
-  <string name="pilot_profile_section_additional">其他信息</string>
-  <!-- Section header for the pilot profile personal info section -->
-  <string name="airmap_personal_information">个人信息</string>
-  <!-- Format for displaying a user's number of aircraft and flights -->
-  <string name="pilot_profile_statistics_format">%1$s 飞机 %2$s 飞行</string>
-  <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
-  <string name="pilot_profile_title">飞行员简介</string>
-  <string name="review_flight_plane_title">飞行计划</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
-  <string name="review_flight_plan_details_next_button">下一步</string>
-  <string name="review_flight_plan_details_public_flight_value_true">是</string>
-  <string name="review_flight_plan_details_radius">半径</string>
-  <string name="airmap_aircraft_stats">无人机</string>
-  <string name="review_flight_plan_details_row_title_altitude">高度</string>
-  <string name="review_flight_plan_details_row_title_duration">结束</string>
-  <string name="review_flight_plan_details_row_title_ends">结束</string>
-  <string name="review_flight_plan_details_row_title_public">公共</string>
-  <string name="review_flight_plan_details_row_title_starts">开始</string>
-  <string name="review_flight_plan_details_section_header_aircraft">无人机</string>
-  <string name="review_flight_plan_details_section_header_details">细节</string>
-  <string name="review_flight_plan_details_section_header_social">共享我的飞行计划</string>
-  <string name="review_flight_plan_details_start_time_now">现在</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
-  <string name="airmap_title_activity_create_flight">创建飞行</string>
-  <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
-  <string name="end_flight">结束飞行</string>
-  <!-- Displayed for authorities that are setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_accepts_notice">接受数字通知</string>
-  <!-- Displayed for authorities that are NOT setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_does_not_accept_notice">这方面的以下当局不接受数字通知</string>
-  <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
-  <string name="review_flight_plan_notices_tab_section_header_no_notices">这班机没有告示。</string>
-  <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
-  <string name="airmap_digital_notice_accepted">接受数字通知</string>
-  <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
-  <string name="airmap_not_accept_notice">这方面的以下当局不接受数字通知</string>
-  <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
-  <string name="airmap_review">检讨</string>
-  <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
-  <string name="airmap_flight_notice">飞行通告</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
-  <string name="submit">提交</string>
-  <string name="review_flight_plan_tab_title_digital_notice">通知</string>
-  <string name="review_flight_plan_tab_title_flight">飞行</string>
-  <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
-  <string name="review_flight_plan_title">审查飞行计划</string>
-  <!-- Label for the section header that displays all the Optional rulesets -->
-  <string name="rulesets_section_optional">可选</string>
-  <!-- Label for the section header that displays all the Pick One rulesets -->
-  <string name="rulesets_section_pick_one">必选一</string>
-  <!-- Label for the section header that displays all the Required rulesets -->
-  <string name="rulesets_section_required">必填</string>
-  <!-- Label for rulesets that can be optionally enabled by the user -->
-  <string name="ruleset_selection_type_optional">可选</string>
-  <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
-  <string name="ruleset_selection_type_pickone">必选一</string>
-  <!-- Label for rulesets that must be enabled by the user -->
-  <string name="ruleset_selection_type_required">必填</string>
-  <string name="rules_generic_title">现场规则</string>
-  <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-  <string name="select_aircraft">选择飞机</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
-  <string name="sms_login_code_header">短信代码</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
-  <string name="sms_login_code_placeholder">代码</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
-  <string name="sms_login_code_submit_button">提交</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
-  <string name="sms_login_code_title">验证代码</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
-  <string name="sms_login_phone_number_placeholder">电话号码</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
-  <string name="sms_login_save_button">保存</string>
-  <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
-  <string name="sms_login_title">登录</string>
-  <!-- Description for status advisory color Green -->
-  <string name="informational">信息</string>
-  <!-- Description for status advisory color Orange -->
-  <string name="status_orange_description">所需操作</string>
-  <!-- Description for status advisory color Red -->
-  <string name="flight_strictly_regulated">飞行严密调控</string>
-  <!-- Description for status advisory color Yellow -->
-  <string name="advisories">注意</string>
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <string name="tile_layer_aerial_rec_areas">空中娱乐区</string>
-  <string name="tile_layer_airports">机场</string>
-  <string name="tile_layer_cities">城市</string>
-  <string name="tile_layer_class_b">B类管制空域</string>
-  <string name="tile_layer_class_c">C类管制空域</string>
-  <string name="tile_layer_class_d">D类管制空域</string>
-  <string name="tile_layer_class_e">E类管制空域</string>
-  <string name="tile_layer_controlled_airspace">管制空域 (B、C、D 和 E)</string>
-  <string name="tile_layer_custom">自定义</string>
-  <string name="tile_layer_emergencies">紧急救援人员活动</string>
-  <string name="tile_layer_fires">火灾</string>
-  <string name="tile_layer_hazard_areas">危险区域</string>
-  <string name="tile_layer_heliports">直升机</string>
-  <string name="tile_layer_hospitals">医院</string>
-  <string name="tile_layer_national_parks">国家公园</string>
-  <string name="tile_layer_noaa">NOAA 海洋保护区</string>
-  <string name="tile_layer_power_plants">电厂</string>
-  <string name="tile_layer_prisons">监狱</string>
-  <string name="tile_layer_private_airports">私人机场</string>
-  <string name="tile_layer_prohibited">禁止空域</string>
-  <string name="tile_layer_restricted_airspace">限制空域</string>
-  <string name="tile_layer_schools">学校</string>
-  <string name="tile_layer_tfr_faa">临时飞行限制</string>
-  <string name="tile_layer_universities">大学</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-  <string name="traffic_alert_with_aircraft_id_and_distance_format">交通 %1$s\ nAltitude %2$s\n%3$s %4$s %5$s</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-  <string name="traffic_alert_with_aircraft_id_format">交通 %1$s\ nAltitude %2$s\n%3$s</string>
-  <!-- Name for the imperial system of measurement -->
-  <string name="units_imperial">英制单位</string>
-  <!-- Name for the metric system of measurement -->
-  <string name="units_metric">米制</string>
-  <!-- Unit and format for displaying nautical miles -->
-  <string name="units_nautical_mile_format">%s 纳米</string>
-  <!-- Unit and format for displaying speed in knots -->
-  <string name="units_speed_format_knots">%s kts</string>
-  <!-- Unit and format for displaying speed in meters per second -->
-  <string name="units_speed_format_meters_per_second">%s 米/秒</string>
-  <!-- Unit and format for displaying speed in miles per hour -->
-  <string name="units_speed_format_miles_per_hour">%s 英里</string>
-  <!-- Unit and format for displaying a speed range in meters per second -->
-  <string name="units_speed_range_format_meters_per_second">%1$s-%2$s 米/秒</string>
-  <!-- Unit and format for displaying a speed range in miles per hour -->
-  <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s 英里</string>
-  <!-- Unit and format for displaying temperature in Celcius -->
-  <string name="units_temperature_celcius_format">%1$s°C</string>
-  <!-- Unit and format for displaying temperature in Fahrenheit -->
-  <string name="units_temperature_fahrenheit_format">%1$s°F</string>
-  <!-- Possible error from keychain. -->
-  <!-- The request with the authority has been accepted -->
-  <string name="validation_accepted">验证</string>
-  <!-- No validation request has been filed -->
-  <string name="validation_not_requested">未请求验证</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="validation_pending">待定验证</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="validation_rejected">拒绝丢失信息</string>
+    <!-- 1Password Extension Error Message -->
+    <string name="end_flight_title">结束飞行</string>
+    <string name="submit_title">提交</string>
+    <string name="review_flight_plan">查看飞行计划</string>
+    <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
+    <string name="airmap_airspace_advisories">空域警告</string>
+    <!-- Label for advisories that are stup to receive digital notice -->
+    <string name="accepts_digital_notice">接受数字通知</string>
+    <!-- Displayed when an advisory has not provided a contact phone -->
+    <string name="no_known_number">未提供电话号码</string>
+    <!-- Label and format for displaying the end time of temporary flight restriction -->
+    <string name="advisory_tfr_ends_format">结束：%1$s</string>
+    <!-- Never ending duration for a TFR -->
+    <string name="advisory_tfr_permanent">永久</string>
+    <!-- Label and format for displaying the start time of temporary flight restriction -->
+    <string name="airmap_starts">开始：%1$s</string>
+    <!-- Format and unit for wildfire advisory in the area unit acres -->
+    <string name="advisory_wildfire_size_format_acres">%1$s 英亩</string>
+    <!-- Format and unit for wildfire advisory in the area unit hectares -->
+    <string name="advisory_wildfire_size_format_hectares">%1$s 公顷</string>
+    <!-- Label for wildfire advisory cells where size is unknown -->
+    <string name="unknown_size">尺寸未知</string>
+    <!-- Call to action when a user has not selected an aircraft -->
+    <string name="aircraft_select_aircraft">选择飞机</string>
+    <!-- Title to display for the view creating a new aircraft -->
+    <string name="airmap_title_activity_create_aircraft">创建飞机</string>
+    <!-- Title to display for the view when updating an existing aircraft -->
+    <string name="airmap_edit_aircraft">更新飞机</string>
+    <!-- Name for airspace type Aerial Recreational Area -->
+    <string name="airspace_type_aerial_rec_area">空中休闲区</string>
+    <!-- Name for airspace type Airport -->
+    <string name="airspace_type_airport">机场</string>
+    <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
+    <string name="airspace_type_ama_field">航空模型学会场地</string>
+    <!-- Name for airspace type City -->
+    <string name="airspace_type_city">城市</string>
+    <!-- Name for airspace type Controlled Airspace -->
+    <string name="airspace_type_controlled">管制空域</string>
+    <!-- Name for airspace type Country -->
+    <string name="airspace_type_country">国家</string>
+    <!-- Name for airspace type County -->
+    <string name="airspace_type_county">县</string>
+    <!-- Name for airspace type Custom -->
+    <string name="airspace_type_custom">海关</string>
+    <!-- Name for airspace type Embassy -->
+    <string name="airspace_type_embassy">大使馆</string>
+    <!-- Name for airspace type Emergency -->
+    <string name="airspace_type_emergency">第一响应者活动</string>
+    <!-- Name for airspace type Federal Building -->
+    <string name="airspace_type_federal_building">联邦大楼</string>
+    <!-- Name for airspace type Flight Information Region -->
+    <string name="airspace_type_fir">飞行情报区</string>
+    <!-- Name for airspace type Fire -->
+    <string name="airspace_type_fire">火灾</string>
+    <!-- Name for airspace type Gliderport -->
+    <string name="airspace_type_gliderport">滑翔机机场</string>
+    <!-- Name for airspace type Hazard Area -->
+    <string name="airspace_type_hazard_area">危险区域</string>
+    <!-- Name for airspace type Heliport -->
+    <string name="airspace_type_heliport">直升机场</string>
+    <!-- Name for airspace type Highway -->
+    <string name="airspace_type_highway">高速公路</string>
+    <!-- Name for airspace type Hospital -->
+    <string name="airspace_type_hospital">医院</string>
+    <!-- Name for airspace type Industrial Property -->
+    <string name="airspace_type_industrial_property">工业财产</string>
+    <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
+    <string name="airspace_type_japan_base">日本基地管理处</string>
+    <!-- Name for airspace type Military Property -->
+    <string name="airspace_type_military_property">军事财产</string>
+    <!-- Name for airspace type National Park -->
+    <string name="airspace_type_national_park">国家公园</string>
+    <!-- Name for airspace type NOTAM -->
+    <string name="airspace_type_notam">航行通告</string>
+    <!-- Name for airspace type Police Station -->
+    <string name="airspace_type_police_station">警察局</string>
+    <!-- Name for airspace type Powerline -->
+    <string name="airspace_type_powerline">电力线</string>
+    <!-- Name for airspace type Power Plant -->
+    <string name="airspace_type_power_plant">发电厂</string>
+    <!-- Name for airspace type Prison -->
+    <string name="airspace_type_prison">监狱</string>
+    <!-- Name for airspace type Railway -->
+    <string name="airspace_type_railway">铁路</string>
+    <!-- Name for airspace type Residential Property -->
+    <string name="airspace_type_residential_property">住宅物业</string>
+    <!-- Name for airspace type School -->
+    <string name="airspace_type_school">学校</string>
+    <!-- Name for airspace type Seaplane Base -->
+    <string name="airspace_type_seaplane_base">水上飞机基地</string>
+    <!-- Name for airspace type Special Use Airspace -->
+    <string name="airspace_type_special_use">特殊用途空域</string>
+    <!-- Name for airspace type Stadium -->
+    <string name="airspace_type_stadium">体育场</string>
+    <!-- Name for airspace type State -->
+    <string name="airspace_type_state">州</string>
+    <!-- Name for airspace type Subprefecture -->
+    <string name="airspace_type_subprefecture">县</string>
+    <!-- Name for airspace type Supercity (Japan related) -->
+    <string name="airspace_type_supercity">特大城市</string>
+    <!-- Name for airspace type FAA Temporary Flight Restriction -->
+    <string name="airspace_type_tfr_faa">临时飞行限制</string>
+    <!-- Name for airspace type Ultralight Field -->
+    <string name="airspace_type_ulm_field">超轻型飞机机场</string>
+    <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
+    <string name="airspace_type_unclassified">未分类</string>
+    <!-- Name for airspace type University -->
+    <string name="airspace_type_university">高等院校</string>
+    <!-- Name for airspace type Waterway -->
+    <string name="airspace_type_waterway">水道</string>
+    <!-- Name for airspace type WildFire -->
+    <string name="airspace_type_wildfire">野火</string>
+    <!-- No comment provided by engineer. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- The request with the authority has been accepted -->
+    <string name="authorization_accepted">已批准</string>
+    <!-- The request with the authority has been cancelled -->
+    <string name="authorization_cancelled_submission">授权已取消</string>
+    <!-- The request with the authority has not been requested -->
+    <string name="authorization_not_requested">授权未被请求</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="authorization_pending">待授权</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="authorization_rejected">授权被拒绝</string>
+    <!-- The request with the authority will be rejected once the flight plan is submitted -->
+    <string name="authorization_rejected_upon_submission">提交后被拒绝</string>
+    <!-- The request with the authority will be accepted once the flight plan is submitted -->
+    <string name="authorization_upon_submission">提交后授权</string>
+    <!-- Login message when a user's account has been blacklisted. -->
+    <string name="invalid_email_domain">您的账户已被列入黑名单。请联系security@airmap.com</string>
+    <!-- Login message when a user must verify their email address -->
+    <string name="verify_email_log_in_again">您的电子邮件地址需要经过验证。请检查您的收件箱。</string>
+    <!-- Login message when a user failed to authenticate -->
+    <string name="auth_error_unauthorized">未经授权</string>
+    <!-- Navigation title for failed login attempt -->
+    <string name="auth_failed_login_title">警告</string>
+    <!-- Abbreviation for East -->
+    <string name="cardinal_direction_e">东</string>
+    <!-- Abbreviation for East North East -->
+    <string name="cardinal_direction_ene">东北东</string>
+    <!-- Abbreviation for East South East -->
+    <string name="cardinal_direction_ese">东南东</string>
+    <!-- Abbreviation for North -->
+    <string name="cardinal_direction_n">北</string>
+    <!-- Abbreviation for North East -->
+    <string name="cardinal_direction_ne">东北</string>
+    <!-- Abbreviation for North North East -->
+    <string name="cardinal_direction_nnne">北东北</string>
+    <!-- Abbreviation for North North West -->
+    <string name="cardinal_direction_nnw">北西北</string>
+    <!-- Abbreviation for North West -->
+    <string name="cardinal_direction_nw">西北</string>
+    <!-- Abbreviation for South -->
+    <string name="cardinal_direction_s">南</string>
+    <!-- Abbreviation for South East -->
+    <string name="cardinal_direction_se">东南</string>
+    <!-- Abbreviation for South South East -->
+    <string name="cardinal_direction_sse">南东南</string>
+    <!-- Abbreviation for South South West -->
+    <string name="cardinal_direction_ssw">南西南</string>
+    <!-- Abbreviation for South West -->
+    <string name="cardinal_direction_sw">西南</string>
+    <!-- Abbreviation for West -->
+    <string name="cardinal_direction_w">西</string>
+    <!-- Abbreviation for West North West -->
+    <string name="cardinal_direction_wnw">西西北</string>
+    <!-- Abbreviation for West South West -->
+    <string name="cardinal_direction_wsw">西南偏西</string>
+    <!-- Bundle name -->
+    <string name="cfbundlename">${PRODUCT_NAME}</string>
+    <!-- Forgot password -->
+    <string name="com_auth0_lock_action_forgot_password">忘记密码?</string>
+    <!-- tos & privacy -->
+    <string name="com_auth0_lock_sign_up_terms">注册即表示您同意我们的服务条款\n 和隐私政策</string>
+    <!-- forgot password email sent -->
+    <string name="com_auth0_lock_db_change_password_message_success">我们刚给您发了一封重置密码的电子邮件。</string>
+    <!-- User logged in -->
+    <string name="com_auth0_lock_database_login_success_message">您已成功登录。</string>
+    <!-- Login Switch -->
+    <string name="com_auth0_lock_mode_log_in">登录</string>
+    <!-- Signup Switch -->
+    <string name="com_auth0_lock_mode_sign_up">注册</string>
+    <!-- Social separator -->
+    <string name="com_auth0_lock_forms_separator">或者</string>
+    <!-- User signed up -->
+    <string name="com.auth0.lock.database.signup.success.message">感谢您的注册。</string>
+    <!-- Cancel -->
+    <string name="com.auth0.lock.database.tos.sheet.cancel">取消</string>
+    <!-- Privacy -->
+    <string name="com.auth0.lock.database.tos.sheet.privacy">隐私政策</string>
+    <!-- ToS -->
+    <string name="com.auth0.lock.database.tos.sheet.title">服务条款</string>
+    <!-- enter corporate credentials -->
+    <string name="com.auth0.lock.enterprise.sso.message">请输入您的企业资质</string>
+    <!-- enter corporate credentials of domain %@{email domain} -->
+    <string name="com.auth0.lock.enterprise.sso.message_at">请在 %1$s 输入您的企业资质</string>
+    <!-- SSO Header -->
+    <string name="com.auth0.lock.enterprise.sso.title">单点登录已启用</string>
+    <!-- user is blocked -->
+    <string name="com.auth0.lock.error.authentication.blocked_user">该用户已被阻止。</string>
+    <!-- Generic login error -->
+    <string name="com.auth0.lock.error.authentication.fallback">很抱歉，在尝试登录时出现错误。</string>
+    <!-- invalid_user_password -->
+    <string name="com_auth0_lock_db_login_error_invalid_credentials_message">错误的电子邮件地址或密码。</string>
+    <!-- a0.mfa_invalid_code -->
+    <string name="com.auth0.lock.error.authentication.mfa_invalid_code">错误代码。</string>
+    <!-- No valid connection -->
+    <string name="com.auth0.lock.error.authentication.no_connection">很抱歉，我们不能为这个用户找到有效的连接。</string>
+    <!-- password_change_required -->
+    <string name="com.auth0.lock.error.authentication.password_change_required">您需要更新密码，因为这是您第一次登录，或者您的密码已经过期。</string>
+    <!-- password_leaked -->
+    <string name="com.auth0.lock.error.authentication.password_leaked">此登录已被阻止，因为您的密码在另一个网站中被泄露。我们已给您发送了一封电子邮件，其中包含解决问题的相关说明。</string>
+    <!-- too_many_attempts -->
+    <string name="com.auth0.lock.error.authentication.too_many_attempts">由于多次连续尝试登录失败，您的账户已被阻止。</string>
+    <!-- Generic error -->
+    <string name="com_auth0_lock_unrecoverable_error_title">出错了。\n请联系技术支持。</string>
+    <!-- Generic password error -->
+    <string name="com_auth0_lock_db_message_change_password_error">很抱歉，在请求更改密码时出现错误。</string>
+    <!-- At least N characters -->
+    <string name="com_auth0_lock_password_strength_chars_length">至少 %d 个字符的长度</string>
+    <!-- At least n groups -->
+    <string name="com.auth0.lock.error.password.contain_at_least">至少包含以下 %d 种字符类型中的 %d 种：</string>
+    <!-- Lowercase letters -->
+    <string name="com_auth0_lock_password_strength_lowercase_letters">小写字母（a-z）</string>
+    <!-- Must no be empty -->
+    <string name="com.auth0.lock.error.password.non_empty">要求密码不能为空</string>
+    <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
+    <string name="com_auth0_lock_password_strength_identical_chars">不能超过连续 %1$d 个相同的字符（例如，不允许\"%2$s\" ）</string>
+    <!-- Numbers -->
+    <string name="com_auth0_lock_password_strength_numbers">数字（即0-9）</string>
+    <!-- N groups -->
+    <string name="com_auth0_lock_password_strength_title_must_have">应包含：</string>
+    <!-- Special Characters -->
+    <string name="com_auth0_lock_password_strength_special_chars">特殊字符（例如： !@#$%^&amp;*）</string>
+    <!-- Uppercase letters -->
+    <string name="com_auth0_lock_password_strength_uppercase_letters">大写字母（A-Z）</string>
+    <!-- Passwordless link invalid. -->
+    <string name="com.auth0.lock.error.passwordless.invalid_link">很抱歉，您的链接有问题。请重新申请一个。</string>
+    <!-- Passwordless sign ups disabled. -->
+    <string name="com.auth0.lock.error.passwordless.signup_disabled">该账户不能重新注册，请与您的管理员联系。</string>
+    <!-- Recoverable error button -->
+    <string name="com.auth0.lock.error.recoverable.button">再试一次</string>
+    <!-- Recoverable error message -->
+    <string name="com.auth0.lock.error.recoverable.message">请检查您的网络连接。</string>
+    <!-- Recoverable error title -->
+    <string name="com.auth0.lock.error.recoverable.title">无法加载登录框</string>
+    <!-- Generic sign up error -->
+    <string name="com_auth0_lock_db_sign_up_error_message">很抱歉，在尝试注册时出现错误。</string>
+    <!-- invalid_password -->
+    <string name="com_auth0_lock_input_error_password">密码无效。</string>
+    <!-- password_dictionary_error -->
+    <string name="com.auth0.lock.error.signup.password_dictionary_error">密码过于简单。</string>
+    <!-- password_history -->
+    <string name="com_auth0_lock_db_signup_password_already_used_error_message">密码已被使用。</string>
+    <!-- password_no_user_info_error -->
+    <string name="com.auth0.lock.error.signup.password_no_user_info_error">密码基于用户信息。</string>
+    <!-- password_strength_error -->
+    <string name="com_auth0_lock_db_signup_password_not_strong_error_message">密码强度太弱。</string>
+    <!-- user_exists -->
+    <string name="com_auth0_lock_db_signup_user_already_exists_error_message">该用户名已经存在。</string>
+    <!-- Unrecoverable error button -->
+    <string name="com.auth0.lock.error.unrecoverable.button">联络支持</string>
+    <!-- Default error -->
+    <string name="com.auth0.lock.error.unrecoverable.default">出错了。\n请联系技术支持。</string>
+    <!-- Invalid client or domain -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">您的Auth0凭据客户端Id和/或域无效。</string>
+    <!-- Your options configuration failed with: %@{error} -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_options">您的选项配置失败：%1$s</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message">解析登录框配置时出现意外错误。</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message.no_action">解析登录框配置时出现意外错误，请联系支持部门。</string>
+    <!-- No connections -->
+    <string name="com.auth0.lock.error.unrecoverable.no_connections">未找到此客户的身份验证方法。请检查您的客户端设置。</string>
+    <!-- Unrecoverable error title -->
+    <string name="com.auth0.lock.error.unrecoverable.title">无法处理您的请求</string>
+    <!-- Forgot Password message -->
+    <string name="com_auth0_lock_forgot_message">请输入您的电子邮件和新密码。我们将向您发送电子邮件以确认密码更改。</string>
+    <!-- Forgot Password title -->
+    <string name="com_auth0_lock_title_change_password">重设密码</string>
+    <!-- Header Title -->
+    <string name="com.auth0.lock.header.default_title">Auth0</string>
+    <!-- invalid email -->
+    <string name="com_auth0_lock_input_error_email">必须是一个有效的电子邮件地址</string>
+    <!-- Email placeholder -->
+    <string name="com_auth0_lock_hint_email">电子邮件</string>
+    <!-- Username or Email placeholder -->
+    <string name="com.auth0.lock.input.email_username.placeholder">用户名/电子邮件</string>
+    <!-- empty input -->
+    <string name="com.auth0.lock.input.empty.error">不能为空</string>
+    <!-- generic input error -->
+    <string name="com.auth0.lock.input.generic.error">输入无效</string>
+    <!-- invalid otp -->
+    <string name="com.auth0.lock.input.otp.error">必须是有效的数字代码</string>
+    <!-- OTP placeholder -->
+    <string name="com.auth0.lock.input.otp.placeholder">代码</string>
+    <!-- Password placeholder -->
+    <string name="com_auth0_lock_hint_password">密码</string>
+    <!-- invalid phone -->
+    <string name="com.auth0.lock.input.phone.error">必须是有效的电话号码</string>
+    <!-- Phone placeholder -->
+    <string name="com.auth0.lock.input.phone.placeholder">电话号码</string>
+    <!-- policy violation -->
+    <string name="com.auth0.lock.input.policy.error">密码不满足密码策略的要求</string>
+    <!-- invalid username -->
+    <string name="com.auth0.lock.input.username.error">只能介于 %d 到 %d 字母数字字符和\'_\'之间。</string>
+    <!-- Username placeholder -->
+    <string name="com.auth0.lock.input.username.placeholder">用户名</string>
+    <!-- Multifactor message -->
+    <string name="com.auth0.lock.multifactor.message">请输入您的移动应用程序生成的验证码。</string>
+    <!-- Multifactor title -->
+    <string name="com.auth0.lock.multifactor.title">两步验证</string>
+    <!-- Country tableview navigation header -->
+    <string name="com.auth0.lock.passwordless.sms.country.header">选择您所在的国家</string>
+    <!-- CountryCodes TableView searchbar placeholder -->
+    <string name="com.auth0.lock.passwordless.sms.country.search">搜索</string>
+    <!-- Amazon -->
+    <string name="com.auth0.lock.strategy.localized.amazon">AMAZON</string>
+    <!-- Aol -->
+    <string name="com.auth0.lock.strategy.localized.aol">AOL</string>
+    <!-- Baidu -->
+    <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
+    <!-- Bitbucket -->
+    <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
+    <!-- Dropbox -->
+    <string name="com.auth0.lock.strategy.localized.dropbox">DROPBOX</string>
+    <!-- Dwolla -->
+    <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
+    <!-- Ebay -->
+    <string name="com.auth0.lock.strategy.localized.ebay">EBAY</string>
+    <!-- Evernote -->
+    <string name="com.auth0.lock.strategy.localized.evernote">EVERNOTE</string>
+    <!-- EvernoteSandbox -->
+    <string name="com.auth0.lock.strategy.localized.evernote_sandbox">EVERNOTE (SANDBOX)</string>
+    <!-- Exact -->
+    <string name="com.auth0.lock.strategy.localized.exact">EXACT</string>
+    <!-- Facebook -->
+    <string name="com.auth0.lock.strategy.localized.facebook">FACEBOOK</string>
+    <!-- Fitbit -->
+    <string name="com.auth0.lock.strategy.localized.fitbit">FITBIT</string>
+    <!-- Github -->
+    <string name="com.auth0.lock.strategy.localized.github">GITHUB</string>
+    <!-- Google -->
+    <string name="com.auth0.lock.strategy.localized.google">谷歌</string>
+    <!-- Instagram -->
+    <string name="com.auth0.lock.strategy.localized.instagram">INSTAGRAM</string>
+    <!-- Linkedin -->
+    <string name="com.auth0.lock.strategy.localized.linkedin">LINKEDIN</string>
+    <!-- Microsoft -->
+    <string name="com.auth0.lock.strategy.localized.microsoft">微软账户</string>
+    <!-- Miicard -->
+    <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
+    <!-- Paypal -->
+    <string name="com.auth0.lock.strategy.localized.paypal">PAYPAL</string>
+    <!-- PaypalSandbox -->
+    <string name="com.auth0.lock.strategy.localized.paypal_sandbox">PAYPAL (SANDBOX)</string>
+    <!-- PlanningCenter -->
+    <string name="com.auth0.lock.strategy.localized.planning_center">PLANNING CENTER</string>
+    <!-- RenRen -->
+    <string name="com.auth0.lock.strategy.localized.renren">人人</string>
+    <!-- Salesforce -->
+    <string name="com.auth0.lock.strategy.localized.salesforce">SALESFORCE</string>
+    <!-- SalesforceCommunity -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE社区</string>
+    <!-- SalesforceSandbox -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (SANDBOX)</string>
+    <!-- Shopify -->
+    <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
+    <!-- Soundcloud -->
+    <string name="com.auth0.lock.strategy.localized.soundcloud">SOUNDCLOUD</string>
+    <!-- TheCity -->
+    <string name="com.auth0.lock.strategy.localized.the_city">THE CITY</string>
+    <!-- TheCitySandbox -->
+    <string name="com.auth0.lock.strategy.localized.the_city_sandbox">THE CITY (SANDBOX)</string>
+    <!-- ThirtySevenSignals -->
+    <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37SIGNALS</string>
+    <!-- Twitter -->
+    <string name="com.auth0.lock.strategy.localized.twitter">推特</string>
+    <!-- Vkontakte -->
+    <string name="com.auth0.lock.strategy.localized.vkontakte">VKONTAKTE</string>
+    <!-- Weibo -->
+    <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
+    <!-- Wordpress -->
+    <string name="com.auth0.lock.strategy.localized.wordpress">WORDPRESS</string>
+    <!-- Yahoo -->
+    <string name="com.auth0.lock.strategy.localized.yahoo">雅虎</string>
+    <!-- Yammer -->
+    <string name="com.auth0.lock.strategy.localized.yammer">YAMMER</string>
+    <!-- Yandex -->
+    <string name="com.auth0.lock.strategy.localized.yandex">YANDEX</string>
+    <!-- Log in with %@{strategy} -->
+    <string name="com_auth0_lock_social_log_in">使用 %1$s登录</string>
+    <!-- Sign up with %@{strategy} -->
+    <string name="com_auth0_lock_social_sign_up">使用%1$s注册</string>
+    <!-- Login Button title -->
+    <string name="com_auth0_lock_action_log_in">登录</string>
+    <!-- Send 2fa code -->
+    <string name="com.auth0.lock.submit.send_code.title">发送</string>
+    <!-- Send Email button title -->
+    <string name="com_auth0_lock_action_send_email">发送电子邮件</string>
+    <!-- Signup Button title -->
+    <string name="com_auth0_lock_action_sign_up">注册</string>
+    <!-- Passwordless code reminder action -->
+    <string name="com.auth0.passwordless.code.reminder">没有获得代码？</string>
+    <!-- Passwordless code sent by email to %@{identifier} -->
+    <string name="com.auth0.passwordless.email.code.sent">包含该代码的电子邮件已发送至%1$s</string>
+    <!-- Passwordless email title -->
+    <string name="com.auth0.passwordless.email.title">输入您的电子邮件登录或创建账户。</string>
+    <!-- Passwordless email title with social -->
+    <string name="com.auth0.passwordless.email.title.social">否则，请输入您的电子邮件以登录或创建账户。</string>
+    <!-- Passwordless link reminder action -->
+    <string name="com.auth0.passwordless.link.reminder">没有收到链接？</string>
+    <!-- Passwordless link sent to %@{identifier} -->
+    <string name="com.auth0.passwordless.link.sent">我们向您发送了一个用于登录 %1$s的链接</string>
+    <!-- Passwordless code sent by sms to %@{identifier} -->
+    <string name="com.auth0.passwordless.sms.code.sent">包含该代码的短信已发送至 %1$s</string>
+    <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
+    <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
+    <!-- CountryCodes TableViewCell label %@{localizedName} -->
+    <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
+    <!-- Passwordless sms title -->
+    <string name="com.auth0.passwordless.sms.title">输入您的手机以登录或创建账户。</string>
+    <!-- Passwordless sms title with social -->
+    <string name="com.auth0.passwordless.sms.title.social">否则，请输入您的手机以登录或创建账户。</string>
+    <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
+    <string name="create_aircraft_make_and_model">品牌&amp;型号</string>
+    <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
+    <string name="airmap_nickname">昵称</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
+    <string name="create_aircraft_save_button">保存</string>
+    <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
+    <string name="create_aircraft">创建飞机</string>
+    <!-- Request cancelled error -->
+    <string name="error_cancelled">请求已在完成之前取消</string>
+    <!-- A conflict exists with the attempted request -->
+    <string name="error_conflict">存在冲突</string>
+    <!-- A generic server error message with an associated error code -->
+    <string name="error_generic_format">服务器返回错误。(%s)</string>
+    <!-- Response serialization failure error -->
+    <string name="error_serialization">服务器返回无法处理的响应。</string>
+    <!-- Server failure error -->
+    <string name="error_server">服务器无法处理您的请求。</string>
+    <!-- Authorization failure error -->
+    <string name="error_unauthorized">未经授权。请检查登录信息。</string>
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
+    <string name="faqs">常见问题解答</string>
+    <string name="flight_data_cell_button_done">完成</string>
+    <string name="now">现在</string>
+    <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
+    <string name="airmap_polygon">区域</string>
+    <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
+    <string name="airmap_path">路线</string>
+    <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
+    <string name="airmap_circle">飞行点</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
+    <string name="flight_drawing_next_button">下一步</string>
+    <!-- The radius around a point-based flight's center -->
+    <string name="airmap_buffer">半径</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
+    <string name="flight_drawing_title">创建飞行</string>
+    <!-- Call to action to fine-tune the geometry of a flight. -->
+    <string name="airmap_done_drawing_tip">拖动任意一点移动。拖动任意中点以添加新点。</string>
+    <!-- Call to action to drag a point to the trash to delete. -->
+    <string name="airmap_delete_tip">拖动点至回收站完成删除</string>
+    <!-- Call to action to draw an area-based flight. -->
+    <string name="airmap_draw_freehand_area">绘制飞行区域</string>
+    <!-- Call to action to draw a path-based flight. -->
+    <string name="airmap_draw_freehand_path">绘制飞行路径</string>
+    <!-- Call to action to drag the center position of a point-based flight. -->
+    <string name="flight_drawing_tooltip_cta_postiion_point">拖动中心点以定位您的飞行区域。</string>
+    <!-- Call to action to tap the icon to begin drawing a flight area. -->
+    <string name="airmap_freehand_tip_area">点击手形图标以绘制飞行区域。</string>
+    <!-- Call to action to tap the icon to begin drawing a flight path. -->
+    <string name="airmap_freehand_tip_path">点击手形图标以绘制飞行路径。</string>
+    <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
+    <string name="airmap_flight_area_overlap_permit_conflict">飞行区域不能与冲突的许可证要求区域重叠。</string>
+    <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
+    <string name="airmap_error_overlap">无效的飞行区域。调整飞行区域，使其不与自身重叠。</string>
+    <!-- The width of a path-based flight extending outward from the centerline -->
+    <string name="airmap_width">宽度</string>
+    <!-- Title for the button to advance to the next screen -->
+    <string name="airmap_next">下一屏</string>
+    <!-- Title for the button to save and create the flight -->
+    <string name="airmap_save">保存</string>
+    <!-- Call to action title for the user to select an aircraft -->
+    <string name="flight_plan_row_title_aircraft">选择飞机</string>
+    <!-- Title for the row displaying the name of the aircraft -->
+    <string name="flight_plan_row_title_aircraft_name">飞机</string>
+    <!-- Title for the row displaying flight plan altitude -->
+    <string name="airmap_max_altitude">高度</string>
+    <!-- Title for the row displaying flight plan buffer -->
+    <string name="flight_plan_row_title_buffer">缓冲</string>
+    <!-- Title for the row displaying flight plan duration -->
+    <string name="airmap_duration">时长</string>
+    <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
+    <string name="flight_plan_row_title_max_altitude">地平面之上最大高度</string>
+    <!-- Call to action title for the user to select a pilot profile -->
+    <string name="select_pilot_profile">选择飞行员简介</string>
+    <!-- Title for the row displaying flight plan radius -->
+    <string name="flight_plan_row_title_radius">半径</string>
+    <!-- Title for the row displaying flight plan start time -->
+    <string name="starts">开始</string>
+    <!-- Title for the section displaying the pilot and aircraft details -->
+    <string name="pilot_and_aircraft_header">飞行员和飞机</string>
+    <!-- Title for the section displaying flight plan details -->
+    <string name="flight_details">飞行</string>
+    <!-- Title for the section displaying social sharing features -->
+    <string name="airmap_share_my_flight">分享我的飞行计划</string>
+    <string name="date_and_time">日期和时间</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketclosederror">套接字由远程对等端关闭</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketconnecttimeouterror">尝试连接到主机超时</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketothererror">尝试从套接字FD创建套接字失败。getpeername() 失败</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadmaxedouterror">读出操作已达到设定的最大长度</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadtimeouterror">读出操作超时</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketwritetimeouterror">写入操作超时</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketclosederror">套接字已关闭</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketsendtimeouterror">发送操作超时</string>
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
+    <string name="manual_authorization">手动授权待提交</string>
+    <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
+    <string name="manufacturers_title">制造商</string>
+    <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
+    <string name="models_title">型号</string>
+    <!-- No comment provided by engineer. -->
+    <!-- Table section title for other selectable countries -->
+    <string name="phone_country_section_other_country">其他</string>
+    <!-- Table section title for the currently selected country -->
+    <string name="phone_country_section_selected_country">已选国家</string>
+    <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
+    <string name="phone_country_title">选择国家</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
+    <string name="phone_verification_code_header">短信代码</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
+    <string name="phone_verification_code_placeholder">代码</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
+    <string name="phone_verification_code_title">验证电话号码</string>
+    <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
+    <string name="airmap_phone_number_disclaimer">提供编号即表示您同意接收该编号对应的有关您飞行的文本。运营商信息和数据费率可能适用。\n\n当您的数字通知成功提交后，AirMap会向您发送一条短信。\n</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
+    <string name="phone_verification_phone">电话号码</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
+    <string name="phone_verification_request_new_sms_code">请求新的短信代码</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
+    <string name="phone_verification_save_button">保存</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
+    <string name="phone_verification_submit_button">提交</string>
+    <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
+    <string name="phone_number_verification">电话号码验证</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
+    <string name="phone_verification_try_again">再试一次</string>
+    <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
+    <string name="phone_verification_verification_failed">电话号码验证失败</string>
+    <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
+    <string name="pilot_full_name_format">%1$s %2$s</string>
+    <!-- Table row label for FAA registration number -->
+    <string name="pilot_profile_faa_registration">FAA注册编号</string>
+    <!-- Label for the pilot profile email -->
+    <string name="email">电子邮件</string>
+    <!-- Label for the pilot profile first name -->
+    <string name="first_name">名字</string>
+    <!-- Label for the pilot profile last name -->
+    <string name="last_name">姓氏</string>
+    <!-- Label for the pilot profile phone -->
+    <string name="pilot_profile_label_phone">电话</string>
+    <!-- Label for the pilot profile username -->
+    <string name="pilot_profile_label_username">用户名</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
+    <string name="pilot_profile_save_button">保存</string>
+    <!-- Section header for the pilot profile additional info section -->
+    <string name="pilot_profile_section_additional">附加信息</string>
+    <!-- Section header for the pilot profile personal info section -->
+    <string name="airmap_personal_information">个人信息</string>
+    <!-- Format for displaying a user's number of aircraft and flights -->
+    <string name="pilot_profile_statistics_format">%1$s 飞机， %2$s 飞行</string>
+    <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
+    <string name="pilot_profile_title">飞行员简介</string>
+    <string name="review_flight_plane_title">飞行计划</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
+    <string name="review_flight_plan_details_next_button">下一步</string>
+    <string name="review_flight_plan_details_public_flight_value_true">是</string>
+    <string name="review_flight_plan_details_radius">半径</string>
+    <string name="airmap_aircraft_stats">飞机</string>
+    <string name="review_flight_plan_details_row_title_altitude">高度</string>
+    <string name="review_flight_plan_details_row_title_duration">结束</string>
+    <string name="review_flight_plan_details_row_title_ends">结束</string>
+    <string name="review_flight_plan_details_row_title_public">公用</string>
+    <string name="review_flight_plan_details_row_title_starts">开始</string>
+    <string name="review_flight_plan_details_section_header_aircraft">飞机</string>
+    <string name="review_flight_plan_details_section_header_details">详情</string>
+    <string name="review_flight_plan_details_section_header_social">分享我的飞行计划</string>
+    <string name="review_flight_plan_details_start_time_now">现在</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
+    <string name="airmap_title_activity_create_flight">创建飞行</string>
+    <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
+    <string name="end_flight">结束飞行</string>
+    <!-- Displayed for authorities that are setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_accepts_notice">接受数字通知</string>
+    <!-- Displayed for authorities that are NOT setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_does_not_accept_notice">该区域的下列机构不接受数字通知</string>
+    <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
+    <string name="review_flight_plan_notices_tab_section_header_no_notices">此飞行没有相关通知。</string>
+    <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
+    <string name="airmap_digital_notice_accepted">数字通知已接受</string>
+    <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
+    <string name="airmap_not_accept_notice">该区域的下列机构不接受数字通知</string>
+    <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
+    <string name="airmap_review">查看</string>
+    <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
+    <string name="airmap_flight_notice">飞行通知</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
+    <string name="submit">提交</string>
+    <string name="review_flight_plan_tab_title_digital_notice">通知</string>
+    <string name="review_flight_plan_tab_title_flight">飞行</string>
+    <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
+    <string name="review_flight_plan_title">查看飞行计划</string>
+    <!-- Label for the section header that displays all the Optional rulesets -->
+    <string name="rulesets_section_optional">可选</string>
+    <!-- Label for the section header that displays all the Pick One rulesets -->
+    <string name="rulesets_section_pick_one">限选一个</string>
+    <!-- Label for the section header that displays all the Required rulesets -->
+    <string name="rulesets_section_required">必选</string>
+    <!-- Label for rulesets that can be optionally enabled by the user -->
+    <string name="ruleset_selection_type_optional">可选</string>
+    <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
+    <string name="ruleset_selection_type_pickone">限选一个</string>
+    <!-- Label for rulesets that must be enabled by the user -->
+    <string name="ruleset_selection_type_required">必选</string>
+    <string name="rules_generic_title">地方规则</string>
+    <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
+    <string name="select_aircraft">选择飞机</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
+    <string name="sms_login_code_header">短信代码</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
+    <string name="sms_login_code_placeholder">代码</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
+    <string name="sms_login_code_submit_button">提交</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
+    <string name="sms_login_code_title">验证码</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
+    <string name="sms_login_phone_number_placeholder">电话号码</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
+    <string name="sms_login_save_button">保存</string>
+    <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
+    <string name="sms_login_title">登录</string>
+    <!-- Description for status advisory color Green -->
+    <string name="informational">信息</string>
+    <!-- Description for status advisory color Orange -->
+    <string name="status_orange_description">需要采取行动</string>
+    <!-- Description for status advisory color Red -->
+    <string name="flight_strictly_regulated">飞行严格管制</string>
+    <!-- Description for status advisory color Yellow -->
+    <string name="advisories">通告</string>
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <string name="tile_layer_aerial_rec_areas">空中休闲区</string>
+    <string name="tile_layer_airports">机场</string>
+    <string name="tile_layer_cities">城市</string>
+    <string name="tile_layer_class_b">B类管制空域</string>
+    <string name="tile_layer_class_c">C类管制空域</string>
+    <string name="tile_layer_class_d">D类管制空域</string>
+    <string name="tile_layer_class_e">E类管制空域</string>
+    <string name="tile_layer_controlled_airspace">管制空域（B、C、D和E）</string>
+    <string name="tile_layer_custom">海关</string>
+    <string name="tile_layer_emergencies">第一响应者活动</string>
+    <string name="tile_layer_fires">火灾</string>
+    <string name="tile_layer_hazard_areas">危险区域</string>
+    <string name="tile_layer_heliports">直升机场</string>
+    <string name="tile_layer_hospitals">医院</string>
+    <string name="tile_layer_national_parks">国家公园</string>
+    <string name="tile_layer_noaa">NOAA海洋保护区</string>
+    <string name="tile_layer_power_plants">发电厂</string>
+    <string name="tile_layer_prisons">监狱</string>
+    <string name="tile_layer_private_airports">私人机场</string>
+    <string name="tile_layer_prohibited">禁飞空域</string>
+    <string name="tile_layer_restricted_airspace">受限空域</string>
+    <string name="tile_layer_schools">学校</string>
+    <string name="tile_layer_tfr_faa">临时飞行限制</string>
+    <string name="tile_layer_universities">高等院校</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">交通 %1$s\n高度 %2$s\n%3$s %4$s %5$s</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
+    <string name="traffic_alert_with_aircraft_id_format">交通 %1$s\n高度 %2$s\n%3$s</string>
+    <!-- Name for the imperial system of measurement -->
+    <string name="units_imperial">英制</string>
+    <!-- Name for the metric system of measurement -->
+    <string name="units_metric">公制</string>
+    <!-- Unit and format for displaying nautical miles -->
+    <string name="units_nautical_mile_format">%s 海里</string>
+    <!-- Unit and format for displaying speed in knots -->
+    <string name="units_speed_format_knots">%s 节</string>
+    <!-- Unit and format for displaying speed in meters per second -->
+    <string name="units_speed_format_meters_per_second">%s 米/秒</string>
+    <!-- Unit and format for displaying speed in miles per hour -->
+    <string name="units_speed_format_miles_per_hour">%s 英里/小时</string>
+    <!-- Unit and format for displaying a speed range in meters per second -->
+    <string name="units_speed_range_format_meters_per_second">%1$s-%2$s 米/秒</string>
+    <!-- Unit and format for displaying a speed range in miles per hour -->
+    <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s 英里/小时</string>
+    <!-- Unit and format for displaying temperature in Celcius -->
+    <string name="units_temperature_celcius_format">%1$s°C</string>
+    <!-- Unit and format for displaying temperature in Fahrenheit -->
+    <string name="units_temperature_fahrenheit_format">%1$s°F</string>
+    <!-- Possible error from keychain. -->
+    <!-- No comment provided by engineer. -->
+    <!-- The request with the authority has been accepted -->
+    <string name="validation_accepted">已验证</string>
+    <!-- No validation request has been filed -->
+    <string name="validation_not_requested">验证未被请求</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="validation_pending">待验证</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="validation_rejected">已拒绝的缺失信息</string>
 </resources>

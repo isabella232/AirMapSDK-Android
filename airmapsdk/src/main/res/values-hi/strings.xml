@@ -1,745 +1,748 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- 1Password Extension Error Message -->
-  <string name="end_flight_title">अंत उड़ान</string>
-  <string name="submit_title">जमा करें</string>
-  <string name="review_flight_plan">समीक्षा उड़ान योजना</string>
-  <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
-  <string name="airmap_airspace_advisories">हवाई क्षेत्र सलाह</string>
-  <!-- Label for advisories that are stup to receive digital notice -->
-  <string name="accepts_digital_notice">डिजिटल सूचना स्वीकार करता है</string>
-  <!-- Displayed when an advisory has not provided a contact phone -->
-  <string name="no_known_number">कोई फ़ोन नंबर उपलब्ध नहीं कराया</string>
-  <!-- Label and format for displaying the end time of temporary flight restriction -->
-  <string name="advisory_tfr_ends_format">समाप्त होता: %1$s</string>
-  <!-- Never ending duration for a TFR -->
-  <string name="advisory_tfr_permanent">स्थायी</string>
-  <!-- Label and format for displaying the start time of temporary flight restriction -->
-  <string name="airmap_starts">शुरू: %1$s</string>
-  <!-- Format and unit for wildfire advisory in the area unit acres -->
-  <string name="advisory_wildfire_size_format_acres">%1$s एकड़</string>
-  <!-- Format and unit for wildfire advisory in the area unit hectares -->
-  <string name="advisory_wildfire_size_format_hectares">%1$s हेक्टेयर</string>
-  <!-- Label for wildfire advisory cells where size is unknown -->
-  <string name="unknown_size">आकार अज्ञात</string>
-  <!-- Call to action when a user has not selected an aircraft -->
-  <string name="aircraft_select_aircraft">विमान का चयन करें</string>
-  <!-- Title to display for the view creating a new aircraft -->
-  <string name="airmap_title_activity_create_aircraft">विमान बनाएं</string>
-  <!-- Title to display for the view when updating an existing aircraft -->
-  <string name="airmap_edit_aircraft">अद्यतन विमान</string>
-  <!-- Name for airspace type Aerial Recreational Area -->
-  <string name="airspace_type_aerial_rec_area">हवाई मनोरंजन क्षेत्र</string>
-  <!-- Name for airspace type Airport -->
-  <string name="airspace_type_airport">हवाई अड्डे</string>
-  <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
-  <string name="airspace_type_ama_field">ामा मैदान</string>
-  <!-- Name for airspace type City -->
-  <string name="airspace_type_city">शहर</string>
-  <!-- Name for airspace type Controlled Airspace -->
-  <string name="airspace_type_controlled">नियंत्रित हवाई क्षेत्र</string>
-  <!-- Name for airspace type Country -->
-  <string name="airspace_type_country">देश</string>
-  <!-- Name for airspace type County -->
-  <string name="airspace_type_county">काउंटी</string>
-  <!-- Name for airspace type Custom -->
-  <string name="airspace_type_custom">कस्टम</string>
-  <!-- Name for airspace type Embassy -->
-  <string name="airspace_type_embassy">दूतावास</string>
-  <!-- Name for airspace type Emergency -->
-  <string name="airspace_type_emergency">पहले उत्तरदाता गतिविधि</string>
-  <!-- Name for airspace type Federal Building -->
-  <string name="airspace_type_federal_building">संघीय भवन</string>
-  <!-- Name for airspace type Flight Information Region -->
-  <string name="airspace_type_fir">उड़ान जानकारी क्षेत्र</string>
-  <!-- Name for airspace type Fire -->
-  <string name="airspace_type_fire">आग</string>
-  <!-- Name for airspace type Gliderport -->
-  <string name="airspace_type_gliderport">Gliderport</string>
-  <!-- Name for airspace type Hazard Area -->
-  <string name="airspace_type_hazard_area">खतरा क्षेत्र</string>
-  <!-- Name for airspace type Heliport -->
-  <string name="airspace_type_heliport">हेलीपोर्ट</string>
-  <!-- Name for airspace type Highway -->
-  <string name="airspace_type_highway">राजमार्ग</string>
-  <!-- Name for airspace type Hospital -->
-  <string name="airspace_type_hospital">अस्पताल</string>
-  <!-- Name for airspace type Industrial Property -->
-  <string name="airspace_type_industrial_property">औद्योगिक संपदा</string>
-  <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
-  <string name="airspace_type_japan_base">जापान बेस व्यवस्थापक</string>
-  <!-- Name for airspace type Military Property -->
-  <string name="airspace_type_military_property">सैंय संपदा</string>
-  <!-- Name for airspace type National Park -->
-  <string name="airspace_type_national_park">राष्ट्रीय उद्यान</string>
-  <!-- Name for airspace type NOTAM -->
-  <string name="airspace_type_notam">नोटं</string>
-  <!-- Name for airspace type Police Station -->
-  <string name="airspace_type_police_station">पुलिस स्टेशन</string>
-  <!-- Name for airspace type Powerline -->
-  <string name="airspace_type_powerline">Powerline</string>
-  <!-- Name for airspace type Power Plant -->
-  <string name="airspace_type_power_plant">पावर प्लांट</string>
-  <!-- Name for airspace type Prison -->
-  <string name="airspace_type_prison">जेल</string>
-  <!-- Name for airspace type Railway -->
-  <string name="airspace_type_railway">रेलवे</string>
-  <!-- Name for airspace type Residential Property -->
-  <string name="airspace_type_residential_property">आवासीय संपत्ति</string>
-  <!-- Name for airspace type School -->
-  <string name="airspace_type_school">स्कूल</string>
-  <!-- Name for airspace type Seaplane Base -->
-  <string name="airspace_type_seaplane_base">सीप्लेन आधार</string>
-  <!-- Name for airspace type Special Use Airspace -->
-  <string name="airspace_type_special_use">विशेष प्रयोग हवाई क्षेत्र</string>
-  <!-- Name for airspace type Stadium -->
-  <string name="airspace_type_stadium">स्टेडियम</string>
-  <!-- Name for airspace type State -->
-  <string name="airspace_type_state">राज्य</string>
-  <!-- Name for airspace type Subprefecture -->
-  <string name="airspace_type_subprefecture">उपजनपद</string>
-  <!-- Name for airspace type Supercity (Japan related) -->
-  <string name="airspace_type_supercity">Supercity</string>
-  <!-- Name for airspace type FAA Temporary Flight Restriction -->
-  <string name="airspace_type_tfr_faa">अस्थाई उड़ान प्रतिबंध</string>
-  <!-- Name for airspace type Ultralight Field -->
-  <string name="airspace_type_ulm_field">अल्ट्रालाइट मैदान</string>
-  <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
-  <string name="airspace_type_unclassified">अवर्गीकृत</string>
-  <!-- Name for airspace type University -->
-  <string name="airspace_type_university">विश्वविद्यालय</string>
-  <!-- Name for airspace type Waterway -->
-  <string name="airspace_type_waterway">जलमार्ग</string>
-  <!-- Name for airspace type WildFire -->
-  <string name="airspace_type_wildfire">जंगल</string>
-  <!-- No comment provided by engineer. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- The request with the authority has been accepted -->
-  <string name="authorization_accepted">अनुमोदित</string>
-  <!-- The request with the authority has been cancelled -->
-  <string name="authorization_cancelled_submission">प्राधिकरण रद्द</string>
-  <!-- The request with the authority has not been requested -->
-  <string name="authorization_not_requested">प्राधिकरण ने अनुरोध नहीं किया</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="authorization_pending">प्राधिकरण लंबित</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="authorization_rejected">प्राधिकरण अस्वीकृत</string>
-  <!-- The request with the authority will be rejected once the flight plan is submitted -->
-  <string name="authorization_rejected_upon_submission">प्रस्तुत करने पर निर</string>
-  <!-- The request with the authority will be accepted once the flight plan is submitted -->
-  <string name="authorization_upon_submission">जमा करने पर प्राधिकरण</string>
-  <!-- Login message when a user's account has been blacklisted. -->
-  <string name="invalid_email_domain">आपके खाते को ब्लैकलिस्ट किया गया है । कृपया संपर्क security@airmap.com</string>
-  <!-- Login message when a user must verify their email address -->
-  <string name="verify_email_log_in_again">आपका ईमेल पता सत्यापित करने की आवश्यकता है । कृपया अपने इनबॉक्स की जांच करें ।</string>
-  <!-- Login message when a user failed to authenticate -->
-  <string name="auth_error_unauthorized">अनधिकृत</string>
-  <!-- Navigation title for failed login attempt -->
-  <string name="auth_failed_login_title">चेतावनी</string>
-  <!-- Abbreviation for East -->
-  <string name="cardinal_direction_e">ई</string>
-  <!-- Abbreviation for East North East -->
-  <string name="cardinal_direction_ene">िेने</string>
-  <!-- Abbreviation for East South East -->
-  <string name="cardinal_direction_ese">Ese</string>
-  <!-- Abbreviation for North -->
-  <string name="cardinal_direction_n">एन</string>
-  <!-- Abbreviation for North East -->
-  <string name="cardinal_direction_ne">NE</string>
-  <!-- Abbreviation for North North East -->
-  <string name="cardinal_direction_nnne">NNE</string>
-  <!-- Abbreviation for North North West -->
-  <string name="cardinal_direction_nnw">NNW</string>
-  <!-- Abbreviation for North West -->
-  <string name="cardinal_direction_nw">एनडब्ल्यू</string>
-  <!-- Abbreviation for South -->
-  <string name="cardinal_direction_s">एस</string>
-  <!-- Abbreviation for South East -->
-  <string name="cardinal_direction_se">एसई</string>
-  <!-- Abbreviation for South South East -->
-  <string name="cardinal_direction_sse">Sse</string>
-  <!-- Abbreviation for South South West -->
-  <string name="cardinal_direction_ssw">Ssw</string>
-  <!-- Abbreviation for South West -->
-  <string name="cardinal_direction_sw">Sw</string>
-  <!-- Abbreviation for West -->
-  <string name="cardinal_direction_w">डब्ल्यू</string>
-  <!-- Abbreviation for West North West -->
-  <string name="cardinal_direction_wnw">उ</string>
-  <!-- Abbreviation for West South West -->
-  <string name="cardinal_direction_wsw">WSW</string>
-  <!-- Forgot password -->
-  <string name="com_auth0_lock_action_forgot_password">अपना पासवर्ड याद नहीं है?</string>
-  <!-- tos & privacy -->
-  <string name="com_auth0_lock_sign_up_terms">साइन अप करके, आप हमारी शर्तें of\n सेवा और गोपनीयता नीति से सहमत हैं</string>
-  <!-- forgot password email sent -->
-  <string name="com_auth0_lock_db_change_password_message_success">हमने आपका पासवर्ड रीसेट करने के लिए आपको बस एक ईमेल भेजा है</string>
-  <!-- User logged in -->
-  <string name="com_auth0_lock_database_login_success_message">आपने सफलतापूर्वक में लॉग इन किया है ।</string>
-  <!-- Login Switch -->
-  <string name="com_auth0_lock_mode_log_in">लॉग इन करो</string>
-  <!-- Signup Switch -->
-  <string name="com_auth0_lock_mode_sign_up">नाम लिखो</string>
-  <!-- Social separator -->
-  <string name="com_auth0_lock_forms_separator">या</string>
-  <!-- User signed up -->
-  <string name="com.auth0.lock.database.signup.success.message">साइन अप करने के लिए धंयवाद ।</string>
-  <!-- Cancel -->
-  <string name="com.auth0.lock.database.tos.sheet.cancel">रद्द करना</string>
-  <!-- Privacy -->
-  <string name="com.auth0.lock.database.tos.sheet.privacy">गोपनीयता नीति</string>
-  <!-- ToS -->
-  <string name="com.auth0.lock.database.tos.sheet.title">सेवा की शर्तें</string>
-  <!-- enter corporate credentials -->
-  <string name="com.auth0.lock.enterprise.sso.message">कृपया अपनी कॉर्पोरेट साख दर्ज करें</string>
-  <!-- enter corporate credentials of domain %@{email domain} -->
-  <string name="com.auth0.lock.enterprise.sso.message_at">कृपया अपने कॉर्पोरेट क्रेडेंशियल्स पर दर्ज करें %1$s</string>
-  <!-- SSO Header -->
-  <string name="com.auth0.lock.enterprise.sso.title">एकल साइन-ऑन सक्षम किया गया</string>
-  <!-- user is blocked -->
-  <string name="com.auth0.lock.error.authentication.blocked_user">उपयोगकर्ता अवरोधित किया गया है ।</string>
-  <!-- Generic login error -->
-  <string name="com.auth0.lock.error.authentication.fallback">हमें खेद है, कुछ गलत हो गया जब में प्रवेश करने का प्रयास कर रहे हैं ।</string>
-  <!-- invalid_user_password -->
-  <string name="com_auth0_lock_db_login_error_invalid_credentials_message">गलत ईमेल या पासवर्ड ।</string>
-  <!-- a0.mfa_invalid_code -->
-  <string name="com.auth0.lock.error.authentication.mfa_invalid_code">गलत कोड ।</string>
-  <!-- No valid connection -->
-  <string name="com.auth0.lock.error.authentication.no_connection">हमें खेद है, हम इस उपयोगकर्ता के लिए कोई मांय कनेक्शन नहीं ढूंढ सके ।</string>
-  <!-- password_change_required -->
-  <string name="com.auth0.lock.error.authentication.password_change_required">आपको अपना पासवर्ड अद्यतन करने की आवश्यकता है क्योंकि यह पहली बार है जब आप लॉगिन कर रहे हैं, या आपके पासवर्ड की समयसीमा समाप्त हो गई है ।</string>
-  <!-- password_leaked -->
-  <string name="com.auth0.lock.error.authentication.password_leaked">यह लॉगिन अवरोधित कर दिया गया है क्योंकि आपका पासवर्ड किसी अंय वेबसाइट में लीक हो गया है । हमने आपको इसे अनवरोधित करने के निर्देशों के साथ एक ईमेल भेजा है ।</string>
-  <!-- too_many_attempts -->
-  <string name="com.auth0.lock.error.authentication.too_many_attempts">एकाधिक लगातार लॉगिन प्रयासों के बाद आपका खाता अवरोधित कर दिया गया है ।</string>
-  <!-- Generic error -->
-  <string name="com_auth0_lock_unrecoverable_error_title">कुछ गलत हो गया. \ nPLEASE तकनीकी समर्थन से संपर्क करें ।</string>
-  <!-- Generic password error -->
-  <string name="com_auth0_lock_db_message_change_password_error">हमें खेद है, कुछ गलत हो गया जब पासवर्ड परिवर्तन का अनुरोध कर रहे हैं ।</string>
-  <!-- At least N characters -->
-  <string name="com_auth0_lock_password_strength_chars_length">से कम %d लंबाई में वर्ण</string>
-  <!-- At least n groups -->
-  <string name="com.auth0.lock.error.password.contain_at_least">इसमें कम-से %d निंन में से %d वर्णों के प्रकार:</string>
-  <!-- Lowercase letters -->
-  <string name="com_auth0_lock_password_strength_lowercase_letters">लोअर केस लेटर्स (a-z)</string>
-  <!-- Must no be empty -->
-  <string name="com.auth0.lock.error.password.non_empty">गैर-रिक्त पासवर्ड आवश्यक</string>
-  <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
-  <string name="com_auth0_lock_password_strength_identical_chars">से अधिक नहीं %1$d एक पंक्ति में समान वर्ण (उदा., \'%2$s\' अनुमति नहीं है)</string>
-  <!-- Numbers -->
-  <string name="com_auth0_lock_password_strength_numbers">संख्याएं (यानी 0-9)</string>
-  <!-- N groups -->
-  <string name="com_auth0_lock_password_strength_title_must_have">शामिल होना चाहिए:</string>
-  <!-- Special Characters -->
-  <string name="com_auth0_lock_password_strength_special_chars">विशेष वर्ण (उदा.! @ # $% ^ &amp; *)</string>
-  <!-- Uppercase letters -->
-  <string name="com_auth0_lock_password_strength_uppercase_letters">अपर प्रकरण पत्र (A-Z)</string>
-  <!-- Passwordless link invalid. -->
-  <string name="com.auth0.lock.error.passwordless.invalid_link">हमें खेद है, वहां अपने लिंक के साथ एक समस्या थी । कृपया एक नया अनुरोध करें ।</string>
-  <!-- Passwordless sign ups disabled. -->
-  <string name="com.auth0.lock.error.passwordless.signup_disabled">इस खाते के लिए नए साइन अप अक्षम हैं, कृपया अपने व्यवस्थापक से संपर्क करें ।</string>
-  <!-- Recoverable error button -->
-  <string name="com.auth0.lock.error.recoverable.button">पुनर्प्रयास</string>
-  <!-- Recoverable error message -->
-  <string name="com.auth0.lock.error.recoverable.message">कृपया अपने इंटरनेट कनेक्शन की जांच करें ।</string>
-  <!-- Recoverable error title -->
-  <string name="com.auth0.lock.error.recoverable.title">लॉगिन बॉक्स लोड नहीं कर सकता</string>
-  <!-- Generic sign up error -->
-  <string name="com_auth0_lock_db_sign_up_error_message">हमें खेद है, कुछ गलत हो गया जब साइन अप करने का प्रयास कर रहे हैं ।</string>
-  <!-- invalid_password -->
-  <string name="com_auth0_lock_input_error_password">पासवर्ड अमांय है ।</string>
-  <!-- password_dictionary_error -->
-  <string name="com.auth0.lock.error.signup.password_dictionary_error">पासवर्ड बहुत सामांय है ।</string>
-  <!-- password_history -->
-  <string name="com_auth0_lock_db_signup_password_already_used_error_message">पासवर्ड पहले उपयोग किया गया है ।</string>
-  <!-- password_no_user_info_error -->
-  <string name="com.auth0.lock.error.signup.password_no_user_info_error">पासवर्ड उपयोगकर्ता जानकारी पर आधारित है ।</string>
-  <!-- password_strength_error -->
-  <string name="com_auth0_lock_db_signup_password_not_strong_error_message">पासवर्ड बहुत कमज़ोर है ।</string>
-  <!-- user_exists -->
-  <string name="com_auth0_lock_db_signup_user_already_exists_error_message">उपयोगकर्ता पहले से मौजूद है ।</string>
-  <!-- Unrecoverable error button -->
-  <string name="com.auth0.lock.error.unrecoverable.button">समर्थन से संपर्क करें</string>
-  <!-- Default error -->
-  <string name="com.auth0.lock.error.unrecoverable.default">कुछ गलत हो गया. \ nPLEASE तकनीकी समर्थन से संपर्क करें ।</string>
-  <!-- Invalid client or domain -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">आपके Auth0 क्रेडेंशियल्स ClientId और/या डोमेन अमांय हैं ।</string>
-  <!-- Your options configuration failed with: %@{error} -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_options">आपके विकल्प कॉंफ़िगरेशन के साथ विफल: %1$s</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message">लॉगिन बॉक्स कॉंफ़िगरेशन को हल करते समय कोई अप्रत्याशित त्रुटि आई ।</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message.no_action">लॉगिन बॉक्स कॉंफ़िगरेशन को हल करते समय कोई अप्रत्याशित त्रुटि आई, कृपया समर्थन से संपर्क करें ।</string>
-  <!-- No connections -->
-  <string name="com.auth0.lock.error.unrecoverable.no_connections">इस क्लाइंट के लिए कोई प्रमाणन विधि नहीं मिली । कृपया अपने क्लाइंट सेटअप की जांच करें ।</string>
-  <!-- Unrecoverable error title -->
-  <string name="com.auth0.lock.error.unrecoverable.title">आपके अनुरोध को हल नहीं कर सकता</string>
-  <!-- Forgot Password message -->
-  <string name="com_auth0_lock_forgot_message">कृपया अपना ईमेल और नया पासवर्ड दर्ज करें । हम आपको पासवर्ड परिवर्तन की पुष्टि करने के लिए एक ईमेल भेजेंगे ।</string>
-  <!-- Forgot Password title -->
-  <string name="com_auth0_lock_title_change_password">पासवर्ड रीसेट करें</string>
-  <!-- Header Title -->
-  <string name="com.auth0.lock.header.default_title">Auth0</string>
-  <!-- invalid email -->
-  <string name="com_auth0_lock_input_error_email">कोई मांय ईमेल पता होना चाहिए</string>
-  <!-- Email placeholder -->
-  <string name="com_auth0_lock_hint_email">ईमेल</string>
-  <!-- Username or Email placeholder -->
-  <string name="com.auth0.lock.input.email_username.placeholder">प्रयोक्ता नाम ईमेल/</string>
-  <!-- empty input -->
-  <string name="com.auth0.lock.input.empty.error">खाली नहीं होना चाहिए</string>
-  <!-- generic input error -->
-  <string name="com.auth0.lock.input.generic.error">अमांय इनपुट</string>
-  <!-- invalid otp -->
-  <string name="com.auth0.lock.input.otp.error">कोई मांय सांख्यिक कोड होना आवश्यक है</string>
-  <!-- OTP placeholder -->
-  <string name="com.auth0.lock.input.otp.placeholder">कोड</string>
-  <!-- Password placeholder -->
-  <string name="com_auth0_lock_hint_password">पासवर्ड</string>
-  <!-- invalid phone -->
-  <string name="com.auth0.lock.input.phone.error">कोई मांय फ़ोन नंबर होना आवश्यक है</string>
-  <!-- Phone placeholder -->
-  <string name="com.auth0.lock.input.phone.placeholder">फोन नंबर</string>
-  <!-- policy violation -->
-  <string name="com.auth0.lock.input.policy.error">पासवर्ड नीति को पूरा नहीं करता</string>
-  <!-- invalid username -->
-  <string name="com.auth0.lock.input.username.error">के बीच ही हो सकता है %d को %d अल्फ़ांयूमेरिक वर्ण और \'_\' ।</string>
-  <!-- Username placeholder -->
-  <string name="com.auth0.lock.input.username.placeholder">उपयोगकर्ता</string>
-  <!-- Multifactor message -->
-  <string name="com.auth0.lock.multifactor.message">कृपया अपने मोबाइल अनुप्रयोग द्वारा जेनरेट किया गया सत्यापन कोड दर्ज करें ।</string>
-  <!-- Multifactor title -->
-  <string name="com.auth0.lock.multifactor.title">दो चरणीय सत् यापन</string>
-  <!-- Country tableview navigation header -->
-  <string name="com.auth0.lock.passwordless.sms.country.header">अपने देश का चयन करें</string>
-  <!-- CountryCodes TableView searchbar placeholder -->
-  <string name="com.auth0.lock.passwordless.sms.country.search">खोज</string>
-  <!-- Amazon -->
-  <string name="com.auth0.lock.strategy.localized.amazon">अमेज़न</string>
-  <!-- Aol -->
-  <string name="com.auth0.lock.strategy.localized.aol">एओएल</string>
-  <!-- Baidu -->
-  <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
-  <!-- Bitbucket -->
-  <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
-  <!-- Dropbox -->
-  <string name="com.auth0.lock.strategy.localized.dropbox">Dropbox</string>
-  <!-- Dwolla -->
-  <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
-  <!-- Ebay -->
-  <string name="com.auth0.lock.strategy.localized.ebay">Ebay</string>
-  <!-- Evernote -->
-  <string name="com.auth0.lock.strategy.localized.evernote">Evernote</string>
-  <!-- EvernoteSandbox -->
-  <string name="com.auth0.lock.strategy.localized.evernote_sandbox">EVERNOTE (SANDBOX)</string>
-  <!-- Exact -->
-  <string name="com.auth0.lock.strategy.localized.exact">सटीक</string>
-  <!-- Facebook -->
-  <string name="com.auth0.lock.strategy.localized.facebook">Facebook</string>
-  <!-- Fitbit -->
-  <string name="com.auth0.lock.strategy.localized.fitbit">Fitbit</string>
-  <!-- Github -->
-  <string name="com.auth0.lock.strategy.localized.github">Github</string>
-  <!-- Google -->
-  <string name="com.auth0.lock.strategy.localized.google">गूगल</string>
-  <!-- Instagram -->
-  <string name="com.auth0.lock.strategy.localized.instagram">Instagram</string>
-  <!-- Linkedin -->
-  <string name="com.auth0.lock.strategy.localized.linkedin">Linkedin</string>
-  <!-- Microsoft -->
-  <string name="com.auth0.lock.strategy.localized.microsoft">MICROSOFT खाता</string>
-  <!-- Miicard -->
-  <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
-  <!-- Paypal -->
-  <string name="com.auth0.lock.strategy.localized.paypal">पेपैल</string>
-  <!-- PaypalSandbox -->
-  <string name="com.auth0.lock.strategy.localized.paypal_sandbox">पेपैल (SANDBOX)</string>
-  <!-- PlanningCenter -->
-  <string name="com.auth0.lock.strategy.localized.planning_center">योजना केंद्र</string>
-  <!-- RenRen -->
-  <string name="com.auth0.lock.strategy.localized.renren">人人</string>
-  <!-- Salesforce -->
-  <string name="com.auth0.lock.strategy.localized.salesforce">Salesforce</string>
-  <!-- SalesforceCommunity -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE समुदाय</string>
-  <!-- SalesforceSandbox -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (SANDBOX)</string>
-  <!-- Shopify -->
-  <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
-  <!-- Soundcloud -->
-  <string name="com.auth0.lock.strategy.localized.soundcloud">Soundcloud</string>
-  <!-- TheCity -->
-  <string name="com.auth0.lock.strategy.localized.the_city">लेकर शहर</string>
-  <!-- TheCitySandbox -->
-  <string name="com.auth0.lock.strategy.localized.the_city_sandbox">शहर (SANDBOX)</string>
-  <!-- ThirtySevenSignals -->
-  <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">३७ संकेत</string>
-  <!-- Twitter -->
-  <string name="com.auth0.lock.strategy.localized.twitter">चहचहाना</string>
-  <!-- Vkontakte -->
-  <string name="com.auth0.lock.strategy.localized.vkontakte">VKONTAKTE</string>
-  <!-- Weibo -->
-  <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
-  <!-- Wordpress -->
-  <string name="com.auth0.lock.strategy.localized.wordpress">Wordpress</string>
-  <!-- Yahoo -->
-  <string name="com.auth0.lock.strategy.localized.yahoo">याहू!</string>
-  <!-- Yammer -->
-  <string name="com.auth0.lock.strategy.localized.yammer">Yammer</string>
-  <!-- Yandex -->
-  <string name="com.auth0.lock.strategy.localized.yandex">Yandex</string>
-  <!-- Log in with %@{strategy} -->
-  <string name="com_auth0_lock_social_log_in">लॉग इन करें %1$s</string>
-  <!-- Sign up with %@{strategy} -->
-  <string name="com_auth0_lock_social_sign_up">साथ साइन अप %1$s</string>
-  <!-- Login Button title -->
-  <string name="com_auth0_lock_action_log_in">लॉग इन करो</string>
-  <!-- Send 2fa code -->
-  <string name="com.auth0.lock.submit.send_code.title">भेजें</string>
-  <!-- Send Email button title -->
-  <string name="com_auth0_lock_action_send_email">ईमेल भेजें</string>
-  <!-- Signup Button title -->
-  <string name="com_auth0_lock_action_sign_up">नाम लिखो</string>
-  <!-- Passwordless code reminder action -->
-  <string name="com.auth0.passwordless.code.reminder">कोड नहीं मिला?</string>
-  <!-- Passwordless code sent by email to %@{identifier} -->
-  <string name="com.auth0.passwordless.email.code.sent">कोड के साथ एक ईमेल करने के लिए भेजा गया है %1$s</string>
-  <!-- Passwordless email title -->
-  <string name="com.auth0.passwordless.email.title">साइन इन करने या खाता बनाने के लिए अपना ईमेल दर्ज करें ।</string>
-  <!-- Passwordless email title with social -->
-  <string name="com.auth0.passwordless.email.title.social">अंयथा, साइन इन करने या खाता बनाने के लिए अपना ईमेल दर्ज करें ।</string>
-  <!-- Passwordless link reminder action -->
-  <string name="com.auth0.passwordless.link.reminder">लिंक प्राप्त नहीं हुआ?</string>
-  <!-- Passwordless link sent to %@{identifier} -->
-  <string name="com.auth0.passwordless.link.sent">हमने आपको साइन इन करने के लिए लिंक भेजा है %1$s</string>
-  <!-- Passwordless code sent by sms to %@{identifier} -->
-  <string name="com.auth0.passwordless.sms.code.sent">कोड के साथ एक एसएमएस भेजा गया है %1$s</string>
-  <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
-  <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
-  <!-- CountryCodes TableViewCell label %@{localizedName} -->
-  <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
-  <!-- Passwordless sms title -->
-  <string name="com.auth0.passwordless.sms.title">साइन इन करने या खाता बनाने के लिए अपना फ़ोन दर्ज करें ।</string>
-  <!-- Passwordless sms title with social -->
-  <string name="com.auth0.passwordless.sms.title.social">अंयथा, साइन इन करने या खाता बनाने के लिए अपना फ़ोन दर्ज करें ।</string>
-  <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
-  <string name="create_aircraft_make_and_model">मेक &amp; मॉडल</string>
-  <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
-  <string name="airmap_nickname">उपनाम</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
-  <string name="create_aircraft_save_button">सहेजें</string>
-  <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
-  <string name="create_aircraft">विमान बनाएं</string>
-  <!-- Request cancelled error -->
-  <string name="error_cancelled">पूर्ण होने से पहले रद्द करने का अनुरोध करें</string>
-  <!-- A conflict exists with the attempted request -->
-  <string name="error_conflict">कोई विरोध मौजूद है</string>
-  <!-- A generic server error message with an associated error code -->
-  <string name="error_generic_format">सर्वर ने कोई त्रुटि लौटाई । (%s)</string>
-  <!-- Response serialization failure error -->
-  <string name="error_serialization">सर्वर ने कोई प्रक्रियात्मक प्रतिसाद लौटाया ।</string>
-  <!-- Server failure error -->
-  <string name="error_server">सर्वर आपके अनुरोध को पूरा नहीं कर सका ।</string>
-  <!-- Authorization failure error -->
-  <string name="error_unauthorized">अनधिकृत. कृपया लॉगिन क्रेडेंशियल्स की जांच करें ।</string>
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
-  <string name="faqs">Faq</string>
-  <string name="flight_data_cell_button_done">किया</string>
-  <string name="now">Nwo</string>
-  <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
-  <string name="airmap_polygon">क्षेत्र</string>
-  <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
-  <string name="airmap_path">पथ</string>
-  <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
-  <string name="airmap_circle">बिंदु</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
-  <string name="flight_drawing_next_button">अगले</string>
-  <!-- The radius around a point-based flight's center -->
-  <string name="airmap_buffer">त्रिज्या</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
-  <string name="flight_drawing_title">उड़ान बनाएं</string>
-  <!-- Call to action to fine-tune the geometry of a flight. -->
-  <string name="airmap_done_drawing_tip">किसी भी बिंदु को ले जाने के लिए खींचें । कोई नया बिंदु जोड़ने के लिए कोई मध्यबिंदु खींचें ।</string>
-  <!-- Call to action to drag a point to the trash to delete. -->
-  <string name="airmap_delete_tip">हटाने के लिए ट्रैश पर पॉइंट खींचें</string>
-  <!-- Call to action to draw an area-based flight. -->
-  <string name="airmap_draw_freehand_area">उड़ान क्षेत्र आरेखित करना</string>
-  <!-- Call to action to draw a path-based flight. -->
-  <string name="airmap_draw_freehand_path">कोई फ़्लाइट पथ आरेखित करना</string>
-  <!-- Call to action to drag the center position of a point-based flight. -->
-  <string name="flight_drawing_tooltip_cta_postiion_point">केंद्र बिंदु को अपनी फ़्लाइट क्षेत्र की स्थिति में खींचें.</string>
-  <!-- Call to action to tap the icon to begin drawing a flight area. -->
-  <string name="airmap_freehand_tip_area">एक उड़ान क्षेत्र आकर्षित करने के लिए हाथ आइकन टैप करें ।</string>
-  <!-- Call to action to tap the icon to begin drawing a flight path. -->
-  <string name="airmap_freehand_tip_path">एक उड़ान पथ आकर्षित करने के लिए हाथ आइकन टैप करें ।</string>
-  <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
-  <string name="airmap_flight_area_overlap_permit_conflict">फ़्लाइट क्षेत्र विरोधी अनुमति आवश्यकता ज़ोन के साथ ओवरलैप नहीं कर सकता ।</string>
-  <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
-  <string name="airmap_error_overlap">अमांय फ़्लाइट क्षेत्र । उड़ान क्षेत्र को समायोजित करें ताकि वह स्वयं के साथ ओवरलैप न करें ।</string>
-  <!-- The width of a path-based flight extending outward from the centerline -->
-  <string name="airmap_width">चौड़ाई</string>
-  <!-- Title for the button to advance to the next screen -->
-  <string name="airmap_next">अगले</string>
-  <!-- Title for the button to save and create the flight -->
-  <string name="airmap_save">सहेजें</string>
-  <!-- Call to action title for the user to select an aircraft -->
-  <string name="flight_plan_row_title_aircraft">विमान का चयन करें</string>
-  <!-- Title for the row displaying the name of the aircraft -->
-  <string name="flight_plan_row_title_aircraft_name">विमान</string>
-  <!-- Title for the row displaying flight plan altitude -->
-  <string name="airmap_max_altitude">ऊंचाई</string>
-  <!-- Title for the row displaying flight plan buffer -->
-  <string name="flight_plan_row_title_buffer">बफ़र</string>
-  <!-- Title for the row displaying flight plan duration -->
-  <string name="airmap_duration">अवधि</string>
-  <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
-  <string name="flight_plan_row_title_max_altitude">अधिकतम ऊंचाई एजीएल</string>
-  <!-- Call to action title for the user to select a pilot profile -->
-  <string name="select_pilot_profile">पायलट प्रोफ़ाइल का चयन करें</string>
-  <!-- Title for the row displaying flight plan radius -->
-  <string name="flight_plan_row_title_radius">त्रिज्या</string>
-  <!-- Title for the row displaying flight plan start time -->
-  <string name="starts">शुरू</string>
-  <!-- Title for the section displaying the pilot and aircraft details -->
-  <string name="pilot_and_aircraft_header">पायलट &amp; विमान</string>
-  <!-- Title for the section displaying flight plan details -->
-  <string name="flight_details">उड़ान</string>
-  <!-- Title for the section displaying social sharing features -->
-  <string name="airmap_share_my_flight">मेरी उड़ान साझा करें</string>
-  <string name="date_and_time">ितिथ &amp; समय</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketclosederror">सॉकेट दूरस्थ पीअर द्वारा बंद</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketconnecttimeouterror">होस्ट टाइम आउट से कनेक्ट करने का प्रयास</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketothererror">सॉकेट एफडी से सॉकेट बनाने का प्रयास विफल रहा । getpeername () विफल</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadmaxedouterror">पठन कार्रवाई अधिकतम लंबाई सेट तक पहुंच गई</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadtimeouterror">पठन कार्रवाई समय बाह्य</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketwritetimeouterror">लेखन कार्रवाई समय बाह्य</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketclosederror">सॉकेट बंद</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketsendtimeouterror">कार्रवाई समय बाह्य भेजें</string>
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
-  <string name="manual_authorization">मैंयुअल प्राधिकरण लंबित सबमिशन</string>
-  <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
-  <string name="manufacturers_title">निर्माताओं</string>
-  <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
-  <string name="models_title">मॉडल</string>
-  <!-- No comment provided by engineer. -->
-  <!-- Table section title for other selectable countries -->
-  <string name="phone_country_section_other_country">अन्य</string>
-  <!-- Table section title for the currently selected country -->
-  <string name="phone_country_section_selected_country">चयनित देश</string>
-  <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
-  <string name="phone_country_title">देश चुनिए</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
-  <string name="phone_verification_code_header">एसएमएस कोड</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
-  <string name="phone_verification_code_placeholder">कोड</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
-  <string name="phone_verification_code_title">फ़ोन नंबर सत्यापित करें</string>
-  <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
-  <string name="airmap_phone_number_disclaimer">अपना नंबर प्रदान करके, आप इस नंबर पर अपनी उड़ानों के बारे में ग्रंथों प्राप्त करने के लिए सहमत हैं । वाहक संदेश &amp; डेटा दरें लागू हो सकती हैं.  AirMap आपके डिजिटल नोटिस को सफलतापूर्वक सबमिट किए जाने पर आपको एक टेक्स्ट संदेश भेजेगा</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
-  <string name="phone_verification_phone">फोन नंबर</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
-  <string name="phone_verification_request_new_sms_code">नए एसएमएस कोड का अनुरोध करें</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
-  <string name="phone_verification_save_button">जमा करें</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
-  <string name="phone_verification_submit_button">जमा करें</string>
-  <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
-  <string name="phone_number_verification">फोन नंबर वेरिफिकेशन</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
-  <string name="phone_verification_try_again">फिर कोशिश करो</string>
-  <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
-  <string name="phone_verification_verification_failed">फ़ोन नंबर सत्यापन विफल</string>
-  <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
-  <string name="pilot_full_name_format">%1$s %2$s</string>
-  <!-- Table row label for FAA registration number -->
-  <string name="pilot_profile_faa_registration">FAA पंजीकरण संख्या</string>
-  <!-- Label for the pilot profile email -->
-  <string name="email">ईमेल</string>
-  <!-- Label for the pilot profile first name -->
-  <string name="first_name">प्रथम नाम</string>
-  <!-- Label for the pilot profile last name -->
-  <string name="last_name">अंतिम नाम</string>
-  <!-- Label for the pilot profile phone -->
-  <string name="pilot_profile_label_phone">फोन</string>
-  <!-- Label for the pilot profile username -->
-  <string name="pilot_profile_label_username">उपयोगकर्ता</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
-  <string name="pilot_profile_save_button">सहेजें</string>
-  <!-- Section header for the pilot profile additional info section -->
-  <string name="pilot_profile_section_additional">अतिरिक्त जानकारी</string>
-  <!-- Section header for the pilot profile personal info section -->
-  <string name="airmap_personal_information">व्यक्तिगत जानकारी</string>
-  <!-- Format for displaying a user's number of aircraft and flights -->
-  <string name="pilot_profile_statistics_format">%1$s विमान %2$s उड़ानें</string>
-  <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
-  <string name="pilot_profile_title">पायलट प्रोफाइल</string>
-  <string name="review_flight_plane_title">उड़ान योजना</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
-  <string name="review_flight_plan_details_next_button">अगले</string>
-  <string name="review_flight_plan_details_public_flight_value_true">हाँ</string>
-  <string name="review_flight_plan_details_radius">त्रिज्या</string>
-  <string name="airmap_aircraft_stats">विमान</string>
-  <string name="review_flight_plan_details_row_title_altitude">ऊंचाई</string>
-  <string name="review_flight_plan_details_row_title_duration">समाप्त होता</string>
-  <string name="review_flight_plan_details_row_title_ends">समाप्त होता</string>
-  <string name="review_flight_plan_details_row_title_public">सार्वजनिक</string>
-  <string name="review_flight_plan_details_row_title_starts">शुरू</string>
-  <string name="review_flight_plan_details_section_header_aircraft">विमान</string>
-  <string name="review_flight_plan_details_section_header_details">विवरण</string>
-  <string name="review_flight_plan_details_section_header_social">मेरी उड़ान साझा करें</string>
-  <string name="review_flight_plan_details_start_time_now">Nwo</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
-  <string name="airmap_title_activity_create_flight">उड़ान बनाएं</string>
-  <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
-  <string name="end_flight">अंत उड़ान</string>
-  <!-- Displayed for authorities that are setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_accepts_notice">डिजिटल सूचना स्वीकार करता है</string>
-  <!-- Displayed for authorities that are NOT setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_does_not_accept_notice">इस क्षेत्र में निम्न प्राधिकारी डिजिटल सूचना स्वीकार नहीं करते</string>
-  <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
-  <string name="review_flight_plan_notices_tab_section_header_no_notices">इस उड़ान के लिए कोई नोटिस नहीं हैं ।</string>
-  <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
-  <string name="airmap_digital_notice_accepted">डिजिटल नोटिस स्वीकृत</string>
-  <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
-  <string name="airmap_not_accept_notice">इस क्षेत्र में निम्न प्राधिकारी डिजिटल सूचना स्वीकार नहीं करते</string>
-  <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
-  <string name="airmap_review">समीक्षा</string>
-  <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
-  <string name="airmap_flight_notice">उड़ान सूचना</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
-  <string name="submit">जमा करें</string>
-  <string name="review_flight_plan_tab_title_digital_notice">नोटिस</string>
-  <string name="review_flight_plan_tab_title_flight">उड़ान</string>
-  <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
-  <string name="review_flight_plan_title">समीक्षा उड़ान योजना</string>
-  <!-- Label for the section header that displays all the Optional rulesets -->
-  <string name="rulesets_section_optional">वैकल्पिक</string>
-  <!-- Label for the section header that displays all the Pick One rulesets -->
-  <string name="rulesets_section_pick_one">एक उठाओ</string>
-  <!-- Label for the section header that displays all the Required rulesets -->
-  <string name="rulesets_section_required">आवश्यक</string>
-  <!-- Label for rulesets that can be optionally enabled by the user -->
-  <string name="ruleset_selection_type_optional">वैकल्पिक</string>
-  <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
-  <string name="ruleset_selection_type_pickone">एक उठाओ</string>
-  <!-- Label for rulesets that must be enabled by the user -->
-  <string name="ruleset_selection_type_required">आवश्यक</string>
-  <string name="rules_generic_title">स्थानीयता नियम</string>
-  <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-  <string name="select_aircraft">विमान का चयन करें</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
-  <string name="sms_login_code_header">एसएमएस कोड</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
-  <string name="sms_login_code_placeholder">कोड</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
-  <string name="sms_login_code_submit_button">जमा करें</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
-  <string name="sms_login_code_title">कोड की जांच करें</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
-  <string name="sms_login_phone_number_placeholder">फोन नंबर</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
-  <string name="sms_login_save_button">सहेजें</string>
-  <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
-  <string name="sms_login_title">लॉगिन</string>
-  <!-- Description for status advisory color Green -->
-  <string name="informational">जानकारी</string>
-  <!-- Description for status advisory color Orange -->
-  <string name="status_orange_description">आवश्यक कार्रवाई</string>
-  <!-- Description for status advisory color Red -->
-  <string name="flight_strictly_regulated">उड़ान कड़ाई से विनियमित</string>
-  <!-- Description for status advisory color Yellow -->
-  <string name="advisories">सलाह</string>
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <string name="tile_layer_aerial_rec_areas">हवाई मनोरंजन क्षेत्र</string>
-  <string name="tile_layer_airports">हवाई अड्डों</string>
-  <string name="tile_layer_cities">शहरों</string>
-  <string name="tile_layer_class_b">कक्षा बी नियंत्रित हवाई क्षेत्र</string>
-  <string name="tile_layer_class_c">कक्षा सी नियंत्रित हवाई क्षेत्र</string>
-  <string name="tile_layer_class_d">कक्षा डी नियंत्रित हवाई क्षेत्र</string>
-  <string name="tile_layer_class_e">वर्ग ई नियंत्रित हवाई क्षेत्र</string>
-  <string name="tile_layer_controlled_airspace">नियंत्रित हवाई क्षेत्र (B, C, D &amp; E)</string>
-  <string name="tile_layer_custom">कस्टम</string>
-  <string name="tile_layer_emergencies">पहले उत्तरदाता गतिविधि</string>
-  <string name="tile_layer_fires">आग</string>
-  <string name="tile_layer_hazard_areas">जोखिम क्षेत्रों</string>
-  <string name="tile_layer_heliports">Heliports</string>
-  <string name="tile_layer_hospitals">अस्पतालों</string>
-  <string name="tile_layer_national_parks">राष्ट्रीय उद्यान</string>
-  <string name="tile_layer_noaa">NOAA समुद्री संरक्षण क्षेत्र</string>
-  <string name="tile_layer_power_plants">विद्युत संयंत्रों</string>
-  <string name="tile_layer_prisons">जेलों</string>
-  <string name="tile_layer_private_airports">निजी हवाईअड्डे</string>
-  <string name="tile_layer_prohibited">जानि हवाई क्षेत्र</string>
-  <string name="tile_layer_restricted_airspace">वाटे हवाई क्षेत्र</string>
-  <string name="tile_layer_schools">स्कूलों</string>
-  <string name="tile_layer_tfr_faa">अस्थाई उड़ान प्रतिबंध</string>
-  <string name="tile_layer_universities">विश्वविद्यालयों</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-  <string name="traffic_alert_with_aircraft_id_and_distance_format">यातायात %1$s\nAltitude %2$s\n%3$s %4$s %5$s</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-  <string name="traffic_alert_with_aircraft_id_format">यातायात %1$s\nAltitude %2$s\n%3$s</string>
-  <!-- Name for the imperial system of measurement -->
-  <string name="units_imperial">शाही</string>
-  <!-- Name for the metric system of measurement -->
-  <string name="units_metric">मीट्रिक</string>
-  <!-- Unit and format for displaying nautical miles -->
-  <string name="units_nautical_mile_format">%s एनएम</string>
-  <!-- Unit and format for displaying speed in knots -->
-  <string name="units_speed_format_knots">%s kts</string>
-  <!-- Unit and format for displaying speed in meters per second -->
-  <string name="units_speed_format_meters_per_second">%s मी</string>
-  <!-- Unit and format for displaying speed in miles per hour -->
-  <string name="units_speed_format_miles_per_hour">%s मील प्रति घंटा</string>
-  <!-- Unit and format for displaying a speed range in meters per second -->
-  <string name="units_speed_range_format_meters_per_second">%1$s-%2$s मी</string>
-  <!-- Unit and format for displaying a speed range in miles per hour -->
-  <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s मील प्रति घंटा</string>
-  <!-- Unit and format for displaying temperature in Celcius -->
-  <string name="units_temperature_celcius_format">%1$s° c</string>
-  <!-- Unit and format for displaying temperature in Fahrenheit -->
-  <string name="units_temperature_fahrenheit_format">%1$s° f</string>
-  <!-- Possible error from keychain. -->
-  <!-- The request with the authority has been accepted -->
-  <string name="validation_accepted">मान्य</string>
-  <!-- No validation request has been filed -->
-  <string name="validation_not_requested">मांयता अनुरोध नहीं किया गया</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="validation_pending">मांयता लंबित</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="validation_rejected">अस्वीकृत अनुपलब्ध जानकारी</string>
+    <!-- 1Password Extension Error Message -->
+    <string name="end_flight_title">उड़ान समाप्ती</string>
+    <string name="submit_title">जमा करें</string>
+    <string name="review_flight_plan">उड़ान प्लान का पुनरावलोकन करें</string>
+    <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
+    <string name="airmap_airspace_advisories">हवाई-क्षेत्र परामर्श</string>
+    <!-- Label for advisories that are stup to receive digital notice -->
+    <string name="accepts_digital_notice">डिजिटल नोटिस स्वीकार करता है</string>
+    <!-- Displayed when an advisory has not provided a contact phone -->
+    <string name="no_known_number">कोई फ़ोन संख्या प्रस्तुत नहीं की गई</string>
+    <!-- Label and format for displaying the end time of temporary flight restriction -->
+    <string name="advisory_tfr_ends_format">समाप्त: %1$s</string>
+    <!-- Never ending duration for a TFR -->
+    <string name="advisory_tfr_permanent">स्थायी</string>
+    <!-- Label and format for displaying the start time of temporary flight restriction -->
+    <string name="airmap_starts">आरंभ: %1$s</string>
+    <!-- Format and unit for wildfire advisory in the area unit acres -->
+    <string name="advisory_wildfire_size_format_acres">%1$s एकड़</string>
+    <!-- Format and unit for wildfire advisory in the area unit hectares -->
+    <string name="advisory_wildfire_size_format_hectares">%1$s हैक्टेयर</string>
+    <!-- Label for wildfire advisory cells where size is unknown -->
+    <string name="unknown_size">नामालूम आकार</string>
+    <!-- Call to action when a user has not selected an aircraft -->
+    <string name="aircraft_select_aircraft">विमान का चयन करें</string>
+    <!-- Title to display for the view creating a new aircraft -->
+    <string name="airmap_title_activity_create_aircraft">विमान की संरचना करें</string>
+    <!-- Title to display for the view when updating an existing aircraft -->
+    <string name="airmap_edit_aircraft">विमान अपडेट करें</string>
+    <!-- Name for airspace type Aerial Recreational Area -->
+    <string name="airspace_type_aerial_rec_area">हवाई मनोरंजन क्षेत्र</string>
+    <!-- Name for airspace type Airport -->
+    <string name="airspace_type_airport">हवाई-अड्डा</string>
+    <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
+    <string name="airspace_type_ama_field">AMA फ़ील्ड</string>
+    <!-- Name for airspace type City -->
+    <string name="airspace_type_city">शहर</string>
+    <!-- Name for airspace type Controlled Airspace -->
+    <string name="airspace_type_controlled">नियंत्रित हवाई-क्षेत्र</string>
+    <!-- Name for airspace type Country -->
+    <string name="airspace_type_country">देश</string>
+    <!-- Name for airspace type County -->
+    <string name="airspace_type_county">काउंटी</string>
+    <!-- Name for airspace type Custom -->
+    <string name="airspace_type_custom">कस्टम</string>
+    <!-- Name for airspace type Embassy -->
+    <string name="airspace_type_embassy">दूतावास</string>
+    <!-- Name for airspace type Emergency -->
+    <string name="airspace_type_emergency">प्रथम उत्तरदाता गतिविधि</string>
+    <!-- Name for airspace type Federal Building -->
+    <string name="airspace_type_federal_building">संघीय भवन</string>
+    <!-- Name for airspace type Flight Information Region -->
+    <string name="airspace_type_fir">उड़ान जानकारी क्षेत्र</string>
+    <!-- Name for airspace type Fire -->
+    <string name="airspace_type_fire">अग्नि</string>
+    <!-- Name for airspace type Gliderport -->
+    <string name="airspace_type_gliderport">ग्लाइडर पोर्ट</string>
+    <!-- Name for airspace type Hazard Area -->
+    <string name="airspace_type_hazard_area">संकट क्षेत्र</string>
+    <!-- Name for airspace type Heliport -->
+    <string name="airspace_type_heliport">हेलीपोर्ट</string>
+    <!-- Name for airspace type Highway -->
+    <string name="airspace_type_highway">राजमार्ग</string>
+    <!-- Name for airspace type Hospital -->
+    <string name="airspace_type_hospital">हॉस्पिटल</string>
+    <!-- Name for airspace type Industrial Property -->
+    <string name="airspace_type_industrial_property">औद्योगिक संपत्ति</string>
+    <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
+    <string name="airspace_type_japan_base">जापान बेस एडमिन</string>
+    <!-- Name for airspace type Military Property -->
+    <string name="airspace_type_military_property">सैन्य संपत्ति</string>
+    <!-- Name for airspace type National Park -->
+    <string name="airspace_type_national_park">राष्ट्रीय पार्क</string>
+    <!-- Name for airspace type NOTAM -->
+    <string name="airspace_type_notam">NOTAM</string>
+    <!-- Name for airspace type Police Station -->
+    <string name="airspace_type_police_station">पुलिस थाना</string>
+    <!-- Name for airspace type Powerline -->
+    <string name="airspace_type_powerline">ऊर्जा लाईन</string>
+    <!-- Name for airspace type Power Plant -->
+    <string name="airspace_type_power_plant">ऊर्जा संयंत्र</string>
+    <!-- Name for airspace type Prison -->
+    <string name="airspace_type_prison">जेल</string>
+    <!-- Name for airspace type Railway -->
+    <string name="airspace_type_railway">रेलवे</string>
+    <!-- Name for airspace type Residential Property -->
+    <string name="airspace_type_residential_property">आवासीय संपत्ति</string>
+    <!-- Name for airspace type School -->
+    <string name="airspace_type_school">स्कूल</string>
+    <!-- Name for airspace type Seaplane Base -->
+    <string name="airspace_type_seaplane_base">जलविमान बेस</string>
+    <!-- Name for airspace type Special Use Airspace -->
+    <string name="airspace_type_special_use">विशेष उपयोग हवाई-क्षेत्र</string>
+    <!-- Name for airspace type Stadium -->
+    <string name="airspace_type_stadium">स्टेडियम</string>
+    <!-- Name for airspace type State -->
+    <string name="airspace_type_state">राज्य</string>
+    <!-- Name for airspace type Subprefecture -->
+    <string name="airspace_type_subprefecture">उप-प्रशासक प्रान्त</string>
+    <!-- Name for airspace type Supercity (Japan related) -->
+    <string name="airspace_type_supercity">सुपरसिटी</string>
+    <!-- Name for airspace type FAA Temporary Flight Restriction -->
+    <string name="airspace_type_tfr_faa">अस्थाई उड़ान प्रतिबन्ध</string>
+    <!-- Name for airspace type Ultralight Field -->
+    <string name="airspace_type_ulm_field">अल्ट्रालाइट फ़ील्ड</string>
+    <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
+    <string name="airspace_type_unclassified">अवर्गीकृत</string>
+    <!-- Name for airspace type University -->
+    <string name="airspace_type_university">महाविद्यालय</string>
+    <!-- Name for airspace type Waterway -->
+    <string name="airspace_type_waterway">जलमार्ग</string>
+    <!-- Name for airspace type WildFire -->
+    <string name="airspace_type_wildfire">अग्निकाण्ड</string>
+    <!-- No comment provided by engineer. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- The request with the authority has been accepted -->
+    <string name="authorization_accepted">स्वीकृत</string>
+    <!-- The request with the authority has been cancelled -->
+    <string name="authorization_cancelled_submission">अनुमति रद्द की गई</string>
+    <!-- The request with the authority has not been requested -->
+    <string name="authorization_not_requested">अनुमति का अनुरोध नहीं किया गया</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="authorization_pending">अनुमति विचाराधीन है</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="authorization_rejected">अनुमति अस्वीकृत</string>
+    <!-- The request with the authority will be rejected once the flight plan is submitted -->
+    <string name="authorization_rejected_upon_submission">प्रस्तुति के पश्चात अस्वीकृत</string>
+    <!-- The request with the authority will be accepted once the flight plan is submitted -->
+    <string name="authorization_upon_submission">प्रस्तुति के पश्चात स्वीकृत</string>
+    <!-- Login message when a user's account has been blacklisted. -->
+    <string name="invalid_email_domain">आपका खाता काली सूची में लिखा गया है।  कृप्या security@airmap.com से संपर्क करें।</string>
+    <!-- Login message when a user must verify their email address -->
+    <string name="verify_email_log_in_again">आपके ईमेल पते का सत्यापन होना शेष है।  कृप्या अपना इन-बॉक्स देखें।</string>
+    <!-- Login message when a user failed to authenticate -->
+    <string name="auth_error_unauthorized">अनधिकृत</string>
+    <!-- Navigation title for failed login attempt -->
+    <string name="auth_failed_login_title">चेतावनी</string>
+    <!-- Abbreviation for East -->
+    <string name="cardinal_direction_e">E</string>
+    <!-- Abbreviation for East North East -->
+    <string name="cardinal_direction_ene">ENE</string>
+    <!-- Abbreviation for East South East -->
+    <string name="cardinal_direction_ese">ESE</string>
+    <!-- Abbreviation for North -->
+    <string name="cardinal_direction_n">N</string>
+    <!-- Abbreviation for North East -->
+    <string name="cardinal_direction_ne">NE</string>
+    <!-- Abbreviation for North North East -->
+    <string name="cardinal_direction_nnne">NNE</string>
+    <!-- Abbreviation for North North West -->
+    <string name="cardinal_direction_nnw">NNW</string>
+    <!-- Abbreviation for North West -->
+    <string name="cardinal_direction_nw">NW</string>
+    <!-- Abbreviation for South -->
+    <string name="cardinal_direction_s">S</string>
+    <!-- Abbreviation for South East -->
+    <string name="cardinal_direction_se">SE</string>
+    <!-- Abbreviation for South South East -->
+    <string name="cardinal_direction_sse">SSE</string>
+    <!-- Abbreviation for South South West -->
+    <string name="cardinal_direction_ssw">SSW</string>
+    <!-- Abbreviation for South West -->
+    <string name="cardinal_direction_sw">SW</string>
+    <!-- Abbreviation for West -->
+    <string name="cardinal_direction_w">W</string>
+    <!-- Abbreviation for West North West -->
+    <string name="cardinal_direction_wnw">WNW</string>
+    <!-- Abbreviation for West South West -->
+    <string name="cardinal_direction_wsw">WSW</string>
+    <!-- Bundle name -->
+    <string name="cfbundlename">${PRODUCT_NAME}</string>
+    <!-- Forgot password -->
+    <string name="com_auth0_lock_action_forgot_password">अपना पासवर्ड याद नहीं है?</string>
+    <!-- tos & privacy -->
+    <string name="com_auth0_lock_sign_up_terms">साइन-अप करने से आप हमारे नियमों से सहमत है। \n सेवा और गोपनियता नीति</string>
+    <!-- forgot password email sent -->
+    <string name="com_auth0_lock_db_change_password_message_success">अपना पासवर्ड पुन: स्थापित करने हेतु हमने आपको अभी-अभी एक ईमेल भेजा है।</string>
+    <!-- User logged in -->
+    <string name="com_auth0_lock_database_login_success_message">आपने सफलतापूर्वक लॉग-इन किया है।</string>
+    <!-- Login Switch -->
+    <string name="com_auth0_lock_mode_log_in">लॉग-इन</string>
+    <!-- Signup Switch -->
+    <string name="com_auth0_lock_mode_sign_up">साइन-अप</string>
+    <!-- Social separator -->
+    <string name="com_auth0_lock_forms_separator">अथवा</string>
+    <!-- User signed up -->
+    <string name="com.auth0.lock.database.signup.success.message">साइन-अप करने के लिये धन्यवाद</string>
+    <!-- Cancel -->
+    <string name="com.auth0.lock.database.tos.sheet.cancel">रद्द करें</string>
+    <!-- Privacy -->
+    <string name="com.auth0.lock.database.tos.sheet.privacy">गोपनियता नीति</string>
+    <!-- ToS -->
+    <string name="com.auth0.lock.database.tos.sheet.title">सेवा की शर्तें</string>
+    <!-- enter corporate credentials -->
+    <string name="com.auth0.lock.enterprise.sso.message">कृप्या अपनी कॉर्पोरेट जानकारियां एंटर करें</string>
+    <!-- enter corporate credentials of domain %@{email domain} -->
+    <string name="com.auth0.lock.enterprise.sso.message_at">कृप्या %1$s पर अपनी कॉर्पोरेट जानकारियां एंटर करें</string>
+    <!-- SSO Header -->
+    <string name="com.auth0.lock.enterprise.sso.title">सिंगल साइन-ऑन सक्षम किया गया है</string>
+    <!-- user is blocked -->
+    <string name="com.auth0.lock.error.authentication.blocked_user">उपयोगकर्ता ब्लॉक किया गया है।</string>
+    <!-- Generic login error -->
+    <string name="com.auth0.lock.error.authentication.fallback">हमें खेद है कि लॉग-इन का प्रयास करते समय कुछ गलत हो गया है।</string>
+    <!-- invalid_user_password -->
+    <string name="com_auth0_lock_db_login_error_invalid_credentials_message">गलत ईमेल अथवा पासवर्ड</string>
+    <!-- a0.mfa_invalid_code -->
+    <string name="com.auth0.lock.error.authentication.mfa_invalid_code">गलत कोड</string>
+    <!-- No valid connection -->
+    <string name="com.auth0.lock.error.authentication.no_connection">हमें खेद है कि इस उपयोगकर्ता के लिये हमें कोई मान्य कनैक्शन नहीं मिल पाया है।</string>
+    <!-- password_change_required -->
+    <string name="com.auth0.lock.error.authentication.password_change_required">आपको अपना पासवर्ड अपडेट करने की आवश्यकता है क्योंकि आप पहली बार लॉग-इन कर रहें है, अथवा क्योंकि आपके पासवर्ड की अवधि समाप्त हो गई है।</string>
+    <!-- password_leaked -->
+    <string name="com.auth0.lock.error.authentication.password_leaked">लॉग-इन ब्लॉक हो गया है क्योंकि आपका पासवर्ड किसी अन्य वेब-साईट में लीक हो गया है।  ईमेल के माध्यम से इसे अनब्लॉक करने के लिये आपको आवश्यक निर्देश भेज दिये गये हैं।</string>
+    <!-- too_many_attempts -->
+    <string name="com.auth0.lock.error.authentication.too_many_attempts">सिलसिलेवार कई लॉग-इन प्रयासों से पश्चात आपका खाता ब्लॉक कर दिया गया है।</string>
+    <!-- Generic error -->
+    <string name="com_auth0_lock_unrecoverable_error_title">कुछ गलत हो गया है। \nकृप्या तकनीकी सपोर्ट से संपर्क करें।</string>
+    <!-- Generic password error -->
+    <string name="com_auth0_lock_db_message_change_password_error">हमें खेद है, पासवर्ड बदलने का अनुरोध करते समय कुछ गलत हो गया है।</string>
+    <!-- At least N characters -->
+    <string name="com_auth0_lock_password_strength_chars_length">कम से कम %d अक्षरों की लंबाई</string>
+    <!-- At least n groups -->
+    <string name="com.auth0.lock.error.password.contain_at_least">निम्न %d प्रकारों के अक्षरों में से कम से कम %d अक्षर सम्मिलित है:</string>
+    <!-- Lowercase letters -->
+    <string name="com_auth0_lock_password_strength_lowercase_letters">छोटे अक्षर (a-z)</string>
+    <!-- Must no be empty -->
+    <string name="com.auth0.lock.error.password.non_empty">गैर-रिक्त पासवर्ड आवश्यक है</string>
+    <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
+    <string name="com_auth0_lock_password_strength_identical_chars">एक पंक्ति में %1$d से अधिक एक जैसे अक्षर (उदाहरणार्थ, \"%2$s\") अनुमत नहीं है।</string>
+    <!-- Numbers -->
+    <string name="com_auth0_lock_password_strength_numbers">संख्या (अर्थात 0-9)</string>
+    <!-- N groups -->
+    <string name="com_auth0_lock_password_strength_title_must_have">निम्न सम्मिलित होने चाहिये:</string>
+    <!-- Special Characters -->
+    <string name="com_auth0_lock_password_strength_special_chars">विशेष अक्षर (उदाहरणार्थ !@#$%^&amp;*)</string>
+    <!-- Uppercase letters -->
+    <string name="com_auth0_lock_password_strength_uppercase_letters">बड़े अक्षर (A-Z)</string>
+    <!-- Passwordless link invalid. -->
+    <string name="com.auth0.lock.error.passwordless.invalid_link">हमें खेद है कि आपके लिंक के साथ कोई समस्या है।  कृप्या नये के लिये अनुरोध करें।</string>
+    <!-- Passwordless sign ups disabled. -->
+    <string name="com.auth0.lock.error.passwordless.signup_disabled">इस खाते के लिये नये साइन-अप असक्षम कर दिये गये हैं, कृप्या अपने ऐडमिनिस्ट्रेटर से संपर्क करें।</string>
+    <!-- Recoverable error button -->
+    <string name="com.auth0.lock.error.recoverable.button">पुन: प्रयास करें</string>
+    <!-- Recoverable error message -->
+    <string name="com.auth0.lock.error.recoverable.message">कृप्या अपना इंटरनेट कनैक्शन चैक करें।</string>
+    <!-- Recoverable error title -->
+    <string name="com.auth0.lock.error.recoverable.title">लॉग-इन बॉक्स लोड नहीं किया जा सकता है</string>
+    <!-- Generic sign up error -->
+    <string name="com_auth0_lock_db_sign_up_error_message">हमें खेद है कि साइन-अप का प्रयास करते समय कुछ गलत हो गया है।</string>
+    <!-- invalid_password -->
+    <string name="com_auth0_lock_input_error_password">पासवर्ड अमान्य है।</string>
+    <!-- password_dictionary_error -->
+    <string name="com.auth0.lock.error.signup.password_dictionary_error">पासवर्ड अत्यंत कॉमन है।</string>
+    <!-- password_history -->
+    <string name="com_auth0_lock_db_signup_password_already_used_error_message">पासवर्ड पहले प्रयोग किया जा चुका है।</string>
+    <!-- password_no_user_info_error -->
+    <string name="com.auth0.lock.error.signup.password_no_user_info_error">पासवर्ड उपयोगकर्ता की जानकारी पर आधारित है।</string>
+    <!-- password_strength_error -->
+    <string name="com_auth0_lock_db_signup_password_not_strong_error_message">पासवर्ड अत्यंत कमजोर है।</string>
+    <!-- user_exists -->
+    <string name="com_auth0_lock_db_signup_user_already_exists_error_message">उपयोगकर्ता पहले ही मौजूद है।</string>
+    <!-- Unrecoverable error button -->
+    <string name="com.auth0.lock.error.unrecoverable.button">सपोर्ट से संपर्क करें।</string>
+    <!-- Default error -->
+    <string name="com.auth0.lock.error.unrecoverable.default">कुछ गलत हो गया है।\nकृप्या तकनीकी सपोर्ट से संपर्क करें।</string>
+    <!-- Invalid client or domain -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">आपकी Auth0 जानकारियां, ClientId और/अथवा डोमेन अमान्य हैं।</string>
+    <!-- Your options configuration failed with: %@{error} -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_options">आपके विकल्पों के कोन्फ़िग्रेशन निम्न के साथ फ़ेल हो गये हैं: %1$s</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message">लॉग-इन बॉक्स कोन्फ़िग्रेशन का समाधान करते हुये कोई अप्रत्याशित त्रुटि उत्पन्न हो गई थी।</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message.no_action">लॉग-इन बॉक्स कोन्फ़िग्रेशन का समाधान करते हुये कोई अप्रत्याशित त्रुटि उत्पन्न हो गई थी, कृप्या सपोर्ट से संपर्क करें।</string>
+    <!-- No connections -->
+    <string name="com.auth0.lock.error.unrecoverable.no_connections">इस ग्राहक के लिये कोई सत्यापन विधि नहीं मिली है।  कृप्या अपनी ग्राहक व्यवस्था का निरीक्षण करें।</string>
+    <!-- Unrecoverable error title -->
+    <string name="com.auth0.lock.error.unrecoverable.title">आपके अनुरोध का समाधान नहीं किया जा सका।</string>
+    <!-- Forgot Password message -->
+    <string name="com_auth0_lock_forgot_message">कृप्या अपना ईमेल और नया पासवर्ड एंटर करें।  पासवर्ड परिवर्तन की पुष्टि करने के लिये हम आपको एक ईमेल भेजेंगे।</string>
+    <!-- Forgot Password title -->
+    <string name="com_auth0_lock_title_change_password">पासवर्ड पुन: स्थापित करें</string>
+    <!-- Header Title -->
+    <string name="com.auth0.lock.header.default_title">Auth0</string>
+    <!-- invalid email -->
+    <string name="com_auth0_lock_input_error_email">एक मान्य ईमेल पता होना चाहिये</string>
+    <!-- Email placeholder -->
+    <string name="com_auth0_lock_hint_email">ईमेल</string>
+    <!-- Username or Email placeholder -->
+    <string name="com.auth0.lock.input.email_username.placeholder">उपयोगकर्ता का नाम/ईमेल</string>
+    <!-- empty input -->
+    <string name="com.auth0.lock.input.empty.error">रिक्त नहीं होना चाहिये</string>
+    <!-- generic input error -->
+    <string name="com.auth0.lock.input.generic.error">अमान्य इनपुट</string>
+    <!-- invalid otp -->
+    <string name="com.auth0.lock.input.otp.error">मान्य अंकीय कोड होना चाहिये</string>
+    <!-- OTP placeholder -->
+    <string name="com.auth0.lock.input.otp.placeholder">कोड</string>
+    <!-- Password placeholder -->
+    <string name="com_auth0_lock_hint_password">पासवर्ड</string>
+    <!-- invalid phone -->
+    <string name="com.auth0.lock.input.phone.error">मान्य फ़ोन संख्या होनी चाहिये</string>
+    <!-- Phone placeholder -->
+    <string name="com.auth0.lock.input.phone.placeholder">फ़ोन संख्या</string>
+    <!-- policy violation -->
+    <string name="com.auth0.lock.input.policy.error">पासवर्ड नीति के अनुकूल नहीं है</string>
+    <!-- invalid username -->
+    <string name="com.auth0.lock.input.username.error">केवल %d से %d अक्षरांकीय अक्षर और \'_\' के भीतर ही हो सकते हैं।</string>
+    <!-- Username placeholder -->
+    <string name="com.auth0.lock.input.username.placeholder">उपयोगकर्ता का नाम</string>
+    <!-- Multifactor message -->
+    <string name="com.auth0.lock.multifactor.message">कृप्या अपने मोबाइल एप्लीकेशन द्वारा उत्पन्न किया गया सत्यापन कोड एंटर करें।</string>
+    <!-- Multifactor title -->
+    <string name="com.auth0.lock.multifactor.title">दो चरण सत्यापन</string>
+    <!-- Country tableview navigation header -->
+    <string name="com.auth0.lock.passwordless.sms.country.header">अपना देश चुनें</string>
+    <!-- CountryCodes TableView searchbar placeholder -->
+    <string name="com.auth0.lock.passwordless.sms.country.search">सर्च</string>
+    <!-- Amazon -->
+    <string name="com.auth0.lock.strategy.localized.amazon">अमेज़न</string>
+    <!-- Aol -->
+    <string name="com.auth0.lock.strategy.localized.aol">AOL</string>
+    <!-- Baidu -->
+    <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
+    <!-- Bitbucket -->
+    <string name="com.auth0.lock.strategy.localized.bitbucket">बिटबकेट</string>
+    <!-- Dropbox -->
+    <string name="com.auth0.lock.strategy.localized.dropbox">ड्रॉपबॉक्स</string>
+    <!-- Dwolla -->
+    <string name="com.auth0.lock.strategy.localized.dwolla">ड्वोल्ला</string>
+    <!-- Ebay -->
+    <string name="com.auth0.lock.strategy.localized.ebay">ईबे</string>
+    <!-- Evernote -->
+    <string name="com.auth0.lock.strategy.localized.evernote">ऐवरनोट</string>
+    <!-- EvernoteSandbox -->
+    <string name="com.auth0.lock.strategy.localized.evernote_sandbox">ऐवरनोट (सैंडबॉक्स)</string>
+    <!-- Exact -->
+    <string name="com.auth0.lock.strategy.localized.exact">एग्जैक्ट</string>
+    <!-- Facebook -->
+    <string name="com.auth0.lock.strategy.localized.facebook">फ़ेसबुक</string>
+    <!-- Fitbit -->
+    <string name="com.auth0.lock.strategy.localized.fitbit">फिटबिट</string>
+    <!-- Github -->
+    <string name="com.auth0.lock.strategy.localized.github">गिटहब</string>
+    <!-- Google -->
+    <string name="com.auth0.lock.strategy.localized.google">गूगल</string>
+    <!-- Instagram -->
+    <string name="com.auth0.lock.strategy.localized.instagram">इंस्टाग्राम</string>
+    <!-- Linkedin -->
+    <string name="com.auth0.lock.strategy.localized.linkedin">लिंकडइन</string>
+    <!-- Microsoft -->
+    <string name="com.auth0.lock.strategy.localized.microsoft">माइक्रोसॉफ्ट खाता</string>
+    <!-- Miicard -->
+    <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
+    <!-- Paypal -->
+    <string name="com.auth0.lock.strategy.localized.paypal">पेपाल</string>
+    <!-- PaypalSandbox -->
+    <string name="com.auth0.lock.strategy.localized.paypal_sandbox">पेपाल (सैंडबॉक्स)</string>
+    <!-- PlanningCenter -->
+    <string name="com.auth0.lock.strategy.localized.planning_center">योजना केंद्र</string>
+    <!-- RenRen -->
+    <string name="com.auth0.lock.strategy.localized.renren">人人</string>
+    <!-- Salesforce -->
+    <string name="com.auth0.lock.strategy.localized.salesforce">सेल्सफ़ोर्स</string>
+    <!-- SalesforceCommunity -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_community">सेल्सफ़ोर्स समुदाय</string>
+    <!-- SalesforceSandbox -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">सेल्सफ़ोर्स (सैंडबॉक्स)</string>
+    <!-- Shopify -->
+    <string name="com.auth0.lock.strategy.localized.shopify">शोपीफ़ाई</string>
+    <!-- Soundcloud -->
+    <string name="com.auth0.lock.strategy.localized.soundcloud">साउंडक्लाउड</string>
+    <!-- TheCity -->
+    <string name="com.auth0.lock.strategy.localized.the_city">द सिटी</string>
+    <!-- TheCitySandbox -->
+    <string name="com.auth0.lock.strategy.localized.the_city_sandbox">द सिटी (सैंडबॉक्स)</string>
+    <!-- ThirtySevenSignals -->
+    <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37 सिग्नल</string>
+    <!-- Twitter -->
+    <string name="com.auth0.lock.strategy.localized.twitter">ट्विटर</string>
+    <!-- Vkontakte -->
+    <string name="com.auth0.lock.strategy.localized.vkontakte">व्कोंटकते</string>
+    <!-- Weibo -->
+    <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
+    <!-- Wordpress -->
+    <string name="com.auth0.lock.strategy.localized.wordpress">वर्डप्रैस</string>
+    <!-- Yahoo -->
+    <string name="com.auth0.lock.strategy.localized.yahoo">याहू</string>
+    <!-- Yammer -->
+    <string name="com.auth0.lock.strategy.localized.yammer">यामर</string>
+    <!-- Yandex -->
+    <string name="com.auth0.lock.strategy.localized.yandex">YANDEX</string>
+    <!-- Log in with %@{strategy} -->
+    <string name="com_auth0_lock_social_log_in">%1$s के साथ लॉग-इन करें</string>
+    <!-- Sign up with %@{strategy} -->
+    <string name="com_auth0_lock_social_sign_up">%1$s के साथ साइन-अप करें</string>
+    <!-- Login Button title -->
+    <string name="com_auth0_lock_action_log_in">लॉग-इन</string>
+    <!-- Send 2fa code -->
+    <string name="com.auth0.lock.submit.send_code.title">भेजें</string>
+    <!-- Send Email button title -->
+    <string name="com_auth0_lock_action_send_email">ईमेल भेजें</string>
+    <!-- Signup Button title -->
+    <string name="com_auth0_lock_action_sign_up">साइन-अप</string>
+    <!-- Passwordless code reminder action -->
+    <string name="com.auth0.passwordless.code.reminder">कोड नहीं मिला?</string>
+    <!-- Passwordless code sent by email to %@{identifier} -->
+    <string name="com.auth0.passwordless.email.code.sent">%1$s पर कोड सहित एक ईमेल भेज दिया गया है।</string>
+    <!-- Passwordless email title -->
+    <string name="com.auth0.passwordless.email.title">साइन-इन अथवा खाता तैयार करने के लिये अपना ईमेल एंटर करें।</string>
+    <!-- Passwordless email title with social -->
+    <string name="com.auth0.passwordless.email.title.social">अन्यथा, साइन-इन अथवा खाता तैयार करने के लिये अपना ईमेल एंटर करें।</string>
+    <!-- Passwordless link reminder action -->
+    <string name="com.auth0.passwordless.link.reminder">लिंक नहीं मिला?</string>
+    <!-- Passwordless link sent to %@{identifier} -->
+    <string name="com.auth0.passwordless.link.sent">साइन-इन करने के लिये हमनें आपको %1$s पर लिंक भेजा है।</string>
+    <!-- Passwordless code sent by sms to %@{identifier} -->
+    <string name="com.auth0.passwordless.sms.code.sent">%1$s पर कोड सहित एक SMS भेज दिया गया है।</string>
+    <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
+    <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
+    <!-- CountryCodes TableViewCell label %@{localizedName} -->
+    <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
+    <!-- Passwordless sms title -->
+    <string name="com.auth0.passwordless.sms.title">साइन-इन अथवा खाता तैयार करने के लिये अपना ईमेल एंटर करें।</string>
+    <!-- Passwordless sms title with social -->
+    <string name="com.auth0.passwordless.sms.title.social">अन्यथा, साइन-इन अथवा खाता तैयार करने के लिये अपना फ़ोन एंटर करें</string>
+    <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
+    <string name="create_aircraft_make_and_model">निर्माण और मॉडल</string>
+    <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
+    <string name="airmap_nickname">उपनाम</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
+    <string name="create_aircraft_save_button">सेव</string>
+    <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
+    <string name="create_aircraft">विमान की संरचना करें</string>
+    <!-- Request cancelled error -->
+    <string name="error_cancelled">पूरा करने से पूर्व रद्द करने का अनुरोध करें</string>
+    <!-- A conflict exists with the attempted request -->
+    <string name="error_conflict">एक टकराव मौजूद है</string>
+    <!-- A generic server error message with an associated error code -->
+    <string name="error_generic_format">सर्वर ने एक त्रुटि लौटाई है।  (%s)</string>
+    <!-- Response serialization failure error -->
+    <string name="error_serialization">सर्वर ने एक संसाधित न किये जाने योग्य उत्तर लौटाया है।</string>
+    <!-- Server failure error -->
+    <string name="error_server">सर्वर आपका अनुरोध पूरा नहीं कर सका है।</string>
+    <!-- Authorization failure error -->
+    <string name="error_unauthorized">अनधिकृत  कृप्या लॉग-इन विवरण चेक करें।</string>
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
+    <string name="faqs">अक्सर पूछे जाने वाले प्रश्न</string>
+    <string name="flight_data_cell_button_done">हो गया</string>
+    <string name="now">अब</string>
+    <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
+    <string name="airmap_polygon">क्षेत्र</string>
+    <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
+    <string name="airmap_path">मार्ग</string>
+    <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
+    <string name="airmap_circle">पॉइंट</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
+    <string name="flight_drawing_next_button">अगला</string>
+    <!-- The radius around a point-based flight's center -->
+    <string name="airmap_buffer">त्रिज्या</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
+    <string name="flight_drawing_title">उड़ान की संरचना करें</string>
+    <!-- Call to action to fine-tune the geometry of a flight. -->
+    <string name="airmap_done_drawing_tip">किसी पॉइंट को हिलाने के लिये ड्रैग करें।  कोई नया पॉइंट जोड़ने के लिये कोई मध्य-पॉइंट ड्रैग करें।</string>
+    <!-- Call to action to drag a point to the trash to delete. -->
+    <string name="airmap_delete_tip">मिटाने के लिये पॉइंट को ट्रेश तक ड्रैग करें।</string>
+    <!-- Call to action to draw an area-based flight. -->
+    <string name="airmap_draw_freehand_area">उड़ान क्षेत्र तैयार करें</string>
+    <!-- Call to action to draw a path-based flight. -->
+    <string name="airmap_draw_freehand_path">उड़ान मार्ग तैयार करें</string>
+    <!-- Call to action to drag the center position of a point-based flight. -->
+    <string name="flight_drawing_tooltip_cta_postiion_point">अपना उड़ान क्षेत्र स्थापित करने हेतु केंद्र बिन्दु को ड्रैग करें।</string>
+    <!-- Call to action to tap the icon to begin drawing a flight area. -->
+    <string name="airmap_freehand_tip_area">उड़ान क्षेत्र तैयार करने हेतु हाथ के आइकॉन पर टैप करें।</string>
+    <!-- Call to action to tap the icon to begin drawing a flight path. -->
+    <string name="airmap_freehand_tip_path">उड़ान मार्ग तैयार करने हेतु हाथ के आइकॉन पर टैप करें।</string>
+    <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
+    <string name="airmap_flight_area_overlap_permit_conflict">उड़ान क्षेत्र विरोधाभासी परमिट आवश्यकता क्षेत्र के साथ ओवरलैप नहीं कर सकता हैं।</string>
+    <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
+    <string name="airmap_error_overlap">अमान्य उड़ान क्षेत्र  उड़ान क्षेत्र व्यवस्थित करें ताकि यह स्वयं पर ही ओवरलैप न हो जाये।</string>
+    <!-- The width of a path-based flight extending outward from the centerline -->
+    <string name="airmap_width">चोड़ाई</string>
+    <!-- Title for the button to advance to the next screen -->
+    <string name="airmap_next">अगला</string>
+    <!-- Title for the button to save and create the flight -->
+    <string name="airmap_save">सेव</string>
+    <!-- Call to action title for the user to select an aircraft -->
+    <string name="flight_plan_row_title_aircraft">विमान चयन करें</string>
+    <!-- Title for the row displaying the name of the aircraft -->
+    <string name="flight_plan_row_title_aircraft_name">विमान</string>
+    <!-- Title for the row displaying flight plan altitude -->
+    <string name="airmap_max_altitude">ऊंचाई</string>
+    <!-- Title for the row displaying flight plan buffer -->
+    <string name="flight_plan_row_title_buffer">प्रतिरोधक</string>
+    <!-- Title for the row displaying flight plan duration -->
+    <string name="airmap_duration">अवधि</string>
+    <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
+    <string name="flight_plan_row_title_max_altitude">अधिकतम ऊंचाई AGL</string>
+    <!-- Call to action title for the user to select a pilot profile -->
+    <string name="select_pilot_profile">पायलट प्रोफ़ाइल चयन करें</string>
+    <!-- Title for the row displaying flight plan radius -->
+    <string name="flight_plan_row_title_radius">त्रिज्या</string>
+    <!-- Title for the row displaying flight plan start time -->
+    <string name="starts">आरंभ होना</string>
+    <!-- Title for the section displaying the pilot and aircraft details -->
+    <string name="pilot_and_aircraft_header">पायलट और विमान</string>
+    <!-- Title for the section displaying flight plan details -->
+    <string name="flight_details">उड़ान</string>
+    <!-- Title for the section displaying social sharing features -->
+    <string name="airmap_share_my_flight">मेरी उड़ान साझा करें</string>
+    <string name="date_and_time">तिथि और समय</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketclosederror">दूरस्थ साथी द्वारा सॉकेट बंद की गई</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketconnecttimeouterror">आयोजित करने के लिये संपर्क करने हेतु प्रयास समय समाप्त</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketothererror">सॉकेट FD से सॉकेट तैयार करने का प्रयास असफल रहा  getpeername() असफल रहा</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadmaxedouterror">पढ़ाई की कार्यवाही अधिकतम निर्धारित लंबाई तक पहुंची</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadtimeouterror">पढ़ाई की कार्यवाही का समय समाप्त</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketwritetimeouterror">लिखने की कार्यवाही का समय समाप्त</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketclosederror">सॉकेट बंद हुआ</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketsendtimeouterror">भेजने की कार्यवाही का समय समाप्त</string>
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
+    <string name="manual_authorization">प्रस्तुति पर्यंत वास्तविक अनुमति</string>
+    <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
+    <string name="manufacturers_title">निर्माता</string>
+    <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
+    <string name="models_title">मॉडल</string>
+    <!-- No comment provided by engineer. -->
+    <!-- Table section title for other selectable countries -->
+    <string name="phone_country_section_other_country">अन्य</string>
+    <!-- Table section title for the currently selected country -->
+    <string name="phone_country_section_selected_country">चयनित देश</string>
+    <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
+    <string name="phone_country_title">देश का चयन करें</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
+    <string name="phone_verification_code_header">SMS कोड</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
+    <string name="phone_verification_code_placeholder">कोड</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
+    <string name="phone_verification_code_title">फ़ोन संख्या सत्यापित करें</string>
+    <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
+    <string name="airmap_phone_number_disclaimer">अपनी संख्या प्रस्तुत करने से आप इस संख्या पर अपनी उड़ानों से संबन्धित संदेश प्राप्त करना स्वीकार करते/करती हैं।  वाहक संदेश और डैटा शुल्क लागू हो सकते हैं। \n\nआपका डिजिटल नोटिस सफलतापूर्वक प्रस्तुत होने पर AirMap आपको एक पाठ्य संदेश भेजेगा।\n</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
+    <string name="phone_verification_phone">फ़ोन संख्या</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
+    <string name="phone_verification_request_new_sms_code">नये SMS कोड का अनुरोध करें</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
+    <string name="phone_verification_save_button">सेव</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
+    <string name="phone_verification_submit_button">जमा करें</string>
+    <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
+    <string name="phone_number_verification">फ़ोन संख्या सत्यापन</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
+    <string name="phone_verification_try_again">पुन: प्रयास करें</string>
+    <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
+    <string name="phone_verification_verification_failed">फ़ोन संख्या सत्यापन असफल रहा</string>
+    <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
+    <string name="pilot_full_name_format">%1$s %2$s</string>
+    <!-- Table row label for FAA registration number -->
+    <string name="pilot_profile_faa_registration">FAA पंजीकरण संख्या</string>
+    <!-- Label for the pilot profile email -->
+    <string name="email">ईमेल</string>
+    <!-- Label for the pilot profile first name -->
+    <string name="first_name">नाम</string>
+    <!-- Label for the pilot profile last name -->
+    <string name="last_name">कुलनाम</string>
+    <!-- Label for the pilot profile phone -->
+    <string name="pilot_profile_label_phone">फ़ोन</string>
+    <!-- Label for the pilot profile username -->
+    <string name="pilot_profile_label_username">उपयोगकर्ता का नाम</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
+    <string name="pilot_profile_save_button">सेव</string>
+    <!-- Section header for the pilot profile additional info section -->
+    <string name="pilot_profile_section_additional">अतिरिक्त जानकारी</string>
+    <!-- Section header for the pilot profile personal info section -->
+    <string name="airmap_personal_information">निजी जानकारी</string>
+    <!-- Format for displaying a user's number of aircraft and flights -->
+    <string name="pilot_profile_statistics_format">%1$s विमान, %2$s उड़ानें</string>
+    <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
+    <string name="pilot_profile_title">पायलट प्रोफ़ाइल</string>
+    <string name="review_flight_plane_title">उड़ान योजना</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
+    <string name="review_flight_plan_details_next_button">अगला</string>
+    <string name="review_flight_plan_details_public_flight_value_true">हां</string>
+    <string name="review_flight_plan_details_radius">त्रिज्या</string>
+    <string name="airmap_aircraft_stats">विमान</string>
+    <string name="review_flight_plan_details_row_title_altitude">ऊंचाई</string>
+    <string name="review_flight_plan_details_row_title_duration">समाप्त होना</string>
+    <string name="review_flight_plan_details_row_title_ends">समाप्त होना</string>
+    <string name="review_flight_plan_details_row_title_public">पब्लिक</string>
+    <string name="review_flight_plan_details_row_title_starts">आरंभ हो रहा है</string>
+    <string name="review_flight_plan_details_section_header_aircraft">विमान</string>
+    <string name="review_flight_plan_details_section_header_details">विवरण</string>
+    <string name="review_flight_plan_details_section_header_social">मेरी उड़ान साझा करें</string>
+    <string name="review_flight_plan_details_start_time_now">अब</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
+    <string name="airmap_title_activity_create_flight">उड़ान की संरचना करें</string>
+    <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
+    <string name="end_flight">उड़ान समाप्त</string>
+    <!-- Displayed for authorities that are setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_accepts_notice">डिजिटल नोटिस स्वीकार करना</string>
+    <!-- Displayed for authorities that are NOT setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_does_not_accept_notice">इस क्षेत्र में निम्न प्राधिकरण डिजिटल नोटिस स्वीकार नहीं करते हैं।</string>
+    <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
+    <string name="review_flight_plan_notices_tab_section_header_no_notices">इस उड़ान के लिये कोई नोटिस नहीं हैं।</string>
+    <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
+    <string name="airmap_digital_notice_accepted">डिजिटल नोटिस स्वीकार किया गया</string>
+    <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
+    <string name="airmap_not_accept_notice">इस क्षेत्र में निम्न प्राधिकरण डिजिटल नोटिस स्वीकार नहीं करती हैं।</string>
+    <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
+    <string name="airmap_review">पुनरावलोकन</string>
+    <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
+    <string name="airmap_flight_notice">उड़ान सूचना</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
+    <string name="submit">प्रस्तुत करें</string>
+    <string name="review_flight_plan_tab_title_digital_notice">नोटिस</string>
+    <string name="review_flight_plan_tab_title_flight">उड़ान</string>
+    <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
+    <string name="review_flight_plan_title">उड़ान प्लान का पुनरावलोकन करें</string>
+    <!-- Label for the section header that displays all the Optional rulesets -->
+    <string name="rulesets_section_optional">वैकल्पिक</string>
+    <!-- Label for the section header that displays all the Pick One rulesets -->
+    <string name="rulesets_section_pick_one">एक चुनें</string>
+    <!-- Label for the section header that displays all the Required rulesets -->
+    <string name="rulesets_section_required">चाहिये</string>
+    <!-- Label for rulesets that can be optionally enabled by the user -->
+    <string name="ruleset_selection_type_optional">वैकल्पिक</string>
+    <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
+    <string name="ruleset_selection_type_pickone">एक चुनें</string>
+    <!-- Label for rulesets that must be enabled by the user -->
+    <string name="ruleset_selection_type_required">चाहिये</string>
+    <string name="rules_generic_title">स्थानीय नियम</string>
+    <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
+    <string name="select_aircraft">विमान का चयन करें</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
+    <string name="sms_login_code_header">SMS कोड</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
+    <string name="sms_login_code_placeholder">कोड</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
+    <string name="sms_login_code_submit_button">प्रस्तुत करें</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
+    <string name="sms_login_code_title">कोड सत्यापित करें</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
+    <string name="sms_login_phone_number_placeholder">फ़ोन संख्या</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
+    <string name="sms_login_save_button">सेव</string>
+    <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
+    <string name="sms_login_title">लॉग-इन</string>
+    <!-- Description for status advisory color Green -->
+    <string name="informational">अंतरराष्ट्रीय</string>
+    <!-- Description for status advisory color Orange -->
+    <string name="status_orange_description">कार्यवाही चाहिये</string>
+    <!-- Description for status advisory color Red -->
+    <string name="flight_strictly_regulated">दृढ़तापूर्वक नियंत्रित उड़ान</string>
+    <!-- Description for status advisory color Yellow -->
+    <string name="advisories">परामर्श</string>
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <string name="tile_layer_aerial_rec_areas">आकाशीय मनोरंजन क्षेत्र</string>
+    <string name="tile_layer_airports">हवाई-अड्डे</string>
+    <string name="tile_layer_cities">शहर</string>
+    <string name="tile_layer_class_b">श्रेणी-B नियंत्रित हवाई-क्षेत्र</string>
+    <string name="tile_layer_class_c">श्रेणी-C नियंत्रित हवाई-क्षेत्र</string>
+    <string name="tile_layer_class_d">श्रेणी-D नियंत्रित हवाई-क्षेत्र</string>
+    <string name="tile_layer_class_e">श्रेणी-E नियंत्रित हवाई-क्षेत्र</string>
+    <string name="tile_layer_controlled_airspace">नियंत्रित हवाई-क्षेत्र (B, C, D &amp; E)</string>
+    <string name="tile_layer_custom">कस्टम</string>
+    <string name="tile_layer_emergencies">प्रथम उत्तरदाता गतिविधि</string>
+    <string name="tile_layer_fires">अग्नि</string>
+    <string name="tile_layer_hazard_areas">संकट क्षेत्र</string>
+    <string name="tile_layer_heliports">हेलीपोर्ट</string>
+    <string name="tile_layer_hospitals">हॉस्पिटल</string>
+    <string name="tile_layer_national_parks">राष्ट्रीय पार्क</string>
+    <string name="tile_layer_noaa">NOAA मैरिन संरक्षण क्षेत्र</string>
+    <string name="tile_layer_power_plants">ऊर्जा संयंत्र</string>
+    <string name="tile_layer_prisons">जेल</string>
+    <string name="tile_layer_private_airports">निजी हवाई-अड्डे</string>
+    <string name="tile_layer_prohibited">प्रतिबंधित हवाई-क्षेत्र</string>
+    <string name="tile_layer_restricted_airspace">नियंत्रित हवाई-क्षेत्र</string>
+    <string name="tile_layer_schools">स्कूल</string>
+    <string name="tile_layer_tfr_faa">अल्पकालिक उड़ान प्रतिबंध</string>
+    <string name="tile_layer_universities">महाविद्यालय</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">ट्रैफिक %1$s\nऊंचाई %2$s\n%3$s %4$s %5$s</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
+    <string name="traffic_alert_with_aircraft_id_format">ट्रैफिक %1$s\nऊंचाई %2$s\n%3$s</string>
+    <!-- Name for the imperial system of measurement -->
+    <string name="units_imperial">राजसी</string>
+    <!-- Name for the metric system of measurement -->
+    <string name="units_metric">मेट्रिक</string>
+    <!-- Unit and format for displaying nautical miles -->
+    <string name="units_nautical_mile_format">%s NM</string>
+    <!-- Unit and format for displaying speed in knots -->
+    <string name="units_speed_format_knots">%s kts</string>
+    <!-- Unit and format for displaying speed in meters per second -->
+    <string name="units_speed_format_meters_per_second">%s m/s</string>
+    <!-- Unit and format for displaying speed in miles per hour -->
+    <string name="units_speed_format_miles_per_hour">%s mph</string>
+    <!-- Unit and format for displaying a speed range in meters per second -->
+    <string name="units_speed_range_format_meters_per_second">%1$s-%2$s m/s</string>
+    <!-- Unit and format for displaying a speed range in miles per hour -->
+    <string name="units_speed_range_format_miles_per_hour">[[%1$s-%2$s mph</string>
+    <!-- Unit and format for displaying temperature in Celcius -->
+    <string name="units_temperature_celcius_format">%1$s°C</string>
+    <!-- Unit and format for displaying temperature in Fahrenheit -->
+    <string name="units_temperature_fahrenheit_format">%1$s°F</string>
+    <!-- Possible error from keychain. -->
+    <!-- No comment provided by engineer. -->
+    <!-- The request with the authority has been accepted -->
+    <string name="validation_accepted">सत्यापित</string>
+    <!-- No validation request has been filed -->
+    <string name="validation_not_requested">सत्यापन की मांग नहीं की गई</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="validation_pending">सत्यापन विचाराधीन</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="validation_rejected">अनुपलब्ध जानकारी अस्वीकृत</string>
 </resources>

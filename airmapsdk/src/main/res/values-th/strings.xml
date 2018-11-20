@@ -1,745 +1,748 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- 1Password Extension Error Message -->
-  <string name="end_flight_title">เที่ยวบินสิ้นสุด</string>
-  <string name="submit_title">ส่ง</string>
-  <string name="review_flight_plan">ตรวจทานแผนการบิน</string>
-  <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
-  <string name="airmap_airspace_advisories">น่านให้คำปรึกษา</string>
-  <!-- Label for advisories that are stup to receive digital notice -->
-  <string name="accepts_digital_notice">ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
-  <!-- Displayed when an advisory has not provided a contact phone -->
-  <string name="no_known_number">ไม่มีหมายเลขโทรศัพท์ให้</string>
-  <!-- Label and format for displaying the end time of temporary flight restriction -->
-  <string name="advisory_tfr_ends_format">สิ้น สุด: %1$s</string>
-  <!-- Never ending duration for a TFR -->
-  <string name="advisory_tfr_permanent">ถาวร</string>
-  <!-- Label and format for displaying the start time of temporary flight restriction -->
-  <string name="airmap_starts">เริ่ม ต้น: %1$s</string>
-  <!-- Format and unit for wildfire advisory in the area unit acres -->
-  <string name="advisory_wildfire_size_format_acres">%1$s เอเคอร์</string>
-  <!-- Format and unit for wildfire advisory in the area unit hectares -->
-  <string name="advisory_wildfire_size_format_hectares">%1$s เฮคเตอร์</string>
-  <!-- Label for wildfire advisory cells where size is unknown -->
-  <string name="unknown_size">ขนาดที่ไม่รู้จัก</string>
-  <!-- Call to action when a user has not selected an aircraft -->
-  <string name="aircraft_select_aircraft">เลือกเครื่องบิน</string>
-  <!-- Title to display for the view creating a new aircraft -->
-  <string name="airmap_title_activity_create_aircraft">สร้างเครื่องบิน</string>
-  <!-- Title to display for the view when updating an existing aircraft -->
-  <string name="airmap_edit_aircraft">ปรับปรุงเครื่องบิน</string>
-  <!-- Name for airspace type Aerial Recreational Area -->
-  <string name="airspace_type_aerial_rec_area">พื้นที่พักผ่อนหย่อนใจทางอากาศ</string>
-  <!-- Name for airspace type Airport -->
-  <string name="airspace_type_airport">สนาม บิน</string>
-  <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
-  <string name="airspace_type_ama_field">สนามที่ AMA</string>
-  <!-- Name for airspace type City -->
-  <string name="airspace_type_city">เมือง</string>
-  <!-- Name for airspace type Controlled Airspace -->
-  <string name="airspace_type_controlled">ควบคุมน่าน</string>
-  <!-- Name for airspace type Country -->
-  <string name="airspace_type_country">ประเทศ</string>
-  <!-- Name for airspace type County -->
-  <string name="airspace_type_county">เขต</string>
-  <!-- Name for airspace type Custom -->
-  <string name="airspace_type_custom">กำหนด เอง</string>
-  <!-- Name for airspace type Embassy -->
-  <string name="airspace_type_embassy">สถาน ทูต</string>
-  <!-- Name for airspace type Emergency -->
-  <string name="airspace_type_emergency">กิจกรรมการตอบสนองครั้งแรก</string>
-  <!-- Name for airspace type Federal Building -->
-  <string name="airspace_type_federal_building">อาคารของรัฐบาลกลาง</string>
-  <!-- Name for airspace type Flight Information Region -->
-  <string name="airspace_type_fir">ข้อมูลการบินภูมิภาค</string>
-  <!-- Name for airspace type Fire -->
-  <string name="airspace_type_fire">ไฟ</string>
-  <!-- Name for airspace type Gliderport -->
-  <string name="airspace_type_gliderport">Gliderport</string>
-  <!-- Name for airspace type Hazard Area -->
-  <string name="airspace_type_hazard_area">พื้นที่อันตราย</string>
-  <!-- Name for airspace type Heliport -->
-  <string name="airspace_type_heliport">เฮ ลิ พอร์ต มาเก๊า</string>
-  <!-- Name for airspace type Highway -->
-  <string name="airspace_type_highway">ไฮเวย์</string>
-  <!-- Name for airspace type Hospital -->
-  <string name="airspace_type_hospital">โรง พยาบาล</string>
-  <!-- Name for airspace type Industrial Property -->
-  <string name="airspace_type_industrial_property">ทรัพย์สินทางอุตสาหกรรม</string>
-  <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
-  <string name="airspace_type_japan_base">ผู้ดูแลพื้นฐานญี่ปุ่น</string>
-  <!-- Name for airspace type Military Property -->
-  <string name="airspace_type_military_property">ทรัพย์สินทางทหาร</string>
-  <!-- Name for airspace type National Park -->
-  <string name="airspace_type_national_park">อุทยานแห่งชาติ</string>
-  <!-- Name for airspace type NOTAM -->
-  <string name="airspace_type_notam">NOTAM</string>
-  <!-- Name for airspace type Police Station -->
-  <string name="airspace_type_police_station">สถานีตำรวจ</string>
-  <!-- Name for airspace type Powerline -->
-  <string name="airspace_type_powerline">Powerline</string>
-  <!-- Name for airspace type Power Plant -->
-  <string name="airspace_type_power_plant">โรงไฟฟ้า</string>
-  <!-- Name for airspace type Prison -->
-  <string name="airspace_type_prison">คุก</string>
-  <!-- Name for airspace type Railway -->
-  <string name="airspace_type_railway">รถไฟ</string>
-  <!-- Name for airspace type Residential Property -->
-  <string name="airspace_type_residential_property">ที่พักอาศัย</string>
-  <!-- Name for airspace type School -->
-  <string name="airspace_type_school">โรงเรียน</string>
-  <!-- Name for airspace type Seaplane Base -->
-  <string name="airspace_type_seaplane_base">ตู้เครื่องทะเล</string>
-  <!-- Name for airspace type Special Use Airspace -->
-  <string name="airspace_type_special_use">น่านใช้พิเศษ</string>
-  <!-- Name for airspace type Stadium -->
-  <string name="airspace_type_stadium">สเตเดียม</string>
-  <!-- Name for airspace type State -->
-  <string name="airspace_type_state">สถานะ</string>
-  <!-- Name for airspace type Subprefecture -->
-  <string name="airspace_type_subprefecture">Subprefecture</string>
-  <!-- Name for airspace type Supercity (Japan related) -->
-  <string name="airspace_type_supercity">Supercity</string>
-  <!-- Name for airspace type FAA Temporary Flight Restriction -->
-  <string name="airspace_type_tfr_faa">ข้อจำกัดเที่ยวบินชั่วคราว</string>
-  <!-- Name for airspace type Ultralight Field -->
-  <string name="airspace_type_ulm_field">ฟิลด์สู่</string>
-  <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
-  <string name="airspace_type_unclassified">Unclassified</string>
-  <!-- Name for airspace type University -->
-  <string name="airspace_type_university">มหาวิทยาลัย</string>
-  <!-- Name for airspace type Waterway -->
-  <string name="airspace_type_waterway">น้ำ</string>
-  <!-- Name for airspace type WildFire -->
-  <string name="airspace_type_wildfire">ป่า</string>
-  <!-- No comment provided by engineer. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- The request with the authority has been accepted -->
-  <string name="authorization_accepted">อนุมัติ</string>
-  <!-- The request with the authority has been cancelled -->
-  <string name="authorization_cancelled_submission">ยกเลิกการอนุญาต</string>
-  <!-- The request with the authority has not been requested -->
-  <string name="authorization_not_requested">ไม่มีการร้องขอการอนุญาต</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="authorization_pending">การตรวจสอบค้างอยู่</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="authorization_rejected">ปฏิเสธการอนุมัติ</string>
-  <!-- The request with the authority will be rejected once the flight plan is submitted -->
-  <string name="authorization_rejected_upon_submission">ปฏิเสธเมื่อส่งผลงาน</string>
-  <!-- The request with the authority will be accepted once the flight plan is submitted -->
-  <string name="authorization_upon_submission">อนุมัติเมื่อส่งผลงาน</string>
-  <!-- Login message when a user's account has been blacklisted. -->
-  <string name="invalid_email_domain">บัญชีของคุณถูกดำ กรุณาติดต่อ security@airmap.com</string>
-  <!-- Login message when a user must verify their email address -->
-  <string name="verify_email_log_in_again">ที่อยู่อีเมลของคุณจะต้องได้รับการยืนยัน กรุณาตรวจสอบกล่องขาเข้าของคุณ</string>
-  <!-- Login message when a user failed to authenticate -->
-  <string name="auth_error_unauthorized">อนุญาต</string>
-  <!-- Navigation title for failed login attempt -->
-  <string name="auth_failed_login_title">แจ้ง เตือน</string>
-  <!-- Abbreviation for East -->
-  <string name="cardinal_direction_e">ตะวัน ออก</string>
-  <!-- Abbreviation for East North East -->
-  <string name="cardinal_direction_ene">เร็ว</string>
-  <!-- Abbreviation for East South East -->
-  <string name="cardinal_direction_ese">Ese</string>
-  <!-- Abbreviation for North -->
-  <string name="cardinal_direction_n">N</string>
-  <!-- Abbreviation for North East -->
-  <string name="cardinal_direction_ne">ยเน</string>
-  <!-- Abbreviation for North North East -->
-  <string name="cardinal_direction_nnne">เร็ว</string>
-  <!-- Abbreviation for North North West -->
-  <string name="cardinal_direction_nnw">ความ</string>
-  <!-- Abbreviation for North West -->
-  <string name="cardinal_direction_nw">Nw</string>
-  <!-- Abbreviation for South -->
-  <string name="cardinal_direction_s">S</string>
-  <!-- Abbreviation for South East -->
-  <string name="cardinal_direction_se">SE</string>
-  <!-- Abbreviation for South South East -->
-  <string name="cardinal_direction_sse">SSE</string>
-  <!-- Abbreviation for South South West -->
-  <string name="cardinal_direction_ssw">ความ</string>
-  <!-- Abbreviation for South West -->
-  <string name="cardinal_direction_sw">Sw</string>
-  <!-- Abbreviation for West -->
-  <string name="cardinal_direction_w">ฝั่ง ตะวัน ตก</string>
-  <!-- Abbreviation for West North West -->
-  <string name="cardinal_direction_wnw">เร็ว</string>
-  <!-- Abbreviation for West South West -->
-  <string name="cardinal_direction_wsw">ความ</string>
-  <!-- Forgot password -->
-  <string name="com_auth0_lock_action_forgot_password">จำรหัสผ่านของคุณไม่ได้?</string>
-  <!-- tos & privacy -->
-  <string name="com_auth0_lock_sign_up_terms">โดยการลงทะเบียน, คุณยอมรับข้อตกลงในการให้บริการ of\n และนโยบายความเป็นส่วนตัว</string>
-  <!-- forgot password email sent -->
-  <string name="com_auth0_lock_db_change_password_message_success">เราเพียงแค่ส่งอีเมลถึงคุณเพื่อรีเซ็ตรหัสผ่านของคุณ</string>
-  <!-- User logged in -->
-  <string name="com_auth0_lock_database_login_success_message">คุณเข้าสู่ระบบเสร็จเรียบร้อยแล้ว</string>
-  <!-- Login Switch -->
-  <string name="com_auth0_lock_mode_log_in">เข้าสู่ระบบ</string>
-  <!-- Signup Switch -->
-  <string name="com_auth0_lock_mode_sign_up">ไซน์อัพ</string>
-  <!-- Social separator -->
-  <string name="com_auth0_lock_forms_separator">หรือ</string>
-  <!-- User signed up -->
-  <string name="com.auth0.lock.database.signup.success.message">ขอบคุณสำหรับการลงทะเบียน.</string>
-  <!-- Cancel -->
-  <string name="com.auth0.lock.database.tos.sheet.cancel">ยกเลิก</string>
-  <!-- Privacy -->
-  <string name="com.auth0.lock.database.tos.sheet.privacy">นโยบายความเป็นส่วนตัว</string>
-  <!-- ToS -->
-  <string name="com.auth0.lock.database.tos.sheet.title">เงื่อนไขการให้บริการ</string>
-  <!-- enter corporate credentials -->
-  <string name="com.auth0.lock.enterprise.sso.message">กรุณาใส่ข้อมูลประจำตัวขององค์กร</string>
-  <!-- enter corporate credentials of domain %@{email domain} -->
-  <string name="com.auth0.lock.enterprise.sso.message_at">กรุณาใส่ข้อมูลประจำตัวขององค์กรของคุณที่ %1$s</string>
-  <!-- SSO Header -->
-  <string name="com.auth0.lock.enterprise.sso.title">การเข้าสู่ระบบแบบครั้งเดียวเปิดใช้งาน</string>
-  <!-- user is blocked -->
-  <string name="com.auth0.lock.error.authentication.blocked_user">ผู้ใช้ถูกบล็อค</string>
-  <!-- Generic login error -->
-  <string name="com.auth0.lock.error.authentication.fallback">ขออภัยบางสิ่งบางอย่างที่ผิดเมื่อพยายามเข้าสู่ระบบ</string>
-  <!-- invalid_user_password -->
-  <string name="com_auth0_lock_db_login_error_invalid_credentials_message">อีเมลหรือรหัสผ่านไม่ถูกต้อง</string>
-  <!-- a0.mfa_invalid_code -->
-  <string name="com.auth0.lock.error.authentication.mfa_invalid_code">รหัสที่ไม่ถูกต้อง</string>
-  <!-- No valid connection -->
-  <string name="com.auth0.lock.error.authentication.no_connection">ขออภัยเราไม่พบการเชื่อมต่อที่ถูกต้องสำหรับผู้ใช้นี้</string>
-  <!-- password_change_required -->
-  <string name="com.auth0.lock.error.authentication.password_change_required">คุณจำเป็นต้องปรับปรุงรหัสผ่านของคุณเนื่องจากเป็นครั้งแรกที่คุณเข้าสู่ระบบหรือเนื่องจากรหัสผ่านของคุณหมดอายุแล้ว</string>
-  <!-- password_leaked -->
-  <string name="com.auth0.lock.error.authentication.password_leaked">การเข้าสู่ระบบนี้ถูกบล็อกเนื่องจากรหัสผ่านของคุณถูกรั่วไหลในเว็บไซต์อื่น เราได้ส่งอีเมลให้คุณด้วยคำแนะนำเกี่ยวกับวิธีการยกเลิกการบล็อก</string>
-  <!-- too_many_attempts -->
-  <string name="com.auth0.lock.error.authentication.too_many_attempts">บัญชีของคุณถูกบล็อกหลังจากความพยายามเข้าสู่ระบบที่ติดต่อกันหลายครั้ง</string>
-  <!-- Generic error -->
-  <string name="com_auth0_lock_unrecoverable_error_title">สิ่งที่ผิดพลาด \ nPLEASE ติดต่อฝ่ายสนับสนุนด้านเทคนิค</string>
-  <!-- Generic password error -->
-  <string name="com_auth0_lock_db_message_change_password_error">ขออภัยบางสิ่งบางอย่างผิดเมื่อขอเปลี่ยนรหัสผ่าน</string>
-  <!-- At least N characters -->
-  <string name="com_auth0_lock_password_strength_chars_length">น้อย %d อักขระที่มีความยาว</string>
-  <!-- At least n groups -->
-  <string name="com.auth0.lock.error.password.contain_at_least">มีอย่างน้อย %d ต่อไปนี้ %d ชนิดของอักขระ:</string>
-  <!-- Lowercase letters -->
-  <string name="com_auth0_lock_password_strength_lowercase_letters">ตัวอักษรเล็ก (a-z)</string>
-  <!-- Must no be empty -->
-  <string name="com.auth0.lock.error.password.non_empty">ต้องใช้รหัสผ่านที่ไม่ว่างเปล่า</string>
-  <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
-  <string name="com_auth0_lock_password_strength_identical_chars">ไม่เกิน %1$d ตัวอักษรที่เหมือนกันในแถว (เช่น, \'%2$s\' ไม่อนุญาตให้ใช้)</string>
-  <!-- Numbers -->
-  <string name="com_auth0_lock_password_strength_numbers">ตัวเลข (เช่น 0-9)</string>
-  <!-- N groups -->
-  <string name="com_auth0_lock_password_strength_title_must_have">ควรประกอบด้วย:</string>
-  <!-- Special Characters -->
-  <string name="com_auth0_lock_password_strength_special_chars">ตัวอักษรพิเศษ (เช่น !@#$%^&amp;*)</string>
-  <!-- Uppercase letters -->
-  <string name="com_auth0_lock_password_strength_uppercase_letters">ตัวอักษรพิมพ์ใหญ่ (a-z)</string>
-  <!-- Passwordless link invalid. -->
-  <string name="com.auth0.lock.error.passwordless.invalid_link">ขออภัยมีปัญหากับการเชื่อมโยงของคุณ กรุณาขอใบใหม่</string>
-  <!-- Passwordless sign ups disabled. -->
-  <string name="com.auth0.lock.error.passwordless.signup_disabled">เครื่องหมายใหม่ถูกปิดใช้งานสำหรับบัญชีนี้โปรดติดต่อผู้ดูแลระบบของคุณ</string>
-  <!-- Recoverable error button -->
-  <string name="com.auth0.lock.error.recoverable.button">ลอง</string>
-  <!-- Recoverable error message -->
-  <string name="com.auth0.lock.error.recoverable.message">กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</string>
-  <!-- Recoverable error title -->
-  <string name="com.auth0.lock.error.recoverable.title">ไม่สามารถโหลดกล่องเข้าสู่ระบบ</string>
-  <!-- Generic sign up error -->
-  <string name="com_auth0_lock_db_sign_up_error_message">ขออภัยบางสิ่งบางอย่างที่ผิดเมื่อพยายามลงทะเบียน</string>
-  <!-- invalid_password -->
-  <string name="com_auth0_lock_input_error_password">รหัสผ่านไม่ถูกต้อง</string>
-  <!-- password_dictionary_error -->
-  <string name="com.auth0.lock.error.signup.password_dictionary_error">รหัสผ่านที่พบบ่อยเกินไป</string>
-  <!-- password_history -->
-  <string name="com_auth0_lock_db_signup_password_already_used_error_message">มีการใช้รหัสผ่านก่อนหน้านี้</string>
-  <!-- password_no_user_info_error -->
-  <string name="com.auth0.lock.error.signup.password_no_user_info_error">รหัสผ่านจะขึ้นอยู่กับข้อมูลผู้ใช้</string>
-  <!-- password_strength_error -->
-  <string name="com_auth0_lock_db_signup_password_not_strong_error_message">รหัสผ่านที่อ่อนแอเกินไป</string>
-  <!-- user_exists -->
-  <string name="com_auth0_lock_db_signup_user_already_exists_error_message">มีผู้ใช้อยู่แล้ว</string>
-  <!-- Unrecoverable error button -->
-  <string name="com.auth0.lock.error.unrecoverable.button">ติดต่อฝ่ายสนับสนุน</string>
-  <!-- Default error -->
-  <string name="com.auth0.lock.error.unrecoverable.default">สิ่งที่ผิดพลาด \ nPLEASE ติดต่อฝ่ายสนับสนุนด้านเทคนิค</string>
-  <!-- Invalid client or domain -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">ข้อมูลประจำตัว Auth0 ของคุณ ClientId และ/หรือโดเมนไม่ถูกต้อง</string>
-  <!-- Your options configuration failed with: %@{error} -->
-  <string name="com.auth0.lock.error.unrecoverable.invalid_options">การกำหนดค่าตัวเลือกของคุณล้มเหลวด้วย: %1$s</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message">มีข้อผิดพลาดที่ไม่คาดคิดขณะที่การแก้ไขการกำหนดค่ากล่องเข้าสู่ระบบ</string>
-  <!-- Unrecoverable error message -->
-  <string name="com.auth0.lock.error.unrecoverable.message.no_action">มีข้อผิดพลาดที่ไม่คาดคิดขณะที่การแก้ไขการกำหนดค่ากล่องเข้าสู่ระบบโปรดติดต่อฝ่ายสนับสนุน</string>
-  <!-- No connections -->
-  <string name="com.auth0.lock.error.unrecoverable.no_connections">ไม่พบวิธีการรับรองความถูกต้องสำหรับไคลเอ็นต์นี้ กรุณาตรวจสอบการตั้งค่าไคลเอ็นต์ของคุณ</string>
-  <!-- Unrecoverable error title -->
-  <string name="com.auth0.lock.error.unrecoverable.title">ไม่สามารถแก้ไขคำขอของคุณ</string>
-  <!-- Forgot Password message -->
-  <string name="com_auth0_lock_forgot_message">กรุณาใส่อีเมลของคุณและรหัสผ่านใหม่ เราจะส่งอีเมลให้คุณเพื่อยืนยันการเปลี่ยนแปลงรหัสผ่าน</string>
-  <!-- Forgot Password title -->
-  <string name="com_auth0_lock_title_change_password">รีเซ็ตรหัสผ่าน</string>
-  <!-- Header Title -->
-  <string name="com.auth0.lock.header.default_title">Auth0</string>
-  <!-- invalid email -->
-  <string name="com_auth0_lock_input_error_email">ต้องเป็นที่อยู่อีเมลที่ถูกต้อง</string>
-  <!-- Email placeholder -->
-  <string name="com_auth0_lock_hint_email">อีเมล</string>
-  <!-- Username or Email placeholder -->
-  <string name="com.auth0.lock.input.email_username.placeholder">ชื่อผู้ใช้/อีเมล</string>
-  <!-- empty input -->
-  <string name="com.auth0.lock.input.empty.error">ต้องไม่ว่าง</string>
-  <!-- generic input error -->
-  <string name="com.auth0.lock.input.generic.error">การป้อนข้อมูลไม่ถูกต้อง</string>
-  <!-- invalid otp -->
-  <string name="com.auth0.lock.input.otp.error">ต้องเป็นรหัสตัวเลขที่ถูกต้อง</string>
-  <!-- OTP placeholder -->
-  <string name="com.auth0.lock.input.otp.placeholder">รหัส</string>
-  <!-- Password placeholder -->
-  <string name="com_auth0_lock_hint_password">รหัส ผ่าน</string>
-  <!-- invalid phone -->
-  <string name="com.auth0.lock.input.phone.error">ต้องเป็นหมายเลขโทรศัพท์ที่ถูกต้อง</string>
-  <!-- Phone placeholder -->
-  <string name="com.auth0.lock.input.phone.placeholder">หมายเลขโทรศัพท์</string>
-  <!-- policy violation -->
-  <string name="com.auth0.lock.input.policy.error">รหัสผ่านไม่ปฏิบัติตามนโยบาย</string>
-  <!-- invalid username -->
-  <string name="com.auth0.lock.input.username.error">สามารถมีได้ระหว่าง %d ถึง %d อักขระตัวเลขและ \'_\'</string>
-  <!-- Username placeholder -->
-  <string name="com.auth0.lock.input.username.placeholder">ชื่อ</string>
-  <!-- Multifactor message -->
-  <string name="com.auth0.lock.multifactor.message">โปรดป้อนรหัสยืนยันที่สร้างโดยแอพพลิเคชั่นโทรศัพท์มือถือของคุณ</string>
-  <!-- Multifactor title -->
-  <string name="com.auth0.lock.multifactor.title">การตรวจสอบสองขั้นตอน</string>
-  <!-- Country tableview navigation header -->
-  <string name="com.auth0.lock.passwordless.sms.country.header">เลือกประเทศ</string>
-  <!-- CountryCodes TableView searchbar placeholder -->
-  <string name="com.auth0.lock.passwordless.sms.country.search">ค้นหา</string>
-  <!-- Amazon -->
-  <string name="com.auth0.lock.strategy.localized.amazon">Amazon</string>
-  <!-- Aol -->
-  <string name="com.auth0.lock.strategy.localized.aol">Aol</string>
-  <!-- Baidu -->
-  <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
-  <!-- Bitbucket -->
-  <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
-  <!-- Dropbox -->
-  <string name="com.auth0.lock.strategy.localized.dropbox">Dropbox</string>
-  <!-- Dwolla -->
-  <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
-  <!-- Ebay -->
-  <string name="com.auth0.lock.strategy.localized.ebay">เบย์</string>
-  <!-- Evernote -->
-  <string name="com.auth0.lock.strategy.localized.evernote">Evernote</string>
-  <!-- EvernoteSandbox -->
-  <string name="com.auth0.lock.strategy.localized.evernote_sandbox">EVERNOTE (SANDBOX)</string>
-  <!-- Exact -->
-  <string name="com.auth0.lock.strategy.localized.exact">แน่ นอน</string>
-  <!-- Facebook -->
-  <string name="com.auth0.lock.strategy.localized.facebook">Facebook</string>
-  <!-- Fitbit -->
-  <string name="com.auth0.lock.strategy.localized.fitbit">FITBIT</string>
-  <!-- Github -->
-  <string name="com.auth0.lock.strategy.localized.github">GITHUB</string>
-  <!-- Google -->
-  <string name="com.auth0.lock.strategy.localized.google">Google</string>
-  <!-- Instagram -->
-  <string name="com.auth0.lock.strategy.localized.instagram">Instagram</string>
-  <!-- Linkedin -->
-  <string name="com.auth0.lock.strategy.localized.linkedin">Linkedin</string>
-  <!-- Microsoft -->
-  <string name="com.auth0.lock.strategy.localized.microsoft">บัญชี MICROSOFT</string>
-  <!-- Miicard -->
-  <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
-  <!-- Paypal -->
-  <string name="com.auth0.lock.strategy.localized.paypal">Paypal</string>
-  <!-- PaypalSandbox -->
-  <string name="com.auth0.lock.strategy.localized.paypal_sandbox">PAYPAL (SANDBOX)</string>
-  <!-- PlanningCenter -->
-  <string name="com.auth0.lock.strategy.localized.planning_center">ศูนย์วางแผน</string>
-  <!-- RenRen -->
-  <string name="com.auth0.lock.strategy.localized.renren">人人</string>
-  <!-- Salesforce -->
-  <string name="com.auth0.lock.strategy.localized.salesforce">SALESFORCE</string>
-  <!-- SalesforceCommunity -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_community">ชุมชนของ SALESFORCE</string>
-  <!-- SalesforceSandbox -->
-  <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (SANDBOX)</string>
-  <!-- Shopify -->
-  <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
-  <!-- Soundcloud -->
-  <string name="com.auth0.lock.strategy.localized.soundcloud">SOUNDCLOUD</string>
-  <!-- TheCity -->
-  <string name="com.auth0.lock.strategy.localized.the_city">ในเมือง</string>
-  <!-- TheCitySandbox -->
-  <string name="com.auth0.lock.strategy.localized.the_city_sandbox">เมือง (SANDBOX)</string>
-  <!-- ThirtySevenSignals -->
-  <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">๓๗สัญญาณ</string>
-  <!-- Twitter -->
-  <string name="com.auth0.lock.strategy.localized.twitter">ทวิตเตอร์</string>
-  <!-- Vkontakte -->
-  <string name="com.auth0.lock.strategy.localized.vkontakte">Vkontakte</string>
-  <!-- Weibo -->
-  <string name="com.auth0.lock.strategy.localized.weibo">微</string>
-  <!-- Wordpress -->
-  <string name="com.auth0.lock.strategy.localized.wordpress">เวิร์ด เพ รส</string>
-  <!-- Yahoo -->
-  <string name="com.auth0.lock.strategy.localized.yahoo">Yahoo!</string>
-  <!-- Yammer -->
-  <string name="com.auth0.lock.strategy.localized.yammer">Yammer</string>
-  <!-- Yandex -->
-  <string name="com.auth0.lock.strategy.localized.yandex">Yandex</string>
-  <!-- Log in with %@{strategy} -->
-  <string name="com_auth0_lock_social_log_in">เข้าสู่ระบบด้วย %1$s</string>
-  <!-- Sign up with %@{strategy} -->
-  <string name="com_auth0_lock_social_sign_up">ลงทะเบียนด้วย %1$s</string>
-  <!-- Login Button title -->
-  <string name="com_auth0_lock_action_log_in">เข้าสู่ระบบ</string>
-  <!-- Send 2fa code -->
-  <string name="com.auth0.lock.submit.send_code.title">ส่ง</string>
-  <!-- Send Email button title -->
-  <string name="com_auth0_lock_action_send_email">ส่งอีเมล์</string>
-  <!-- Signup Button title -->
-  <string name="com_auth0_lock_action_sign_up">ไซน์อัพ</string>
-  <!-- Passwordless code reminder action -->
-  <string name="com.auth0.passwordless.code.reminder">ไม่ได้รับรหัส?</string>
-  <!-- Passwordless code sent by email to %@{identifier} -->
-  <string name="com.auth0.passwordless.email.code.sent">ส่งอีเมลที่มีรหัสไปให้ %1$s</string>
-  <!-- Passwordless email title -->
-  <string name="com.auth0.passwordless.email.title">ป้อนอีเมลของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
-  <!-- Passwordless email title with social -->
-  <string name="com.auth0.passwordless.email.title.social">มิฉะนั้นให้ป้อนอีเมลของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
-  <!-- Passwordless link reminder action -->
-  <string name="com.auth0.passwordless.link.reminder">ไม่ได้รับการเชื่อมโยง?</string>
-  <!-- Passwordless link sent to %@{identifier} -->
-  <string name="com.auth0.passwordless.link.sent">เราส่งลิงก์ให้คุณลงชื่อเข้าใช้ %1$s</string>
-  <!-- Passwordless code sent by sms to %@{identifier} -->
-  <string name="com.auth0.passwordless.sms.code.sent">ส่ง sms ที่มีรหัสไปยัง %1$s</string>
-  <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
-  <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
-  <!-- CountryCodes TableViewCell label %@{localizedName} -->
-  <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
-  <!-- Passwordless sms title -->
-  <string name="com.auth0.passwordless.sms.title">ป้อนโทรศัพท์ของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
-  <!-- Passwordless sms title with social -->
-  <string name="com.auth0.passwordless.sms.title.social">มิฉะนั้นให้ป้อนโทรศัพท์ของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
-  <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
-  <string name="create_aircraft_make_and_model">ทำให้รุ่น</string>
-  <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
-  <string name="airmap_nickname">เล่น</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
-  <string name="create_aircraft_save_button">บันทึก</string>
-  <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
-  <string name="create_aircraft">สร้างเครื่องบิน</string>
-  <!-- Request cancelled error -->
-  <string name="error_cancelled">ขอยกเลิกก่อนที่จะเสร็จสมบูรณ์</string>
-  <!-- A conflict exists with the attempted request -->
-  <string name="error_conflict">มีความขัดแย้งอยู่</string>
-  <!-- A generic server error message with an associated error code -->
-  <string name="error_generic_format">เซิร์ฟเวอร์ส่งกลับข้อผิดพลาด (%s)</string>
-  <!-- Response serialization failure error -->
-  <string name="error_serialization">เซิร์ฟเวอร์ส่งกลับการตอบสนอง unprocessable</string>
-  <!-- Server failure error -->
-  <string name="error_server">เซิร์ฟเวอร์ไม่สามารถทำการร้องขอของคุณ</string>
-  <!-- Authorization failure error -->
-  <string name="error_unauthorized">อนุญาต . กรุณาตรวจสอบข้อมูลประจำตัวการเข้าสู่ระบบ</string>
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- Possible error from keychain. -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- 1Password Extension Error Message -->
-  <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
-  <string name="faqs">พบ บ่อย</string>
-  <string name="flight_data_cell_button_done">เสร็จแล้ว</string>
-  <string name="now">เดี๋ยว นี้</string>
-  <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
-  <string name="airmap_polygon">ตั้ง</string>
-  <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
-  <string name="airmap_path">เส้น ทาง</string>
-  <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
-  <string name="airmap_circle">จุด</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
-  <string name="flight_drawing_next_button">ถัด ไป</string>
-  <!-- The radius around a point-based flight's center -->
-  <string name="airmap_buffer">รัศมี</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
-  <string name="flight_drawing_title">สร้างเที่ยวบิน</string>
-  <!-- Call to action to fine-tune the geometry of a flight. -->
-  <string name="airmap_done_drawing_tip">ลากจุดใดๆเพื่อย้าย ลากกึ่งใดๆเพื่อเพิ่มจุดใหม่</string>
-  <!-- Call to action to drag a point to the trash to delete. -->
-  <string name="airmap_delete_tip">ลากชี้ไปที่ถังขยะเพื่อลบ</string>
-  <!-- Call to action to draw an area-based flight. -->
-  <string name="airmap_draw_freehand_area">การวาดพื้นที่ของเที่ยวบิน</string>
-  <!-- Call to action to draw a path-based flight. -->
-  <string name="airmap_draw_freehand_path">การวาดเส้นทางบิน</string>
-  <!-- Call to action to drag the center position of a point-based flight. -->
-  <string name="flight_drawing_tooltip_cta_postiion_point">ลากจุดกึ่งกลางเพื่อวางตำแหน่งพื้นที่เที่ยวบินของคุณ</string>
-  <!-- Call to action to tap the icon to begin drawing a flight area. -->
-  <string name="airmap_freehand_tip_area">แตะที่ไอคอนรูปมือเพื่อวาดพื้นที่บิน</string>
-  <!-- Call to action to tap the icon to begin drawing a flight path. -->
-  <string name="airmap_freehand_tip_path">แตะที่ไอคอนรูปมือเพื่อวาดเส้นทางบิน</string>
-  <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
-  <string name="airmap_flight_area_overlap_permit_conflict">พื้นที่ของเที่ยวบินไม่สามารถเหลื่อมกับโซนความต้องการอนุญาตที่ขัดแย้งกันได้</string>
-  <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
-  <string name="airmap_error_overlap">พื้นที่เที่ยวบินไม่ถูกต้อง ปรับพื้นที่เที่ยวบินเพื่อไม่ให้ทับซ้อนกับตัวเอง</string>
-  <!-- The width of a path-based flight extending outward from the centerline -->
-  <string name="airmap_width">ความกว้าง</string>
-  <!-- Title for the button to advance to the next screen -->
-  <string name="airmap_next">ถัด ไป</string>
-  <!-- Title for the button to save and create the flight -->
-  <string name="airmap_save">บันทึก</string>
-  <!-- Call to action title for the user to select an aircraft -->
-  <string name="flight_plan_row_title_aircraft">เลือกเครื่องบิน</string>
-  <!-- Title for the row displaying the name of the aircraft -->
-  <string name="flight_plan_row_title_aircraft_name">อากาศยาน</string>
-  <!-- Title for the row displaying flight plan altitude -->
-  <string name="airmap_max_altitude">สูง</string>
-  <!-- Title for the row displaying flight plan buffer -->
-  <string name="flight_plan_row_title_buffer">บัฟเฟอร์</string>
-  <!-- Title for the row displaying flight plan duration -->
-  <string name="airmap_duration">ระยะ เวลา</string>
-  <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
-  <string name="flight_plan_row_title_max_altitude">ความสูงสูงสุด AGL</string>
-  <!-- Call to action title for the user to select a pilot profile -->
-  <string name="select_pilot_profile">เลือกรายละเอียดนักบิน</string>
-  <!-- Title for the row displaying flight plan radius -->
-  <string name="flight_plan_row_title_radius">รัศมี</string>
-  <!-- Title for the row displaying flight plan start time -->
-  <string name="starts">เริ่ม ต้น</string>
-  <!-- Title for the section displaying the pilot and aircraft details -->
-  <string name="pilot_and_aircraft_header">เครื่องบิน</string>
-  <!-- Title for the section displaying flight plan details -->
-  <string name="flight_details">เที่ยว บิน</string>
-  <!-- Title for the section displaying social sharing features -->
-  <string name="airmap_share_my_flight">แบ่งปันเที่ยวบินของฉัน</string>
-  <string name="date_and_time">วันที่และเวลา</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketclosederror">ซ็อกเก็ตปิดโดยเพียร์ระยะไกล</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketconnecttimeouterror">ความพยายามในการเชื่อมต่อกับโฮสต์หมดเวลา</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketothererror">ความพยายามในการสร้างซ็อกเก็ตจากซ็อกเก็ต FD ล้มเหลว getpeername () ล้มเหลว</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadmaxedouterror">การดำเนินการอ่านถึงกำหนดความยาวสูงสุด</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketreadtimeouterror">การดำเนินการอ่านหมดเวลา</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncsocketwritetimeouterror">การดำเนินการเขียนหมดเวลา</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketclosederror">ปิดซ็อกเก็ต</string>
-  <!-- No comment provided by engineer. -->
-  <string name="gcdasyncudpsocketsendtimeouterror">ส่งการดำเนินการหมดเวลา</string>
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid amount of jwt parts -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JWT token base64Url value -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- Invalid JSON value inside base64Url -->
-  <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
-  <string name="manual_authorization">การอนุมัติด้วยตนเองที่รอดำเนินการ</string>
-  <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
-  <string name="manufacturers_title">ผลิต</string>
-  <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
-  <string name="models_title">รุ่น</string>
-  <!-- No comment provided by engineer. -->
-  <!-- Table section title for other selectable countries -->
-  <string name="phone_country_section_other_country">อื่นๆ</string>
-  <!-- Table section title for the currently selected country -->
-  <string name="phone_country_section_selected_country">ประเทศที่เลือก</string>
-  <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
-  <string name="phone_country_title">เลือกประเทศ</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
-  <string name="phone_verification_code_header">รหัส SMS</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
-  <string name="phone_verification_code_placeholder">รหัส</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
-  <string name="phone_verification_code_title">ตรวจสอบหมายเลขโทรศัพท์</string>
-  <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
-  <string name="airmap_phone_number_disclaimer">"คุณตกลงที่จะรับข้อความเกี่ยวกับเที่ยวบินของคุณที่หมายเลขนี้ ข้อความของผู้ให้บริการอาจใช้อัตราข้อมูล ระดับชั้น. AirMap จะส่งข้อความตัวอักษรเมื่อการแจ้งเตือนแบบดิจิทัลของคุณถูกส่งเรียบร้อยแล้ว คลาส "</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
-  <string name="phone_verification_phone">หมายเลขโทรศัพท์</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
-  <string name="phone_verification_request_new_sms_code">ขอรหัส SMS ใหม่</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
-  <string name="phone_verification_save_button">ส่ง</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
-  <string name="phone_verification_submit_button">ส่ง</string>
-  <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
-  <string name="phone_number_verification">การยืนยันหมายเลขโทรศัพท์</string>
-  <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
-  <string name="phone_verification_try_again">ลองอีกครั้ง</string>
-  <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
-  <string name="phone_verification_verification_failed">การตรวจสอบหมายเลขโทรศัพท์ล้มเหลว</string>
-  <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
-  <string name="pilot_full_name_format">%1$s %2$s</string>
-  <!-- Table row label for FAA registration number -->
-  <string name="pilot_profile_faa_registration">หมายเลขทะเบียน FAA</string>
-  <!-- Label for the pilot profile email -->
-  <string name="email">อีเมล</string>
-  <!-- Label for the pilot profile first name -->
-  <string name="first_name">ชื่อจริง</string>
-  <!-- Label for the pilot profile last name -->
-  <string name="last_name">นามสกุล</string>
-  <!-- Label for the pilot profile phone -->
-  <string name="pilot_profile_label_phone">โทรศัพท์</string>
-  <!-- Label for the pilot profile username -->
-  <string name="pilot_profile_label_username">ชื่อ</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
-  <string name="pilot_profile_save_button">บันทึก</string>
-  <!-- Section header for the pilot profile additional info section -->
-  <string name="pilot_profile_section_additional">ข้อมูลเพิ่มเติม</string>
-  <!-- Section header for the pilot profile personal info section -->
-  <string name="airmap_personal_information">ข้อมูลส่วนบุคคล</string>
-  <!-- Format for displaying a user's number of aircraft and flights -->
-  <string name="pilot_profile_statistics_format">%1$s อากาศยาน %2$s เที่ยว บิน</string>
-  <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
-  <string name="pilot_profile_title">รายละเอียดนักบิน</string>
-  <string name="review_flight_plane_title">แผนการบิน</string>
-  <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
-  <string name="review_flight_plan_details_next_button">ถัด ไป</string>
-  <string name="review_flight_plan_details_public_flight_value_true">ใช่</string>
-  <string name="review_flight_plan_details_radius">รัศมี</string>
-  <string name="airmap_aircraft_stats">อากาศยาน</string>
-  <string name="review_flight_plan_details_row_title_altitude">สูง</string>
-  <string name="review_flight_plan_details_row_title_duration">สิ้น สุด</string>
-  <string name="review_flight_plan_details_row_title_ends">สิ้น สุด</string>
-  <string name="review_flight_plan_details_row_title_public">สาธารณะ</string>
-  <string name="review_flight_plan_details_row_title_starts">เริ่ม ต้น</string>
-  <string name="review_flight_plan_details_section_header_aircraft">อากาศยาน</string>
-  <string name="review_flight_plan_details_section_header_details">ราย ละเอียด</string>
-  <string name="review_flight_plan_details_section_header_social">แบ่งปันเที่ยวบินของฉัน</string>
-  <string name="review_flight_plan_details_start_time_now">เดี๋ยว นี้</string>
-  <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
-  <string name="airmap_title_activity_create_flight">สร้างเที่ยวบิน</string>
-  <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
-  <string name="end_flight">เที่ยวบินสิ้นสุด</string>
-  <!-- Displayed for authorities that are setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_accepts_notice">ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
-  <!-- Displayed for authorities that are NOT setup to receive digital notice -->
-  <string name="review_flight_plan_notices_tab_does_not_accept_notice">หน่วยงานต่อไปนี้ในพื้นที่นี้ไม่ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
-  <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
-  <string name="review_flight_plan_notices_tab_section_header_no_notices">ไม่มีการแจ้งเตือนสำหรับเที่ยวบินนี้</string>
-  <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
-  <string name="airmap_digital_notice_accepted">ประกาศดิจิตอลยอมรับ</string>
-  <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
-  <string name="airmap_not_accept_notice">หน่วยงานต่อไปนี้ในพื้นที่นี้ไม่ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
-  <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
-  <string name="airmap_review">รีวิว</string>
-  <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
-  <string name="airmap_flight_notice">ประกาศเที่ยวบิน</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
-  <string name="submit">ส่ง</string>
-  <string name="review_flight_plan_tab_title_digital_notice">ประกาศ</string>
-  <string name="review_flight_plan_tab_title_flight">เที่ยว บิน</string>
-  <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
-  <string name="review_flight_plan_title">ตรวจทานแผนการบิน</string>
-  <!-- Label for the section header that displays all the Optional rulesets -->
-  <string name="rulesets_section_optional">เสริม</string>
-  <!-- Label for the section header that displays all the Pick One rulesets -->
-  <string name="rulesets_section_pick_one">เลือกหนึ่ง</string>
-  <!-- Label for the section header that displays all the Required rulesets -->
-  <string name="rulesets_section_required">ต้องระบุ</string>
-  <!-- Label for rulesets that can be optionally enabled by the user -->
-  <string name="ruleset_selection_type_optional">เสริม</string>
-  <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
-  <string name="ruleset_selection_type_pickone">เลือกหนึ่ง</string>
-  <!-- Label for rulesets that must be enabled by the user -->
-  <string name="ruleset_selection_type_required">ต้องระบุ</string>
-  <string name="rules_generic_title">กฎท้องถิ่น</string>
-  <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-  <string name="select_aircraft">เลือกเครื่องบิน</string>
-  <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
-  <string name="sms_login_code_header">รหัส SMS</string>
-  <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
-  <string name="sms_login_code_placeholder">รหัส</string>
-  <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
-  <string name="sms_login_code_submit_button">ส่ง</string>
-  <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
-  <string name="sms_login_code_title">รหัสยืนยัน</string>
-  <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
-  <string name="sms_login_phone_number_placeholder">หมายเลขโทรศัพท์</string>
-  <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
-  <string name="sms_login_save_button">บันทึก</string>
-  <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
-  <string name="sms_login_title">เข้า สู่ ระบบ</string>
-  <!-- Description for status advisory color Green -->
-  <string name="informational">ข้อมูล</string>
-  <!-- Description for status advisory color Orange -->
-  <string name="status_orange_description">ต้องการการดำเนินการ</string>
-  <!-- Description for status advisory color Red -->
-  <string name="flight_strictly_regulated">การควบคุมเที่ยวบินอย่างเคร่งครัด</string>
-  <!-- Description for status advisory color Yellow -->
-  <string name="advisories">คำ แนะ นำ</string>
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <!-- No comment provided by engineer. -->
-  <string name="tile_layer_aerial_rec_areas">พื้นที่พักผ่อนหย่อนใจทางอากาศ</string>
-  <string name="tile_layer_airports">สนาม บิน</string>
-  <string name="tile_layer_cities">เมือง</string>
-  <string name="tile_layer_class_b">คลาส B ควบคุมน่าน</string>
-  <string name="tile_layer_class_c">น่านควบคุมคลาส C</string>
-  <string name="tile_layer_class_d">การควบคุมระดับ D น่าน</string>
-  <string name="tile_layer_class_e">ชั้น ควบคุมน่าน</string>
-  <string name="tile_layer_controlled_airspace">ควบคุมน่าน (B, C, D และ E)</string>
-  <string name="tile_layer_custom">กำหนด เอง</string>
-  <string name="tile_layer_emergencies">กิจกรรมการตอบสนองครั้งแรก</string>
-  <string name="tile_layer_fires">Fires</string>
-  <string name="tile_layer_hazard_areas">พื้นที่อันตราย</string>
-  <string name="tile_layer_heliports">ศรีลังกา</string>
-  <string name="tile_layer_hospitals">โรง พยาบาล</string>
-  <string name="tile_layer_national_parks">อุทยานแห่งชาติ</string>
-  <string name="tile_layer_noaa">บริเวณคุ้มครองทางทะเล NOAA</string>
-  <string name="tile_layer_power_plants">โรงไฟฟ้า</string>
-  <string name="tile_layer_prisons">เรือน</string>
-  <string name="tile_layer_private_airports">สนามบินส่วนตัว</string>
-  <string name="tile_layer_prohibited">น่านต้องห้าม</string>
-  <string name="tile_layer_restricted_airspace">น่านจำกัด</string>
-  <string name="tile_layer_schools">โรงเรียน</string>
-  <string name="tile_layer_tfr_faa">ข้อจำกัดเที่ยวบินชั่วคราว</string>
-  <string name="tile_layer_universities">มหาวิทยาลัย</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-  <string name="traffic_alert_with_aircraft_id_and_distance_format">จราจร %1$s\nAltitude %2$s\n%3$s %4$s %5$s</string>
-  <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-  <string name="traffic_alert_with_aircraft_id_format">จราจร %1$s\nAltitude %2$s\n%3$s</string>
-  <!-- Name for the imperial system of measurement -->
-  <string name="units_imperial">อิม พี เรี ยล</string>
-  <!-- Name for the metric system of measurement -->
-  <string name="units_metric">เมตริก</string>
-  <!-- Unit and format for displaying nautical miles -->
-  <string name="units_nautical_mile_format">%s Nm</string>
-  <!-- Unit and format for displaying speed in knots -->
-  <string name="units_speed_format_knots">%s kts</string>
-  <!-- Unit and format for displaying speed in meters per second -->
-  <string name="units_speed_format_meters_per_second">%s m/s</string>
-  <!-- Unit and format for displaying speed in miles per hour -->
-  <string name="units_speed_format_miles_per_hour">%s ไมล์</string>
-  <!-- Unit and format for displaying a speed range in meters per second -->
-  <string name="units_speed_range_format_meters_per_second">%1$s-%2$s m/s</string>
-  <!-- Unit and format for displaying a speed range in miles per hour -->
-  <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s ไมล์</string>
-  <!-- Unit and format for displaying temperature in Celcius -->
-  <string name="units_temperature_celcius_format">%1$s° c</string>
-  <!-- Unit and format for displaying temperature in Fahrenheit -->
-  <string name="units_temperature_fahrenheit_format">%1$s° f</string>
-  <!-- Possible error from keychain. -->
-  <!-- The request with the authority has been accepted -->
-  <string name="validation_accepted">ตรวจ สอบ</string>
-  <!-- No validation request has been filed -->
-  <string name="validation_not_requested">ไม่มีการร้องขอการตรวจสอบ</string>
-  <!-- The request with the authority has been made and a response is pending -->
-  <string name="validation_pending">การตรวจสอบที่ค้างอยู่</string>
-  <!-- The request with the authority has been rejected -->
-  <string name="validation_rejected">ข้อมูลที่ขาดหายไป</string>
+    <!-- 1Password Extension Error Message -->
+    <string name="end_flight_title">สิ้นสุดการบิน</string>
+    <string name="submit_title">ส่ง</string>
+    <string name="review_flight_plan">ทบทวนแผนการบิน</string>
+    <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
+    <string name="airmap_airspace_advisories">คำแนะนำเกี่ยวกับห้วงอากาศ</string>
+    <!-- Label for advisories that are stup to receive digital notice -->
+    <string name="accepts_digital_notice">ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
+    <!-- Displayed when an advisory has not provided a contact phone -->
+    <string name="no_known_number">ไม่ได้ระบุหมายเลขโทรศัพท์ไว้</string>
+    <!-- Label and format for displaying the end time of temporary flight restriction -->
+    <string name="advisory_tfr_ends_format">สิ้นสุด: %1$s</string>
+    <!-- Never ending duration for a TFR -->
+    <string name="advisory_tfr_permanent">ไม่กำหนดเวลา</string>
+    <!-- Label and format for displaying the start time of temporary flight restriction -->
+    <string name="airmap_starts">เริ่มต้น: %1$s</string>
+    <!-- Format and unit for wildfire advisory in the area unit acres -->
+    <string name="advisory_wildfire_size_format_acres">%1$s เอเคอร์</string>
+    <!-- Format and unit for wildfire advisory in the area unit hectares -->
+    <string name="advisory_wildfire_size_format_hectares">%1$s เฮกตาร์</string>
+    <!-- Label for wildfire advisory cells where size is unknown -->
+    <string name="unknown_size">ไม่ทราบขนาด</string>
+    <!-- Call to action when a user has not selected an aircraft -->
+    <string name="aircraft_select_aircraft">เลือกอากาศยาน</string>
+    <!-- Title to display for the view creating a new aircraft -->
+    <string name="airmap_title_activity_create_aircraft">สร้างอากาศยาน</string>
+    <!-- Title to display for the view when updating an existing aircraft -->
+    <string name="airmap_edit_aircraft">อัปเดตอากาศยาน</string>
+    <!-- Name for airspace type Aerial Recreational Area -->
+    <string name="airspace_type_aerial_rec_area">พื้นที่นันทนาการทางอากาศ</string>
+    <!-- Name for airspace type Airport -->
+    <string name="airspace_type_airport">สนามบิน</string>
+    <!-- Name for airspace type AMA Field (Academy of Model Aeronautics) -->
+    <string name="airspace_type_ama_field">สนาม AMA</string>
+    <!-- Name for airspace type City -->
+    <string name="airspace_type_city">เมือง</string>
+    <!-- Name for airspace type Controlled Airspace -->
+    <string name="airspace_type_controlled">ห้วงอากาศควบคุม</string>
+    <!-- Name for airspace type Country -->
+    <string name="airspace_type_country">ประเทศ</string>
+    <!-- Name for airspace type County -->
+    <string name="airspace_type_county">เทศมณฑล</string>
+    <!-- Name for airspace type Custom -->
+    <string name="airspace_type_custom">กำหนดเอง</string>
+    <!-- Name for airspace type Embassy -->
+    <string name="airspace_type_embassy">สถานเอกอัครราชทูต</string>
+    <!-- Name for airspace type Emergency -->
+    <string name="airspace_type_emergency">กิจกรรมผู้ตอบโต้รายแรก</string>
+    <!-- Name for airspace type Federal Building -->
+    <string name="airspace_type_federal_building">อาคารของรัฐบาลกลาง</string>
+    <!-- Name for airspace type Flight Information Region -->
+    <string name="airspace_type_fir">เขตข้อมูลการบิน</string>
+    <!-- Name for airspace type Fire -->
+    <string name="airspace_type_fire">ไฟ</string>
+    <!-- Name for airspace type Gliderport -->
+    <string name="airspace_type_gliderport">สนามบินสำหรับเครื่องร่อน</string>
+    <!-- Name for airspace type Hazard Area -->
+    <string name="airspace_type_hazard_area">พื้นที่อันตราย</string>
+    <!-- Name for airspace type Heliport -->
+    <string name="airspace_type_heliport">ลานจอดเฮลิคอปเตอร์</string>
+    <!-- Name for airspace type Highway -->
+    <string name="airspace_type_highway">ถนนหลวง</string>
+    <!-- Name for airspace type Hospital -->
+    <string name="airspace_type_hospital">โรงพยาบาล</string>
+    <!-- Name for airspace type Industrial Property -->
+    <string name="airspace_type_industrial_property">ทรัพย์สินทางอุตสาหกรรม</string>
+    <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
+    <string name="airspace_type_japan_base">ผู้ดูแลระบบสนามบินในญี่ปุ่น</string>
+    <!-- Name for airspace type Military Property -->
+    <string name="airspace_type_military_property">ทรัพย์สินทางด้านการทหาร</string>
+    <!-- Name for airspace type National Park -->
+    <string name="airspace_type_national_park">อุทยานแห่งชาติ</string>
+    <!-- Name for airspace type NOTAM -->
+    <string name="airspace_type_notam">ข่าวประกาศสำหรับผู้ทำการบิน</string>
+    <!-- Name for airspace type Police Station -->
+    <string name="airspace_type_police_station">สถานีตำรวจ</string>
+    <!-- Name for airspace type Powerline -->
+    <string name="airspace_type_powerline">สายไฟฟ้า</string>
+    <!-- Name for airspace type Power Plant -->
+    <string name="airspace_type_power_plant">โรงไฟฟ้า</string>
+    <!-- Name for airspace type Prison -->
+    <string name="airspace_type_prison">เรือนจำ</string>
+    <!-- Name for airspace type Railway -->
+    <string name="airspace_type_railway">ทางรถไฟ</string>
+    <!-- Name for airspace type Residential Property -->
+    <string name="airspace_type_residential_property">ทรัพย์สินประเภทที่พักอาศัย</string>
+    <!-- Name for airspace type School -->
+    <string name="airspace_type_school">โรงเรียน</string>
+    <!-- Name for airspace type Seaplane Base -->
+    <string name="airspace_type_seaplane_base">สนามบินน้ำ</string>
+    <!-- Name for airspace type Special Use Airspace -->
+    <string name="airspace_type_special_use">ห้วงอากาศที่มีการใช้เป็นพิเศษ</string>
+    <!-- Name for airspace type Stadium -->
+    <string name="airspace_type_stadium">สนามกีฬา</string>
+    <!-- Name for airspace type State -->
+    <string name="airspace_type_state">มลรัฐ</string>
+    <!-- Name for airspace type Subprefecture -->
+    <string name="airspace_type_subprefecture">กิ่งจังหวัด</string>
+    <!-- Name for airspace type Supercity (Japan related) -->
+    <string name="airspace_type_supercity">ซูเปอร์ซิตี้</string>
+    <!-- Name for airspace type FAA Temporary Flight Restriction -->
+    <string name="airspace_type_tfr_faa">เขตจำกัดการบินชั่วคราว</string>
+    <!-- Name for airspace type Ultralight Field -->
+    <string name="airspace_type_ulm_field">สนามเครื่องอุลตร้าไลท์</string>
+    <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
+    <string name="airspace_type_unclassified">จำแนกไม่ได้</string>
+    <!-- Name for airspace type University -->
+    <string name="airspace_type_university">มหาวิทยาลัย</string>
+    <!-- Name for airspace type Waterway -->
+    <string name="airspace_type_waterway">ทางน้ำ</string>
+    <!-- Name for airspace type WildFire -->
+    <string name="airspace_type_wildfire">ไฟป่า</string>
+    <!-- No comment provided by engineer. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- The request with the authority has been accepted -->
+    <string name="authorization_accepted">ได้รับการอนุมัติ</string>
+    <!-- The request with the authority has been cancelled -->
+    <string name="authorization_cancelled_submission">ยกเลิกการขออนุญาตแล้ว</string>
+    <!-- The request with the authority has not been requested -->
+    <string name="authorization_not_requested">ไม่ได้ขออนุญาต</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="authorization_pending">กำลังรอการอนุมัติ</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="authorization_rejected">ปฏิเสธการขออนุญาตแล้ว</string>
+    <!-- The request with the authority will be rejected once the flight plan is submitted -->
+    <string name="authorization_rejected_upon_submission">ได้รับการปฏิเสธขณะทำการส่ง</string>
+    <!-- The request with the authority will be accepted once the flight plan is submitted -->
+    <string name="authorization_upon_submission">การขออนุญาตขณะทำการส่ง</string>
+    <!-- Login message when a user's account has been blacklisted. -->
+    <string name="invalid_email_domain">บัญชีของคุณถูกขึ้นบัญชีดำ กรุณาติดต่อ security@airmap.com</string>
+    <!-- Login message when a user must verify their email address -->
+    <string name="verify_email_log_in_again">จำเป็นต้องมีการยืนยันที่อยู่อีเมลของคุณ กรุณาตรวจสอบกล่องจดหมายของคุณ</string>
+    <!-- Login message when a user failed to authenticate -->
+    <string name="auth_error_unauthorized">ไม่ได้รับอนุญาต</string>
+    <!-- Navigation title for failed login attempt -->
+    <string name="auth_failed_login_title">แจ้งเตือน</string>
+    <!-- Abbreviation for East -->
+    <string name="cardinal_direction_e">E</string>
+    <!-- Abbreviation for East North East -->
+    <string name="cardinal_direction_ene">ENE</string>
+    <!-- Abbreviation for East South East -->
+    <string name="cardinal_direction_ese">ESE</string>
+    <!-- Abbreviation for North -->
+    <string name="cardinal_direction_n">N</string>
+    <!-- Abbreviation for North East -->
+    <string name="cardinal_direction_ne">NE</string>
+    <!-- Abbreviation for North North East -->
+    <string name="cardinal_direction_nnne">NNE</string>
+    <!-- Abbreviation for North North West -->
+    <string name="cardinal_direction_nnw">NNW</string>
+    <!-- Abbreviation for North West -->
+    <string name="cardinal_direction_nw">NW</string>
+    <!-- Abbreviation for South -->
+    <string name="cardinal_direction_s">S</string>
+    <!-- Abbreviation for South East -->
+    <string name="cardinal_direction_se">SE</string>
+    <!-- Abbreviation for South South East -->
+    <string name="cardinal_direction_sse">SSE</string>
+    <!-- Abbreviation for South South West -->
+    <string name="cardinal_direction_ssw">SSW</string>
+    <!-- Abbreviation for South West -->
+    <string name="cardinal_direction_sw">SW</string>
+    <!-- Abbreviation for West -->
+    <string name="cardinal_direction_w">W</string>
+    <!-- Abbreviation for West North West -->
+    <string name="cardinal_direction_wnw">WNW</string>
+    <!-- Abbreviation for West South West -->
+    <string name="cardinal_direction_wsw">WSW</string>
+    <!-- Bundle name -->
+    <string name="cfbundlename">${PRODUCT_NAME}</string>
+    <!-- Forgot password -->
+    <string name="com_auth0_lock_action_forgot_password">ลืมรหัสผ่านของคุณ?</string>
+    <!-- tos & privacy -->
+    <string name="com_auth0_lock_sign_up_terms">การลงชื่อสมัครใช้แสดงว่าคุณยอมรับข้อกำหนดในการให้บริการ\n และนโยบายความเป็นส่วนตัวของเรา</string>
+    <!-- forgot password email sent -->
+    <string name="com_auth0_lock_db_change_password_message_success">เราเพิ่งส่งอีเมลเพื่อตั้งรหัสผ่านใหม่ถึงคุณ</string>
+    <!-- User logged in -->
+    <string name="com_auth0_lock_database_login_success_message">คุณได้เข้าสู่ระบบเรียบร้อยแล้ว</string>
+    <!-- Login Switch -->
+    <string name="com_auth0_lock_mode_log_in">เข้าสู่ระบบ</string>
+    <!-- Signup Switch -->
+    <string name="com_auth0_lock_mode_sign_up">ลงชื่อสมัครใช้</string>
+    <!-- Social separator -->
+    <string name="com_auth0_lock_forms_separator">หรือ</string>
+    <!-- User signed up -->
+    <string name="com.auth0.lock.database.signup.success.message">ขอขอบคุณสำหรับการลงชื่อสมัครใช้</string>
+    <!-- Cancel -->
+    <string name="com.auth0.lock.database.tos.sheet.cancel">ยกเลิก</string>
+    <!-- Privacy -->
+    <string name="com.auth0.lock.database.tos.sheet.privacy">นโยบายความเป็นส่วนตัว</string>
+    <!-- ToS -->
+    <string name="com.auth0.lock.database.tos.sheet.title">ข้อกำหนดในการให้บริการ</string>
+    <!-- enter corporate credentials -->
+    <string name="com.auth0.lock.enterprise.sso.message">กรุณาป้อนข้อมูลรับรองบริษัทของคุณ</string>
+    <!-- enter corporate credentials of domain %@{email domain} -->
+    <string name="com.auth0.lock.enterprise.sso.message_at">กรุณาป้อนข้อมูลรับรองบริษัทของคุณที่ %1$s</string>
+    <!-- SSO Header -->
+    <string name="com.auth0.lock.enterprise.sso.title">เปิดใช้งานการลงชื่อเพียงครั้งเดียว</string>
+    <!-- user is blocked -->
+    <string name="com.auth0.lock.error.authentication.blocked_user">ผู้ใช้ถูกบล็อก</string>
+    <!-- Generic login error -->
+    <string name="com.auth0.lock.error.authentication.fallback">เราต้องขออภัย มีบางอย่างผิดพลาดเกิดขึ้นขณะพยายามลงชื่อเข้าใช้</string>
+    <!-- invalid_user_password -->
+    <string name="com_auth0_lock_db_login_error_invalid_credentials_message">อีเมลหรือรหัสผ่านไม่ถูกต้อง</string>
+    <!-- a0.mfa_invalid_code -->
+    <string name="com.auth0.lock.error.authentication.mfa_invalid_code">รหัสไม่ถูกต้อง</string>
+    <!-- No valid connection -->
+    <string name="com.auth0.lock.error.authentication.no_connection">เราต้องขออภัย เราไม่พบการเชื่อมต่อที่ถูกต้องสำหรับผู้ใช้รายนี้</string>
+    <!-- password_change_required -->
+    <string name="com.auth0.lock.error.authentication.password_change_required">คุณจำเป็นต้องอัปเดตรหัสผ่านของคุณเนื่องจากเป็นครั้งแรกที่คุณกำลังเข้าสู่ระบบหรือเนื่องจากรหัสผ่านของคุณหมดอายุ</string>
+    <!-- password_leaked -->
+    <string name="com.auth0.lock.error.authentication.password_leaked">การเข้าสู่ระบบนี้ถูกบล็อกเนื่องจากรหัสผ่านของคุณรั่วไหลบนเว็บไซต์อื่น เราได้ส่งอีเมลถึงคุณพร้อมคำแนะนำเกี่ยวกับวิธียกเลิกการบล็อก</string>
+    <!-- too_many_attempts -->
+    <string name="com.auth0.lock.error.authentication.too_many_attempts">บัญชีของคุณถูกบล็อกหลังจากพยายามเข้าสู่ระบบหลายครั้งติดต่อกัน</string>
+    <!-- Generic error -->
+    <string name="com_auth0_lock_unrecoverable_error_title">มีบางอย่างผิดพลาดเกิดขึ้น\nกรุณาติดต่อฝ่ายสนับสนุนด้านเทคนิค</string>
+    <!-- Generic password error -->
+    <string name="com_auth0_lock_db_message_change_password_error">เราต้องขออภัย มีบางอย่างผิดพลาดเกิดขึ้นขณะส่งคำขอเปลี่ยนรหัสผ่าน</string>
+    <!-- At least N characters -->
+    <string name="com_auth0_lock_password_strength_chars_length">อย่างน้อยต้องมีความยาว %d อักขระ</string>
+    <!-- At least n groups -->
+    <string name="com.auth0.lock.error.password.contain_at_least">ต้องประกอบด้วยอย่างน้อย %d จาก %d ประเภทอักขระต่อไปนี้:</string>
+    <!-- Lowercase letters -->
+    <string name="com_auth0_lock_password_strength_lowercase_letters">ตัวพิมพ์เล็ก (a-z)</string>
+    <!-- Must no be empty -->
+    <string name="com.auth0.lock.error.password.non_empty">ต้องมีรหัสผ่านประเภทที่ไม่เว้นว่างอยู่</string>
+    <!-- No more than %@{count} identical characters in a row (e.g., \"%@{identical sample}\" not allowed) -->
+    <string name="com_auth0_lock_password_strength_identical_chars">มีอักขระที่เหมือนกันไม่เกิน %1$d ในแต่ละแถว (เช่น  ไม่อนุญาตให้ใช้ \"%2$s\" เป็นต้น)</string>
+    <!-- Numbers -->
+    <string name="com_auth0_lock_password_strength_numbers">ตัวเลข (เช่น 0-9)</string>
+    <!-- N groups -->
+    <string name="com_auth0_lock_password_strength_title_must_have">ควรประกอบด้วย:</string>
+    <!-- Special Characters -->
+    <string name="com_auth0_lock_password_strength_special_chars">อักขระพิเศษ (เช่น  !@#$%^&amp;*)</string>
+    <!-- Uppercase letters -->
+    <string name="com_auth0_lock_password_strength_uppercase_letters">ตัวพิมพ์ใหญ่ (A-Z)</string>
+    <!-- Passwordless link invalid. -->
+    <string name="com.auth0.lock.error.passwordless.invalid_link">เราต้องขออภัย มีปัญหาเกิดขึ้นกับลิงก์ของคุณ กรุณาขอลิงก์ใหม่</string>
+    <!-- Passwordless sign ups disabled. -->
+    <string name="com.auth0.lock.error.passwordless.signup_disabled">การลงชื่อสมัครใช้ใหม่ไม่สามารถใช้งานได้กับบัญชีนี้ กรุณาติดต่อผู้ดูแลระบบของคุณ</string>
+    <!-- Recoverable error button -->
+    <string name="com.auth0.lock.error.recoverable.button">ลองใหม่อีกครั้ง</string>
+    <!-- Recoverable error message -->
+    <string name="com.auth0.lock.error.recoverable.message">กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</string>
+    <!-- Recoverable error title -->
+    <string name="com.auth0.lock.error.recoverable.title">ไม่สามารถโหลดกล่องการเข้าสู่ระบบ</string>
+    <!-- Generic sign up error -->
+    <string name="com_auth0_lock_db_sign_up_error_message">เราต้องขออภัย มีบางอย่างผิดพลาดเกิดขึ้นขณะพยายามลงชื่อสมัครใช้</string>
+    <!-- invalid_password -->
+    <string name="com_auth0_lock_input_error_password">รหัสผ่านไม่ถูกต้อง</string>
+    <!-- password_dictionary_error -->
+    <string name="com.auth0.lock.error.signup.password_dictionary_error">รหัสผ่านธรรมดาเกินไป</string>
+    <!-- password_history -->
+    <string name="com_auth0_lock_db_signup_password_already_used_error_message">มีการใช้รหัสผ่านนี้มาก่อน</string>
+    <!-- password_no_user_info_error -->
+    <string name="com.auth0.lock.error.signup.password_no_user_info_error">รหัสผ่านขึ้นอยู่กับข้อมูลผู้ใช้</string>
+    <!-- password_strength_error -->
+    <string name="com_auth0_lock_db_signup_password_not_strong_error_message">รหัสผ่านอ่อนแอเกินไป</string>
+    <!-- user_exists -->
+    <string name="com_auth0_lock_db_signup_user_already_exists_error_message">ชื่อผู้ใช้นี้มีอยู่แล้ว</string>
+    <!-- Unrecoverable error button -->
+    <string name="com.auth0.lock.error.unrecoverable.button">ติดต่อฝ่ายสนับสนุน</string>
+    <!-- Default error -->
+    <string name="com.auth0.lock.error.unrecoverable.default">มีบางอย่างผิดพลาดเกิดขึ้น\nกรุณาติดต่อฝ่ายสนับสนุนด้านเทคนิค</string>
+    <!-- Invalid client or domain -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_credentials">ข้อมูลประจำตัว Auth0 ของคุณ ClientId และ/หรือ Domain ไม่ถูกต้อง</string>
+    <!-- Your options configuration failed with: %@{error} -->
+    <string name="com.auth0.lock.error.unrecoverable.invalid_options">การกำหนดค่าตัวเลือกของคุณล้มเหลวจาก: %1$s</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message">มีข้อผิดพลาดเกิดขึ้นขณะทำการแก้ไขการกำหนดค่ากล่องการเข้าสู่ระบบ</string>
+    <!-- Unrecoverable error message -->
+    <string name="com.auth0.lock.error.unrecoverable.message.no_action">มีข้อผิดพลาดเกิดขึ้นขณะทำการแก้ไขการกำหนดค่ากล่องการเข้าสู่ระบบ กรุณาติดต่อฝ่านสนับสนุน</string>
+    <!-- No connections -->
+    <string name="com.auth0.lock.error.unrecoverable.no_connections">ไม่พบวิธีการตรวจสอบสิทธิ์สำหรับไคลเอ็นต์นี้ โปรดตรวจสอบการตั้งค่าไคลเอ็นต์ของคุณ</string>
+    <!-- Unrecoverable error title -->
+    <string name="com.auth0.lock.error.unrecoverable.title">ไม่สามารถแก้ไขคำขอของคุณได้</string>
+    <!-- Forgot Password message -->
+    <string name="com_auth0_lock_forgot_message">กรุณาป้อนอีเมลและรหัสผ่านใหม่ของคุณ เราจะส่งอีเมลถึงคุณเพื่อยืนยันการเปลี่ยนรหัสผ่าน</string>
+    <!-- Forgot Password title -->
+    <string name="com_auth0_lock_title_change_password">รีเซ็ตรหัสผ่าน</string>
+    <!-- Header Title -->
+    <string name="com.auth0.lock.header.default_title">Auth0</string>
+    <!-- invalid email -->
+    <string name="com_auth0_lock_input_error_email">ต้องเป็นที่อยู่อีเมลที่ถูกต้อง</string>
+    <!-- Email placeholder -->
+    <string name="com_auth0_lock_hint_email">อีเมล</string>
+    <!-- Username or Email placeholder -->
+    <string name="com.auth0.lock.input.email_username.placeholder">ชื่อผู้ใช้/อีเมล</string>
+    <!-- empty input -->
+    <string name="com.auth0.lock.input.empty.error">ต้องไม่เว้นว่าง</string>
+    <!-- generic input error -->
+    <string name="com.auth0.lock.input.generic.error">ข้อมูลที่ป้อนไม่ถูกต้อง</string>
+    <!-- invalid otp -->
+    <string name="com.auth0.lock.input.otp.error">ต้องเป็นรหัสตัวเลขที่ถูกต้อง</string>
+    <!-- OTP placeholder -->
+    <string name="com.auth0.lock.input.otp.placeholder">รหัส</string>
+    <!-- Password placeholder -->
+    <string name="com_auth0_lock_hint_password">รหัสผ่าน</string>
+    <!-- invalid phone -->
+    <string name="com.auth0.lock.input.phone.error">ต้องเป็นหมายเลขโทรศัพท์ที่ถูกต้อง</string>
+    <!-- Phone placeholder -->
+    <string name="com.auth0.lock.input.phone.placeholder">หมายเลขโทรศัพท์</string>
+    <!-- policy violation -->
+    <string name="com.auth0.lock.input.policy.error">รหัสผ่านไม่เป็นไปตามนโยบาย</string>
+    <!-- invalid username -->
+    <string name="com.auth0.lock.input.username.error">สามารถประกอบด้วยอักขระอักษรเลขระหว่าง %d ถึง %d เท่านั้นและ \'_\'</string>
+    <!-- Username placeholder -->
+    <string name="com.auth0.lock.input.username.placeholder">ชื่อผู้ใช้</string>
+    <!-- Multifactor message -->
+    <string name="com.auth0.lock.multifactor.message">กรุณาป้อนรหัสยืนยันที่สร้างขึ้นโดยแอปพลิเคชันบนโทรศัพท์มือถือของคุณ</string>
+    <!-- Multifactor title -->
+    <string name="com.auth0.lock.multifactor.title">การยืนยันแบบสองขั้นตอน</string>
+    <!-- Country tableview navigation header -->
+    <string name="com.auth0.lock.passwordless.sms.country.header">เลือกประเทศของคุณ</string>
+    <!-- CountryCodes TableView searchbar placeholder -->
+    <string name="com.auth0.lock.passwordless.sms.country.search">ค้นหา</string>
+    <!-- Amazon -->
+    <string name="com.auth0.lock.strategy.localized.amazon">AMAZON</string>
+    <!-- Aol -->
+    <string name="com.auth0.lock.strategy.localized.aol">AOL</string>
+    <!-- Baidu -->
+    <string name="com.auth0.lock.strategy.localized.baidu">百度</string>
+    <!-- Bitbucket -->
+    <string name="com.auth0.lock.strategy.localized.bitbucket">BITBUCKET</string>
+    <!-- Dropbox -->
+    <string name="com.auth0.lock.strategy.localized.dropbox">DROPBOX</string>
+    <!-- Dwolla -->
+    <string name="com.auth0.lock.strategy.localized.dwolla">DWOLLA</string>
+    <!-- Ebay -->
+    <string name="com.auth0.lock.strategy.localized.ebay">EBAY</string>
+    <!-- Evernote -->
+    <string name="com.auth0.lock.strategy.localized.evernote">EVERNOTE</string>
+    <!-- EvernoteSandbox -->
+    <string name="com.auth0.lock.strategy.localized.evernote_sandbox">EVERNOTE (SANDBOX)</string>
+    <!-- Exact -->
+    <string name="com.auth0.lock.strategy.localized.exact">EXACT</string>
+    <!-- Facebook -->
+    <string name="com.auth0.lock.strategy.localized.facebook">FACEBOOK</string>
+    <!-- Fitbit -->
+    <string name="com.auth0.lock.strategy.localized.fitbit">FITBIT</string>
+    <!-- Github -->
+    <string name="com.auth0.lock.strategy.localized.github">GITHUB</string>
+    <!-- Google -->
+    <string name="com.auth0.lock.strategy.localized.google">GOOGLE</string>
+    <!-- Instagram -->
+    <string name="com.auth0.lock.strategy.localized.instagram">INSTAGRAM</string>
+    <!-- Linkedin -->
+    <string name="com.auth0.lock.strategy.localized.linkedin">LINKEDIN</string>
+    <!-- Microsoft -->
+    <string name="com.auth0.lock.strategy.localized.microsoft">บัญชี MICROSOFT</string>
+    <!-- Miicard -->
+    <string name="com.auth0.lock.strategy.localized.miicard">MIICARD</string>
+    <!-- Paypal -->
+    <string name="com.auth0.lock.strategy.localized.paypal">PAYPAL</string>
+    <!-- PaypalSandbox -->
+    <string name="com.auth0.lock.strategy.localized.paypal_sandbox">PAYPAL (SANDBOX)</string>
+    <!-- PlanningCenter -->
+    <string name="com.auth0.lock.strategy.localized.planning_center">ศูนย์การวางแผน</string>
+    <!-- RenRen -->
+    <string name="com.auth0.lock.strategy.localized.renren">人人</string>
+    <!-- Salesforce -->
+    <string name="com.auth0.lock.strategy.localized.salesforce">SALESFORCE</string>
+    <!-- SalesforceCommunity -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_community">SALESFORCE COMMUNITY</string>
+    <!-- SalesforceSandbox -->
+    <string name="com.auth0.lock.strategy.localized.salesforce_sandbox">SALESFORCE (SANDBOX)</string>
+    <!-- Shopify -->
+    <string name="com.auth0.lock.strategy.localized.shopify">SHOPIFY</string>
+    <!-- Soundcloud -->
+    <string name="com.auth0.lock.strategy.localized.soundcloud">SOUNDCLOUD</string>
+    <!-- TheCity -->
+    <string name="com.auth0.lock.strategy.localized.the_city">THE CITY</string>
+    <!-- TheCitySandbox -->
+    <string name="com.auth0.lock.strategy.localized.the_city_sandbox">THE CITY (SANDBOX)</string>
+    <!-- ThirtySevenSignals -->
+    <string name="com.auth0.lock.strategy.localized.thirty_seven_signals">37 SIGNALS</string>
+    <!-- Twitter -->
+    <string name="com.auth0.lock.strategy.localized.twitter">TWITTER</string>
+    <!-- Vkontakte -->
+    <string name="com.auth0.lock.strategy.localized.vkontakte">VKONTAKTE</string>
+    <!-- Weibo -->
+    <string name="com.auth0.lock.strategy.localized.weibo">新浪微博</string>
+    <!-- Wordpress -->
+    <string name="com.auth0.lock.strategy.localized.wordpress">WORDPRESS</string>
+    <!-- Yahoo -->
+    <string name="com.auth0.lock.strategy.localized.yahoo">YAHOO!</string>
+    <!-- Yammer -->
+    <string name="com.auth0.lock.strategy.localized.yammer">YAMMER</string>
+    <!-- Yandex -->
+    <string name="com.auth0.lock.strategy.localized.yandex">YANDEX</string>
+    <!-- Log in with %@{strategy} -->
+    <string name="com_auth0_lock_social_log_in">เข้าสู่ระบบด้วย %1$s</string>
+    <!-- Sign up with %@{strategy} -->
+    <string name="com_auth0_lock_social_sign_up">ลงชื่อสมัครใช้ด้วย %1$s</string>
+    <!-- Login Button title -->
+    <string name="com_auth0_lock_action_log_in">เข้าสู่ระบบ</string>
+    <!-- Send 2fa code -->
+    <string name="com.auth0.lock.submit.send_code.title">ส่ง</string>
+    <!-- Send Email button title -->
+    <string name="com_auth0_lock_action_send_email">ส่งอีเมล</string>
+    <!-- Signup Button title -->
+    <string name="com_auth0_lock_action_sign_up">ลงชื่อสมัครใช้</string>
+    <!-- Passwordless code reminder action -->
+    <string name="com.auth0.passwordless.code.reminder">ไม่ได้รับรหัส?</string>
+    <!-- Passwordless code sent by email to %@{identifier} -->
+    <string name="com.auth0.passwordless.email.code.sent">ส่งอีเมลพร้อมรหัสไปที่ %1$s</string>
+    <!-- Passwordless email title -->
+    <string name="com.auth0.passwordless.email.title">ป้อนอีเมลของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
+    <!-- Passwordless email title with social -->
+    <string name="com.auth0.passwordless.email.title.social">หรือป้อนอีเมลของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
+    <!-- Passwordless link reminder action -->
+    <string name="com.auth0.passwordless.link.reminder">ไม่ได้รับลิงก์?</string>
+    <!-- Passwordless link sent to %@{identifier} -->
+    <string name="com.auth0.passwordless.link.sent">เราได้ส่งลิงก์เพื่อลงชื่อเข้าใช้ไปที่ %1$s</string>
+    <!-- Passwordless code sent by sms to %@{identifier} -->
+    <string name="com.auth0.passwordless.sms.code.sent">ส่ง SMS พร้อมรหัสไปที่ %1$s</string>
+    <!-- CountryCodes TableViewCell detail %@{phoneCode} -->
+    <string name="com.auth0.passwordless.sms.country.cell.detail">%1$s</string>
+    <!-- CountryCodes TableViewCell label %@{localizedName} -->
+    <string name="com.auth0.passwordless.sms.country.cell.label">%1$s</string>
+    <!-- Passwordless sms title -->
+    <string name="com.auth0.passwordless.sms.title">ป้อนหมายเลขโทรศัพท์ของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
+    <!-- Passwordless sms title with social -->
+    <string name="com.auth0.passwordless.sms.title.social">หรือป้อนหมายเลขโทรศัพท์ของคุณเพื่อลงชื่อเข้าใช้หรือสร้างบัญชี</string>
+    <!-- Class = "UILabel"; text = "Make & Model"; ObjectID = "XDN-d5-eoX"; Note = "CREATE_AIRCRAFT_MAKE_AND_MODEL|Label for the row label that displays the Make and Model of an aircraft"; AirMapUIObjectId = "XDN-d5-eoX.text"; -->
+    <string name="create_aircraft_make_and_model">แบบและรุ่น</string>
+    <!-- Class = "UITextField"; placeholder = "Nickname"; ObjectID = "blN-px-yT6"; Note = "CREATE_AIRCRAFT_NICKNAME|Placeholder label for the textfield where a user inputs the nickname for an aircraft"; AirMapUIObjectId = "blN-px-yT6.placeholder"; -->
+    <string name="airmap_nickname">ชื่อเล่น</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "K03-vU-4zj"; Note = "CREATE_AIRCRAFT_SAVE_BUTTON|Title for the button that saves a user's changes to a new or existing aircraft"; AirMapUIObjectId = "K03-vU-4zj.normalTitle"; -->
+    <string name="create_aircraft_save_button">บันทึก</string>
+    <!-- Class = "UINavigationItem"; title = "Create Aircraft"; ObjectID = "Z9F-I6-niw"; Note = "CREATE_AIRCRAFT_TITLE|Title for the view where you can create a new aircraft"; AirMapUIObjectId = "Z9F-I6-niw.title"; -->
+    <string name="create_aircraft">สร้างอากาศยาน</string>
+    <!-- Request cancelled error -->
+    <string name="error_cancelled">คำขอถูกยกเลิกก่อนที่จะดำเนินการเสร็จสิ้น</string>
+    <!-- A conflict exists with the attempted request -->
+    <string name="error_conflict">มีข้อขัดแย้งเกิดขึ้น</string>
+    <!-- A generic server error message with an associated error code -->
+    <string name="error_generic_format">เซิร์ฟเวอร์แสดงข้อผิดพลาด (%s)</string>
+    <!-- Response serialization failure error -->
+    <string name="error_serialization">เซิร์ฟเวอร์แสดงการตอบกลับที่ไม่สามารถประมวลผลได้</string>
+    <!-- Server failure error -->
+    <string name="error_server">เซิร์ฟเวอร์ไม่สามารถดำเนินการตามคำขอของคุณได้สำเร็จ</string>
+    <!-- Authorization failure error -->
+    <string name="error_unauthorized">ไม่อนุญาต โปรดตรวจสอบข้อมูลรับรองการเข้าสู่ระบบ</string>
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- Possible error from keychain. -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- 1Password Extension Error Message -->
+    <!-- Class = "UINavigationItem"; title = "FAQs"; ObjectID = "W7d-Gh-IMB"; Note = "FAQS_TITLE|Title for view that shows answers to frequently asked questions (FAQs)."; AirMapUIObjectId = "W7d-Gh-IMB.title"; -->
+    <string name="faqs">คำถามที่พบบ่อย</string>
+    <string name="flight_data_cell_button_done">เสร็จสิ้น</string>
+    <string name="now">ตอนนี้</string>
+    <!-- Class = "UIButton"; normalTitle = "Area"; ObjectID = "Yyg-xF-uSz"; Note = "FLIGHT_DRAWING_MODE_AREA|Label for button that enables area-based flight planning"; AirMapUIObjectId = "Yyg-xF-uSz.normalTitle"; -->
+    <string name="airmap_polygon">พื้นที่</string>
+    <!-- Class = "UIButton"; normalTitle = "Path"; ObjectID = "IAP-O7-VzM"; Note = "FLIGHT_DRAWING_MODE_PATH|Label for button that enables path-based flight planning"; AirMapUIObjectId = "IAP-O7-VzM.normalTitle"; -->
+    <string name="airmap_path">เส้นทาง</string>
+    <!-- Class = "UIButton"; normalTitle = "Point"; ObjectID = "Fti-S4-xfH"; Note = "FLIGHT_DRAWING_MODE_POINT|Label for button that enables point-based flight planning"; AirMapUIObjectId = "Fti-S4-xfH.normalTitle"; -->
+    <string name="airmap_circle">จุด</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "kPh-hd-dib"; Note = "FLIGHT_DRAWING_NEXT_BUTTON|Label for button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "kPh-hd-dib.normalTitle"; -->
+    <string name="flight_drawing_next_button">ต่อไป</string>
+    <!-- The radius around a point-based flight's center -->
+    <string name="airmap_buffer">รัศมี</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "ViV-2h-qM5"; Note = "FLIGHT_DRAWING_TITLE|Title for view that allows a user to draw out a flight plan"; AirMapUIObjectId = "ViV-2h-qM5.title"; -->
+    <string name="flight_drawing_title">สร้างเที่ยวบิน</string>
+    <!-- Call to action to fine-tune the geometry of a flight. -->
+    <string name="airmap_done_drawing_tip">ลากจุดเพื่อย้าย ลากจุดกึ่งกลางเพื่อเพิ่มจุดใหม่</string>
+    <!-- Call to action to drag a point to the trash to delete. -->
+    <string name="airmap_delete_tip">ลากจุดไปที่ถังขยะเพื่อลบ</string>
+    <!-- Call to action to draw an area-based flight. -->
+    <string name="airmap_draw_freehand_area">วาดพื้นที่ทำการบิน</string>
+    <!-- Call to action to draw a path-based flight. -->
+    <string name="airmap_draw_freehand_path">วาดเส้นทางการบิน</string>
+    <!-- Call to action to drag the center position of a point-based flight. -->
+    <string name="flight_drawing_tooltip_cta_postiion_point">ลากจุดศูนย์กลางเพื่อหาตำแหน่งพื้นที่ทำการบินของคุณ</string>
+    <!-- Call to action to tap the icon to begin drawing a flight area. -->
+    <string name="airmap_freehand_tip_area">แตะไอคอนรูปมือเพื่อวาดพื้นที่ทำการบิน</string>
+    <!-- Call to action to tap the icon to begin drawing a flight path. -->
+    <string name="airmap_freehand_tip_path">แตะไอคอนรูปมือเพื่อวาดเส้นทางการบิน</string>
+    <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
+    <string name="airmap_flight_area_overlap_permit_conflict">พื้นที่ทำการบินไม่สามารถทับซ้อนกับเขตอนุญาตให้ทำการบินที่มีความขัดแย้งกันได้</string>
+    <!-- Call to action to fix self-intersecting geometries of an area-based flight. -->
+    <string name="airmap_error_overlap">พื้นที่ทำการบินไม่ถูกต้อง ปรับพื้นที่ทำการบินเพื่อไม่ให้พื้นที่ทับซ้อนกัน</string>
+    <!-- The width of a path-based flight extending outward from the centerline -->
+    <string name="airmap_width">ความกว้าง</string>
+    <!-- Title for the button to advance to the next screen -->
+    <string name="airmap_next">ถัดไป</string>
+    <!-- Title for the button to save and create the flight -->
+    <string name="airmap_save">บันทึก</string>
+    <!-- Call to action title for the user to select an aircraft -->
+    <string name="flight_plan_row_title_aircraft">เลือกอากาศยาน</string>
+    <!-- Title for the row displaying the name of the aircraft -->
+    <string name="flight_plan_row_title_aircraft_name">อากาศยาน</string>
+    <!-- Title for the row displaying flight plan altitude -->
+    <string name="airmap_max_altitude">ระดับความสูง</string>
+    <!-- Title for the row displaying flight plan buffer -->
+    <string name="flight_plan_row_title_buffer">บัฟเฟอร์</string>
+    <!-- Title for the row displaying flight plan duration -->
+    <string name="airmap_duration">ช่วงเวลา</string>
+    <!-- Title for the row displaying flight plan max altitude AGL (above ground level) -->
+    <string name="flight_plan_row_title_max_altitude">ระดับความสูงสูงสุด AGL</string>
+    <!-- Call to action title for the user to select a pilot profile -->
+    <string name="select_pilot_profile">เลือกโปรไฟล์นักบิน</string>
+    <!-- Title for the row displaying flight plan radius -->
+    <string name="flight_plan_row_title_radius">รัศมี</string>
+    <!-- Title for the row displaying flight plan start time -->
+    <string name="starts">เริ่มต้น</string>
+    <!-- Title for the section displaying the pilot and aircraft details -->
+    <string name="pilot_and_aircraft_header">นักบินและอากาศยาน</string>
+    <!-- Title for the section displaying flight plan details -->
+    <string name="flight_details">เที่ยวบิน</string>
+    <!-- Title for the section displaying social sharing features -->
+    <string name="airmap_share_my_flight">แบ่งปันเที่ยวบินของฉัน</string>
+    <string name="date_and_time">วันที่และเวลา</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketclosederror">ซ็อกเก็ตถูกปิดโดยเพียร์จากระยะไกล</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketconnecttimeouterror">ความพยายามเชื่อมต่อกับโฮสต์หมดเวลา</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketothererror">ความพยายามสร้างซ็อกเก็ตจากซ็อกเก็ต FD ล้มเหลว getpeername() ล้มเหลว</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadmaxedouterror">การดำเนินการอ่านถึงความยาวสูงสุดที่กำหนด</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketreadtimeouterror">การดำเนินการอ่านหมดเวลาแล้ว</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncsocketwritetimeouterror">การดำเนินการเขียนหมดเวลาแล้ว</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketclosederror">ซ็อกเก็ตปิดอยู่</string>
+    <!-- No comment provided by engineer. -->
+    <string name="gcdasyncudpsocketsendtimeouterror">การดำเนินการส่งหมดเวลาแล้ว</string>
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid amount of jwt parts -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JWT token base64Url value -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- Invalid JSON value inside base64Url -->
+    <!-- The request with the authority will be reviewed manually sometime after the flight plan is submitted -->
+    <string name="manual_authorization">การส่งคำขออนุญาตด้วยตนเองกำลังรอดำเนินการ</string>
+    <!-- Class = "UINavigationItem"; title = "Manufacturers"; ObjectID = "a84-JL-ndb"; Note = "MANUFACTURERS_TITLE|Title for the view that displays a list of all aircraft manufacturers"; AirMapUIObjectId = "a84-JL-ndb.title"; -->
+    <string name="manufacturers_title">ผู้ผลิต</string>
+    <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
+    <string name="models_title">รุ่นอากาศยาน</string>
+    <!-- No comment provided by engineer. -->
+    <!-- Table section title for other selectable countries -->
+    <string name="phone_country_section_other_country">อื่นๆ</string>
+    <!-- Table section title for the currently selected country -->
+    <string name="phone_country_section_selected_country">ประเทศที่เลือก</string>
+    <!-- Class = "UINavigationItem"; title = "Select Country"; ObjectID = "dcW-Vd-KfC"; Note = "PHONE_COUNTRY_TITLE|Title for the view that allows a user to select their phone numbers country"; AirMapUIObjectId = "dcW-Vd-KfC.title"; -->
+    <string name="phone_country_title">เลือกประเทศ</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "p8q-LE-2ew"; Note = "PHONE_VERIFICATION_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "p8q-LE-2ew.text"; -->
+    <string name="phone_verification_code_header">รหัส SMS</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "dDO-AY-LlB"; Note = "PHONE_VERIFICATION_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "dDO-AY-LlB.placeholder"; -->
+    <string name="phone_verification_code_placeholder">รหัส</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
+    <string name="phone_verification_code_title">ยืนยันหมายเลขโทรศัพท์</string>
+    <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
+    <string name="airmap_phone_number_disclaimer">การระบุหมายเลขของคุณแสดงว่าคุณยินยอมที่จะรับข้อความเกี่ยวกับการบินของคุณตามหมายเลขนี้ ซึ่งอาจมีอัตราค่าบริการในการรับข้อความและข้อมูลของผู้ให้บริการ\n\nAirMap จะส่งข้อความถึงคุณเมื่อการแจ้งเตือนแบบดิจิทัลถูกส่งเรียบร้อยแล้ว\n</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
+    <string name="phone_verification_phone">หมายเลขโทรศัพท์</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
+    <string name="phone_verification_request_new_sms_code">ขอรหัส SMS ใหม่</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "mhb-zV-IBV"; Note = "PHONE_VERIFICATION_SAVE_BUTTON|Title for button that saves and submits the users phone number for verification"; AirMapUIObjectId = "mhb-zV-IBV.normalTitle"; -->
+    <string name="phone_verification_save_button">บันทึก</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "lre-WH-pt9"; Note = "PHONE_VERIFICATION_SUBMIT_BUTTON|Title for button that allows the user to submit the SMS code for verification"; AirMapUIObjectId = "lre-WH-pt9.normalTitle"; -->
+    <string name="phone_verification_submit_button">ส่ง</string>
+    <!-- Class = "UINavigationItem"; title = "Phone Number Verification"; ObjectID = "4g7-2z-c9g"; Note = "PHONE_VERIFICATION_TITLE|Title for view that allows a user to verify their phone number"; AirMapUIObjectId = "4g7-2z-c9g.title"; -->
+    <string name="phone_number_verification">การยืนยันหมายเลขโทรศัพท์</string>
+    <!-- Message that is presented after a phone verification has failed, encouraging the user to try again -->
+    <string name="phone_verification_try_again">ลองใหม่อีกครั้ง</string>
+    <!-- Message presented to a user when the SMS code they input is incorrect and verification of that code has failed -->
+    <string name="phone_verification_verification_failed">การยืนยันหมายเลขโทรศัพท์ล้มเหลว</string>
+    <!-- Format for displaying the given + family name of a user. 1) given name 2) family name -->
+    <string name="pilot_full_name_format">%1$s %2$s</string>
+    <!-- Table row label for FAA registration number -->
+    <string name="pilot_profile_faa_registration">หมายเลขทะเบียน FAA</string>
+    <!-- Label for the pilot profile email -->
+    <string name="email">อีเมล</string>
+    <!-- Label for the pilot profile first name -->
+    <string name="first_name">ชื่อตัว</string>
+    <!-- Label for the pilot profile last name -->
+    <string name="last_name">ชื่อสกุล</string>
+    <!-- Label for the pilot profile phone -->
+    <string name="pilot_profile_label_phone">หมายเลขโทรศัพท์</string>
+    <!-- Label for the pilot profile username -->
+    <string name="pilot_profile_label_username">ชื่อผู้ใช้</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "kCX-rY-nIt"; Note = "PILOT_PROFILE_SAVE_BUTTON|Title for the button that saves any changes to a user's profile"; AirMapUIObjectId = "kCX-rY-nIt.normalTitle"; -->
+    <string name="pilot_profile_save_button">บันทึก</string>
+    <!-- Section header for the pilot profile additional info section -->
+    <string name="pilot_profile_section_additional">ข้อมูลเพิ่มเติม</string>
+    <!-- Section header for the pilot profile personal info section -->
+    <string name="airmap_personal_information">ข้อมูลส่วนตัว</string>
+    <!-- Format for displaying a user's number of aircraft and flights -->
+    <string name="pilot_profile_statistics_format">%1$s อากาศยาน, %2$s เที่ยวบิน</string>
+    <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
+    <string name="pilot_profile_title">โปรไฟล์นักบิน</string>
+    <string name="review_flight_plane_title">แผนการบิน</string>
+    <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
+    <string name="review_flight_plan_details_next_button">ต่อไป</string>
+    <string name="review_flight_plan_details_public_flight_value_true">ใช่</string>
+    <string name="review_flight_plan_details_radius">รัศมี</string>
+    <string name="airmap_aircraft_stats">อากาศยาน</string>
+    <string name="review_flight_plan_details_row_title_altitude">ระดับความสูง</string>
+    <string name="review_flight_plan_details_row_title_duration">สิ้นสุด</string>
+    <string name="review_flight_plan_details_row_title_ends">สิ้นสุด</string>
+    <string name="review_flight_plan_details_row_title_public">สาธารณะ</string>
+    <string name="review_flight_plan_details_row_title_starts">เริ่มต้น</string>
+    <string name="review_flight_plan_details_section_header_aircraft">อากาศยาน</string>
+    <string name="review_flight_plan_details_section_header_details">รายละเอียด</string>
+    <string name="review_flight_plan_details_section_header_social">แบ่งปันเที่ยวบินของฉัน</string>
+    <string name="review_flight_plan_details_start_time_now">ตอนนี้</string>
+    <!-- Class = "UINavigationItem"; title = "Create Flight"; ObjectID = "HM6-qn-wuK"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_TITLE|Title for view that allows a user to adjust the details of a new flight"; AirMapUIObjectId = "HM6-qn-wuK.title"; -->
+    <string name="airmap_title_activity_create_flight">สร้างเที่ยวบิน</string>
+    <!-- Class = "UIButton"; normalTitle = "End Flight"; ObjectID = "2Eq-Fz-bOO"; Note = "REVIEW_FLIGHT_PLAN_END_BUTTON|Label for button that ends an active flight"; AirMapUIObjectId = "2Eq-Fz-bOO.normalTitle"; -->
+    <string name="end_flight">สิ้นสุดการบิน</string>
+    <!-- Displayed for authorities that are setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_accepts_notice">ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
+    <!-- Displayed for authorities that are NOT setup to receive digital notice -->
+    <string name="review_flight_plan_notices_tab_does_not_accept_notice">ผู้มีอำนาจต่อไปนี้ในพื้นที่นี้ไม่ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
+    <!-- Displayed in the flight plan review notices tab when there are no notices to display -->
+    <string name="review_flight_plan_notices_tab_section_header_no_notices">ไม่มีการแจ้งเตือนใดๆ สำหรับเที่ยวบินนี้</string>
+    <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
+    <string name="airmap_digital_notice_accepted">รับการแจ้งเตือนแบบดิจิทัลแล้ว</string>
+    <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
+    <string name="airmap_not_accept_notice">ผู้มีอำนาจดังต่อไปนี้ในพื้นที่นี้ไม่ยอมรับการแจ้งเตือนแบบดิจิทัล</string>
+    <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
+    <string name="airmap_review">ทบทวน</string>
+    <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
+    <string name="airmap_flight_notice">การแจ้งเตือนการบิน</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4YZ-kG-zkZ"; Note = "REVIEW_FLIGHT_PLAN_SUBMIT_BUTTON|Label for button that submits and creates a new flight"; AirMapUIObjectId = "4YZ-kG-zkZ.normalTitle"; -->
+    <string name="submit">ส่ง</string>
+    <string name="review_flight_plan_tab_title_digital_notice">การแจ้งเตือน</string>
+    <string name="review_flight_plan_tab_title_flight">เที่ยวบิน</string>
+    <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
+    <string name="review_flight_plan_title">ทบทวนแผนการบิน</string>
+    <!-- Label for the section header that displays all the Optional rulesets -->
+    <string name="rulesets_section_optional">ตัวเลือก</string>
+    <!-- Label for the section header that displays all the Pick One rulesets -->
+    <string name="rulesets_section_pick_one">เลือกหนึ่งอย่าง</string>
+    <!-- Label for the section header that displays all the Required rulesets -->
+    <string name="rulesets_section_required">จำเป็น</string>
+    <!-- Label for rulesets that can be optionally enabled by the user -->
+    <string name="ruleset_selection_type_optional">ตัวเลือก</string>
+    <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
+    <string name="ruleset_selection_type_pickone">เลือกหนึ่งอย่าง</string>
+    <!-- Label for rulesets that must be enabled by the user -->
+    <string name="ruleset_selection_type_required">จำเป็นต้องระบุ</string>
+    <string name="rules_generic_title">ข้อบังคับของท้องถิ่น</string>
+    <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
+    <string name="select_aircraft">เลือกอากาศยาน</string>
+    <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
+    <string name="sms_login_code_header">รหัส SMS</string>
+    <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
+    <string name="sms_login_code_placeholder">รหัส</string>
+    <!-- Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ERY-u7-YqH"; Note = "SMS_LOGIN_CODE_SUBMIT_BUTTON|Title for button that allows a user to submit an SMS code for verification"; AirMapUIObjectId = "ERY-u7-YqH.normalTitle"; -->
+    <string name="sms_login_code_submit_button">ส่ง</string>
+    <!-- Class = "UINavigationItem"; title = "Verify Code"; ObjectID = "7C4-bp-tif"; Note = "SMS_LOGIN_CODE_TITLE|Title for the view where a user enters their SMS verification code"; AirMapUIObjectId = "7C4-bp-tif.title"; -->
+    <string name="sms_login_code_title">ยืนยันรหัส</string>
+    <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "61d-PT-JN7"; Note = "SMS_LOGIN_PHONE_NUMBER_PLACEHOLDER|Label for field that the user types their phone number into"; AirMapUIObjectId = "61d-PT-JN7.placeholder"; -->
+    <string name="sms_login_phone_number_placeholder">หมายเลขโทรศัพท์</string>
+    <!-- Class = "UIButton"; normalTitle = "Save"; ObjectID = "cdb-du-WXE"; Note = "SMS_LOGIN_SAVE_BUTTON|Label for button that allows the user to submit their phone number for verification"; AirMapUIObjectId = "cdb-du-WXE.normalTitle"; -->
+    <string name="sms_login_save_button">บันทึก</string>
+    <!-- Class = "UINavigationItem"; title = "Login"; ObjectID = "CJG-Jj-2c2"; Note = "SMS_LOGIN_TITLE|Title for view that allows a user to login via SMS"; AirMapUIObjectId = "CJG-Jj-2c2.title"; -->
+    <string name="sms_login_title">เข้าสู่ระบบ</string>
+    <!-- Description for status advisory color Green -->
+    <string name="informational">ด้านสารสนเทศ</string>
+    <!-- Description for status advisory color Orange -->
+    <string name="status_orange_description">จำเป็นต้องดำเนินการ</string>
+    <!-- Description for status advisory color Red -->
+    <string name="flight_strictly_regulated">เที่ยวบินถูกควบคุมอย่างเคร่งครัด</string>
+    <!-- Description for status advisory color Yellow -->
+    <string name="advisories">คำแนะนำ</string>
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <!-- No comment provided by engineer. -->
+    <string name="tile_layer_aerial_rec_areas">พื้นที่นันทนาการทางอากาศ</string>
+    <string name="tile_layer_airports">สนามบิน</string>
+    <string name="tile_layer_cities">เมือง</string>
+    <string name="tile_layer_class_b">ห้วงอากาศควบคุมชั้น บี</string>
+    <string name="tile_layer_class_c">ห้วงอากาศควบคุมชั้น ซี</string>
+    <string name="tile_layer_class_d">ห้วงอากาศควบคุมชั้น ดี</string>
+    <string name="tile_layer_class_e">ห้วงอากาศควบคุมชั้น อี</string>
+    <string name="tile_layer_controlled_airspace">ห้วงอากาศควบคุม (ชั้นบี, ซี, ดีและอี)</string>
+    <string name="tile_layer_custom">กำหนดเอง</string>
+    <string name="tile_layer_emergencies">กิจกรรมผู้ตอบโต้คนแรก</string>
+    <string name="tile_layer_fires">ไฟ</string>
+    <string name="tile_layer_hazard_areas">พื้นที่อันตราย</string>
+    <string name="tile_layer_heliports">ลานจอดเฮลิคอปเตอร์</string>
+    <string name="tile_layer_hospitals">โรงพยาบาล</string>
+    <string name="tile_layer_national_parks">อุทยานแห่งชาติ</string>
+    <string name="tile_layer_noaa">พื้นที่คุ้มครองทางทะเล NOAA</string>
+    <string name="tile_layer_power_plants">โรงไฟฟ้า</string>
+    <string name="tile_layer_prisons">เรือนจำ</string>
+    <string name="tile_layer_private_airports">สนามบินเอกชน</string>
+    <string name="tile_layer_prohibited">ห้วงอากาศเขตต้องห้าม</string>
+    <string name="tile_layer_restricted_airspace">ห้วงอากาศเขตหวงห้าม</string>
+    <string name="tile_layer_schools">โรงเรียน</string>
+    <string name="tile_layer_tfr_faa">ข้อจำกัดการบินชั่วคราว</string>
+    <string name="tile_layer_universities">มหาวิทยาลัย</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">การจราจร %1$s\nระดับความสูง %2$s\n%3$s %4$s %5$s</string>
+    <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
+    <string name="traffic_alert_with_aircraft_id_format">การจราจร %1$s\nระดับความสูง %2$s\n%3$s</string>
+    <!-- Name for the imperial system of measurement -->
+    <string name="units_imperial">หน่วยวัดระบบอังกฤษ</string>
+    <!-- Name for the metric system of measurement -->
+    <string name="units_metric">หน่วยวัดระบบเมตริก</string>
+    <!-- Unit and format for displaying nautical miles -->
+    <string name="units_nautical_mile_format">%s ไมล์ทะเล</string>
+    <!-- Unit and format for displaying speed in knots -->
+    <string name="units_speed_format_knots">%s นอต</string>
+    <!-- Unit and format for displaying speed in meters per second -->
+    <string name="units_speed_format_meters_per_second">%s เมตร/วินาที</string>
+    <!-- Unit and format for displaying speed in miles per hour -->
+    <string name="units_speed_format_miles_per_hour">%s ไมล์ต่อชั่วโมง</string>
+    <!-- Unit and format for displaying a speed range in meters per second -->
+    <string name="units_speed_range_format_meters_per_second">%1$s-%2$s เมตร/วินาที</string>
+    <!-- Unit and format for displaying a speed range in miles per hour -->
+    <string name="units_speed_range_format_miles_per_hour">%1$s-%2$s ไมล์ต่อชั่วโมง</string>
+    <!-- Unit and format for displaying temperature in Celcius -->
+    <string name="units_temperature_celcius_format">%1$sองศาเซลเซียส</string>
+    <!-- Unit and format for displaying temperature in Fahrenheit -->
+    <string name="units_temperature_fahrenheit_format">%1$sองศาฟาเรนไฮต์</string>
+    <!-- Possible error from keychain. -->
+    <!-- No comment provided by engineer. -->
+    <!-- The request with the authority has been accepted -->
+    <string name="validation_accepted">ตรวจสอบแล้ว</string>
+    <!-- No validation request has been filed -->
+    <string name="validation_not_requested">ไม่ขอรับการตรวจสอบความถูกต้อง</string>
+    <!-- The request with the authority has been made and a response is pending -->
+    <string name="validation_pending">อยู่ระหว่างดำเนินการตรวจสอบ</string>
+    <!-- The request with the authority has been rejected -->
+    <string name="validation_rejected">ข้อมูลที่ขาดหายไปได้รับการปฏิเสธ</string>
 </resources>
