@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Podaj swój adres e-mailowy. Wyślemy do Ciebie wiadomość e-mail z prośbą o zresetowanie hasła.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">i zawierać przynajmniej 3 z następujących 4 rodzajów znaków:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">Rejestrując się, akceptujesz <a href="%s">nasz regulamin</a> i <a href="%s">politykę prywatności</a>.</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Rejestrując się, akceptujesz <a href=\'%s\'>nasz regulamin</a> i <a href=\'%s\'>politykę prywatności</a>.]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Regulamin i polityka</string>
     <string name="country">Kraj</string>
     <string name="county">Region</string>

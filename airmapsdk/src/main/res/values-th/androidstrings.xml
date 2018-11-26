@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d องศาเซลเซียส</string>
     <string name="com_auth0_lock_description_change_password">กรุณาป้อนที่อยู่อีเมลของคุณ เราจะส่งอีเมลถึงคุณเพื่อตั้งรหัสผ่านของคุณใหม่</string>
     <string name="com_auth0_lock_password_strength_title_at_least">และประกอบด้วยตัวอักษรอย่างน้อย 3 จาก 4 ประเภทดังต่อไปนี้:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">เมื่อลงชื่อสมัครใช้ถือว่าคุณยอมรับ <a href="%s">ข้อกำหนดในการให้บริการ</a> และ <a href="%s">นโยบายความเป็นส่วนตัว</a></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[เมื่อลงชื่อสมัครใช้ถือว่าคุณยอมรับ <a href=\'%s\'>ข้อกำหนดในการให้บริการ</a> และ <a href=\'%s\'>นโยบายความเป็นส่วนตัว</a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">ข้อกำหนดและนโยบาย</string>
     <string name="country">ประเทศ</string>
     <string name="county">เทศมณฑล</string>

@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Inserisci il tuo indirizzo e-mail. Ti invieremo un\'e-mail per reimpostare la password.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">E contiene almeno 3 dei seguenti 4 tipi di caratteri:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">Sottoscrivendo, accetti i nostri <a href="%s">termini di servizio</a> e la <a href="%s">politica sulla privacy</a></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Sottoscrivendo, accetti i nostri <a href=\'%s\'>termini di servizio</a> e la <a href=\'%s\'>politica sulla privacy</a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Condizioni generali e politica sulla privacy</string>
     <string name="country">Paese</string>
     <string name="county">Contea</string>

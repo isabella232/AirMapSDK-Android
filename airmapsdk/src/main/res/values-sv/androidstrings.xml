@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Vänligen ange din e-postadress. Vi skickar dig ett mail för att återställa ditt lösenord.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">Och innehålla minst 3 av följande 4 typer av tecken:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">När du registrera dig godkänner du våra <a href="%s">villkor</a> och <a href="%s">sekretesspolicy</a></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[När du registrera dig godkänner du våra <a href=\'%s\'>villkor</a> och <a href=\'%s\'>sekretesspolicy</a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Villkor</string>
     <string name="country">Land</string>
     <string name="county">Län</string>

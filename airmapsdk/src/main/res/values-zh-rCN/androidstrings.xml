@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">请输入您的电子邮件地址。我们会向您发送一封电子邮件，以便重置您的密码。</string>
     <string name="com_auth0_lock_password_strength_title_at_least">并至少包含以下4种字符中的3种：</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">注册即表示您同意我们的<a href="%s">服务条款</a> 和 <a href="%s">隐私政策</a></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[注册即表示您同意我们的<a href=\'%s\'>服务条款</a> 和 <a href=\'%s\'>隐私政策</a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">条款和政策</string>
     <string name="country">国家</string>
     <string name="county">县</string>

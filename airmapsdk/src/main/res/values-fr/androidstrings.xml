@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Veuillez saisir votre adresse e-mail. Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">Et comprennent au moins 3 des 4 types de caractère suivants :</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">En vous inscrivant, vous confirmez accepter nos <a href="%s">conditions de service</a> et notre <a href="%s">politique de confidentialité</a></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[En vous inscrivant, vous confirmez accepter nos <a href=\'%s\'>conditions de service</a> et notre <a href=\'%s\'>politique de confidentialité</a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Conditions générales et politique</string>
     <string name="country">Pays</string>
     <string name="county">Département</string>

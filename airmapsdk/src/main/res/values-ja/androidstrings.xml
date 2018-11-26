@@ -15,9 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">メールアドレスを入力してください。パスワードリセットのメールを送信します。</string>
     <string name="com_auth0_lock_password_strength_title_at_least">最低でも以下の4種類の文字のうち3種類を含める必要があります</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message"><![CDATA[
-サインアップには <a href=\'%s\'>サービス規約</a> と <a href=\'%s\'>プライバシーポリシー</a>に同意する必要があります
-]]></string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[サインアップには <a href=\'%s\'>サービス規約</a> と <a href=\'%s\'>プライバシーポリシー</a>に同意する必要があります]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">規約関連</string>
     <string name="country">国</string>
     <string name="county">国</string>

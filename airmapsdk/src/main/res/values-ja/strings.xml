@@ -219,7 +219,7 @@
     <!-- At least N characters -->
     <string name="com_auth0_lock_password_strength_chars_length">%d 文字以上が必要</string>
     <!-- At least n groups -->
-    <string name="com.auth0.lock.error.password.contain_at_least">次のうち %d 種類が必要</string>
+    <string name="com.auth0.lock.error.password.contain_at_least">%d 次のうち %d 種類が必要</string>
     <!-- Lowercase letters -->
     <string name="com_auth0_lock_password_strength_lowercase_letters">小文字（a-z）</string>
     <!-- Must no be empty -->

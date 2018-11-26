@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Bitte geben Sie Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">Und enthalten mindestens 3 der folgenden 4 Zeichenarten:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">Mit der Anmeldung erklären Sie sich mit unseren <a href="%s">terms of service</a> und <a href="%s">privacy policy</a> einverstanden</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Mit der Anmeldung erklären Sie sich mit unseren <a href=\'%s\'>terms of service</a> und <a href=\'%s\'>privacy policy</a> einverstanden]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Bedingungen &amp; Richtlinien</string>
     <string name="country">Land</string>
     <string name="county">Bezirk</string>

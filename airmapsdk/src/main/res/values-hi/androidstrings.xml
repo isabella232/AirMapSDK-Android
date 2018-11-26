@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">कृप्या अपना ईमेल पता एंटर करें।  अपना पासवर्ड पुन: स्थापित करने के लिये हम आपको एक ईमेल भेजेंगे।</string>
     <string name="com_auth0_lock_password_strength_title_at_least">और निम्न 4 प्रकार के अक्षरों में से कम से कम 3 सम्मिलित हैं।</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">साइन-अप करने से आप हमारी <a href="%s">terms of service</a> और <a href="%s">privacy policy</a> को स्वीकार करते/करती हैं।</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[साइन-अप करने से आप हमारी <a href=\'%s\'>terms of service</a> और <a href=\'%s\'>privacy policy</a> को स्वीकार करते/करती हैं।]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">नियम एवं नीति</string>
     <string name="country">देश</string>
     <string name="county">काउंटी</string>

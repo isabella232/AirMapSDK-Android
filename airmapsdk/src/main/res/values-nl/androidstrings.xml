@@ -15,16 +15,16 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Voer uw e-mailadres. Wij sturen u een e-mail om uw wachtwoord te resetten.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">En ten minste 3 van de volgende 4 soorten tekens bevatten:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">Door omhoog te ondertekenen, gaat u akkoord met onze &lt; een href = \'%s\' &gt; Servicevoorwaarden &lt; / a &gt; en &lt; een href = \'%s\' &gt; privacybeleid &lt; / a &gt;</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Door omhoog te ondertekenen, gaat u akkoord met onze <a href = \'%s\' > Servicevoorwaarden </a> en <a href = \'%s\' > privacybeleid </a>]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Voorwaarden &amp; beleid</string>
     <string name="country">Land</string>
     <string name="county">County</string>
     <string name="dew_point">Dauwpunt</string>
     <string name="do_you_want_to_call">Wilt u %1$s Bel?</string>
     <plurals name="duration_in_hours">
-        <item quantity="zero">%1$s uur</item>
         <item quantity="one">%1$s uur</item>
         <item quantity="other">%1$s uur</item>
+        <item quantity="zero">%1$s uur</item>
     </plurals>
     <string name="duration_in_minutes">%1$s mins</string>
     <string name="email_verification_required">E-mail verificatie vereist</string>

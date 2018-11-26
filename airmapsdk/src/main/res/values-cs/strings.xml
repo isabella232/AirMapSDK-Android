@@ -217,7 +217,7 @@
     <!-- Generic password error -->
     <string name="com_auth0_lock_db_message_change_password_error">OMLOUVÁME SE, NĚCO SE POKAZILO PŘI POKUSU O ZMĚNU HESLA.</string>
     <!-- At least N characters -->
-    <string name="com_auth0_lock_password_strength_chars_length">"Minimálně %d znaků délka "</string>
+    <string name="com_auth0_lock_password_strength_chars_length">Minimálně %d znaků délka</string>
     <!-- At least n groups -->
     <string name="com.auth0.lock.error.password.contain_at_least">Obsahují alespoň %d z následujících %d typů znaků:</string>
     <!-- Lowercase letters -->

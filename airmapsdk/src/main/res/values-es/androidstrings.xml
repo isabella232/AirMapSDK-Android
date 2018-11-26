@@ -15,7 +15,7 @@
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Introduce tu dirección de correo electrónico. Te enviaremos un correo para restablecer tu contraseña.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">Y debe contener al menos tres de los siguientes cuatro tipos de caracteres:</string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_message">Al crear una cuenta, aceptas nuestros <a href="%s">términos y condiciones</a> y nuestra <a href="%s">política de privacidad</a>.</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Al crear una cuenta, aceptas nuestros <a href=\'%s\'>términos y condiciones</a> y nuestra <a href=\'%s\'>política de privacidad</a>.]]></string>
     <string name="com_auth0_lock_sign_up_terms_dialog_title">Términos y política</string>
     <string name="country">País</string>
     <string name="county">Condado</string>
