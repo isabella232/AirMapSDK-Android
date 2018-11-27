@@ -202,12 +202,13 @@ public class AirMapRuleset implements Serializable, AirMapBaseModel, Comparable 
             return -1;
         }
 
-        if (type.intValue() > ((AirMapRuleset) o).getType().intValue()) {
+        AirMapRuleset otherRuleset = (AirMapRuleset) o;
+        if (type.intValue() > otherRuleset.getType().intValue()) {
             return 1;
-        } else if (type.intValue() < ((AirMapRuleset) o).getType().intValue()) {
+        } else if (type.intValue() < otherRuleset.getType().intValue()) {
             return -1;
         } else {
-            return 0;
+            return getName().compareTo(otherRuleset.getName());
         }
     }
 

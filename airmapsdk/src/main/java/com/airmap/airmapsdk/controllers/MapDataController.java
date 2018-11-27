@@ -27,6 +27,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -184,6 +186,14 @@ public class MapDataController {
                         List<AirMapRuleset> availableRulesetsList = CopyCollections.copy(pair.first);
                         List<AirMapRuleset> selectedRulesetsList = CopyCollections.copy(pair.second);
                         List<AirMapRuleset> previouslySelectedRulesetsList = CopyCollections.copy(selectedRulesets);
+
+                        // sort available rulesets
+                        Collections.sort(availableRulesetsList, new Comparator<AirMapRuleset>() {
+                            @Override
+                            public int compare(AirMapRuleset o1, AirMapRuleset o2) {
+                                return o1.compareTo(o2);
+                            }
+                        });
 
                         callback.onRulesetsUpdated(availableRulesetsList, selectedRulesetsList, previouslySelectedRulesetsList);
                         availableRulesets = pair.first;
