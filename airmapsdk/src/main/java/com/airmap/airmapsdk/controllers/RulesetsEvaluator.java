@@ -9,10 +9,8 @@ import com.airmap.airmapsdk.util.CopyCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import timber.log.Timber;
@@ -26,7 +24,6 @@ public class RulesetsEvaluator {
             case AUTOMATIC:
                 return computeSelectedRulesets(availableRulesets, new HashSet<String>(), new HashSet<String>(), true);
             case DYNAMIC:
-                //TODO: whitelist/blacklist?
                 AirMapMapView.DynamicConfiguration dynamicConfig = (AirMapMapView.DynamicConfiguration) configuration;
                 HashSet<String> preferredRulesets = new HashSet<>(dynamicConfig.preferredRulesetIds);
                 HashSet<String> unpreferredRulesets = new HashSet<>(dynamicConfig.unpreferredRulesetIds);
@@ -47,20 +44,21 @@ public class RulesetsEvaluator {
      * @param unpreferredRulesets - Optional rulesets that the user has manually disabled
      * @return selectedRulesets
      */
-    public static List<AirMapRuleset> computeSelectedRulesets(@NonNull List<AirMapRuleset> availableRulesets, @NonNull Set<String> preferredRulesets, @NonNull Set<String> unpreferredRulesets, boolean enableRecommendedRulesets) {
-        Set<AirMapRuleset> selectedRulesets = new HashSet<>();
-
-        availableRulesets = CopyCollections.copy(availableRulesets);
-
-        Map<String,AirMapRuleset> availableRulesetsMap = new HashMap<>();
-        for (AirMapRuleset availableRuleset : availableRulesets) {
-            availableRulesetsMap.put(availableRuleset.getId(), availableRuleset);
-        }
-
+    private static List<AirMapRuleset> computeSelectedRulesets(@NonNull List<AirMapRuleset> availableRulesets, @NonNull Set<String> preferredRulesets, @NonNull Set<String> unpreferredRulesets, boolean enableRecommendedRulesets) {
         // select rulesets that are preferred, required or default
-        for (AirMapRuleset newRuleset : availableRulesets) {
+        Set<AirMapRuleset> selectedRulesets = new HashSet<>();
+        for (AirMapRuleset newRuleset : CopyCollections.copy(availableRulesets)) {
             // preferred are automatically added
             if (preferredRulesets.contains(newRuleset.getId())) {
+                // unselect sibling rulesets
+                if (newRuleset.getType() == PickOne) {
+                    for (AirMapRuleset selectedRuleset : CopyCollections.copy(selectedRulesets)) {
+                        if (selectedRuleset.getType() == PickOne && selectedRuleset.getJurisdiction().getId() == newRuleset.getJurisdiction().getId()) {
+                            selectedRulesets.remove(selectedRuleset);
+                        }
+                    }
+                }
+
                 selectedRulesets.add(newRuleset);
                 continue;
             }
@@ -79,20 +77,19 @@ public class RulesetsEvaluator {
                     break;
                 }
                 case PickOne: {
-                    // select pick-one's that default on and don't have a sibling that is preferred
+                    // select pick-one's that default on and don't have a sibling that is preferred or selected
                     if (newRuleset.isDefault()) {
-                        boolean noSiblingsSelected = true;
-                        // check if there's a sibling selected (only pick-one's have siblings)
-                        for (String preferredRulesetId : preferredRulesets) {
-                            AirMapRuleset preferredRuleset = availableRulesetsMap.get(preferredRulesetId);
-                            if (preferredRuleset != null && preferredRuleset.getType() == PickOne && preferredRuleset.getJurisdiction().getId() == newRuleset.getJurisdiction().getId()) {
-                                noSiblingsSelected = false;
+                        boolean siblingsSelected = false;
+                        // check if there's a sibling selected or preferred (only pick-one's have siblings)
+                        for (AirMapRuleset selectedRuleset : selectedRulesets) {
+                            if (selectedRuleset.getType() == PickOne && selectedRuleset.getJurisdiction().getId() == newRuleset.getJurisdiction().getId()) {
+                                siblingsSelected = true;
                                 break;
                             }
                         }
 
                         // if not, we can select this ruleset
-                        if (noSiblingsSelected) {
+                        if (!siblingsSelected) {
                             selectedRulesets.add(newRuleset);
                         }
                     }
@@ -101,7 +98,7 @@ public class RulesetsEvaluator {
             }
         }
 
-        // Sort rulesets (pick one > optional > required)
+        // Sort rulesets by type (pick one > optional > required) then alphabetically
         List<AirMapRuleset> selectedRulesetsList = new ArrayList<>(selectedRulesets);
         Collections.sort(selectedRulesetsList, new Comparator<AirMapRuleset>() {
             @Override
@@ -109,13 +106,12 @@ public class RulesetsEvaluator {
                 return o1.compareTo(o2);
             }
         });
-
         Timber.v("Rulesets evaluated: %s", selectedRulesets);
 
         return selectedRulesetsList;
     }
 
-    public static boolean checkIfRulesetsHaveChanged(List<AirMapRuleset> oldSelectedRulesets, List<AirMapRuleset> newSelectedRulesets) {
+    private static boolean checkIfRulesetsHaveChanged(List<AirMapRuleset> oldSelectedRulesets, List<AirMapRuleset> newSelectedRulesets) {
         for (AirMapRuleset newRuleset : newSelectedRulesets) {
             if (!oldSelectedRulesets.contains(newRuleset)) {
                 return true;
