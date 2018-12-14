@@ -12,12 +12,27 @@ import timber.log.Timber;
 
 public class AirMapConfig {
 
+    private static final String PROD = "";
+
     public static String getDomain() {
         try {
             return AirMap.getConfig().getJSONObject("airmap").getString("domain");
         } catch (JSONException e) {
             Timber.w(e, "Error getting airmap domain from airmap.config.json. Using fallback");
             return "airmap.com";
+        }
+    }
+
+    public static String getEnvironment() {
+        try {
+            String environment = AirMap.getConfig().getJSONObject("airmap").getString("environment");
+            if ("prod".equals(environment)) {
+                return PROD;
+            }
+            return environment;
+        } catch (JSONException e) {
+            Timber.e(e, "No environment key from airmap.config.json");
+            return PROD;
         }
     }
 
@@ -64,15 +79,6 @@ public class AirMapConfig {
         } catch (JSONException e) {
             Timber.e(e, "Error getting auth0 clientId from airmap.config.json");
             throw new RuntimeException("client_id and/or callback_url not found in airmap.config.json");
-        }
-    }
-
-    public static String getMqttDomain() {
-        try {
-            return AirMap.getConfig().getJSONObject("airmap").getString("mqtt_domain");
-        } catch (JSONException e) {
-            Timber.w(e, "No mqtt domain found in airmap.config.json, defaulting to airmap.io");
-            return "airmap.io";
         }
     }
 
