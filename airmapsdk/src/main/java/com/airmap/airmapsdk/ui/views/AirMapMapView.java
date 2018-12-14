@@ -26,6 +26,7 @@ import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
+import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.airmap.airmapsdk.util.Utils;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -43,7 +44,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 
 import okhttp3.Dispatcher;
@@ -118,7 +118,7 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
     }
 
     private void init(Configuration configuration, @Nullable MappingService.AirMapMapTheme mapTheme) {
-        addLanguageHeaders();
+        addHeaders();
 
         mapLoadListeners = new ArrayList<>();
         mapDataChangeListeners = new ArrayList<>();
@@ -149,23 +149,24 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
         addOnMapChangedListener(this);
     }
 
-    private void addLanguageHeaders() {
-        if (!TextUtils.isEmpty(getLanguageTag())) {
-            Dispatcher dispatcher = new Dispatcher();
-            dispatcher.setMaxRequestsPerHost(20);
-            OkHttpClient mapboxHttpClient = new OkHttpClient.Builder().dispatcher(dispatcher).addInterceptor(new Interceptor() {
-                @Override
-                public Response intercept(Chain chain) throws IOException {
-                    Request request = chain.request().newBuilder()
-                            .addHeader("Accept-Language", getLanguageTag())
-                            .build();
+    private void addHeaders() {
+        Dispatcher dispatcher = new Dispatcher();
+        dispatcher.setMaxRequestsPerHost(20);
+        OkHttpClient mapboxHttpClient = new OkHttpClient.Builder().dispatcher(dispatcher).addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request.Builder request = chain.request().newBuilder()
+                        .addHeader("x-Api-Key", AirMap.getApiKey());
 
-                    return chain.proceed(request);
+                if (!TextUtils.isEmpty(getLanguageTag())) {
+                    request.addHeader("Accept-Language", getLanguageTag());
                 }
-            }).build();
 
-            HttpRequestUtil.setOkHttpClient(mapboxHttpClient);
-        }
+                return chain.proceed(request.build());
+            }
+        }).build();
+
+        HttpRequestUtil.setOkHttpClient(mapboxHttpClient);
     }
 
     public void configure(Configuration configuration) {
