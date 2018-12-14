@@ -430,31 +430,6 @@ public class Utils {
         return TextUtils.join(",", coordinates);
     }
 
-
-    public static String getStagingUrl() {
-        try {
-            return AirMap.getConfig().getJSONObject("internal").getString("debug_url");
-        } catch (JSONException e) {
-            return "stage/";
-        }
-    }
-
-    public static String getMqttDebugUrl() {
-        try {
-            return AirMap.getConfig().getJSONObject("internal").getString("mqtt_url");
-        } catch (JSONException e) {
-            return "v2/";
-        }
-    }
-
-    public static String getTelemetryDebugUrl() {
-        try {
-            return AirMap.getConfig().getJSONObject("internal").getString("telemetry_url");
-        } catch (JSONException e) {
-            return "v2/";
-        }
-    }
-
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
