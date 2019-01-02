@@ -192,10 +192,11 @@ public class Utils {
 
     public static void error(AirMapCallback listener, Exception e) {
         if (e != null && listener != null) {
-            if (e.getMessage().toLowerCase().startsWith("unable to resolve host")) {
+            String message = e.getMessage() != null ? e.getMessage().toLowerCase() : "Unknown error";
+            if (message.startsWith("unable to resolve host")) {
                 listener.error(new AirMapException("No internet connection"));
-            } else if (!e.getMessage().toLowerCase().contains("canceled")) { //Not an error if it was canceled
-                listener.error(new AirMapException(e.getMessage()));
+            } else if (!message.contains("canceled")) { //Not an error if it was canceled
+                listener.error(new AirMapException(message));
             }
         }
     }
