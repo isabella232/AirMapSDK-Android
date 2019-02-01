@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">飞行员须知</string>
     <string name="airmap_title_activity_custom_properties">自定义属性</string>
     <string name="airmap_title_activity_profile">飞行</string>
-    <string name="airspace_laanc_authorization_automated">FAA授权可用</string>
+    <string name="airspace_laanc_authorization_automated">授权可用</string>
     <string name="airspace_type_ama">AMA场地</string>
     <string name="airspace_type_unknown">未知</string>
     <string name="amas">AMA场地</string>

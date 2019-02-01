@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">पायलट जानकारी</string>
     <string name="airmap_title_activity_custom_properties">कस्टम विशेषतायें</string>
     <string name="airmap_title_activity_profile">पायलट प्रोफ़ाइल</string>
-    <string name="airspace_laanc_authorization_automated">FAA अनुमति उपलब्ध</string>
+    <string name="airspace_laanc_authorization_automated">अनुमति उपलब्ध</string>
     <string name="airspace_type_ama">AMA फ़ील्ड</string>
     <string name="airspace_type_unknown">नामालूम</string>
     <string name="amas">AMA फ़ील्ड</string>

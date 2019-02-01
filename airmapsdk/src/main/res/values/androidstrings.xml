@@ -97,7 +97,7 @@
     <string name="dew_point">Dew Point</string>
     <string name="pressure">Pressure</string>
 
-    <string name="airspace_laanc_authorization_automated">FAA authorization available</string>
+    <string name="airspace_laanc_authorization_automated">Authorization available</string>
 
     <string name="country">Country</string>
     <string name="county">County</string>

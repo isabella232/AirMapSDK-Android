@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">ข้อมูลนักบิน</string>
     <string name="airmap_title_activity_custom_properties">คุณสมบัติแบบกำหนดเอง</string>
     <string name="airmap_title_activity_profile">โปรไฟล์นักบิน</string>
-    <string name="airspace_laanc_authorization_automated">ได้รับการอนุมัติโดย FAA</string>
+    <string name="airspace_laanc_authorization_automated">ได้รับการอนุมัติโดย</string>
     <string name="airspace_type_ama">สนาม AMA</string>
     <string name="airspace_type_unknown">ไม่รู้จัก</string>
     <string name="amas">สนาม AMA</string>
