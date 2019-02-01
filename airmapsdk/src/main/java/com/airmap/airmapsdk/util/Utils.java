@@ -304,7 +304,8 @@ public class Utils {
                 feetToMeters(1750),
                 feetToMeters(2000),
                 feetToMeters(2500),
-                feetToMeters(3000)
+                feetToMeters(3000),
+                feetToMeters(6000)
         };
     }
 
@@ -335,7 +336,8 @@ public class Utils {
                 500,
                 600,
                 750,
-                1000
+                1000,
+                2000
         };
     }
 
