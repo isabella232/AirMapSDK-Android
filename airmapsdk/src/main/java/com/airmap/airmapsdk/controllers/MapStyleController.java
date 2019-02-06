@@ -148,11 +148,11 @@ public class MapStyleController implements MapView.OnMapChangedListener {
         PreferenceManager.getDefaultSharedPreferences(map.getContext()).edit().putString(AirMapConstants.MAP_STYLE, currentTheme.toString()).apply();
     }
 
-    public void addMapLayers(String sourceId, List<String> layers) {
+    public void addMapLayers(String sourceId, List<String> layers, boolean useSIMeasurements) {
         if (map.getMap().getSource(sourceId) != null) {
             Timber.d("Source already added for: %s", sourceId);
         } else {
-            String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers);
+            String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
             TileSet tileSet = new TileSet("2.2.0", urlTemplates);
             tileSet.setMaxZoom(12f);
             tileSet.setMinZoom(8f);
