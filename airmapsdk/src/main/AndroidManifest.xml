@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.airmap.airmapsdk">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.airmap.airmapsdk">
 
     <!--Permissions-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -23,10 +23,8 @@
             android:value="@integer/google_play_services_version"/>
 
         <activity
-            android:name="com.auth0.android.lock.LockActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:theme="@style/AirMap.Lock.Theme" />
+            android:name="com.airmap.airmapsdk.auth.LoginActivity"
+            android:theme="@style/AppTheme.Transparent"/>
 
     </application>
 
