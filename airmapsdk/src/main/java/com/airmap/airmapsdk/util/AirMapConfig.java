@@ -63,22 +63,12 @@ public class AirMapConfig {
         }
     }
 
-    public static String getAuth0Host() {
+    public static String getClientId() {
         try {
-            return AirMap.getConfig().getJSONObject("auth0").getString("host");
+            return AirMap.getConfig().getJSONObject("airmap").getString("client_id");
         } catch (JSONException e) {
-            Timber.w(e, "Error getting auth0 host from airmap.config.json. Using fallback");
-            return "sso.airmap.io";
-        }
-    }
-
-    public static String getAuth0ClientId() {
-        try {
-            JSONObject auth0 = AirMap.getConfig().getJSONObject("auth0");
-            return auth0.getString("client_id");
-        } catch (JSONException e) {
-            Timber.e(e, "Error getting auth0 clientId from airmap.config.json");
-            throw new RuntimeException("client_id and/or callback_url not found in airmap.config.json");
+            Timber.e(e, "Error getting clientId from airmap.config.json");
+            throw new RuntimeException("client_id not found in airmap.config.json");
         }
     }
 

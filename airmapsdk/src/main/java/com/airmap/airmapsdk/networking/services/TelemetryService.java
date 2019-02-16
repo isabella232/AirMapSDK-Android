@@ -95,10 +95,6 @@ public class TelemetryService extends BaseService {
                 .build();
 
         sendTelemetry(flightId, attitudeMessage);
-
-        for (Listener listener : listeners) {
-            listener.onAttitudeChanged(yaw, pitch, roll);
-        }
     }
 
     public void sendSpeedMessage(String flightId, float velocityX, float velocityY, float velocityZ) {
@@ -261,7 +257,6 @@ public class TelemetryService extends BaseService {
     public interface Listener {
         void onPositionChanged(Coordinate position, double altitudeMSL, double altitudeAGL);
         void onSpeedChanged(double velocityX, double velocityY, double velocityZ);
-        void onAttitudeChanged(float yaw, float pitch, float roll);
     }
 
     private enum Encryption {

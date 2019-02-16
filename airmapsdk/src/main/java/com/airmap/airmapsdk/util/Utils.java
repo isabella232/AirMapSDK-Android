@@ -42,8 +42,6 @@ import timber.log.Timber;
 @SuppressWarnings("unused")
 public class Utils {
 
-    public static final String REFRESH_TOKEN_KEY = "AIRMAP_SDK_REFRESH_TOKEN";
-
     /**
      * Return the value mapped by the given key, or fallback if not present or null.
      */

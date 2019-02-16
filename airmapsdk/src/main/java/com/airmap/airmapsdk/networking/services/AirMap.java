@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
 import com.airmap.airmapsdk.AnalyticsTracker;
 import com.airmap.airmapsdk.Auth;
+import com.airmap.airmapsdk.auth.AuthConstants;
 import com.airmap.airmapsdk.models.AirMapWeather;
 import com.airmap.airmapsdk.models.Coordinate;
 import com.airmap.airmapsdk.models.aircraft.AirMapAircraft;
@@ -33,14 +35,11 @@ import com.airmap.airmapsdk.networking.callbacks.AirMapTrafficListener;
 import com.airmap.airmapsdk.networking.callbacks.LoginCallback;
 import com.airmap.airmapsdk.networking.callbacks.LoginListener;
 import com.airmap.airmapsdk.util.AirMapTree;
+import com.airmap.airmapsdk.util.PreferenceUtils;
+import com.airmap.airmapsdk.util.SecuredPreferenceException;
 import com.airmap.airmapsdk.util.Utils;
+import com.auth0.android.jwt.JWT;
 
-import org.jose4j.jwt.JwtClaims;
-import org.jose4j.jwt.MalformedClaimException;
-import org.jose4j.jwt.NumericDate;
-import org.jose4j.jwt.consumer.InvalidJwtException;
-import org.jose4j.jwt.consumer.JwtConsumer;
-import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,7 +47,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import okhttp3.Call;
 import timber.log.Timber;
@@ -179,19 +177,13 @@ public final class AirMap {
      *
      * @return The expiration date
      */
-    public NumericDate getAuthTokenExpirationDate() {
-        JwtConsumer consumer = new JwtConsumerBuilder()
-                .setSkipAllValidators()
-                .setDisableRequireSignature()
-                .setSkipSignatureVerification()
-                .build();
-        try {
-            JwtClaims claims = consumer.processToClaims(authToken);
-            return claims.getExpirationTime();
-        } catch (InvalidJwtException | MalformedClaimException e) {
-            Timber.v("Invalid auth token");
-            return NumericDate.now();
+    public static Date getAuthTokenExpirationDate() {
+        if (TextUtils.isEmpty(authToken)) {
+            return new Date();
         }
+
+        JWT jwt = new JWT(authToken);
+        return jwt.getExpiresAt();
     }
 
     public static void getFirebaseToken(AirMapCallback<String> callback) {
@@ -227,20 +219,16 @@ public final class AirMap {
     /**
      * Decodes the JWT Auth Token and parses it to get the user ID
      *
-     * @param jwt The JWT Auth Token
+     * @param token The JWT Auth Token
      */
-    private static void decodeToken(String jwt) {
-        JwtConsumer consumer = new JwtConsumerBuilder()
-                .setSkipAllValidators()
-                .setDisableRequireSignature()
-                .setSkipSignatureVerification()
-                .build();
-        try {
-            JwtClaims claims = consumer.processToClaims(jwt);
-            userId = claims.getSubject();
-        } catch (InvalidJwtException | MalformedClaimException e) {
-            Timber.e(e, "Invalid auth token");
+    private static void decodeToken(String token) {
+        if (TextUtils.isEmpty(token)) {
+            Timber.e("No token to decode");
+            return;
         }
+
+        JWT jwt = new JWT(token);
+        userId = jwt.getSubject();
     }
 
     /**
@@ -258,6 +246,18 @@ public final class AirMap {
     public static void clearAuthToken() {
         authToken = null;
         getAirMapTrafficService().setAuthToken(null);
+    }
+
+    public static void saveTokens(Context context, @Nullable String newAccessToken, @Nullable String newRefreshToken) {
+        try {
+            PreferenceUtils.getPreferences(context)
+                    .edit()
+                    .putString(AuthConstants.REFRESH_TOKEN_KEY, newRefreshToken)
+                    .putString(AuthConstants.ACCESS_TOKEN_KEY, newAccessToken)
+                    .apply();
+        } catch (SecuredPreferenceException e) {
+            Timber.e(e, "Secured Preferences Failed");
+        }
     }
 
     /**
@@ -282,6 +282,16 @@ public final class AirMap {
      */
     public static String getAuthToken() {
         return authToken;
+    }
+
+    public static String getRefreshToken(Context context) {
+        try {
+            return PreferenceUtils.getPreferences(context)
+                    .getString(AuthConstants.REFRESH_TOKEN_KEY, "");
+        } catch (SecuredPreferenceException e) {
+            Timber.e(e, "Secured Preferences Failed");
+            return "";
+        }
     }
 
     /**
@@ -314,9 +324,11 @@ public final class AirMap {
      * Logs the user out
      */
     public void logout() {
+        AuthService.logout(context);
         setAuthToken(null);
         userId = null;
         getClient().resetClient();
+        saveTokens(context, null, null);
     }
 
     /**
@@ -337,17 +349,7 @@ public final class AirMap {
      * @return whether there is an authenticated pilot associated with the SDK instance
      */
     public static boolean hasValidAuthenticatedUser() {
-        JwtConsumer consumer = new JwtConsumerBuilder()
-                .setSkipAllValidators()
-                .setDisableRequireSignature()
-                .setSkipSignatureVerification()
-                .build();
-        try {
-            JwtClaims claims = consumer.processToClaims(authToken);
-            return claims.getExpirationTime().isAfter(NumericDate.now());
-        } catch (InvalidJwtException | MalformedClaimException e) {
-            return false;
-        }
+        return getAuthTokenExpirationDate().after(new Date());
     }
 
     /**
@@ -400,7 +402,7 @@ public final class AirMap {
      * @param callback AirMap authentication callback
      */
     public static void showLogin(Activity activity, LoginCallback callback) {
-        Auth.loginOrSignup(activity, new AirMapAuthenticationCallback(activity, callback));
+        AuthService.loginOrSignup(activity, new AirMapAuthenticationCallback(activity, callback));
     }
 
     /**

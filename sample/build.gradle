@@ -12,7 +12,6 @@ android {
         versionName "2.0.1"
         multiDexEnabled true
 
-        manifestPlaceholders = [auth0Domain: "sso.airmap.com", auth0Scheme: "airmap"]
         buildConfigField "boolean", "LOGGING", "true"
     }
     buildTypes {

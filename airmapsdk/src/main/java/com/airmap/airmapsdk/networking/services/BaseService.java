@@ -4,7 +4,6 @@ package com.airmap.airmapsdk.networking.services;
 import android.text.TextUtils;
 
 import static com.airmap.airmapsdk.util.AirMapConfig.getApiOverride;
-import static com.airmap.airmapsdk.util.AirMapConfig.getAuth0Host;
 import static com.airmap.airmapsdk.util.AirMapConfig.getDomain;
 import static com.airmap.airmapsdk.util.AirMapConfig.getEnvironment;
 
@@ -80,13 +79,12 @@ public class BaseService {
     protected static final int telemetryPort = Integer.parseInt(getApiOverride("telemetry_port", "16060"));
 
     //Auth
-    protected static final String loginUrl = "https://" + getAuth0Host() + "/delegation";
-    protected static final String authVersion = "v1/";
-    protected static final String authBaseUrl = apiUrl + "/auth/" + authVersion;
-    protected static final String anonymousLoginUrl = authBaseUrl + "anonymous/token";
-    protected static final String delegationUrl = loginUrl;
-    protected static final String auth0Domain = getAuth0Host();
+    protected static final String anonymousLoginUrl = apiUrl + "/auth/v1/anonymous/token";
     protected static final String insuranceDelegationUrl = "https://auth.airmap.io/delegation";
+    protected static final String authBaseUrl = getHost("auth") + "/realms/airmap/protocol/openid-connect/";
+    protected static final String loginUrl = authBaseUrl + "auth";
+    protected static final String refreshTokenUrl = authBaseUrl + "token";
+    protected static final String logoutUrl = authBaseUrl + "logout";
 
     //Rules
     protected static final String rulesetsVersion = "v1/";
