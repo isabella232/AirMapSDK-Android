@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'com.airmap.airmapsdk'
-def libVersion = '2.0.1'
+def libVersion = '3.0.0'
 
 android {
     compileSdkVersion 27

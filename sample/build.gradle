@@ -8,11 +8,13 @@ android {
         applicationId "com.airmap.airmapsdktest"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 2
-        versionName "2.0.1"
+        versionCode 3
+        versionName "3.0.0"
         multiDexEnabled true
 
         buildConfigField "boolean", "LOGGING", "true"
+
+        manifestPlaceholders = ['appAuthRedirectScheme': applicationId]
     }
     buildTypes {
         release {
@@ -27,5 +29,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.3'
-    implementation project(':AirMapSDK-Android:airmapsdk')
+    implementation project(':airmapsdk')
 }
