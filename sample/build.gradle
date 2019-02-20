@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.airmap.airmapsdktest"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 3
         versionName "3.0.0"
         multiDexEnabled true
@@ -29,5 +29,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.3'
-    implementation project(':airmapsdk')
+    implementation project(':AirMapSDK-Android:airmapsdk')
 }
