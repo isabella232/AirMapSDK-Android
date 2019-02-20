@@ -2,7 +2,7 @@
 [![Bintray](https://img.shields.io/bintray/v/airmapio/maven/com.airmap.airmapsdk.svg)](http://jcenter.bintray.com/com/airmap/airmapsdk/airmapsdk/)
 [![license](https://img.shields.io/github/license/airmap/AirMapSDK-Android.svg)](https://github.com/airmap/AirMapSDK-Android/blob/master/LICENSE)
 
-Create Flights, Send Telemetry Data, Get Realtime Traffic Alerts.
+Create Flights, Send Telemetry Data, Get Real-time Traffic Alerts.
 
 ## Requirements
 * Minimum Android SDK Level 18 or higher
@@ -21,14 +21,14 @@ Start by adding the Android SDK to your project:
 
 * Add 
 ```groovy
-implementation 'com.airmap.airmapsdk:airmapsdk:2.0.1'
+implementation 'com.airmap.airmapsdk:airmapsdk:3.0.0'
 ``` 
 
 to the dependencies section of your module level `build.gradle` file
 
 * Add
 ```groovy
-manifestPlaceholders = [auth0Domain: "@string/com_auth0_domain", auth0Scheme: "@string/com_auth0_scheme"]
+manifestPlaceholders = ['appAuthRedirectScheme': applicationId]
 ```
 
 to the defaultConfig section of your module level `build.gradle` file
@@ -47,6 +47,9 @@ Simply add this line in your Application or Activity's `onCreate`
 ```java
 AirMap.init(this);
 ```
+
+### Migration from 2.0
+See [MIGRATION GUIDE](https://raw.githubusercontent.com/airmap/AirMapSDK-Android/master/MIGRATION.md) for details.
 
 ### Documentation
 Visit [https://developers.airmap.com/](https://developers.airmap.com/) for the full documentation
