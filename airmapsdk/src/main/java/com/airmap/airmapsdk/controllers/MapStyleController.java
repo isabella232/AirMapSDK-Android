@@ -139,6 +139,11 @@ public class MapStyleController implements MapView.OnMapChangedListener {
         updateMapTheme(theme);
     }
 
+    public void reset() {
+        callback.onMapStyleReset();
+        loadStyleJSON();
+    }
+
     public void updateMapTheme(MappingService.AirMapMapTheme theme) {
         callback.onMapStyleReset();
 

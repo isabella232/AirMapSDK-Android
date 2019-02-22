@@ -213,6 +213,10 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
         mapStyleController.updateMapTheme(theme);
     }
 
+    public void reset() {
+        mapStyleController.reset();
+    }
+
     @Override
     public void getMapAsync(final OnMapReadyCallback callback) {
         super.getMapAsync(new OnMapReadyCallback() {
