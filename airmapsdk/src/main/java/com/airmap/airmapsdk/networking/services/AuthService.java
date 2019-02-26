@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.auth.AuthConstants;
@@ -52,13 +53,6 @@ public class AuthService extends BaseService {
         callback.registerReceiver(activity);
 
         AppAuthConfiguration appAuthConfig = new AppAuthConfiguration.Builder()
-                .setBrowserMatcher(new BrowserBlacklist(
-                        new VersionedBrowserMatcher(
-                                Browsers.SBrowser.PACKAGE_NAME,
-                                Browsers.SBrowser.SIGNATURE_SET,
-                                true, // when this browser is used via a custom tab
-                                VersionRange.atMost("5.3")
-                        )))
                 .build();
 
         AuthorizationServiceConfiguration serviceConfig =
@@ -85,10 +79,15 @@ public class AuthService extends BaseService {
                 .build();
 
         AuthorizationService authService = new AuthorizationService(activity, appAuthConfig);
-        authService.performAuthorizationRequest(
-                authRequest,
-                PendingIntent.getActivity(activity, 0, new Intent(activity, LoginActivity.class), 0),
-                PendingIntent.getActivity(activity, 0, new Intent(activity, LoginActivity.class), 0));
+
+        if (authService.getBrowserDescriptor() == null) {
+            Toast.makeText(activity, "Must install internet browser to login", Toast.LENGTH_SHORT).show();
+        } else {
+            authService.performAuthorizationRequest(
+                    authRequest,
+                    PendingIntent.getActivity(activity, 0, new Intent(activity, LoginActivity.class), 0),
+                    PendingIntent.getActivity(activity, 0, new Intent(activity, LoginActivity.class), 0));
+        }
     }
 
     public static Call performAnonymousLogin(String userId, final AirMapCallback<Void> callback) {
