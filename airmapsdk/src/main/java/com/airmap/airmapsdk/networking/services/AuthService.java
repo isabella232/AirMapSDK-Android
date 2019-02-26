@@ -2,6 +2,7 @@ package com.airmap.airmapsdk.networking.services;
 
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.airmap.airmapsdk.AirMapException;
+import com.airmap.airmapsdk.Analytics;
 import com.airmap.airmapsdk.auth.AuthConstants;
 import com.airmap.airmapsdk.auth.LoginActivity;
 import com.airmap.airmapsdk.models.AirMapToken;
@@ -82,6 +84,7 @@ public class AuthService extends BaseService {
 
         if (authService.getBrowserDescriptor() == null) {
             Toast.makeText(activity, "Must install internet browser to login", Toast.LENGTH_SHORT).show();
+            Analytics.report(new ActivityNotFoundException("No browser installed for login!"));
         } else {
             authService.performAuthorizationRequest(
                     authRequest,
