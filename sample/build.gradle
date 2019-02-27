@@ -29,5 +29,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.3'
-    implementation project(':airmapsdk')
+    implementation project(':AirMapSDK-Android:airmapsdk')
 }
