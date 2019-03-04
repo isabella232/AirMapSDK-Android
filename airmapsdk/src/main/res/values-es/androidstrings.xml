@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">Información sobre el piloto</string>
     <string name="airmap_title_activity_custom_properties">Propiedades personalizadas</string>
     <string name="airmap_title_activity_profile">Perfil de piloto</string>
-    <string name="airspace_laanc_authorization_automated">Autorización de la FAA disponible</string>
+    <string name="airspace_laanc_authorization_automated">Autorización disponible</string>
     <string name="airspace_type_ama">Campo de la AMA</string>
     <string name="airspace_type_unknown">Desconocido</string>
     <string name="amas">Campos de la AMA</string>

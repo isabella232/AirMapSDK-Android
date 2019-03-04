@@ -1003,8 +1003,8 @@ public final class AirMap {
         return airMapMapMappingService.getStylesJson(theme, listener);
     }
 
-    public static String getRulesetTileUrlTemplate(String rulesetId, List<String> layers) {
-        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers);
+    public static String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements) {
+        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements);
     }
 
     /**

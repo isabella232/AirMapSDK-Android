@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">Pilot informatie</string>
     <string name="airmap_title_activity_custom_properties">Aangepaste eigenschappen</string>
     <string name="airmap_title_activity_profile">Pilot profiel</string>
-    <string name="airspace_laanc_authorization_automated">FAA vergunning beschikbaar</string>
+    <string name="airspace_laanc_authorization_automated">Vergunning beschikbaar</string>
     <string name="airspace_type_ama">AMA veld</string>
     <string name="airspace_type_unknown">Onbekend</string>
     <string name="amas">AMA velden</string>

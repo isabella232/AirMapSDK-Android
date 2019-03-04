@@ -68,6 +68,8 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
     private List<OnMapDataChangeListener> mapDataChangeListeners;
     private List<OnAdvisoryClickListener> advisoryClickListeners;
 
+    private boolean useSIMeasurements;
+
     public AirMapMapView(@NonNull Context context, Configuration configuration, @Nullable MappingService.AirMapMapTheme mapTheme) {
         super(context);
 
@@ -173,6 +175,10 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
         mapDataController.configure(configuration);
     }
 
+    public void setMeasurementSystem(boolean useSIMeasurements) {
+        this.useSIMeasurements = useSIMeasurements;
+    }
+
     /**
      * Override data controller
      *
@@ -205,6 +211,10 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
             return;
         }
         mapStyleController.updateMapTheme(theme);
+    }
+
+    public void reset() {
+        mapStyleController.reset();
     }
 
     @Override
@@ -406,7 +416,7 @@ public class AirMapMapView extends MapView implements MapView.OnMapChangedListen
 
         for (AirMapRuleset newRuleset : newRulesets) {
             if (oldRulesets == null || !oldRulesets.contains(newRuleset)) {
-                mapStyleController.addMapLayers(newRuleset.getId(), newRuleset.getLayers());
+                mapStyleController.addMapLayers(newRuleset.getId(), newRuleset.getLayers(), useSIMeasurements);
             }
         }
     }

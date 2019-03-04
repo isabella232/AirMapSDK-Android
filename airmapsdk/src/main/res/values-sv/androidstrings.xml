@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">Pilotuppgifter</string>
     <string name="airmap_title_activity_custom_properties">Anpassade egenskaper</string>
     <string name="airmap_title_activity_profile">Pilotprofil</string>
-    <string name="airspace_laanc_authorization_automated">FAA-auktorisering tillgänglig</string>
+    <string name="airspace_laanc_authorization_automated">Auktorisering tillgänglig</string>
     <string name="airspace_type_ama">AMA-fält</string>
     <string name="airspace_type_unknown">Okänd</string>
     <string name="amas">AMA-fält</string>

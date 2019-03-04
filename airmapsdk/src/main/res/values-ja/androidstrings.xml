@@ -5,7 +5,7 @@
     <string name="airmap_pilot_information">パイロット情報</string>
     <string name="airmap_title_activity_custom_properties">カスタムプロパティ</string>
     <string name="airmap_title_activity_profile">パイロットのプロフィール</string>
-    <string name="airspace_laanc_authorization_automated">FAA承認利用可</string>
+    <string name="airspace_laanc_authorization_automated">承認利用可</string>
     <string name="airspace_type_ama">AMAフィールド</string>
     <string name="airspace_type_unknown">タイプ不明</string>
     <string name="amas">AMAフィールド</string>
