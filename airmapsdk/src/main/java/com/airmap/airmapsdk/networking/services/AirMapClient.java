@@ -312,8 +312,8 @@ public class AirMapClient {
         builder.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
-                // Don't intercept if refresh token not yet expired or for actual refresh token request
-                if (!Auth.isTokenExpired() || chain.request().url().toString().matches(AuthService.refreshTokenUrl) || chain.request().url().toString().matches(AuthService.loginUrl)) {
+                // Don't intercept if not logged in or refresh token not yet expired or request is for login/refresh
+                if (TextUtils.isEmpty(AirMap.getAuthToken()) || !Auth.isTokenExpired() || chain.request().url().toString().matches(AuthService.refreshTokenUrl) || chain.request().url().toString().matches(AuthService.loginUrl)) {
                     return chain.proceed(chain.request());
                 }
                 AirMap.refreshAccessToken();
