@@ -262,8 +262,8 @@ public class MapDataController {
                     public void call(final Subscriber<? super List<AirMapJurisdiction>> subscriber) {
 
                         // query map for jurisdictions
-                        List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(map.getLeft(),
-                                map.getTop(), map.getRight(), map.getBottom()), "jurisdictions");
+                        List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(0,
+                                0, map.getWidth(), map.getHeight()), "jurisdictions");
 
                         if (features.isEmpty()) {
                             Timber.d("Features are empty");
