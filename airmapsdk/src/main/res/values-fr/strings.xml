@@ -25,7 +25,7 @@
     <!-- Call to action when a user has not selected an aircraft -->
     <string name="aircraft_select_aircraft">Sélectionner un appareil</string>
     <!-- Title to display for the view creating a new aircraft -->
-    <string name="airmap_title_activity_create_aircraft">Créer un avion</string>
+    <string name="airmap_title_activity_create_aircraft">Créer un appareil</string>
     <!-- Title to display for the view when updating an existing aircraft -->
     <string name="airmap_edit_aircraft">Mettre à jour appareil</string>
     <!-- Name for airspace type Aerial Recreational Area -->
@@ -89,7 +89,7 @@
     <!-- Name for airspace type School -->
     <string name="airspace_type_school">École</string>
     <!-- Name for airspace type Seaplane Base -->
-    <string name="airspace_type_seaplane_base">Base pour hydravion</string>
+    <string name="airspace_type_seaplane_base">Base pour hydravions</string>
     <!-- Name for airspace type Special Use Airspace -->
     <string name="airspace_type_special_use">Espace aérien à utilisation particulière (SUA)</string>
     <!-- Name for airspace type Stadium -->
@@ -659,7 +659,7 @@
     <string name="ruleset_selection_type_required">Requis</string>
     <string name="rules_generic_title">Normes locales</string>
     <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-    <string name="select_aircraft">Sélectionner un avion</string>
+    <string name="select_aircraft">Sélectionner un appareil</string>
     <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
     <string name="sms_login_code_header">Code SMS</string>
     <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->

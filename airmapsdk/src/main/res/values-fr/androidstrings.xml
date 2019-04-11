@@ -102,7 +102,7 @@
     <string name="tile_layer_class_f">Classe F</string>
     <string name="tile_layer_did">Région densément peuplée</string>
     <string name="tile_layer_other_cautionary_areas">Autres zones d\'avertissement</string>
-    <string name="tile_layer_seaplane_base">Base pour hydravions</string>
+    <string name="tile_layer_seaplane_base">Base hydravions</string>
     <string name="tile_layer_unknown">Inconnu</string>
     <string name="tile_layer_wildfires">Feux de forêt</string>
     <string name="time">Heure</string>
