@@ -263,7 +263,7 @@ public class MapDataController {
 
                         // query map for jurisdictions
                         List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(0,
-                                0, map.getWidth(), map.getHeight()), "jurisdictions");
+                                0, map.getMeasuredWidth(), map.getMeasuredHeight()), "jurisdictions");
 
                         if (features.isEmpty()) {
                             Timber.d("Features are empty");
