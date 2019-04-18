@@ -101,7 +101,7 @@ public class AirMapConfig {
 
     public static String getFAQUrl() {
         try {
-            return AirMap.getConfig().getJSONObject("app").getString("faq_url");
+            return AirMap.getConfig().getJSONObject("app").getString("faq_url") + "?language=" + Locale.getDefault().getLanguage();
         } catch (JSONException e) {
             Timber.w(e, "No FAQ in airmap.config.json using fallback");
             return "https://airmap.typeform.com/to/XDkePS?language=" + Locale.getDefault().getLanguage();
