@@ -25,7 +25,7 @@ public class ModelTests {
     @Test
     public void AirMapTrafficTest() throws Exception {
         AirMapTraffic airMapTraffic = new AirMapTraffic();
-        assertEquals(airMapTraffic.getAltitude(), 0, 0);
+        assertEquals(airMapTraffic.getAltitudeFt(), 0, 0);
         assertEquals(airMapTraffic.shouldShowAlert(), false);
 
         airMapTraffic.setTrueHeading(115);

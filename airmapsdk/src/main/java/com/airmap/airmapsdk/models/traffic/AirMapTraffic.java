@@ -24,7 +24,7 @@ public class AirMapTraffic implements Serializable, AirMapBaseModel {
 
     private String id;
     private double direction;
-    private double altitude;
+    private double altitudeFt;
     private int groundSpeedKt;
     private int trueHeading;
     private Coordinate coordinate;
@@ -55,7 +55,7 @@ public class AirMapTraffic implements Serializable, AirMapBaseModel {
         if (json != null) {
             setId(optString(json, "id"));
             setDirection(json.optDouble("direction", -1));
-            setAltitude(json.optDouble("altitude"));
+            setAltitudeFt(json.optDouble("altitude"));
             setGroundSpeedKt(json.optInt("ground_speed_kts", -1));
             setTrueHeading(json.optInt("true_heading", -1));
             setProperties(new AirMapTrafficProperties(json.optJSONObject("properties")));
@@ -89,12 +89,12 @@ public class AirMapTraffic implements Serializable, AirMapBaseModel {
         return this;
     }
 
-    public double getAltitude() {
-        return altitude;
+    public double getAltitudeFt() {
+        return altitudeFt;
     }
 
-    public AirMapTraffic setAltitude(double altitude) {
-        this.altitude = altitude;
+    public AirMapTraffic setAltitudeFt(double altitude) {
+        this.altitudeFt = altitude;
         return this;
     }
 
