@@ -196,7 +196,11 @@ class FlightService extends BaseService {
     }
 
     static Call deleteFlight(AirMapFlight flight, AirMapCallback<Void> listener) {
-        String url = String.format(flightDeleteUrl, flight.getFlightId());
+        return deleteFlight(flight.getFlightId(), listener);
+    }
+
+    static Call deleteFlight(String flightId, AirMapCallback<Void> listener) {
+        String url = String.format(flightDeleteUrl, flightId);
         return AirMap.getClient().post(url, new VoidCallback(listener));
     }
 

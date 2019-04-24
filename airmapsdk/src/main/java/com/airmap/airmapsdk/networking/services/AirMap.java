@@ -672,6 +672,16 @@ public final class AirMap {
     }
 
     /**
+     * Delete a flight belonging to the logged in pilot
+     *
+     * @param flightId The id of flight to delete
+     * @param callback The callback that is invoked on success or error
+     */
+    public static Call deleteFlight(@NonNull String flightId, @Nullable AirMapCallback<Void> callback) {
+        return FlightService.deleteFlight(flightId, callback);
+    }
+
+    /**
      * Get a comm key for a given flight to enable traffic alerts
      *
      * @param flightId The flight ID to get the comm key for
@@ -969,6 +979,16 @@ public final class AirMap {
 
     public static void getFlightPlanEvaluation(@NonNull List<String> rulesets, @NonNull JSONObject geometry, AirMapCallback<AirMapEvaluation> callback) {
         RulesetService.getEvaluation(rulesets, geometry, callback);
+    }
+
+    public static Call getAirspaceStatus(@NonNull AirMapFlightPlan flightPlan, AirMapCallback<AirMapAirspaceStatus> callback) {
+        try {
+            JSONObject geometry = new JSONObject(flightPlan.getGeometry());
+            return RulesetService.getAdvisories(flightPlan.getRulesetIds(), geometry, flightPlan.getStartsAt(), flightPlan.getEndsAt(), null, callback);
+        } catch (JSONException e) {
+            callback.error(new AirMapException("Unable to parse geometry json: \n" + e.getMessage()));
+            return null;
+        }
     }
 
     public static Call getAirspaceStatus(@NonNull AirMapPolygon polygon, @NonNull List<String> rulesetIds, AirMapCallback<AirMapAirspaceStatus> callback) {
