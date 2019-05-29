@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">ข้อมูลที่ป้อนไม่ถูกต้อง</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">ต้องเป็นรหัสตัวเลขที่ถูกต้อง</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">รหัส</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">รหัสผ่าน</string>
     <!-- invalid phone -->
