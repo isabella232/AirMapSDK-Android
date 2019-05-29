@@ -157,7 +157,9 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
             }
         };
 
-        getMapView().addOnMapLoadListener(mapLoadListener);
+        if (getMapView() != null) {
+            getMapView().addOnMapLoadListener(mapLoadListener);
+        }
     }
 
 
@@ -338,6 +340,10 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
     @SuppressLint("MissingPermission")
     protected Location getMyLocation() {
         return getMapView() != null && getMapView().getMap() != null ? getMapView().getMap().getLocationComponent().getLastKnownLocation() : null;
+    }
+
+    public void onMapViewCreated() {
+        setupMapLoadListener();
     }
 
     protected abstract AirMapMapView getMapView();
