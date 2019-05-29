@@ -93,6 +93,12 @@ public abstract class ExpandableRecyclerAdapter<P,C> extends RecyclerView.Adapte
         notifyDataSetChanged();
     }
 
+    public void expandParentAt(int position) {
+        final P parent = (P) getItem(position);
+        expandedParents.add(parent);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         if (dataMap == null) {
