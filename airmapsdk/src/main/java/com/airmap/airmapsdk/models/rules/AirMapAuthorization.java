@@ -15,7 +15,7 @@ import static com.airmap.airmapsdk.util.Utils.optString;
 public class AirMapAuthorization implements AirMapBaseModel, Serializable{
 
     public enum Status {
-        NOT_REQUESTED, REJECTED_UPON_SUBMISSION, AUTHORIZED_UPON_SUBMISSION, MANUAL_AUTHORIZATION, ACCEPTED, REJECTED, PENDING, CANCELLED;
+        NOT_REQUESTED, REJECTED_UPON_SUBMISSION, AUTHORIZED_PENDING_SUBMISSION, MANUAL_AUTHORIZATION, ACCEPTED, REJECTED, PENDING, CANCELLED;
 
         public static Status fromText(String text) {
             switch (text) {
@@ -24,7 +24,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
                 case "rejected_upon_submission":
                     return REJECTED_UPON_SUBMISSION;
                 case "authorized_upon_submission":
-                    return AUTHORIZED_UPON_SUBMISSION;
+                    return AUTHORIZED_PENDING_SUBMISSION;
                 case "manual_authorization":
                     return MANUAL_AUTHORIZATION;
                 case "pending":
@@ -111,7 +111,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
             case REJECTED_UPON_SUBMISSION:
                 statusString = "rejected_upon_submission";
                 break;
-            case AUTHORIZED_UPON_SUBMISSION:
+            case AUTHORIZED_PENDING_SUBMISSION:
                 statusString = "authorized_upon_submission";
                 break;
             case MANUAL_AUTHORIZATION:
