@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">タイプ不明</string>
     <string name="amas">AMAフィールド</string>
     <string name="authorizations_header">承認と検証</string>
-    <string name="authorized_upon_submission">申請時に承認</string>
+    <string name="authorized_pending_submission">申請時に承認</string>
     <string name="call">電話</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">メールアドレスを入力してください。パスワードリセットのメールを送信します。</string>

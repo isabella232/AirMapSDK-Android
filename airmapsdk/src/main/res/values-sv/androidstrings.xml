@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Okänd</string>
     <string name="amas">AMA-fält</string>
     <string name="authorizations_header">Auktorisering och validering</string>
-    <string name="authorized_upon_submission">Auktorisering vid insändning</string>
+    <string name="authorized_pending_submission">Auktorisering vid insändning</string>
     <string name="call">Ring</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Vänligen ange din e-postadress. Vi skickar dig ett mail för att återställa ditt lösenord.</string>
