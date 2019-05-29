@@ -481,7 +481,7 @@
 
   <string name="authorization_not_requested">Authorization Not Requested</string>
   <string name="authorization_rejected_upon_submission">Rejected Upon Submission</string>
-  <string name="authorized_upon_submission">Authorization Upon Submission</string>
+  <string name="authorized_pending_submission">Authorization Pending Submission</string>
   <string name="manual_authorization">Manual Authorization Pending Submission</string>
   <string name="authorization_pending">Authorization Pending</string>
   <string name="authorization_accepted">Authorization Approved</string>
