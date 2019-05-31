@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">無効です</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">有効な数字でなければいけません</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">コード</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">パスワード</string>
     <!-- invalid phone -->

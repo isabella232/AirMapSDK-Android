@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Neznámý</string>
     <string name="amas">Modelářská letiště</string>
     <string name="authorizations_header">Autorizace a Ověření</string>
-    <string name="authorized_upon_submission">Autorizace na žádost</string>
+    <string name="authorized_pending_submission">Autorizace na žádost</string>
     <string name="call">Volat</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Prosím zadejte svou emailovou adresu. Zašleme vám email pro obnovení hesla.</string>

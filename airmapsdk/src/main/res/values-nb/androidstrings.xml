@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Ukjent</string>
     <string name="amas">AMA felt</string>
     <string name="authorizations_header">Godkjenning og validering</string>
-    <string name="authorized_upon_submission">Godkjenning ved innlevering</string>
+    <string name="authorized_pending_submission">Godkjenning ved innlevering</string>
     <string name="call">Samtale</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Skriv inn din e-postadresse. Vi vil sende deg en e-post til å tilbakestille passordet.</string>

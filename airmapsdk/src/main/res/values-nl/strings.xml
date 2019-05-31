@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">Ongeldige invoer</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Moet een geldige numerieke code</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Code</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Wachtwoord</string>
     <!-- invalid phone -->

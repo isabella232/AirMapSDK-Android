@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Inserimento non valido</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Deve essere un codice numerico valido</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Codice</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Password</string>
     <!-- invalid phone -->

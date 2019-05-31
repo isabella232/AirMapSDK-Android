@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Saisie invalide</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Merci de saisir un code à chiffres valide</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Code</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Mot de passe</string>
     <!-- invalid phone -->

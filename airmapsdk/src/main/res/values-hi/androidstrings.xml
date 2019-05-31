@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">नामालूम</string>
     <string name="amas">AMA फ़ील्ड</string>
     <string name="authorizations_header">अनुमति और सत्यापन</string>
-    <string name="authorized_upon_submission">प्रस्तुति के पश्चात अनुमत</string>
+    <string name="authorized_pending_submission">प्रस्तुति के पश्चात अनुमत</string>
     <string name="call">कॉल</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">कृप्या अपना ईमेल पता एंटर करें।  अपना पासवर्ड पुन: स्थापित करने के लिये हम आपको एक ईमेल भेजेंगे।</string>

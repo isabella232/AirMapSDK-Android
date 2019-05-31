@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">अमान्य इनपुट</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">मान्य अंकीय कोड होना चाहिये</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">कोड</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">पासवर्ड</string>
     <!-- invalid phone -->

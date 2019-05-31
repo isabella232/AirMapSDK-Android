@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Nieznane</string>
     <string name="amas">Pola AMA</string>
     <string name="authorizations_header">Autoryzacja i weryfikacja</string>
-    <string name="authorized_upon_submission">Autoryzowany po przesłaniu</string>
+    <string name="authorized_pending_submission">Autoryzowany po przesłaniu</string>
     <string name="call">Zadzwoń</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Podaj swój adres e-mailowy. Wyślemy do Ciebie wiadomość e-mail z prośbą o zresetowanie hasła.</string>

@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">Neplatný přístup</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Musí být platný číselný kód</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Kód</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Heslo</string>
     <!-- invalid phone -->
