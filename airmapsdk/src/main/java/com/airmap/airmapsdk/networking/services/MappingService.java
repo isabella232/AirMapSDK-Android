@@ -409,7 +409,7 @@ public class MappingService extends BaseService {
 
         // fallback
         if (TextUtils.isEmpty(stylesUrl)) {
-            stylesUrl = "https://cdn.airmap.com/static/map-styles/0.9.5/";
+            stylesUrl = "https://cdn.airmap.com/static/map-styles/0.9.7/";
         }
 
         switch (theme) {
