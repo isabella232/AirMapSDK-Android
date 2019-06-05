@@ -268,8 +268,9 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                         AirMapControlledAirspaceProperties controlledAirspaceProperties = advisory.getControlledAirspaceProperties();
 
                         if (controlledAirspaceProperties.isLaanc() && controlledAirspaceProperties.isAuthorization()) {
-                            info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
-                            ((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
+                            //Remove "Authorization available" description
+                            //info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
+                            //((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
                         }
                         break;
                     }
