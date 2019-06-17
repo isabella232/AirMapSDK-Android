@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Felaktig angivelse</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Måste vara en giltig numerisk kod</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Kod</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Lösenord</string>
     <!-- invalid phone -->

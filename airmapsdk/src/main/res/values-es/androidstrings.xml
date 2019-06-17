@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Desconocido</string>
     <string name="amas">Campos de la AMA</string>
     <string name="authorizations_header">Autorización y validación</string>
-    <string name="authorized_upon_submission">Autorizado tras la recepción</string>
+    <string name="authorized_pending_submission">Autorizado tras la recepción</string>
     <string name="call">Llamar</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Introduce tu dirección de correo electrónico. Te enviaremos un correo para restablecer tu contraseña.</string>

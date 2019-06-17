@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">Ugyldige inndata</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Må være en gyldig numerisk kode</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Kode</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Passord</string>
     <!-- invalid phone -->
