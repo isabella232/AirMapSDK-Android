@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Schváleno</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Ověření zamítnuto</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Ověření není vyžadováno</string>
