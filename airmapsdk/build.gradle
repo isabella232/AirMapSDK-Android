@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
@@ -7,7 +9,6 @@ def libVersion = '3.0.0'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion 27
@@ -32,10 +33,12 @@ android {
 }
 
 dependencies {
-    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test:runner:1.0.2'
     testCompile 'junit:junit:4.12'
     testCompile "org.mockito:mockito-core:2.10.0"
     testCompile "org.robolectric:robolectric:3.4.2"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // support
     def supportLibraryVersion = '27.1.1'
@@ -65,7 +68,7 @@ dependencies {
     compile 'net.openid:appauth:0.7.1'
 
     // other
-    compile 'com.squareup.okhttp3:okhttp:3.11.0'
+    compile 'com.squareup.okhttp3:okhttp:3.12.0'
     compile 'com.jakewharton.timber:timber:4.6.0'
     compile 'com.auth0.android:jwtdecode:1.1.1'
     compile 'com.google.protobuf:protobuf-java:3.5.0'
