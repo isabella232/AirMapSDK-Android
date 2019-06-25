@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">ไม่รู้จัก</string>
     <string name="amas">สนาม AMA</string>
     <string name="authorizations_header">การอนุมัติและการตรวจสอบความถูกต้อง</string>
-    <string name="authorized_upon_submission">การอนุมัติขณะทำการส่ง</string>
+    <string name="authorized_pending_submission">การอนุมัติขณะทำการส่ง</string>
     <string name="call">โทร</string>
     <string name="celsius_temp">%d องศาเซลเซียส</string>
     <string name="com_auth0_lock_description_change_password">กรุณาป้อนที่อยู่อีเมลของคุณ เราจะส่งอีเมลถึงคุณเพื่อตั้งรหัสผ่านของคุณใหม่</string>

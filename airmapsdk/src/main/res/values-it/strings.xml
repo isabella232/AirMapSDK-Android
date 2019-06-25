@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Approvato</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Autorizzazione cancellata</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Autorizzazione non richiesta</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Inserimento non valido</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Deve essere un codice numerico valido</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Codice</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Password</string>
     <!-- invalid phone -->

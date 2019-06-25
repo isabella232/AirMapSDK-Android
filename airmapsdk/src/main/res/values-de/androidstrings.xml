@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Unbekannt</string>
     <string name="amas">AMA-Bereiche</string>
     <string name="authorizations_header">Autorisierung &amp; Überprüfung</string>
-    <string name="authorized_upon_submission">Autorisierung bei der Einreichung</string>
+    <string name="authorized_pending_submission">Autorisierung bei der Einreichung</string>
     <string name="call">Anrufen</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Bitte geben Sie Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen.</string>

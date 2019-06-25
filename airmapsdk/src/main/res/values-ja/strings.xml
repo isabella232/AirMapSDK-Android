@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">承認済み</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">キャンセル</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">承認不要</string>
@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">無効です</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">有効な数字でなければいけません</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">コード</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">パスワード</string>
     <!-- invalid phone -->
@@ -539,6 +537,8 @@
     <string name="gcdasyncudpsocketclosederror">ソケットが閉じました</string>
     <!-- No comment provided by engineer. -->
     <string name="gcdasyncudpsocketsendtimeouterror">送信がタイムアウト</string>
+    <!-- No comment provided by engineer. -->
+    <string name="import_album_name">import_album_name</string>
     <!-- Invalid amount of jwt parts -->
     <!-- Invalid amount of jwt parts -->
     <!-- Invalid JWT token base64Url value -->

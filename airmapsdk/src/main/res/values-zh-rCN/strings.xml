@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">已批准</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">授权已取消</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">授权未被请求</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">输入无效</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">必须是有效的数字代码</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">代码</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">密码</string>
     <!-- invalid phone -->

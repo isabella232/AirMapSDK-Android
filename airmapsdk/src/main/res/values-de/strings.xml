@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Genehmigt</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Berechtigung aufgehoben</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Berechtigung nicht angefordert</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Ungültige Eingabe</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Es muss ein gültiger Zahlencode sein.</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Code</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Passwort</string>
     <!-- invalid phone -->

@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">स्वीकृत</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">अनुमति रद्द की गई</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">अनुमति का अनुरोध नहीं किया गया</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">अमान्य इनपुट</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">मान्य अंकीय कोड होना चाहिये</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">कोड</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">पासवर्ड</string>
     <!-- invalid phone -->

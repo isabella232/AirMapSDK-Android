@@ -10,7 +10,7 @@
     <string name="airspace_type_unknown">Inconnu</string>
     <string name="amas">Champs AMA</string>
     <string name="authorizations_header">Autorisation et validation</string>
-    <string name="authorized_upon_submission">Autorisé après demande</string>
+    <string name="authorized_pending_submission">Autorisé après demande</string>
     <string name="call">Appeler</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Veuillez saisir votre adresse e-mail. Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.</string>

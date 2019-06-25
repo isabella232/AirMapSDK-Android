@@ -2,7 +2,7 @@
 <resources>
     <!-- 1Password Extension Error Message -->
     <string name="end_flight_title">Ukončení letu</string>
-    <string name="submit_title">Souhlasím</string>
+    <string name="submit_title">Odeslat</string>
     <string name="review_flight_plan">Zkontrolujte letový plán</string>
     <!-- Class = "UINavigationItem"; title = "Airspace Advisories"; ObjectID = "yk1-9H-q3n"; Note = "ADVISORIES_TITLE|Title for view that shows a list of airspace advisories"; AirMapUIObjectId = "yk1-9H-q3n.title"; -->
     <string name="airmap_airspace_advisories">Upozornění v prostoru</string>
@@ -25,7 +25,7 @@
     <!-- Call to action when a user has not selected an aircraft -->
     <string name="aircraft_select_aircraft">Výběr stroje</string>
     <!-- Title to display for the view creating a new aircraft -->
-    <string name="airmap_title_activity_create_aircraft">Vytvoření stroje</string>
+    <string name="airmap_title_activity_create_aircraft">Vložit stroj</string>
     <!-- Title to display for the view when updating an existing aircraft -->
     <string name="airmap_edit_aircraft">Aktualizovat stroj</string>
     <!-- Name for airspace type Aerial Recreational Area -->
@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Schváleno</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Ověření zamítnuto</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Ověření není vyžadováno</string>
@@ -292,8 +292,6 @@
     <string name="com.auth0.lock.input.generic.error">Neplatný přístup</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Musí být platný číselný kód</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Kód</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Heslo</string>
     <!-- invalid phone -->
@@ -632,7 +630,7 @@
     <!-- Class = "UILabel"; text = "Digital Notice Accepted"; ObjectID = "39m-XX-eZ2"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_ACCEPTED|Header for section that shows what organizations accept digital notice"; AirMapUIObjectId = "39m-XX-eZ2.text"; -->
     <string name="airmap_digital_notice_accepted">Oznámení přijato</string>
     <!-- Class = "UILabel"; text = "The following authorities in this area do not accept digital notice"; ObjectID = "lll-ta-VAP"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_HEADER_NOTICE_NOT_ACCEPTED|Header for section that shows what organizations do not accept digital notice"; AirMapUIObjectId = "lll-ta-VAP.text"; -->
-    <string name="airmap_not_accept_notice">Následující autority v této oblasti neakceptují digitální upozornění</string>
+    <string name="airmap_not_accept_notice">Následující autority v této oblasti neakceptují elektronické upozornění</string>
     <!-- Class = "UIButton"; normalTitle = "Review"; ObjectID = "V59-8d-Sdh"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_REVIEW_BUTON|Title for the button that allows the user to advance to the next step to review their flight plan"; AirMapUIObjectId = "V59-8d-Sdh.normalTitle"; -->
     <string name="airmap_review">Posouzení</string>
     <!-- Class = "UINavigationItem"; title = "Flight Notice"; ObjectID = "Uk3-p4-sdr"; Note = "REVIEW_FLIGHT_PLAN_NOTICE_TITLE|Title for view that displays digital notice that can be submitted to supported organizations"; AirMapUIObjectId = "Uk3-p4-sdr.title"; -->
@@ -644,17 +642,17 @@
     <!-- Class = "UINavigationItem"; title = "Review Flight Plan"; ObjectID = "7qo-VN-M2p"; Note = "REVIEW_FLIGHT_PLAN_TITLE|Title for view where user can review a flight plan"; AirMapUIObjectId = "7qo-VN-M2p.title"; -->
     <string name="review_flight_plan_title">Posouzení letového plánu</string>
     <!-- Label for the section header that displays all the Optional rulesets -->
-    <string name="rulesets_section_optional">Volitelný</string>
+    <string name="rulesets_section_optional">Podle volby</string>
     <!-- Label for the section header that displays all the Pick One rulesets -->
     <string name="rulesets_section_pick_one">Vybrat jeden</string>
     <!-- Label for the section header that displays all the Required rulesets -->
-    <string name="rulesets_section_required">Vyžadováno</string>
+    <string name="rulesets_section_required">Povinná</string>
     <!-- Label for rulesets that can be optionally enabled by the user -->
-    <string name="ruleset_selection_type_optional">Volitelný</string>
+    <string name="ruleset_selection_type_optional">Volitelná</string>
     <!-- Label for rulesets that are part of a group in which one and only one ruleset can be enabled by the user -->
     <string name="ruleset_selection_type_pickone">Vybrat jeden</string>
     <!-- Label for rulesets that must be enabled by the user -->
-    <string name="ruleset_selection_type_required">Vyžadováno</string>
+    <string name="ruleset_selection_type_required">Povinná</string>
     <string name="rules_generic_title">Pravidla pro lokalitu</string>
     <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
     <string name="select_aircraft">Výběr stroje</string>
