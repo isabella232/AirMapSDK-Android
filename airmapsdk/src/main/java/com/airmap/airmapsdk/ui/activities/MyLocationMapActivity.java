@@ -404,4 +404,8 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
     public void setMapView(AirMapMapView mapView) {
         setupMapLoadListener();
     }
+
+    public void setHasLoadedMyLocation(boolean hasLoadedMyLocation) {
+        this.hasLoadedMyLocation = hasLoadedMyLocation;
+    }
 }
