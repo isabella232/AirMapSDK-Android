@@ -53,7 +53,7 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
     private AirMapLocationEngine locationEngine;
     private LocationRequest locationRequest;
 
-    public boolean hasLoadedMyLocation;
+    private boolean hasLoadedMyLocation;
     private boolean isLocationDialogShowing;
     private boolean isMapFailureDialogShowing;
 
@@ -403,5 +403,9 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
 
     public void setMapView(AirMapMapView mapView) {
         setupMapLoadListener();
+    }
+
+    public void setHasLoadedMyLocation(boolean hasLoadedMyLocation) {
+        this.hasLoadedMyLocation = hasLoadedMyLocation;
     }
 }
