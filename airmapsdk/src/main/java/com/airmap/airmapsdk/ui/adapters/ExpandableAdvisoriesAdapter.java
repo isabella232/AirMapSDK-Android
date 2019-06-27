@@ -344,7 +344,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
         String country = locale != null && locale.getCountry() != null && !TextUtils.isEmpty(locale.getCountry()) ? locale.getCountry() : "US";
         try {
             Phonenumber.PhoneNumber phoneNumber = phoneUtil.parse(number, country);
-            return phoneUtil.format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.NATIONAL);
+            return phoneUtil.format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL);
         } catch (NumberParseException e) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 return PhoneNumberUtils.formatNumber(number, country);
