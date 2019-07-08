@@ -708,7 +708,7 @@
     <string name="tile_layer_tfr_faa">Dočasné omezení letu</string>
     <string name="tile_layer_universities">Univerzity</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-    <string name="traffic_alert_with_aircraft_id_and_distance_format">Provoz %1$s\nLetová výška %2$s\n%3$s %4$s %5$s</string>
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">Provoz %1$s Letová výška %2$s %3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
     <string name="traffic_alert_with_aircraft_id_format">Provoz %1$s\nLetová výška %2$s\n%3$s</string>
     <!-- Name for the imperial system of measurement -->
