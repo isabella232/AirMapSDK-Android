@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">स्वीकृत</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">अनुमति रद्द की गई</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">अनुमति का अनुरोध नहीं किया गया</string>
@@ -710,9 +710,9 @@
     <string name="tile_layer_tfr_faa">अल्पकालिक उड़ान प्रतिबंध</string>
     <string name="tile_layer_universities">महाविद्यालय</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-    <string name="traffic_alert_with_aircraft_id_and_distance_format">ट्रैफिक %1$s\nऊंचाई %2$s\n%3$s %4$s %5$s</string>
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">ट्रैफिक %1$s ऊंचाई %2$s %3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-    <string name="traffic_alert_with_aircraft_id_format">ट्रैफिक %1$s\nऊंचाई %2$s\n%3$s</string>
+    <string name="traffic_alert_with_aircraft_id_format">ट्रैफिक %1$s ऊंचाई %2$s %3$s</string>
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">राजसी</string>
     <!-- Name for the metric system of measurement -->
