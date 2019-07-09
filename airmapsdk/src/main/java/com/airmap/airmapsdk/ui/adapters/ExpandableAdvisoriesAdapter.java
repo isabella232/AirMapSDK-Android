@@ -336,7 +336,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
 
     private String formatPhoneNumber(Context context, String number) {
         if (TextUtils.isEmpty(number)) {
-            return context.getString(R.string.no_phone_number_provided);
+            return context.getString(R.string.no_known_number);
         }
 
         PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
