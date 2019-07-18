@@ -175,9 +175,10 @@ public class Utils {
         }
 
         try {
-            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
-            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
-            return dateTime.toDate();
+//            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
+//            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
+//            return dateTime.toDate();
+            return new DateTime(iso8601).toDate();
         } catch (Exception e) {
             Timber.e(e, "Error parsing date: %s", iso8601);
         }
