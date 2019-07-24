@@ -13,7 +13,7 @@ public class AirMapAuthority implements Serializable, AirMapBaseModel {
     private String id;
     private String name;
 
-    private AirMapAuthority() {
+    public AirMapAuthority() {
     }
 
     public AirMapAuthority(JSONObject jsonObject) {

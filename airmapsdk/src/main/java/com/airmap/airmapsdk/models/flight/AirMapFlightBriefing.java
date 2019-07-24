@@ -21,6 +21,7 @@ public class AirMapFlightBriefing implements Serializable, AirMapBaseModel {
 
     private String color;
     private Date createdAt;
+    private String flightPlanId;
     private List<AirMapRuleset> rulesets;
     private AirMapAirspaceStatus airspace;
     private List<AirMapValidation> validations;
@@ -50,6 +51,10 @@ public class AirMapFlightBriefing implements Serializable, AirMapBaseModel {
 
             if (json.has("airspace")) {
                 airspace = new AirMapAirspaceStatus(json.optJSONObject("airspace"));
+            }
+
+            if (json.has("flight_plan_id")) {
+                setFlightPlanId(json.optString("flight_plan_id"));
             }
 
             validations = new ArrayList<>();
@@ -117,5 +122,13 @@ public class AirMapFlightBriefing implements Serializable, AirMapBaseModel {
 
     public void setAuthorizations(List<AirMapAuthorization> authorizations) {
         this.authorizations = authorizations;
+    }
+
+    public String getFlightPlanId() {
+        return flightPlanId;
+    }
+
+    public void setFlightPlanId(String flightPlanId) {
+        this.flightPlanId = flightPlanId;
     }
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 import static com.airmap.airmapsdk.util.Utils.optString;
 
-public class AirMapAuthorization implements AirMapBaseModel, Serializable{
+public class AirMapAuthorization implements AirMapBaseModel, Serializable {
 
     public enum Status {
         NOT_REQUESTED, REJECTED_UPON_SUBMISSION, AUTHORIZED_PENDING_SUBMISSION, MANUAL_AUTHORIZATION, ACCEPTED, REJECTED, PENDING, CANCELLED;
@@ -46,9 +46,14 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
     private AirMapAuthority authority;
     private String description;
     private String message;
+    private String referenceNumber;
 
     public AirMapAuthorization(JSONObject jsonObject) {
         constructFromJson(jsonObject);
+    }
+
+    public AirMapAuthorization() {
+
     }
 
     @Override
@@ -59,6 +64,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
         setStatus(Status.fromText(optString(json, "status")));
         setMessage(optString(json, "message"));
         setDescription(optString(json, "description"));
+        setReferenceNumber(optString(json, "reference_number"));
         return this;
     }
 
@@ -94,6 +100,14 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 
     public JSONObject toJSON() throws JSONException {
@@ -136,6 +150,10 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
 
         if (!TextUtils.isEmpty(getMessage())) {
             authorizationObject.put("message", getMessage());
+        }
+
+        if (!TextUtils.isEmpty(getReferenceNumber())) {
+            authorizationObject.put("reference_number", getReferenceNumber());
         }
 
         if (getAuthority() != null) {

@@ -175,9 +175,10 @@ public class Utils {
         }
 
         try {
-            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
-            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
-            return dateTime.toDate();
+//            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
+//            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
+//            return dateTime.toDate();
+            return new DateTime(iso8601).toDate();
         } catch (Exception e) {
             Timber.e(e, "Error parsing date: %s", iso8601);
         }
@@ -278,13 +279,13 @@ public class Utils {
      */
     public static double[] getBufferPresets() {
         return new double[]{
+                feetToMeters(10),
                 feetToMeters(25),
                 feetToMeters(50),
                 feetToMeters(75),
                 feetToMeters(100),
                 feetToMeters(125),
                 feetToMeters(150),
-                feetToMeters(175),
                 feetToMeters(200),
                 feetToMeters(250),
                 feetToMeters(300),
@@ -292,18 +293,14 @@ public class Utils {
                 feetToMeters(400),
                 feetToMeters(450),
                 feetToMeters(500),
-                feetToMeters(600),
-                feetToMeters(700),
-                feetToMeters(800),
-                feetToMeters(900),
+                feetToMeters(750),
                 feetToMeters(1000),
-                feetToMeters(1250),
                 feetToMeters(1500),
-                feetToMeters(1750),
                 feetToMeters(2000),
                 feetToMeters(2500),
                 feetToMeters(3000),
-                feetToMeters(6000)
+                feetToMeters(4000),
+                feetToMeters(5000)
         };
     }
 
@@ -312,22 +309,21 @@ public class Utils {
      */
     public static double[] getBufferPresetsMetric() {
         return new double[]{
+                5,
                 10,
                 15,
                 20,
                 25,
                 30,
+                40,
                 50,
-                60,
                 75,
                 100,
-                120,
+                125,
                 150,
                 175,
                 200,
-                225,
                 250,
-                275,
                 300,
                 350,
                 400,
@@ -335,7 +331,7 @@ public class Utils {
                 600,
                 750,
                 1000,
-                2000
+                1500
         };
     }
 
