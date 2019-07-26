@@ -624,6 +624,10 @@ public final class AirMap {
         return FlightService.getFlightPlanById(flightPlanId, callback);
     }
 
+    public static Call getFlightPlanAuthorizationsBatch(List<String> flightPlanIds, AirMapCallback<List<AirMapFlightBriefing>> callback) {
+        return FlightService.getFlightPlanAuthorizationsBatch(flightPlanIds, callback);
+    }
+
     public static Call getFlightPlanByFlightId(String flightId, AirMapCallback<AirMapFlightPlan> callback) {
         return FlightService.getFlightPlanByFlightId(flightId, callback);
     }

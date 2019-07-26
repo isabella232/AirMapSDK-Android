@@ -268,9 +268,9 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                         AirMapControlledAirspaceProperties controlledAirspaceProperties = advisory.getControlledAirspaceProperties();
 
                         if (controlledAirspaceProperties.isLaanc() && controlledAirspaceProperties.isAuthorization()) {
-                            // Remove Authorization available from view
-                            // info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
-                            // ((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
+                            //Remove "Authorization available" description
+                            //info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
+                            //((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
                         }
                         break;
                     }
@@ -337,7 +337,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
 
     private String formatPhoneNumber(Context context, String number) {
         if (TextUtils.isEmpty(number)) {
-            return context.getString(R.string.no_phone_number_provided);
+            return context.getString(R.string.no_known_number);
         }
 
         PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();

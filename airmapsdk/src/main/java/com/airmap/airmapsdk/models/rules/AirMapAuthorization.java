@@ -12,10 +12,10 @@ import java.io.Serializable;
 
 import static com.airmap.airmapsdk.util.Utils.optString;
 
-public class AirMapAuthorization implements AirMapBaseModel, Serializable{
+public class AirMapAuthorization implements AirMapBaseModel, Serializable {
 
     public enum Status {
-        NOT_REQUESTED, REJECTED_UPON_SUBMISSION, AUTHORIZED_UPON_SUBMISSION, MANUAL_AUTHORIZATION, ACCEPTED, REJECTED, PENDING, CANCELLED;
+        NOT_REQUESTED, REJECTED_UPON_SUBMISSION, AUTHORIZED_PENDING_SUBMISSION, MANUAL_AUTHORIZATION, ACCEPTED, REJECTED, PENDING, CANCELLED;
 
         public static Status fromText(String text) {
             switch (text) {
@@ -24,7 +24,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
                 case "rejected_upon_submission":
                     return REJECTED_UPON_SUBMISSION;
                 case "authorized_upon_submission":
-                    return AUTHORIZED_UPON_SUBMISSION;
+                    return AUTHORIZED_PENDING_SUBMISSION;
                 case "manual_authorization":
                     return MANUAL_AUTHORIZATION;
                 case "pending":
@@ -46,9 +46,14 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
     private AirMapAuthority authority;
     private String description;
     private String message;
+    private String referenceNumber;
 
     public AirMapAuthorization(JSONObject jsonObject) {
         constructFromJson(jsonObject);
+    }
+
+    public AirMapAuthorization() {
+
     }
 
     @Override
@@ -59,6 +64,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
         setStatus(Status.fromText(optString(json, "status")));
         setMessage(optString(json, "message"));
         setDescription(optString(json, "description"));
+        setReferenceNumber(optString(json, "reference_number"));
         return this;
     }
 
@@ -96,6 +102,14 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
         this.description = description;
     }
 
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
+    }
+
     public JSONObject toJSON() throws JSONException {
         JSONObject authorizationObject = new JSONObject();
 
@@ -111,7 +125,7 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
             case REJECTED_UPON_SUBMISSION:
                 statusString = "rejected_upon_submission";
                 break;
-            case AUTHORIZED_UPON_SUBMISSION:
+            case AUTHORIZED_PENDING_SUBMISSION:
                 statusString = "authorized_upon_submission";
                 break;
             case MANUAL_AUTHORIZATION:
@@ -136,6 +150,10 @@ public class AirMapAuthorization implements AirMapBaseModel, Serializable{
 
         if (!TextUtils.isEmpty(getMessage())) {
             authorizationObject.put("message", getMessage());
+        }
+
+        if (!TextUtils.isEmpty(getReferenceNumber())) {
+            authorizationObject.put("reference_number", getReferenceNumber());
         }
 
         if (getAuthority() != null) {

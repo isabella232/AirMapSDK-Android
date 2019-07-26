@@ -87,7 +87,7 @@
     <string name="kilometers_short">%d km</string>
     <string name="miles_short">%d mi</string>
 
-    <string name="authorizations_header">Authorization &amp; Validation</string>
+    <string name="authorizations_header">Authorization Requests</string>
     <string name="rules_header">Compliance Evaluation</string>
 
     <string name="time">Time</string>

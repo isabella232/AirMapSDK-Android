@@ -474,16 +474,17 @@
   <string name="rules_and_flight_features_header">Rules &amp; Compliance</string>
 
   <string name="flight_brief">Flight Brief</string>
-  <string name="conflicting_rules">Rules you may be violating</string>
+  <string name="conflicting_rules">Rules you are violating</string>
   <string name="missing_info_rules">Rules needing more information</string>
   <string name="informational_rules">Rules you should review</string>
   <string name="not_conflicting_rules">Rules you are following</string>
 
   <string name="authorization_not_requested">Authorization Not Requested</string>
   <string name="authorization_rejected_upon_submission">Rejected Upon Submission</string>
-  <string name="authorized_upon_submission">Authorization Upon Submission</string>
+  <string name="authorized_pending_submission">Authorization Pending Submission</string>
   <string name="manual_authorization">Manual Authorization Pending Submission</string>
   <string name="authorization_pending">Authorization Pending</string>
   <string name="authorization_accepted">Authorization Approved</string>
   <string name="authorization_rejected">Authorization Rejected</string>
+  <string name="authorization_cancelled">Authorization Invalidated</string>
 </resources>
