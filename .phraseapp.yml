@@ -1,5 +1,5 @@
 phraseapp:
-  access_token: ba231de1c01e4dc42988940bf77ef1d39d76a11de27033a0656a72319cf69ef6
+  access_token: 8052ffc36f1884c924c4b2a993621fbabb855eab91be89f5fe4631b42d1cc599
   project_id: 8e1da11a577bc4eb2ca0a2b4011d165d
   push:
     sources:
