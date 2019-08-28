@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">สนาม AMA</string>
     <string name="airspace_type_unknown">ไม่รู้จัก</string>
     <string name="amas">สนาม AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">กฎที่คุณละเมิด</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">กฎที่คุณควรตรวจสอบ</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">กฎที่ต้องการข้อมูลเพิ่มเติม</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">กฎที่คุณกำลังติดตาม</string>
     <string name="authorizations_header">การอนุมัติและการตรวจสอบความถูกต้อง</string>
     <string name="authorized_pending_submission">การอนุมัติขณะทำการส่ง</string>
     <string name="call">โทร</string>

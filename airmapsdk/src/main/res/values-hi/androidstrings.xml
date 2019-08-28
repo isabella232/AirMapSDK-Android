@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">AMA फ़ील्ड</string>
     <string name="airspace_type_unknown">नामालूम</string>
     <string name="amas">AMA फ़ील्ड</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">आप जिन नियमों का उल्लंघन कर रहे हैं</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">नियमों की समीक्षा करनी चाहिए</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">नियमों से अधिक जानकारी की जरूरत</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">नियम आप अनुसरण कर रहे है</string>
     <string name="authorizations_header">अनुमति और सत्यापन</string>
     <string name="authorized_pending_submission">प्रस्तुति के पश्चात अनुमत</string>
     <string name="call">कॉल</string>
