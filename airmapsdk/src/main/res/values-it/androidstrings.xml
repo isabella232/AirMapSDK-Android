@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">Campo AMA</string>
     <string name="airspace_type_unknown">Sconosciuto</string>
     <string name="amas">Campi AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Regole che stai violando</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Regole che dovreste rivedere</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Regole che necessitano di ulteriori informazioni</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Regole che stai seguendo</string>
     <string name="authorizations_header">Autorizzazione e conferma</string>
     <string name="authorized_pending_submission">Autorizzazione in seguito a invio</string>
     <string name="call">Chiama</string>

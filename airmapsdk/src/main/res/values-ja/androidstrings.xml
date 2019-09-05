@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">AMAフィールド</string>
     <string name="airspace_type_unknown">タイプ不明</string>
     <string name="amas">AMAフィールド</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">違反しているルール</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">確認する必要があるルール</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">より多くの情報が必要なルール</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">従うルール</string>
     <string name="authorizations_header">承認と検証</string>
     <string name="authorized_pending_submission">申請時に承認</string>
     <string name="call">電話</string>

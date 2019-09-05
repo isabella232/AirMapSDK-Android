@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">Pole AMA</string>
     <string name="airspace_type_unknown">Nieznane</string>
     <string name="amas">Pola AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Zasady, które naruszają</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Zasady, które należy przejrzeć</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Zasady wymagające dodatkowych informacji</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Reguły, które są następujące</string>
     <string name="authorizations_header">Autoryzacja i weryfikacja</string>
     <string name="authorized_pending_submission">Autoryzowany po przesłaniu</string>
     <string name="call">Zadzwoń</string>

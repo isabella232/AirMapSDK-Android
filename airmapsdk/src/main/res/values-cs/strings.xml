@@ -714,7 +714,7 @@
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">Univerzální</string>
     <!-- Name for the metric system of measurement -->
-    <string name="units_metric">Metrický</string>
+    <string name="units_metric">Metrické</string>
     <!-- Unit and format for displaying nautical miles -->
     <string name="units_nautical_mile_format">%s NM</string>
     <!-- Unit and format for displaying speed in knots -->

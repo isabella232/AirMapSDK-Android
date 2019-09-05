@@ -9,6 +9,14 @@
     <string name="airspace_type_ama">AMA场地</string>
     <string name="airspace_type_unknown">未知</string>
     <string name="amas">AMA场地</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">您违反的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">您应该审阅的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">需要更多信息的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">您所遵循的规则</string>
     <string name="authorizations_header">授权和验证</string>
     <string name="authorized_pending_submission">提交后授权</string>
     <string name="call">致电</string>
