@@ -4,6 +4,7 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.support.v4.util.Pair;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.models.Coordinate;
@@ -256,11 +257,10 @@ public class MapDataController {
     protected Func1<AirMapPolygon, Observable<List<AirMapJurisdiction>>> getJurisdictions() {
         return new Func1<AirMapPolygon, Observable<List<AirMapJurisdiction>>>() {
             @Override
-            public Observable<List<AirMapJurisdiction>> call(AirMapPolygon polygon) {
+            public Observable<List<AirMapJurisdiction>> call(final AirMapPolygon polygon) {
                 return Observable.create(new Observable.OnSubscribe<List<AirMapJurisdiction>>() {
                     @Override
                     public void call(final Subscriber<? super List<AirMapJurisdiction>> subscriber) {
-
                         // query map for jurisdictions
                         List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(0,
                                 0, map.getMeasuredWidth(), map.getMeasuredHeight()), "jurisdictions");
@@ -282,7 +282,6 @@ public class MapDataController {
                                 Timber.e(e, "Unable to get jurisdiction json");
                             }
                         }
-
                         subscriber.onNext(jurisdictions);
                         subscriber.onCompleted();
                     }

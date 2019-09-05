@@ -7,15 +7,18 @@ import com.airmap.airmapsdk.models.shapes.AirMapPolygon;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
+import com.airmap.airmapsdk.util.RetryWithDelay;
 
 import java.util.List;
 
 import okhttp3.Call;
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Func1;
 import rx.subscriptions.Subscriptions;
+import timber.log.Timber;
 
 public class FlightPlanDataController extends MapDataController {
 
@@ -62,10 +65,12 @@ public class FlightPlanDataController extends MapDataController {
                         }));
                     }
                 })
-                .onErrorResumeNext(new Func1<Throwable, Observable<? extends List<AirMapJurisdiction>>>() {
+                .retryWhen(new RetryWithDelay(4, 400), AndroidSchedulers.mainThread())
+                .onErrorReturn(new Func1<Throwable, List<AirMapJurisdiction>>() {
                     @Override
-                    public Observable<? extends List<AirMapJurisdiction>> call(Throwable throwable) {
-                        return Observable.just(null);
+                    public List<AirMapJurisdiction> call(Throwable throwable) {
+                        Timber.e("Ran out of attempts to query jurisdictions", throwable);
+                        return null;
                     }
                 });
             }
