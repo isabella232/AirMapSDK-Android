@@ -485,7 +485,7 @@
     <!-- Call to action to drag the center position of a point-based flight. -->
     <string name="flight_drawing_tooltip_cta_postiion_point">Déplacez le point central pour positionner votre zone de vol.</string>
     <!-- Call to action to tap the icon to begin drawing a flight area. -->
-    <string name="airmap_freehand_tip_area">Cliquez sur l\'icône \"main\" pour dessiner une zone de vol.</string>
+    <string name="airmap_freehand_tip_area">Cliquez sur l\'icône main pour dessiner une zone de vol.</string>
     <!-- Call to action to tap the icon to begin drawing a flight path. -->
     <string name="airmap_freehand_tip_path">Cliquez sur l\'icône de la main pour dessiner une trajectoire de vol.</string>
     <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
