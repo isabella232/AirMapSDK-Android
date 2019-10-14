@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
@@ -43,9 +41,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:2.10.0"
     testImplementation "org.robolectric:robolectric:3.4.2"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
+    
     // support
     def supportLibraryVersion = '27.1.1'
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
@@ -61,8 +57,9 @@ dependencies {
     api "com.google.android.gms:play-services-location:$playServicesVersion"
 
     // mapbox
-    compile 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
-    compile 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.8.0'
+    api 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.4.0'
+    api 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.9.0'
+    api 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.9.0'
 
     // shared libraries
     api 'joda-time:joda-time:2.9.9'
