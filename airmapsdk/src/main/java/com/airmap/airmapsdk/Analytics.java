@@ -271,6 +271,9 @@ public class Analytics {
         public static final String GEO_AWARENESS_VISUAL_ALERTS = "Geo-Awareness Visual Alerts";
         public static final String GEOFENCE = "Keep Aircraft From Entering No-Fly Zones";
         public static final String GEOCAGE = "Keep Aircraft From Leaving Flight Plan";
+
+        public static final String TURN_ON_LOCATION_DIALOG = "Turn On Location Dialog";
+        public static final String LOCATION_PERMISSIONS = "Location Permissions";
     }
 
     public static final class Value {

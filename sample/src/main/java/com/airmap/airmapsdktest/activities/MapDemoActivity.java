@@ -26,6 +26,8 @@ public class MapDemoActivity extends MyLocationMapActivity {
     private MapPagerAdapter pagerAdapter;
     private SwipeDisableableViewPager viewPager;
 
+    private AirMapMapView mapView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,11 +101,12 @@ public class MapDemoActivity extends MyLocationMapActivity {
 
     @Override
     protected AirMapMapView getMapView() {
-        if (getMapFragment() != null) {
-            return getMapFragment().getMapView();
-        }
+        return mapView;
+    }
 
-        return null;
+    public void setMapView(AirMapMapView mapView) {
+        this.mapView = mapView;
+        onMapViewCreated();
     }
 
     private class MapPagerAdapter extends FragmentPagerAdapter {

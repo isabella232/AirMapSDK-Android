@@ -5,13 +5,14 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'com.airmap.airmapsdk'
-def libVersion = '3.0.0'
+def libVersion = '4.0.0-alpha.1'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         minSdkVersion 18
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "$libVersion"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,6 +30,11 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -55,10 +61,8 @@ dependencies {
     api "com.google.android.gms:play-services-location:$playServicesVersion"
 
     // mapbox
-    api 'com.mapbox.mapboxsdk:mapbox-android-sdk:5.5.3'
-    api 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.4.0'
-    api 'com.mapbox.mapboxsdk:mapbox-android-services:2.2.10'
-    api 'com.mapbox.mapboxsdk:mapbox-android-ui:2.2.10'
+    compile 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
+    compile 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.8.0'
 
     // shared libraries
     api 'joda-time:joda-time:2.9.9'

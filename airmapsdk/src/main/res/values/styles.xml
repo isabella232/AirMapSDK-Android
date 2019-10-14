@@ -33,9 +33,4 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <style name="CustomLocationLayer" parent="mapbox_LocationLayer">
-        <item name="mapbox_accuracyAlpha">0</item>
-        <item name="mapbox_elevation">2dp</item>
-    </style>
-
 </resources>

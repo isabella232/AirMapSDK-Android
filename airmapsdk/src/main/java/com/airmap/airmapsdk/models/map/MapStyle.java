@@ -27,7 +27,14 @@ public class MapStyle {
         }
     }
 
-    public List<AirMapLayerStyle> getLayerStyles() {
-        return layerStyles;
+    public List<AirMapLayerStyle> getLayerStyles(String layer) {
+        List<AirMapLayerStyle> styles = new ArrayList<>();
+        for (AirMapLayerStyle style : layerStyles) {
+            if (style.sourceLayer.equals(layer)) {
+                styles.add(style);
+            }
+        }
+
+        return styles;
     }
 }
