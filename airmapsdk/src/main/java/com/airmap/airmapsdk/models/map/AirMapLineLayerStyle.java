@@ -1,94 +1,153 @@
 package com.airmap.airmapsdk.models.map;
 
-import com.mapbox.mapboxsdk.style.functions.Function;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
+import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import timber.log.Timber;
 
 import static com.airmap.airmapsdk.util.Utils.optString;
 
 public class AirMapLineLayerStyle extends AirMapLayerStyle {
 
-    private final float lineWidth;
-    private final float lineOpacity;
-    private final Function lineOpacityFunction;
-    private final String lineColor;
-    private final Function lineColorFunction;
-    private final Float[] lineDashArray;
-
-    protected AirMapLineLayerStyle(JSONObject json) {
+    AirMapLineLayerStyle(JSONObject json) {
         super(json);
-
-        JSONObject paintJson = json.optJSONObject("paint");
-        if (paintJson != null) {
-            lineWidth = (float) paintJson.optDouble("line-width", 1.0f);
-
-            JSONObject lineOpacityJson = paintJson.optJSONObject("line-opacity");
-            if (lineOpacityJson != null) {
-                lineOpacityFunction = getFillOpacityFunction(lineOpacityJson);
-                lineOpacity = 0;
-            } else {
-                lineOpacity = (float) paintJson.optDouble("line-opacity", 1.0f);
-                lineOpacityFunction = null;
-            }
-
-            JSONObject lineColorJson = paintJson.optJSONObject("line-color");
-            if (lineColorJson != null) {
-                lineColorFunction = getFillColorFunction(lineColorJson);
-                lineColor = "#000000";
-            } else {
-                lineColor = optString(paintJson, "line-color");
-                lineColorFunction = null;
-            }
-
-            JSONArray dashArray = paintJson.optJSONArray("line-dasharray");
-            if (dashArray != null && dashArray.length() > 0) {
-                lineDashArray = new Float[dashArray.length()];
-                for (int i = 0; i < dashArray.length(); i++) {
-                    lineDashArray[i] = (float) dashArray.optDouble(i);
-                }
-            } else {
-                lineDashArray = null;
-            }
-        } else {
-            lineOpacity = 1.0f;
-            lineOpacityFunction = null;
-            lineWidth = 1f;
-            lineColor = "#000000";
-            lineColorFunction = null;
-            lineDashArray = null;
-        }
     }
 
     @Override
     public LineLayer toMapboxLayer(Layer layerToClone, String sourceId) {
-        LineLayer layer = new LineLayer(id + "|" + sourceId + "|new", sourceId);
-        layer.setSourceLayer(sourceId + "_" + sourceLayer);
-        layer.setProperties(PropertyFactory.lineWidth(lineWidth));
+        LineLayer lineLayer = new LineLayer(id + "|" + sourceId + "|new", sourceId);
+        lineLayer.setSourceLayer(sourceId + "_" + sourceLayer);
 
-        if (lineOpacityFunction != null) {
-            layer.setProperties(PropertyFactory.lineOpacity(lineOpacityFunction));
-        } else {
-            layer.setProperties(PropertyFactory.lineOpacity(lineOpacity));
+        LineLayer layer = (LineLayer) layerToClone;
+        List<PropertyValue> properties = new ArrayList<>();
+
+        PropertyValue lineColor = getLineColor(layer.getLineColor());
+        if (lineColor != null) {
+            properties.add(lineColor);
         }
 
-        if (lineColorFunction != null) {
-            layer.setProperties(PropertyFactory.lineColor(lineColorFunction));
-        } else {
-            layer.setProperties(PropertyFactory.lineColor(lineColor));
+        PropertyValue lineOpacity = getLineOpacity(layer.getLineOpacity());
+        if (lineOpacity != null) {
+            properties.add(lineOpacity);
         }
 
+        PropertyValue lineWidth = getLineWidth(layer.getLineWidth());
+        if (lineWidth != null) {
+            properties.add(lineWidth);
+        }
+
+        PropertyValue lineGapWidth = getLineGapWidth(layer.getLineGapWidth());
+        if (lineGapWidth != null) {
+            properties.add(lineGapWidth);
+        }
+
+        PropertyValue lineTranslate = getLineTranslate(layer.getLineTranslate());
+        if (lineTranslate != null) {
+            properties.add(lineTranslate);
+        }
+
+        PropertyValue lineTranslateAnchor = getLineTranslateAnchor(layer.getLineTranslateAnchor());
+        if (lineTranslateAnchor != null) {
+            properties.add(lineTranslateAnchor);
+        }
+
+        PropertyValue lineDashArray = getLineDashArray(layer.getLineDasharray());
         if (lineDashArray != null) {
-            layer.setProperties(PropertyFactory.lineDasharray(lineDashArray));
+            properties.add(lineDashArray);
         }
 
-        if (filter != null) {
-            layer.setFilter(filter);
+        PropertyValue linePattern = getLinePattern(layer.getLinePattern());
+        if (linePattern != null) {
+            properties.add(linePattern);
         }
 
-        return layer;
+        // set all properties
+        lineLayer.setProperties(properties.toArray(new PropertyValue[properties.size()]));
+
+        if (layer.getFilter() != null) {
+            lineLayer.setFilter(layer.getFilter());
+        }
+
+        return lineLayer;
+    }
+
+    private PropertyValue getLineColor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineColor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineColor(pv.getColorInt());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineOpacity(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineOpacity(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineOpacity((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineWidth(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineWidth(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineWidth((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineGapWidth(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineGapWidth(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineGapWidth((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineTranslate(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineTranslate(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineTranslate((Float[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineTranslateAnchor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineTranslateAnchor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineTranslateAnchor((String) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLineDashArray(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.lineDasharray(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.lineDasharray((Float[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getLinePattern(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.linePattern(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.linePattern((String) pv.getValue());
+        }
+        return null;
     }
 }

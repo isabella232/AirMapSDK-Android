@@ -1,3 +1,5 @@
+## `4.0.0-alpha.1 (5/29/19)`
+* Updated to Mapbox 8.0.0
 
 ## `2.0.1 (9/28/18)`
 * Add localization for cs, de, es, fr, hi, it, ja, nb, pl, sv, th & zh

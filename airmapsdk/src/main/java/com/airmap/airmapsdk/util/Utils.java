@@ -2,10 +2,16 @@ package com.airmap.airmapsdk.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 
@@ -16,7 +22,6 @@ import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.services.commons.models.Position;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
@@ -479,20 +484,6 @@ public class Utils {
         return false;
     }
 
-    public static List<Position> getPositionsFromFeature(ArrayList coordinates) {
-            List<Position> positions = new ArrayList<>();
-            for (Object o : coordinates) {
-                if (o instanceof ArrayList) {
-                    positions.addAll(getPositionsFromFeature((ArrayList) o));
-                } else if (o instanceof Position) {
-                    Position position = (Position) o;
-                    positions.add(position);
-                }
-            }
-
-            return positions;
-    }
-
     public static boolean useGPSForLocation(Context context) {
         // by default, GPS is not used
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(context.getString(R.string.setting_location_provider), true);
@@ -504,5 +495,25 @@ public class Utils {
         }
 
         return Locale.getDefault().getLanguage();
+    }
+
+    public static Bitmap getBitmapForDrawable(Context context, @DrawableRes int id) {
+        Drawable drawable = ContextCompat.getDrawable(context, id);
+        Bitmap bitmap;
+        if (drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            bitmap = bitmapDrawable.getBitmap();
+        } else {
+            if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+                bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            } else {
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            }
+
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+        }
+        return bitmap;
     }
 }

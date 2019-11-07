@@ -1,17 +1,15 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'com.airmap.airmapsdk'
-def libVersion = '3.0.0'
+def libVersion = '4.0.0-alpha.1'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         minSdkVersion 18
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "$libVersion"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -30,6 +28,11 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -37,9 +40,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:2.10.0"
     testImplementation "org.robolectric:robolectric:3.4.2"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
+    
     // support
     def supportLibraryVersion = '27.1.1'
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
@@ -55,10 +56,10 @@ dependencies {
     api "com.google.android.gms:play-services-location:$playServicesVersion"
 
     // mapbox
-    api 'com.mapbox.mapboxsdk:mapbox-android-sdk:5.5.3'
-    api 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.4.0'
-    api 'com.mapbox.mapboxsdk:mapbox-android-services:2.2.10'
-    api 'com.mapbox.mapboxsdk:mapbox-android-ui:2.2.10'
+    api 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.4.0'
+    api 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v8:0.9.0'
+    api 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.9.0'
+    api 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.9.0'
 
     // shared libraries
     api 'joda-time:joda-time:2.9.9'

@@ -13,7 +13,6 @@ import com.airmap.airmapsdk.models.Coordinate;
 import com.airmap.airmapsdk.models.shapes.AirMapPolygon;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
-import com.mapbox.mapboxsdk.annotations.MarkerViewOptions;
 import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -66,33 +65,6 @@ public class AnnotationsFactory {
         PolylineOptions options = new PolylineOptions();
         options.color(ContextCompat.getColor(context, R.color.colorPrimary));
         options.width(2);
-        return options;
-    }
-
-    public MarkerViewOptions getDefaultMarkerOptions(LatLng latLng) {
-        MarkerViewOptions options = new MarkerViewOptions();
-        options.position(latLng);
-        options.icon(cornerIcon);
-        options.title(CORNER_TAG);
-        options.anchor(0.5f, 0.5f);
-        return options;
-    }
-
-    public MarkerViewOptions getDefaultMidpointMarker(LatLng latLng) {
-        MarkerViewOptions options = new MarkerViewOptions();
-        options.position(latLng);
-        options.icon(midpointIcon);
-        options.title(MIDPOINT_TAG);
-        options.anchor(0.5f, 0.5f);
-        return options;
-    }
-
-    public MarkerViewOptions getIntersectionMarker(LatLng latLng) {
-        MarkerViewOptions options = new MarkerViewOptions();
-        options.position(latLng);
-        options.icon(intersectionIcon);
-        options.title(INTERSECTION_TAG);
-        options.anchor(0.5f, 0.5f);
         return options;
     }
 
