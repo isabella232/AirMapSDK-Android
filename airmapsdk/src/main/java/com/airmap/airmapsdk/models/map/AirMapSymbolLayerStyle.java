@@ -1,8 +1,7 @@
 package com.airmap.airmapsdk.models.map;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.PropertyValue;

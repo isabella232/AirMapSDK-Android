@@ -2,16 +2,13 @@ package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
-import com.airmap.airmapsdk.models.map.AirMapFillLayerStyle;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
-import com.airmap.airmapsdk.models.map.AirMapLineLayerStyle;
-import com.airmap.airmapsdk.models.map.AirMapSymbolLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
@@ -27,7 +24,6 @@ import com.mapbox.mapboxsdk.style.layers.FillLayer;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
-import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;

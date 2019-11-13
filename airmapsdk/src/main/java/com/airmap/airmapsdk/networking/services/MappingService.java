@@ -1,7 +1,7 @@
 package com.airmap.airmapsdk.networking.services;
 
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;

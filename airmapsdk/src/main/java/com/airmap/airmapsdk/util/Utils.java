@@ -10,8 +10,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 
@@ -19,7 +19,6 @@ import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.models.Coordinate;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
-import com.airmap.airmapsdk.networking.services.AirMap;
 import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 
@@ -27,7 +26,6 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;

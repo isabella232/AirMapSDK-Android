@@ -1,7 +1,7 @@
 package com.airmap.airmapsdktest.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,8 +14,6 @@ import com.airmap.airmapsdk.ui.activities.MyLocationMapActivity;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
 import com.airmap.airmapsdktest.R;
 import com.airmap.airmapsdktest.activities.MapDemoActivity;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
 import java.util.List;
 

@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.ColorRes;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.text.format.DateUtils;

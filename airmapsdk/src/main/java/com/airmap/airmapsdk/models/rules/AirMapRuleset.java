@@ -1,12 +1,11 @@
 package com.airmap.airmapsdk.models.rules;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
-import com.airmap.airmapsdk.util.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
