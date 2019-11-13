@@ -76,13 +76,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         assertTrue(AirMap.hasBeenInitialized());
     }
 
-    public void testCertPinning() {
-        AirMap.enableCertificatePinning(true);
-        assertTrue(AirMap.isCertificatePinningEnabled());
-        AirMap.enableCertificatePinning(false);
-        assertFalse(AirMap.isCertificatePinningEnabled());
-    }
-
     public void testGetManufacturers() throws InterruptedException {
         AirMap.getManufacturers(new AirMapCallback<List<AirMapAircraftManufacturer>>() {
             @Override

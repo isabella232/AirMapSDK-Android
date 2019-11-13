@@ -159,7 +159,7 @@ public final class AirMap {
         } catch (IOException | JSONException | NullPointerException e) {
             throw new RuntimeException("Please ensure you have your airmap.config.json file in your /assets directory");
         }
-        client = new AirMapClient();
+        client = new AirMapClient(context);
     }
 
     /**
@@ -327,7 +327,7 @@ public final class AirMap {
         AuthService.logout(context);
         setAuthToken(null);
         userId = null;
-        getClient().resetClient();
+        getClient().resetClient(context);
         saveTokens(context, null, null);
     }
 
@@ -359,11 +359,6 @@ public final class AirMap {
      */
     public static boolean isCertificatePinningEnabled() {
         return certificatePinning;
-    }
-
-    public static void enableCertificatePinning(boolean enable) {
-        AirMap.certificatePinning = enable;
-        getClient().resetClient();
     }
 
     /**
@@ -920,7 +915,7 @@ public final class AirMap {
     }
 
     public static Call getJurisdictions(@NonNull AirMapPolygon polygon, @Nullable AirMapCallback<List<AirMapJurisdiction>> callback) {
-        return RulesetService.getJurisdictions(AirMapGeometry.getGeoJSONFromGeometry(polygon), callback);
+        return RulesetService.getJurisdictions(AirMapGeometry.getGeoJSONFromGeometry(polygon), AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -931,7 +926,7 @@ public final class AirMap {
      * @return
      */
     public static Call getRulesets(@NonNull Coordinate coordinate, @Nullable AirMapCallback<List<AirMapRuleset>> callback) {
-        return RulesetService.getRulesets(coordinate, callback);
+        return RulesetService.getRulesets(coordinate, AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -942,7 +937,7 @@ public final class AirMap {
      * @return
      */
     public static Call getRulesets(@NonNull JSONObject geometry, @Nullable AirMapCallback<List<AirMapRuleset>> callback) {
-        return RulesetService.getRulesets(geometry, callback);
+        return RulesetService.getRulesets(geometry, AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -953,7 +948,7 @@ public final class AirMap {
      * @return
      */
     public static Call getRulesets(@NonNull List<String> rulesetIds, @Nullable AirMapCallback<List<AirMapRuleset>> callback) {
-        return RulesetService.getRulesets(rulesetIds, callback);
+        return RulesetService.getRulesets(rulesetIds, AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -964,7 +959,7 @@ public final class AirMap {
      * @return
      */
     public static Call getRules(@NonNull String rulesetId, @Nullable AirMapCallback<AirMapRuleset> callback) {
-        return RulesetService.getRules(rulesetId, callback);
+        return RulesetService.getRules(rulesetId, AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -982,13 +977,13 @@ public final class AirMap {
     }
 
     public static void getFlightPlanEvaluation(@NonNull List<String> rulesets, @NonNull JSONObject geometry, AirMapCallback<AirMapEvaluation> callback) {
-        RulesetService.getEvaluation(rulesets, geometry, callback);
+        RulesetService.getEvaluation(rulesets, geometry, AirMap.getAuthToken(), callback);
     }
 
     public static Call getAirspaceStatus(@NonNull AirMapFlightPlan flightPlan, AirMapCallback<AirMapAirspaceStatus> callback) {
         try {
             JSONObject geometry = new JSONObject(flightPlan.getGeometry());
-            return RulesetService.getAdvisories(flightPlan.getRulesetIds(), geometry, flightPlan.getStartsAt(), flightPlan.getEndsAt(), null, callback);
+            return RulesetService.getAdvisories(flightPlan.getRulesetIds(), geometry, flightPlan.getStartsAt(), flightPlan.getEndsAt(), null, AirMap.getAuthToken(), callback);
         } catch (JSONException e) {
             callback.error(new AirMapException("Unable to parse geometry json: \n" + e.getMessage()));
             return null;
@@ -996,15 +991,15 @@ public final class AirMap {
     }
 
     public static Call getAirspaceStatus(@NonNull AirMapPolygon polygon, @NonNull List<String> rulesetIds, AirMapCallback<AirMapAirspaceStatus> callback) {
-        return RulesetService.getAdvisories(rulesetIds, polygon, null, null, null, callback);
+        return RulesetService.getAdvisories(rulesetIds, polygon, null, null, null, AirMap.getAuthToken(), callback);
     }
 
     public static Call getAirspaceStatus(@NonNull AirMapPolygon polygon, @NonNull List<String> rulesetIds, @Nullable Date start, @Nullable Date end, AirMapCallback<AirMapAirspaceStatus> callback) {
-        return RulesetService.getAdvisories(rulesetIds, polygon, start, end, null, callback);
+        return RulesetService.getAdvisories(rulesetIds, polygon, start, end, null, AirMap.getAuthToken(), callback);
     }
 
     public static Call getAirspaceStatus(@NonNull JSONObject geometry, @NonNull List<String> rulesetIds, @Nullable Date start, @Nullable Date end, AirMapCallback<AirMapAirspaceStatus> callback) {
-        return RulesetService.getAdvisories(rulesetIds, geometry, start, end, null, callback);
+        return RulesetService.getAdvisories(rulesetIds, geometry, start, end, null, AirMap.getAuthToken(), callback);
     }
 
     /**
@@ -1028,7 +1023,7 @@ public final class AirMap {
     }
 
     public static String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements) {
-        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements);
+        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, AirMap.getAuthToken());
     }
 
     /**

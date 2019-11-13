@@ -1,13 +1,14 @@
 package com.airmap.airmapsdk.networking.services;
 
+import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Auth;
-import com.airmap.airmapsdk.auth.AuthConstants;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 import com.airmap.airmapsdk.util.Utils;
+import com.readystatesoftware.chuck.ChuckInterceptor;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,8 +43,8 @@ public class AirMapClient {
     /**
      * Initialize the client
      */
-    public AirMapClient() {
-        resetClient(); //Will initialize OkHttpClient client, add cert pinning, and interceptors
+    public AirMapClient(Context context) {
+        resetClient(context); //Will initialize OkHttpClient client, add cert pinning, and interceptors
     }
 
     /**
@@ -301,8 +302,9 @@ public class AirMapClient {
 
     /**
      * Clears Interceptor Headers and adds Authorization + x-Api-Key
+     * @param context
      */
-    public void resetClient() {
+    public void resetClient(Context context) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (AirMap.isCertificatePinningEnabled()) {
             builder.certificatePinner(getCertificatePinner());
@@ -368,6 +370,8 @@ public class AirMapClient {
                 return response;
             }
         });
+
+        builder.addInterceptor(new ChuckInterceptor(context));
         //TODO: Check for active connections before reassigning client
         client = builder.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS).writeTimeout(60, TimeUnit.SECONDS).build();
     }

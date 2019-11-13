@@ -399,9 +399,13 @@ public class MappingService extends BaseService {
         return mapTilesBaseUrl + tiles + "?&theme=" + theme.toString() + "&apikey=" + AirMap.getInstance().getApiKey() + "&token=" + AirMap.getInstance().getApiKey();
     }
 
-    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements) {
+    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken) {
         String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
-        return mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        String url = mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        if (accessToken != null) {
+            url += "?access_token=" + accessToken;
+        }
+        return url;
     }
 
     protected String getStylesUrl(AirMapMapTheme theme) {
