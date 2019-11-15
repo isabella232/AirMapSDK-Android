@@ -3,8 +3,9 @@ package com.airmap.airmapsdktest.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.widget.CardView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+
 import android.view.View;
 import android.widget.Toast;
 
