@@ -64,19 +64,17 @@ dependencies {
     testImplementation "org.mockito:mockito-core:2.10.0"
     testImplementation "org.robolectric:robolectric:3.4.2"
     
-    // support
-    def supportLibraryVersion = '27.1.1'
-    api 'androidx.appcompat:appcompat:1.0.0'
+    // AndroidX
+    api 'androidx.appcompat:appcompat:1.1.0'
     api 'com.google.android.material:material:1.0.0'
     api 'androidx.cardview:cardview:1.0.0'
     api 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'androidx.annotation:annotation:1.0.0'
-    api 'androidx.fragment:fragment:1.0.0'
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.fragment:fragment:1.1.0'
     api 'androidx.legacy:legacy-support-v13:1.0.0'
 
-    // play services
-    def playServicesVersion = '15.0.1'
-    api "com.google.android.gms:play-services-location:$playServicesVersion"
+    // Play services
+    api "com.google.android.gms:play-services-location:17.0.0"
 
     // mapbox
     api 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.4.0'
