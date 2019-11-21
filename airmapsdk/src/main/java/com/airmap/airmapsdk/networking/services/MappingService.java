@@ -3,6 +3,7 @@ package com.airmap.airmapsdk.networking.services;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.R;
@@ -403,7 +404,7 @@ public class MappingService extends BaseService {
         String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
         String url = mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
         if (accessToken != null) {
-            url += "?access_token=" + accessToken;
+            url += "&access_token=" + accessToken;
         }
         return url;
     }

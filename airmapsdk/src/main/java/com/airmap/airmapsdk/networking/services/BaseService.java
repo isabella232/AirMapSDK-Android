@@ -16,7 +16,7 @@ public class BaseService {
     //Map
     protected static final String mapTilesVersion = "v1/";
     protected static final String mapTilesBaseUrl = apiUrl + "/maps/v4/tilejson/";
-    protected static final String mapTilesRulesUrl = apiUrl + "/tiledata/" + mapTilesVersion;
+    public static final String mapTilesRulesUrl = apiUrl + "/tiledata/" + mapTilesVersion;
 
     //Aircraft
     protected static final String aircraftVersion = "v2/";

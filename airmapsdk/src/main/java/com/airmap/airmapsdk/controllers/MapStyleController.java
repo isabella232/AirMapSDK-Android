@@ -1,9 +1,11 @@
 package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
@@ -29,6 +31,7 @@ import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
@@ -40,6 +43,7 @@ import java.util.Locale;
 
 import timber.log.Timber;
 
+import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesRulesUrl;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
@@ -86,6 +90,28 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                 backgroundLayer.setProperties(PropertyFactory.backgroundOpacity(0.9f));
             }
         }
+
+        // Manage jurisdictions for Enterprise
+        String jurisdictionsLayerId = "jurisdictions";
+//        Source source = map.getMap().getStyle().getSource(jurisdictionsLayerId);
+//        if (source != null) {
+//        }
+
+        String jurisdictionsUrl = mapTilesRulesUrl + "base-jurisdiction/{z}/{x}/{y}";
+        if (!TextUtils.isEmpty(AirMap.getAuthToken())) {
+            jurisdictionsUrl += "?accessToken=" + AirMap.getAuthToken();
+        }
+
+        VectorSource vectorSource = new VectorSource(jurisdictionsLayerId, jurisdictionsUrl);
+        FillLayer fillLayer = new FillLayer(jurisdictionsLayerId, jurisdictionsLayerId)
+                .withProperties(PropertyFactory.fillColor(Color.TRANSPARENT),
+                        PropertyFactory.fillOpacity(1f));
+
+
+        map.getMap().getStyle().removeLayer(jurisdictionsLayerId);
+        map.getMap().getStyle().removeSource(jurisdictionsLayerId);
+        map.getMap().getStyle().addSource(vectorSource);
+        map.getMap().getStyle().addLayerAt(fillLayer, 0);
 
         try {
             mapStyle = new MapStyle(map.getMap().getStyle().getJson());
@@ -326,6 +352,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
     public interface Callback {
         void onMapStyleLoaded();
+
         void onMapStyleReset();
     }
 }
