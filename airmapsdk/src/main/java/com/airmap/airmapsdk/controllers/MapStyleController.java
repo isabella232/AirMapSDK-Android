@@ -2,6 +2,7 @@ package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import com.airmap.airmapsdk.models.map.AirMapSymbolLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
+import com.airmap.airmapsdk.networking.callbacks.AuthTokenListener;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
@@ -43,6 +45,7 @@ import java.util.Locale;
 
 import timber.log.Timber;
 
+import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesBaseJurisdictionsUrl;
 import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesRulesUrl;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
@@ -59,6 +62,8 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
     private String highlightLayerId;
 
+    private static String tileJsonSpecVersion = "2.2.0";
+
     public MapStyleController(AirMapMapView map, @Nullable MappingService.AirMapMapTheme mapTheme, Callback callback) {
         this.map = map;
         this.callback = callback;
@@ -71,6 +76,8 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             String savedTheme = prefs.getString(AirMapConstants.MAP_STYLE, MappingService.AirMapMapTheme.Standard.toString());
             currentTheme = MappingService.AirMapMapTheme.fromString(savedTheme);
         }
+
+        AirMap.setAuthTokenListener(this::setupJurisdictionsForEnterprise);
     }
 
     public void onMapReady() {
@@ -91,27 +98,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             }
         }
 
-        // Manage jurisdictions for Enterprise
-        String jurisdictionsLayerId = "jurisdictions";
-//        Source source = map.getMap().getStyle().getSource(jurisdictionsLayerId);
-//        if (source != null) {
-//        }
-
-        String jurisdictionsUrl = mapTilesRulesUrl + "base-jurisdiction/{z}/{x}/{y}";
-        if (!TextUtils.isEmpty(AirMap.getAuthToken())) {
-            jurisdictionsUrl += "?accessToken=" + AirMap.getAuthToken();
-        }
-
-        VectorSource vectorSource = new VectorSource(jurisdictionsLayerId, jurisdictionsUrl);
-        FillLayer fillLayer = new FillLayer(jurisdictionsLayerId, jurisdictionsLayerId)
-                .withProperties(PropertyFactory.fillColor(Color.TRANSPARENT),
-                        PropertyFactory.fillOpacity(1f));
-
-
-        map.getMap().getStyle().removeLayer(jurisdictionsLayerId);
-        map.getMap().getStyle().removeSource(jurisdictionsLayerId);
-        map.getMap().getStyle().addSource(vectorSource);
-        map.getMap().getStyle().addLayerAt(fillLayer, 0);
+        setupJurisdictionsForEnterprise();
 
         try {
             mapStyle = new MapStyle(map.getMap().getStyle().getJson());
@@ -129,6 +116,32 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         }
 
         callback.onMapStyleLoaded();
+    }
+
+    public void setupJurisdictionsForEnterprise() {
+        // Enterprise only applies when we have an access token
+        if (TextUtils.isEmpty(AirMap.getAuthToken()) || map == null || map.getMap() == null || map.getMap().getStyle() == null) {
+            return;
+        }
+        
+        String jurisdictionsUrl = mapTilesBaseJurisdictionsUrl + "?accessToken=" + AirMap.getAuthToken();
+        TileSet tileSet = new TileSet(tileJsonSpecVersion, jurisdictionsUrl);
+
+        String jurisdictionsId = "jurisdictions";
+        map.getMap().getStyle().removeLayer(jurisdictionsId);
+        map.getMap().getStyle().removeSource(jurisdictionsId);
+
+        VectorSource vectorSource = new VectorSource(jurisdictionsId, tileSet);
+        FillLayer fillLayer = new FillLayer(jurisdictionsId, vectorSource.getId())
+                .withProperties(
+                        PropertyFactory.fillColor(Color.TRANSPARENT),
+                        PropertyFactory.fillOpacity(1f)
+                );
+        fillLayer.setSourceLayer(jurisdictionsId);
+
+
+        map.getMap().getStyle().addSource(vectorSource);
+        map.getMap().getStyle().addLayerAt(fillLayer, 0);
     }
 
     // Updates the map to use a custom style based on theme and selected layers
@@ -180,7 +193,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             Timber.e("Source already added for: %s", sourceId);
         } else {
             String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
-            TileSet tileSet = new TileSet("2.2.0", urlTemplates);
+            TileSet tileSet = new TileSet(tileJsonSpecVersion, urlTemplates);
             tileSet.setMaxZoom(12f);
             tileSet.setMinZoom(8f);
             VectorSource tileSource = new VectorSource(sourceId, tileSet);

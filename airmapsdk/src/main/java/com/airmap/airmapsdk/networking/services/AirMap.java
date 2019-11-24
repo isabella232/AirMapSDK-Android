@@ -32,6 +32,7 @@ import com.airmap.airmapsdk.models.status.AirMapStatus;
 import com.airmap.airmapsdk.networking.callbacks.AirMapAuthenticationCallback;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.callbacks.AirMapTrafficListener;
+import com.airmap.airmapsdk.networking.callbacks.AuthTokenListener;
 import com.airmap.airmapsdk.networking.callbacks.LoginCallback;
 import com.airmap.airmapsdk.networking.callbacks.LoginListener;
 import com.airmap.airmapsdk.util.AirMapTree;
@@ -71,6 +72,8 @@ public final class AirMap {
 
     private static LoginListener loginListener;
     private static Analytics analytics;
+
+    private static AuthTokenListener authTokenListener;
 
     /**
      * Initializes the SDK. This must be called before any requests can be made
@@ -241,6 +244,9 @@ public final class AirMap {
         authToken = newAuthToken;
         getAirMapTrafficService().setAuthToken(newAuthToken);
         decodeToken(authToken);
+        if (authTokenListener != null) {
+            authTokenListener.onNewToken();
+        }
     }
 
     public static void clearAuthToken() {
@@ -249,6 +255,7 @@ public final class AirMap {
     }
 
     public static void saveTokens(Context context, @Nullable String newAccessToken, @Nullable String newRefreshToken) {
+        setAuthToken(newAccessToken);
         try {
             PreferenceUtils.getPreferences(context)
                     .edit()
@@ -299,6 +306,10 @@ public final class AirMap {
      */
     public static String getApiKey() {
         return apiKey;
+    }
+
+    public static void setAuthTokenListener(AuthTokenListener newAuthTokenListener) {
+        authTokenListener = newAuthTokenListener;
     }
 
     /**
