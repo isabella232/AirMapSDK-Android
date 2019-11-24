@@ -2,23 +2,17 @@ package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
-import com.airmap.airmapsdk.models.map.AirMapFillLayerStyle;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
-import com.airmap.airmapsdk.models.map.AirMapLineLayerStyle;
-import com.airmap.airmapsdk.models.map.AirMapSymbolLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
-import com.airmap.airmapsdk.networking.callbacks.AuthTokenListener;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
@@ -31,9 +25,7 @@ import com.mapbox.mapboxsdk.style.layers.FillLayer;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
-import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
-import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
@@ -46,7 +38,6 @@ import java.util.Locale;
 import timber.log.Timber;
 
 import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesBaseJurisdictionsUrl;
-import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesRulesUrl;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
@@ -123,7 +114,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         if (TextUtils.isEmpty(AirMap.getAuthToken()) || map == null || map.getMap() == null || map.getMap().getStyle() == null) {
             return;
         }
-        
+
         String jurisdictionsUrl = mapTilesBaseJurisdictionsUrl + "?accessToken=" + AirMap.getAuthToken();
         TileSet tileSet = new TileSet(tileJsonSpecVersion, jurisdictionsUrl);
 
