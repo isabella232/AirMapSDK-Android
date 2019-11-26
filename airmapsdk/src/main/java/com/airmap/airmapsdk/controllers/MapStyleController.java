@@ -1,7 +1,6 @@
 package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -37,11 +36,16 @@ import java.util.Locale;
 
 import timber.log.Timber;
 
+import static android.graphics.Color.TRANSPARENT;
 import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesBaseJurisdictionsUrl;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Standard;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.color;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.literal;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
 
 public class MapStyleController implements MapView.OnDidFinishLoadingStyleListener {
 
@@ -109,7 +113,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         callback.onMapStyleLoaded();
     }
 
-    public void setupJurisdictionsForEnterprise() {
+    private void setupJurisdictionsForEnterprise() {
         // Enterprise only applies when we have an access token
         if (TextUtils.isEmpty(AirMap.getAuthToken()) || map == null || map.getMap() == null || map.getMap().getStyle() == null) {
             return;
@@ -119,15 +123,18 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         TileSet tileSet = new TileSet(tileJsonSpecVersion, jurisdictionsUrl);
 
         String jurisdictionsId = "jurisdictions";
-        map.getMap().getStyle().removeLayer(jurisdictionsId);
-        map.getMap().getStyle().removeSource(jurisdictionsId);
+
+        if (map.getMap().getStyle().getLayer(jurisdictionsId) != null) {
+            map.getMap().getStyle().removeLayer(jurisdictionsId);
+        }
+
+        if (map.getMap().getStyle().getSource(jurisdictionsId) != null) {
+            map.getMap().getStyle().removeSource(jurisdictionsId);
+        }
 
         VectorSource vectorSource = new VectorSource(jurisdictionsId, tileSet);
-        FillLayer fillLayer = new FillLayer(jurisdictionsId, vectorSource.getId())
-                .withProperties(
-                        PropertyFactory.fillColor(Color.TRANSPARENT),
-                        PropertyFactory.fillOpacity(1f)
-                );
+        FillLayer fillLayer = new FillLayer(jurisdictionsId, jurisdictionsId)
+                .withProperties(fillColor(color(TRANSPARENT)), fillOpacity(literal(1)));
         fillLayer.setSourceLayer(jurisdictionsId);
 
 
