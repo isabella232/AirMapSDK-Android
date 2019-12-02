@@ -18,6 +18,7 @@ import com.airmap.airmapsdk.ui.views.AirMapMapView;
 import com.airmap.airmapsdk.util.AirMapConstants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.BackgroundLayer;
 import com.mapbox.mapboxsdk.style.layers.FillLayer;
@@ -37,7 +38,6 @@ import java.util.Locale;
 import timber.log.Timber;
 
 import static android.graphics.Color.TRANSPARENT;
-import static com.airmap.airmapsdk.networking.services.BaseService.mapTilesBaseJurisdictionsUrl;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
@@ -93,13 +93,13 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             }
         }
 
-        setupJurisdictionsForEnterprise();
-
         try {
             mapStyle = new MapStyle(map.getMap().getStyle().getJson());
         } catch (JSONException e) {
             Timber.e(e, "Failed to parse style json");
         }
+
+        setupJurisdictionsForEnterprise();
 
         // change labels to local if device is not in english
         if (!Locale.ENGLISH.getLanguage().equals(Locale.getDefault().getLanguage())) {
@@ -119,9 +119,6 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             return;
         }
 
-        String jurisdictionsUrl = mapTilesBaseJurisdictionsUrl + "?accessToken=" + AirMap.getAuthToken();
-        TileSet tileSet = new TileSet(tileJsonSpecVersion, jurisdictionsUrl);
-
         String jurisdictionsId = "jurisdictions";
 
         if (map.getMap().getStyle().getLayer(jurisdictionsId) != null) {
@@ -132,13 +129,18 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             map.getMap().getStyle().removeSource(jurisdictionsId);
         }
 
+        TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getEnterpriseTileUrlTemplate());
+        tileSet.setMaxZoom(12f);
+        tileSet.setMinZoom(8f);
         VectorSource vectorSource = new VectorSource(jurisdictionsId, tileSet);
+        map.getMap().getStyle().addSource(vectorSource);
+
+
+
         FillLayer fillLayer = new FillLayer(jurisdictionsId, jurisdictionsId)
                 .withProperties(fillColor(color(TRANSPARENT)), fillOpacity(literal(1)));
         fillLayer.setSourceLayer(jurisdictionsId);
 
-
-        map.getMap().getStyle().addSource(vectorSource);
         map.getMap().getStyle().addLayerAt(fillLayer, 0);
     }
 

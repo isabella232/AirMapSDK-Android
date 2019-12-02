@@ -1037,6 +1037,10 @@ public final class AirMap {
         return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, AirMap.getAuthToken());
     }
 
+    public static String getEnterpriseTileUrlTemplate() {
+        return airMapMapMappingService.getEnterpriseTileUrlTemplate(AirMap.getAuthToken());
+    }
+
     /**
      * Starts the Traffic Alerts service to receive traffic alerts for the current active flight
      *
