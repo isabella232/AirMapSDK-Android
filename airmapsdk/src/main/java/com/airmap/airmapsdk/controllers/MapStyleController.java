@@ -26,6 +26,7 @@ import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
@@ -42,8 +43,6 @@ import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapT
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Standard;
-import static com.mapbox.mapboxsdk.style.expressions.Expression.color;
-import static com.mapbox.mapboxsdk.style.expressions.Expression.literal;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
 
@@ -72,6 +71,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             currentTheme = MappingService.AirMapMapTheme.fromString(savedTheme);
         }
 
+        // On the receipt of a new Auth Token, reload the current style to populate Enterprise
         AirMap.setAuthTokenListener(this::setupJurisdictionsForEnterprise);
     }
 
@@ -99,8 +99,6 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             Timber.e(e, "Failed to parse style json");
         }
 
-        setupJurisdictionsForEnterprise();
-
         // change labels to local if device is not in english
         if (!Locale.ENGLISH.getLanguage().equals(Locale.getDefault().getLanguage())) {
             for (Layer layer : map.getMap().getStyle().getLayers()) {
@@ -114,34 +112,31 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     }
 
     private void setupJurisdictionsForEnterprise() {
-        // Enterprise only applies when we have an access token
-        if (TextUtils.isEmpty(AirMap.getAuthToken()) || map == null || map.getMap() == null || map.getMap().getStyle() == null) {
+        // Reload the style after setup is complete
+        if (map == null || map.getMap() == null || map.getMap().getStyle() == null) {
             return;
         }
 
+        Style style = map.getMap().getStyle();
         String jurisdictionsId = "jurisdictions";
 
-        if (map.getMap().getStyle().getLayer(jurisdictionsId) != null) {
-            map.getMap().getStyle().removeLayer(jurisdictionsId);
+        if (style.getLayer(jurisdictionsId) != null) {
+            style.removeLayer(jurisdictionsId);
         }
 
-        if (map.getMap().getStyle().getSource(jurisdictionsId) != null) {
-            map.getMap().getStyle().removeSource(jurisdictionsId);
+        if (style.getSource(jurisdictionsId) != null) {
+            style.removeSource(jurisdictionsId);
         }
 
-        TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getEnterpriseTileUrlTemplate());
+        TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getBaseJurisdictionsUrlTemplate());
         tileSet.setMaxZoom(12f);
         tileSet.setMinZoom(8f);
-        VectorSource vectorSource = new VectorSource(jurisdictionsId, tileSet);
-        map.getMap().getStyle().addSource(vectorSource);
-
-
-
-        FillLayer fillLayer = new FillLayer(jurisdictionsId, jurisdictionsId)
-                .withProperties(fillColor(color(TRANSPARENT)), fillOpacity(literal(1)));
-        fillLayer.setSourceLayer(jurisdictionsId);
-
-        map.getMap().getStyle().addLayerAt(fillLayer, 0);
+        Source source = new VectorSource(jurisdictionsId, tileSet);
+        style.addSource(source);
+        Layer layer = new FillLayer(jurisdictionsId, jurisdictionsId)
+                .withSourceLayer(jurisdictionsId)
+                .withProperties(fillColor(TRANSPARENT), fillOpacity(1f));
+        style.addLayerAt(layer, 0);
     }
 
     // Updates the map to use a custom style based on theme and selected layers

@@ -409,12 +409,8 @@ public class MappingService extends BaseService {
         return url;
     }
 
-    protected String getEnterpriseTileUrlTemplate(@Nullable String authToken) {
-        String jurisdictionsUrl = mapTilesBaseJurisdictionsUrl + "?units=airmap";
-        if (!TextUtils.isEmpty(authToken)) {
-            jurisdictionsUrl += "&accessToken=" + authToken;
-        }
-        return jurisdictionsUrl;
+    protected String getBaseJurisdictionsUrlTemplate() {
+        return mapTilesBaseJurisdictionsUrl;
     }
 
     protected String getStylesUrl(AirMapMapTheme theme) {

@@ -1037,8 +1037,8 @@ public final class AirMap {
         return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, AirMap.getAuthToken());
     }
 
-    public static String getEnterpriseTileUrlTemplate() {
-        return airMapMapMappingService.getEnterpriseTileUrlTemplate(AirMap.getAuthToken());
+    public static String getBaseJurisdictionsUrlTemplate() {
+        return airMapMapMappingService.getBaseJurisdictionsUrlTemplate();
     }
 
     /**
