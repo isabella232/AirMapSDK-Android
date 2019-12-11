@@ -19,6 +19,7 @@ import com.airmap.airmapsdk.util.AirMapConstants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.offline.OfflineManager;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.BackgroundLayer;
 import com.mapbox.mapboxsdk.style.layers.FillLayer;
@@ -116,6 +117,8 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         if (map == null || map.getMap() == null || map.getMap().getStyle() == null) {
             return;
         }
+
+        OfflineManager.getInstance(map.getContext()).clearAmbientCache(null);
 
         Style style = map.getMap().getStyle();
         String jurisdictionsId = "jurisdictions";
