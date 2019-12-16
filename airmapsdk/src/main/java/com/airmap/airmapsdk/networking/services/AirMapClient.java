@@ -8,7 +8,6 @@ import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Auth;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 import com.airmap.airmapsdk.util.Utils;
-import com.readystatesoftware.chuck.ChuckInterceptor;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -371,7 +370,6 @@ public class AirMapClient {
             }
         });
 
-        builder.addInterceptor(new ChuckInterceptor(context));
         //TODO: Check for active connections before reassigning client
         client = builder.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS).writeTimeout(60, TimeUnit.SECONDS).build();
     }

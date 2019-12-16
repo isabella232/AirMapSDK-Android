@@ -75,8 +75,6 @@ dependencies {
     api 'com.google.protobuf:protobuf-java:3.5.0'
     api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     api 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-    debugApi 'com.readystatesoftware.chuck:library:1.1.0'
-    releaseApi 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 }
 
 configurations {
