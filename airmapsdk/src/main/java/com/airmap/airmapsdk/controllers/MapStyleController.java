@@ -104,7 +104,8 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         if (!Locale.ENGLISH.getLanguage().equals(Locale.getDefault().getLanguage())) {
             for (Layer layer : map.getMap().getStyle().getLayers()) {
                 if (layer instanceof SymbolLayer && (layer.getId().contains("label") || layer.getId().contains("place") || layer.getId().contains("poi"))) {
-                    layer.setProperties(PropertyFactory.textField("{name}"));
+                    //layer.setProperties(PropertyFactory.textField("{name}"));
+                    // TODO: 2020-01-15 Need to do more investigation as to why removing this line fixes map labelling issue. 
                 }
             }
         }
