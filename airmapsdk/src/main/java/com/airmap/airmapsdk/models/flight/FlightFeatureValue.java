@@ -2,7 +2,7 @@ package com.airmap.airmapsdk.models.flight;
 
 import java.io.Serializable;
 
-public class FlightFeatureValue<T> implements Serializable {
+public class FlightFeatureValue<T extends Serializable> implements Serializable {
 
     private String key;
     private T value;
