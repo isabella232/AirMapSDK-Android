@@ -17,6 +17,42 @@ public class AirMapConfig {
     private static boolean isCustomEnvironment = false;
     private static String customEnvironment;
 
+    public static String getAirshipDevelopmentKey(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("developmentAppKey");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship developmentAppKey from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipDevelopmentSecret(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("developmentAppSecret");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship developmentAppSecret from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipProductionKey(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("productionAppKey");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship productionAppKey from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipProductionSecret(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("productionAppSecret");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship productionAppSecret from airmap.config.json");
+            return "";
+        }
+    }
+
     public static String getDomain() {
         if(isCustomEnvironment){
             try {
