@@ -31,7 +31,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.0'
     implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.3'
     implementation project(':AirMapSDK-Android:airmapsdk')
 }

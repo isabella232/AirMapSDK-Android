@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.google.protobuf'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+
 
 group = 'com.airmap.airmapsdk'
 def libVersion = '4.0.0-alpha.1'
@@ -12,7 +14,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "$libVersion"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
     }
@@ -35,25 +37,44 @@ android {
     }
 }
 
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0'
+    }
+    plugins {
+        javalite {
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.plugins {
+                javalite { }
+            }
+        }
+    }
+}
+
 dependencies {
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:2.10.0"
     testImplementation "org.robolectric:robolectric:3.4.2"
     
-    // support
-    def supportLibraryVersion = '27.1.1'
-    api "com.android.support:appcompat-v7:$supportLibraryVersion"
-    api "com.android.support:design:$supportLibraryVersion"
-    api "com.android.support:cardview-v7:$supportLibraryVersion"
-    api "com.android.support:recyclerview-v7:$supportLibraryVersion"
-    api "com.android.support:support-annotations:$supportLibraryVersion"
-    api "com.android.support:support-fragment:$supportLibraryVersion"
-    api "com.android.support:support-v13:$supportLibraryVersion"
+    // AndroidX
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.fragment:fragment:1.1.0'
+    api 'androidx.legacy:legacy-support-v13:1.0.0'
 
-    // play services
-    def playServicesVersion = '15.0.1'
-    api "com.google.android.gms:play-services-location:$playServicesVersion"
+    // Play services
+    api "com.google.android.gms:play-services-location:17.0.0"
 
     // mapbox
     api 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.4.0'
@@ -72,7 +93,7 @@ dependencies {
     // other
     api 'com.squareup.okhttp3:okhttp:3.12.3'
     api 'com.auth0.android:jwtdecode:1.1.1'
-    api 'com.google.protobuf:protobuf-java:3.5.0'
+    api 'com.google.protobuf:protobuf-lite:3.0.1'
     api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     api 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }

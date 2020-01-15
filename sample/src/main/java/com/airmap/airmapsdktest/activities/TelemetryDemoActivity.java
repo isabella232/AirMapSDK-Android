@@ -1,12 +1,9 @@
 package com.airmap.airmapsdktest.activities;
 
 import android.annotation.SuppressLint;
-import android.graphics.PointF;
-import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.MotionEvent;
-import android.view.View;
+import androidx.appcompat.widget.Toolbar;
+
 import android.widget.Toast;
 
 import com.airmap.airmapsdk.AirMapException;
@@ -23,9 +20,6 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-
-import java.util.Collections;
-import java.util.List;
 
 import timber.log.Timber;
 
