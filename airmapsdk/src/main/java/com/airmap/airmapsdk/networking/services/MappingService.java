@@ -3,6 +3,7 @@ package com.airmap.airmapsdk.networking.services;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.R;
@@ -399,9 +400,17 @@ public class MappingService extends BaseService {
         return mapTilesBaseUrl + tiles + "?&theme=" + theme.toString() + "&apikey=" + AirMap.getInstance().getApiKey() + "&token=" + AirMap.getInstance().getApiKey();
     }
 
-    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements) {
+    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken) {
         String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
-        return mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        String url = mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        if (accessToken != null) {
+            url += "&access_token=" + accessToken;
+        }
+        return url;
+    }
+
+    protected String getBaseJurisdictionsUrlTemplate() {
+        return mapTilesBaseJurisdictionsUrl;
     }
 
     protected String getStylesUrl(AirMapMapTheme theme) {

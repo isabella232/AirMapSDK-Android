@@ -18,6 +18,8 @@ import com.airmap.airmapsdk.ui.views.AirMapMapView;
 import com.airmap.airmapsdk.util.AirMapConstants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.offline.OfflineManager;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.BackgroundLayer;
 import com.mapbox.mapboxsdk.style.layers.FillLayer;
@@ -25,6 +27,7 @@ import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
@@ -36,10 +39,13 @@ import java.util.Locale;
 
 import timber.log.Timber;
 
+import static android.graphics.Color.TRANSPARENT;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Dark;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Light;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Satellite;
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Standard;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
 
 public class MapStyleController implements MapView.OnDidFinishLoadingStyleListener {
 
@@ -50,6 +56,8 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     private Callback callback;
 
     private String highlightLayerId;
+
+    private static String tileJsonSpecVersion = "2.2.0";
 
     public MapStyleController(AirMapMapView map, @Nullable MappingService.AirMapMapTheme mapTheme, Callback callback) {
         this.map = map;
@@ -63,6 +71,9 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             String savedTheme = prefs.getString(AirMapConstants.MAP_STYLE, MappingService.AirMapMapTheme.Standard.toString());
             currentTheme = MappingService.AirMapMapTheme.fromString(savedTheme);
         }
+
+        // On the receipt of a new Auth Token, reload the current style to populate Enterprise
+        AirMap.setAuthTokenListener(this::setupJurisdictionsForEnterprise);
     }
 
     public void onMapReady() {
@@ -93,12 +104,43 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         if (!Locale.ENGLISH.getLanguage().equals(Locale.getDefault().getLanguage())) {
             for (Layer layer : map.getMap().getStyle().getLayers()) {
                 if (layer instanceof SymbolLayer && (layer.getId().contains("label") || layer.getId().contains("place") || layer.getId().contains("poi"))) {
-                    layer.setProperties(PropertyFactory.textField("{name}"));
+                    //layer.setProperties(PropertyFactory.textField("{name}"));
+                    // TODO: 2020-01-15 Need to do more investigation as to why removing this line fixes map labelling issue. 
                 }
             }
         }
 
         callback.onMapStyleLoaded();
+    }
+
+    private void setupJurisdictionsForEnterprise() {
+        // Reload the style after setup is complete
+        if (map == null || map.getMap() == null || map.getMap().getStyle() == null) {
+            return;
+        }
+
+        OfflineManager.getInstance(map.getContext()).clearAmbientCache(null);
+
+        Style style = map.getMap().getStyle();
+        String jurisdictionsId = "jurisdictions";
+
+        if (style.getLayer(jurisdictionsId) != null) {
+            style.removeLayer(jurisdictionsId);
+        }
+
+        if (style.getSource(jurisdictionsId) != null) {
+            style.removeSource(jurisdictionsId);
+        }
+
+        TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getBaseJurisdictionsUrlTemplate());
+        tileSet.setMaxZoom(12f);
+        tileSet.setMinZoom(8f);
+        Source source = new VectorSource(jurisdictionsId, tileSet);
+        style.addSource(source);
+        Layer layer = new FillLayer(jurisdictionsId, jurisdictionsId)
+                .withSourceLayer(jurisdictionsId)
+                .withProperties(fillColor(TRANSPARENT), fillOpacity(1f));
+        style.addLayerAt(layer, 0);
     }
 
     // Updates the map to use a custom style based on theme and selected layers
@@ -150,7 +192,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             Timber.e("Source already added for: %s", sourceId);
         } else {
             String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
-            TileSet tileSet = new TileSet("2.2.0", urlTemplates);
+            TileSet tileSet = new TileSet(tileJsonSpecVersion, urlTemplates);
             tileSet.setMaxZoom(12f);
             tileSet.setMinZoom(8f);
             VectorSource tileSource = new VectorSource(sourceId, tileSet);
@@ -322,6 +364,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
     public interface Callback {
         void onMapStyleLoaded();
+
         void onMapStyleReset();
     }
 }

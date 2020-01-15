@@ -177,6 +177,11 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
                     request.addHeader("Accept-Language", getLanguageTag());
                 }
 
+                // Used for Enterprise Jurisdictions
+                if (!TextUtils.isEmpty(AirMap.getAuthToken())) {
+                    request.addHeader("Authorization", "Bearer " + AirMap.getAuthToken());
+                }
+
                 return chain.proceed(request.build());
             }
         }).build();

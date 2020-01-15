@@ -83,6 +83,7 @@ dependencies {
     api 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.9.0'
 
     // shared libraries
+    api 'com.jakewharton.timber:timber:4.7.1'
     api 'joda-time:joda-time:2.9.9'
     api 'io.reactivex:rxandroid:1.2.1'
     api 'com.googlecode.libphonenumber:libphonenumber:8.8.2'
@@ -90,8 +91,7 @@ dependencies {
     api 'net.openid:appauth:0.7.1'
 
     // other
-    api 'com.squareup.okhttp3:okhttp:3.12.0'
-    api 'com.jakewharton.timber:timber:4.6.0'
+    api 'com.squareup.okhttp3:okhttp:3.12.3'
     api 'com.auth0.android:jwtdecode:1.1.1'
     api 'com.google.protobuf:protobuf-lite:3.0.1'
     api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
