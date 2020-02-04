@@ -253,6 +253,7 @@ public class MappingService extends BaseService {
         UlmField("ulm_field", R.string.ulm_field),
         Waterway("waterway", R.string.waterway),
         JapanBase("jpn_base", R.string.japan_base_admin),
+        Notification("notification", R.string.airspace_type_notification),
         Unknown("unknown", R.string.airspace_type_unknown);
 
         private final String text;
@@ -314,6 +315,8 @@ public class MappingService extends BaseService {
                     return SeaplaneBase;
                 case "notam":
                     return Notam;
+                case "notification":
+                    return Notification;
                 case "ama":
                 case "ama_field":
                     return AMA;

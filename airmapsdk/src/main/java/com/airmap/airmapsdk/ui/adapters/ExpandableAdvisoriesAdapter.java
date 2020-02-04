@@ -301,6 +301,10 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                                 ((AdvisoryViewHolder) holder).descriptionTextView.setVisibility(View.VISIBLE);
                             }
                         }
+                        break;
+                    }
+                    case Notification: {
+                        info = advisory.getNotificationProperties().getBody();
                     }
                 }
             }
