@@ -73,7 +73,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         }
 
         // On the receipt of a new Auth Token, reload the current style to populate Enterprise
-        AirMap.setAuthTokenListener(this::setupJurisdictionsForEnterprise);
+        AirMap.setAuthTokenListener(() -> map.post(this::setupJurisdictionsForEnterprise));
     }
 
     public void onMapReady() {
