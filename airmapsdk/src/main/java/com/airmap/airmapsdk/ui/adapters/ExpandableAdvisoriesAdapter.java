@@ -149,11 +149,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                         final AirMapTfrProperties tfr = advisory.getTfrProperties();
                         SimpleDateFormat dateFormat;
                         if (tfr.getStartTime() != null && tfr.getEndTime() != null) {
-                            if (DateUtils.isToday(tfr.getStartTime().getTime())) {
-                                dateFormat = new SimpleDateFormat("h:mm a");
-                            } else {
-                                dateFormat = new SimpleDateFormat("MMM d h:mm a");
-                            }
+                            dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
                             info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                         }
 
@@ -241,11 +237,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case Notam: {
                         final AirMapNotamProperties notam = advisory.getNotamProperties();
                         SimpleDateFormat dateFormat;
-                        if (notam.getStartTime() != null && DateUtils.isToday(notam.getStartTime().getTime())) {
-                            dateFormat = new SimpleDateFormat("h:mm a");
-                        } else {
-                            dateFormat = new SimpleDateFormat("MMM d h:mm a");
-                        }
+                        dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
                         info = dateFormat.format(notam.getStartTime()) + " - " + dateFormat.format(notam.getEndTime());
 
                         if (!TextUtils.isEmpty(notam.getUrl())) {
