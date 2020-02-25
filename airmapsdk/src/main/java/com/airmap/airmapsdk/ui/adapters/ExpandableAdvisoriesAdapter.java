@@ -148,9 +148,16 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case TFR: {
                         final AirMapTfrProperties tfr = advisory.getTfrProperties();
                         SimpleDateFormat dateFormat;
+                        if(tfr.getInfo() != null){
+                            info = tfr.getInfo() + "\n";
+                        }
                         if (tfr.getStartTime() != null && tfr.getEndTime() != null) {
                             dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
-                            info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
+                            if(tfr.getInfo() != null){
+                                info = info + dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
+                            } else {
+                                info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
+                            }
                         }
 
                         if (!TextUtils.isEmpty(tfr.getUrl())) {
