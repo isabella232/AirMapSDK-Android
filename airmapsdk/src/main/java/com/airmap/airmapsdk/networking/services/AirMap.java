@@ -31,6 +31,7 @@ import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
 import com.airmap.airmapsdk.models.status.AirMapStatus;
 import com.airmap.airmapsdk.networking.callbacks.AirMapAuthenticationCallback;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
+import com.airmap.airmapsdk.networking.callbacks.AirMapSystemStatusListener;
 import com.airmap.airmapsdk.networking.callbacks.AirMapTrafficListener;
 import com.airmap.airmapsdk.networking.callbacks.AuthTokenListener;
 import com.airmap.airmapsdk.networking.callbacks.LoginCallback;
@@ -67,6 +68,7 @@ public final class AirMap {
     private static AirMapClient client;
 
     private static TrafficService airMapTrafficService;
+    private static SystemStatusService airMapSystemStatusService;
     private static MappingService airMapMapMappingService;
     private static TelemetryService airMapTelemetryService;
 
@@ -92,6 +94,7 @@ public final class AirMap {
         ourInstance = new AirMap(context, authToken, pinCertificates);
         airMapTrafficService = new TrafficService(context); //Initialized here because TrafficService requires AirMap to be initialized already, so it is called after the constructor
         airMapMapMappingService = new MappingService(); //Initialized here because MappingService requires AirMap to be initialized already, so it is called after the constructor
+        airMapSystemStatusService = new SystemStatusService(context);
         return ourInstance;
     }
 
@@ -206,6 +209,11 @@ public final class AirMap {
         if (service != null && service.isConnected()) {
             service.disconnect();
         }
+
+        SystemStatusService systemStatusService = getAirMapSystemStatusService();
+        if(systemStatusService != null && systemStatusService.isConnected()) {
+            systemStatusService.disconnect();
+        }
     }
 
     /**
@@ -216,6 +224,11 @@ public final class AirMap {
         TrafficService service = getAirMapTrafficService();
         if (service != null) {
             service.connect();
+        }
+
+        SystemStatusService systemStatusService = getAirMapSystemStatusService();
+        if(systemStatusService != null) {
+            systemStatusService.connect();
         }
     }
 
@@ -243,6 +256,7 @@ public final class AirMap {
     public static void setAuthToken(String newAuthToken) {
         authToken = newAuthToken;
         getAirMapTrafficService().setAuthToken(newAuthToken);
+        getAirMapSystemStatusService().setAuthToken(newAuthToken);
         decodeToken(authToken);
         if (authTokenListener != null) {
             authTokenListener.onNewToken();
@@ -252,6 +266,7 @@ public final class AirMap {
     public static void clearAuthToken() {
         authToken = null;
         getAirMapTrafficService().setAuthToken(null);
+        getAirMapSystemStatusService().setAuthToken(null);
     }
 
     public static void saveTokens(Context context, @Nullable String newAccessToken, @Nullable String newRefreshToken) {
@@ -388,6 +403,13 @@ public final class AirMap {
      */
     public static TrafficService getAirMapTrafficService() {
         return airMapTrafficService;
+    }
+
+    /**
+     * @return the system status service
+     */
+    public static SystemStatusService getAirMapSystemStatusService() {
+        return airMapSystemStatusService;
     }
 
     //Login
@@ -1041,6 +1063,10 @@ public final class AirMap {
         return airMapMapMappingService.getBaseJurisdictionsUrlTemplate();
     }
 
+    //////////
+    // Traffic
+    //////////
+
     /**
      * Starts the Traffic Alerts service to receive traffic alerts for the current active flight
      *
@@ -1074,6 +1100,48 @@ public final class AirMap {
     public static void removeAllTrafficListeners() {
         getAirMapTrafficService().removeAllListeners();
     }
+
+    ////////////////
+    // System Status
+    ////////////////
+
+    /**
+     * Starts the System Status service to receive updates on the AirMap System health
+     *
+     * @param listener the callback that is invoked
+     */
+    public static void enableSystemStatusAlerts(AirMapSystemStatusListener listener){
+        getAirMapSystemStatusService().addListener(listener);
+        getAirMapSystemStatusService().connect();
+    }
+
+    /**
+     * Disconnects from System Status updates
+     */
+    public static void disableSystemStatusAlerts(){
+        getAirMapSystemStatusService().disconnect();
+        getAirMapSystemStatusService().removeAllListeners();
+    }
+
+    /**
+     * Adds a callback to the System Status service
+     *
+     * @param listener the callback that is invoked
+     */
+    public static void addSystemStatusListener(AirMapSystemStatusListener listener){
+        getAirMapSystemStatusService().addListener(listener);
+    }
+
+    /**
+     * Removes all System Status callbacks
+     */
+    public static void removeAllSystemStatusListeners(){
+        getAirMapSystemStatusService().removeAllListeners();
+    }
+
+    ////////////
+    // Telemetry
+    ////////////
 
     public static TelemetryService getTelemetryService() {
         if (airMapTelemetryService == null) {

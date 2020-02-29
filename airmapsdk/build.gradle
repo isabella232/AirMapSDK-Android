@@ -90,6 +90,8 @@ dependencies {
     api 'com.googlecode.libphonenumber:libphonenumber:8.8.2'
     api 'online.devliving:securedpreferencestore:0.3.1' // Newer version available, but updating requires making some api changes within our code
     api 'net.openid:appauth:0.7.1'
+    api 'com.neovisionaries:nv-websocket-client:2.9'
+
 
     // other
     api 'com.squareup.okhttp3:okhttp:3.12.3'
