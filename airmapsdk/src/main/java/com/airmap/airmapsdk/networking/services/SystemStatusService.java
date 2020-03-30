@@ -164,7 +164,7 @@ public class SystemStatusService extends BaseService {
     public void notifyBrokenComponents(){
         for(SystemStatusComponent component : notNormalComponents){
             Timber.i(component.toString());
-            notifyComponentHealth(component.getName(), component.getLevel());
+            //notifyComponentHealth(component.getName(), component.getLevel());
         }
 
     }
