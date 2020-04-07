@@ -179,7 +179,7 @@ public abstract class MyLocationMapActivity extends AppCompatActivity implements
                     .build();
 
             // Activate with options
-            locationComponent.activateLocationComponent(this, map.getStyle(), options);
+            map.getStyle((style -> locationComponent.activateLocationComponent(this, style, options)));
 
             // Enable to make component visible
             locationComponent.setLocationComponentEnabled(true);
