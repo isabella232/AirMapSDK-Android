@@ -119,6 +119,7 @@
     <string name="ulm_field">Ulm Field</string>
     <string name="waterway">Waterway</string>
     <string name="japan_base_admin">Japan Base Admin</string>
+    <string name="airspace_type_notification">Notification</string>
 
 
     <string name="com_auth0_lock_description_change_password">Please enter your email address. We will send you an email to reset your password.</string>

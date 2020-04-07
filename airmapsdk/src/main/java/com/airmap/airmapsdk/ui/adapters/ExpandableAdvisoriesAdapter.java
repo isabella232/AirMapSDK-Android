@@ -148,13 +148,16 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case TFR: {
                         final AirMapTfrProperties tfr = advisory.getTfrProperties();
                         SimpleDateFormat dateFormat;
+                        if(tfr.getInfo() != null){
+                            info = tfr.getInfo() + "\n";
+                        }
                         if (tfr.getStartTime() != null && tfr.getEndTime() != null) {
-                            if (DateUtils.isToday(tfr.getStartTime().getTime())) {
-                                dateFormat = new SimpleDateFormat("h:mm a");
+                            dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
+                            if(tfr.getInfo() != null){
+                                info = info + dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                             } else {
-                                dateFormat = new SimpleDateFormat("MMM d h:mm a");
+                                info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                             }
-                            info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                         }
 
                         if (!TextUtils.isEmpty(tfr.getUrl())) {
@@ -241,11 +244,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case Notam: {
                         final AirMapNotamProperties notam = advisory.getNotamProperties();
                         SimpleDateFormat dateFormat;
-                        if (notam.getStartTime() != null && DateUtils.isToday(notam.getStartTime().getTime())) {
-                            dateFormat = new SimpleDateFormat("h:mm a");
-                        } else {
-                            dateFormat = new SimpleDateFormat("MMM d h:mm a");
-                        }
+                        dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
                         info = dateFormat.format(notam.getStartTime()) + " - " + dateFormat.format(notam.getEndTime());
 
                         if (!TextUtils.isEmpty(notam.getUrl())) {
@@ -301,6 +300,10 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                                 ((AdvisoryViewHolder) holder).descriptionTextView.setVisibility(View.VISIBLE);
                             }
                         }
+                        break;
+                    }
+                    case Notification: {
+                        info = advisory.getNotificationProperties().getBody();
                     }
                 }
             }

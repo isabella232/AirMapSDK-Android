@@ -7,6 +7,7 @@ import com.airmap.airmapsdk.models.status.properties.AirMapControlledAirspacePro
 import com.airmap.airmapsdk.models.status.properties.AirMapEmergencyProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapHeliportProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapNotamProperties;
+import com.airmap.airmapsdk.models.status.properties.AirMapNotificationProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapOptionalProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapParkProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapPowerPlantProperties;
@@ -52,6 +53,7 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
     private AirMapWildfireProperties wildfireProperties;
     private AirMapEmergencyProperties emergencyProperties;
     private AirMapNotamProperties notamProperties;
+    private AirMapNotificationProperties notificationProperties;
 
 
     /**
@@ -147,6 +149,10 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
                     }
                     case Notam: {
                         setNotamProperties(new AirMapNotamProperties(properties));
+                        break;
+                    }
+                    case Notification: {
+                        setNotificationProperties(new AirMapNotificationProperties(properties));
                         break;
                     }
                 }
@@ -368,6 +374,14 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
     public AirMapAdvisory setNotamProperties(AirMapNotamProperties notamProperties) {
         this.notamProperties = notamProperties;
         return this;
+    }
+
+    public AirMapNotificationProperties getNotificationProperties() {
+        return notificationProperties;
+    }
+
+    public void setNotificationProperties(AirMapNotificationProperties notificationProperties) {
+        this.notificationProperties = notificationProperties;
     }
 
     public AirMapOptionalProperties getOptionalProperties() {
