@@ -335,6 +335,8 @@ public class MappingService extends BaseService {
                     return Highway;
                 case "industrial_property":
                     return IndustrialProperty;
+                case "landing_site":
+                    return LandingSite;
                 case "military_property":
                     return MilitaryProperty;
                 case "police_station":
