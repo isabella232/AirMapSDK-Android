@@ -1,8 +1,9 @@
 package com.airmap.airmapsdk.networking.services;
 
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.R;
@@ -252,6 +253,9 @@ public class MappingService extends BaseService {
         UlmField("ulm_field", R.string.ulm_field),
         Waterway("waterway", R.string.waterway),
         JapanBase("jpn_base", R.string.japan_base_admin),
+        Notification("notification", R.string.airspace_type_notification),
+        TMA("tma", R.string.airspace_type_tma),
+        LandingSite("landing_site", R.string.airspace_type_landing_site),
         Unknown("unknown", R.string.airspace_type_unknown);
 
         private final String text;
@@ -313,6 +317,8 @@ public class MappingService extends BaseService {
                     return SeaplaneBase;
                 case "notam":
                     return Notam;
+                case "notification":
+                    return Notification;
                 case "ama":
                 case "ama_field":
                     return AMA;
@@ -399,8 +405,17 @@ public class MappingService extends BaseService {
         return mapTilesBaseUrl + tiles + "?&theme=" + theme.toString() + "&apikey=" + AirMap.getInstance().getApiKey() + "&token=" + AirMap.getInstance().getApiKey();
     }
 
-    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers) {
-        return mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}";
+    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken) {
+        String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
+        String url = mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        if (accessToken != null) {
+            url += "&access_token=" + accessToken;
+        }
+        return url;
+    }
+
+    protected String getBaseJurisdictionsUrlTemplate() {
+        return mapTilesBaseJurisdictionsUrl;
     }
 
     protected String getStylesUrl(AirMapMapTheme theme) {
@@ -408,7 +423,7 @@ public class MappingService extends BaseService {
 
         // fallback
         if (TextUtils.isEmpty(stylesUrl)) {
-            stylesUrl = "https://cdn.airmap.com/static/map-styles/0.9.5/";
+            stylesUrl = "https://cdn.airmap.com/static/map-styles/0.10.0-beta1/";
         }
 
         switch (theme) {

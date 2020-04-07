@@ -1,11 +1,11 @@
 package com.airmap.airmapsdktest.fragments;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -13,8 +13,11 @@ import com.airmap.airmapsdk.ui.activities.MyLocationMapActivity;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
 import com.airmap.airmapsdktest.R;
 import com.airmap.airmapsdktest.activities.MapDemoActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+
+import timber.log.Timber;
 
 public class MapFragment extends Fragment implements AirMapMapView.OnMapDataChangeListener {
 
@@ -51,8 +54,8 @@ public class MapFragment extends Fragment implements AirMapMapView.OnMapDataChan
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ((MapDemoActivity) getActivity()).setMapView(mapView);
-        mapView.getMapAsync(null);
+        ((MapDemoActivity) requireActivity()).setMapView(mapView);
+        mapView.getMapAsync(mapboxMap -> Timber.d("Map ready"));
 
         configuration = new AirMapMapView.DynamicConfiguration(null, null, true);
         mapView.configure(configuration);

@@ -13,35 +13,105 @@ import timber.log.Timber;
 public class AirMapConfig {
 
     private static final String PROD = "";
+    private static final String AVAILABLE_ENVS = "available_envs";
+    private static boolean isCustomEnvironment = false;
+    private static String customEnvironment;
+
+    public static String getAirshipDevelopmentKey(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("developmentAppKey");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship developmentAppKey from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipDevelopmentSecret(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("developmentAppSecret");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship developmentAppSecret from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipProductionKey(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("productionAppKey");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship productionAppKey from airmap.config.json");
+            return "";
+        }
+    }
+
+    public static String getAirshipProductionSecret(){
+        try {
+            return AirMap.getConfig().getJSONObject("airship").getString("productionAppSecret");
+        } catch (JSONException e) {
+            Timber.e(e, "No Airship productionAppSecret from airmap.config.json");
+            return "";
+        }
+    }
 
     public static String getDomain() {
-        try {
-            return AirMap.getConfig().getJSONObject("airmap").getString("domain");
-        } catch (JSONException e) {
-            Timber.w(e, "Error getting airmap domain from airmap.config.json. Using fallback");
-            return "airmap.com";
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("domain");
+            } catch (JSONException e) {
+                Timber.w(e, "Error getting airmap domain from airmap.config.json. Using fallback");
+                return "airmap.com";
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getString("domain");
+            } catch (JSONException e) {
+                Timber.w(e, "Error getting airmap domain from airmap.config.json. Using fallback");
+                return "airmap.com";
+            }
         }
     }
 
     public static String getEnvironment() {
-        try {
-            String environment = AirMap.getConfig().getJSONObject("airmap").getString("environment");
-            if ("prod".equals(environment)) {
+        if(isCustomEnvironment){
+            try {
+                String environment = AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("environment");
+                if ("prod".equals(environment)) {
+                    return PROD;
+                }
+                return environment;
+            } catch (JSONException e) {
+                Timber.e(e, "No environment key from airmap.config.json");
                 return PROD;
             }
-            return environment;
-        } catch (JSONException e) {
-            Timber.e(e, "No environment key from airmap.config.json");
-            return PROD;
+        } else {
+            try {
+                String environment = AirMap.getConfig().getJSONObject("airmap").getString("environment");
+                if ("prod".equals(environment)) {
+                    return PROD;
+                }
+                return environment;
+            } catch (JSONException e) {
+                Timber.e(e, "No environment key from airmap.config.json");
+                return PROD;
+            }
         }
     }
 
     public static String getApiKey() {
-        try {
-            return AirMap.getConfig().getJSONObject("airmap").getString("api_key");
-        } catch (JSONException e) {
-            Timber.e(e, "Error getting api key from airmap.config.json");
-            throw new RuntimeException("Error getting api key from airmap.config.json");
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("api_key");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting api key from airmap.config.json");
+                throw new RuntimeException("Error getting api key from airmap.config.json");
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getString("api_key");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting api key from airmap.config.json");
+                throw new RuntimeException("Error getting api key from airmap.config.json");
+            }
         }
     }
 
@@ -64,11 +134,20 @@ public class AirMapConfig {
     }
 
     public static String getClientId() {
-        try {
-            return AirMap.getConfig().getJSONObject("airmap").getString("client_id");
-        } catch (JSONException e) {
-            Timber.e(e, "Error getting clientId from airmap.config.json");
-            throw new RuntimeException("client_id not found in airmap.config.json");
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("client_id");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting clientId from airmap.config.json");
+                throw new RuntimeException("client_id not found in airmap.config.json");
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getString("client_id");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting clientId from airmap.config.json");
+                throw new RuntimeException("client_id not found in airmap.config.json");
+            }
         }
     }
 
@@ -82,11 +161,20 @@ public class AirMapConfig {
     }
 
     public static String getMapStyleUrl() {
-        try {
-            return AirMap.getConfig().getJSONObject("airmap").getString("map_style");
-        } catch (JSONException e) {
-            Timber.w(e, "No map style found in airmap.config.json for. Using fallback");
-            return null;
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("map_style");
+            } catch (JSONException e) {
+                Timber.w(e, "No map style found in airmap.config.json for. Using fallback");
+                return null;
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getString("map_style");
+            } catch (JSONException e) {
+                Timber.w(e, "No map style found in airmap.config.json for. Using fallback");
+                return null;
+            }
         }
     }
 
@@ -191,5 +279,13 @@ public class AirMapConfig {
             Timber.e("Unable to get app id for third party: " + key);
             return null;
         }
+    }
+
+    public static void setIsCustomEnvironment(boolean bool) {
+        isCustomEnvironment = bool;
+    }
+
+    public static void setCustomEnvironment(String string) {
+        customEnvironment = string;
     }
 }

@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">Pilot informatie</string>
     <string name="airmap_title_activity_custom_properties">Aangepaste eigenschappen</string>
     <string name="airmap_title_activity_profile">Pilot profiel</string>
-    <string name="airspace_laanc_authorization_automated">FAA vergunning beschikbaar</string>
+    <string name="airspace_laanc_authorization_automated">Vergunning beschikbaar</string>
     <string name="airspace_type_ama">AMA veld</string>
     <string name="airspace_type_unknown">Onbekend</string>
     <string name="amas">AMA velden</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Regels die u schendt</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Regels die u moet controleren</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Regels die meer informatie nodig hebben</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Regels die u volgt</string>
     <string name="authorizations_header">Vergunning &amp; validatie</string>
-    <string name="authorized_upon_submission">Vergunning op vertoon</string>
+    <string name="authorized_pending_submission">Vergunning op vertoon</string>
     <string name="call">Oproep</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Voer uw e-mailadres. Wij sturen u een e-mail om uw wachtwoord te resetten.</string>

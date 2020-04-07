@@ -1,60 +1,21 @@
 package com.airmap.airmapsdk.models.map;
 
-import android.text.TextUtils;
-
-import com.mapbox.mapboxsdk.style.functions.Function;
 import com.mapbox.mapboxsdk.style.layers.FillLayer;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
+import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 
 import org.json.JSONObject;
 
-import static com.airmap.airmapsdk.util.Utils.optString;
+import java.util.ArrayList;
+import java.util.List;
+
+import timber.log.Timber;
 
 public class AirMapFillLayerStyle extends AirMapLayerStyle {
 
-    public final float fillOpacity;
-    public final Function fillOpacityFunction;
-    public final String fillColor;
-    public final Function fillColorFunction;
-    public final String fillOutlineColor;
-
-    protected AirMapFillLayerStyle(JSONObject json) {
+    AirMapFillLayerStyle(JSONObject json) {
         super(json);
-
-        JSONObject paintJson = json.optJSONObject("paint");
-        if (paintJson != null) {
-
-            JSONObject fillOpacityJson = paintJson.optJSONObject("fill-opacity");
-            if (fillOpacityJson != null) {
-                fillOpacityFunction = getFillOpacityFunction(fillOpacityJson);
-                fillOpacity = 0;
-            } else {
-                fillOpacity = (float) paintJson.optDouble("fill-opacity", 1);
-                fillOpacityFunction = null;
-            }
-
-            JSONObject fillColorJson = paintJson.optJSONObject("fill-color");
-            if (fillColorJson != null) {
-                fillColorFunction = getFillColorFunction(fillColorJson);
-                fillColor = "#000000";
-            } else {
-                fillColor = optString(paintJson, "fill-color");
-                fillColorFunction = null;
-            }
-
-            fillOutlineColor = optString(paintJson, "fill-outline-color");
-        } else {
-            fillOpacity = 0;
-            fillOpacityFunction = null;
-            fillColor = "#000000";
-            fillColorFunction = null;
-            fillOutlineColor = "#000000";
-        }
-    }
-
-    public boolean isBackgroundStyle() {
-        return id.contains("background");
     }
 
     @Override
@@ -62,26 +23,114 @@ public class AirMapFillLayerStyle extends AirMapLayerStyle {
         FillLayer fillLayer = new FillLayer(id + "|" + sourceId + "|new", sourceId);
         fillLayer.setSourceLayer(sourceId + "_" + sourceLayer);
 
-        if (!TextUtils.isEmpty(fillOutlineColor)) {
-            fillLayer.setProperties(PropertyFactory.fillOutlineColor(fillOutlineColor));
+        FillLayer layer = (FillLayer) layerToClone;
+        List<PropertyValue> properties = new ArrayList<>();
+
+        PropertyValue fillColor = getFillColor(layer.getFillColor());
+        if (fillColor != null) {
+            properties.add(fillColor);
         }
 
-        if (fillOpacityFunction != null) {
-            fillLayer.setProperties(PropertyFactory.fillOpacity(fillOpacityFunction));
-        } else {
-            fillLayer.setProperties(PropertyFactory.fillOpacity(fillOpacity));
+        PropertyValue fillOpacity = getFillOpacity(layer.getFillOpacity());
+        if (fillOpacity != null) {
+            properties.add(fillOpacity);
         }
 
-        if (fillColorFunction != null) {
-            fillLayer.setProperties(PropertyFactory.fillColor(fillColorFunction));
-        } else {
-            fillLayer.setProperties(PropertyFactory.fillColor(fillColor));
+        PropertyValue fillAntialias = getFillAntialias(layer.getFillAntialias());
+        if (fillAntialias != null) {
+            properties.add(fillAntialias);
         }
 
-        if (filter != null) {
-            fillLayer.setFilter(filter);
+        PropertyValue fillOutlineColor = getFillOutlineColor(layer.getFillOutlineColor());
+        if (fillOutlineColor != null) {
+            properties.add(fillOutlineColor);
+        }
+
+        PropertyValue fillTranslate = getFillTranslate(layer.getFillTranslate());
+        if (fillTranslate != null) {
+            properties.add(fillTranslate);
+        }
+
+        PropertyValue fillTranslateAnchor = getFillTranslateAnchor(layer.getFillTranslateAnchor());
+        if (fillTranslateAnchor != null) {
+            properties.add(fillTranslateAnchor);
+        }
+
+        PropertyValue fillPattern = getFillPattern(layer.getFillPattern());
+        if (fillPattern != null) {
+            properties.add(fillPattern);
+        }
+
+        // set all properties
+        fillLayer.setProperties(properties.toArray(new PropertyValue[properties.size()]));
+
+        if (layer.getFilter() != null) {
+            fillLayer.setFilter(layer.getFilter());
         }
 
         return fillLayer;
+    }
+
+    private PropertyValue getFillColor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillColor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillColor(pv.getColorInt());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillOpacity(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillOpacity(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillOpacity((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillAntialias(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillAntialias(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillAntialias((Boolean) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillOutlineColor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillOutlineColor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillOutlineColor(pv.getColorInt());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillTranslate(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillTranslate(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillTranslate((Float[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillTranslateAnchor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillTranslateAnchor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillTranslateAnchor((String) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getFillPattern(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.fillPattern(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.fillPattern((String) pv.getValue());
+        }
+        return null;
     }
 }

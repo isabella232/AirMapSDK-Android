@@ -9,14 +9,22 @@
     <string name="airspace_type_ama">Modelářské letiště</string>
     <string name="airspace_type_unknown">Neznámý</string>
     <string name="amas">Modelářská letiště</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Pravidla, která porušujete</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Pravidla, která je třeba zkontrolovat</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Pravidla vyžadující více informací</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Pravidla, která používáte</string>
     <string name="authorizations_header">Autorizace a Ověření</string>
-    <string name="authorized_upon_submission">Autorizace na žádost</string>
+    <string name="authorized_pending_submission">Autorizace na žádost</string>
     <string name="call">Volat</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Prosím zadejte svou emailovou adresu. Zašleme vám email pro obnovení hesla.</string>
     <string name="com_auth0_lock_password_strength_title_at_least">A obsahují alespoň 3 z následujících 4 typů znaků:</string>
     <string name="com_auth0_lock_sign_up_terms_dialog_message" formatted="false"><![CDATA[Registrací souhlasíte s našimi <a href=\'%s\'>smluvními podmínkami</a> a <a href=\'%s\'>zásadami ochrany osobních údajů</a>]]></string>
-    <string name="com_auth0_lock_sign_up_terms_dialog_title">Zásady &amp; termíny</string>
+    <string name="com_auth0_lock_sign_up_terms_dialog_title">Podmínky &amp; Vyhlášky</string>
     <string name="country">Země</string>
     <string name="county">Okres</string>
     <string name="dew_point">Rosný bod</string>

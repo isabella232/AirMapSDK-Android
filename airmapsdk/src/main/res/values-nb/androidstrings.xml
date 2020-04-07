@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">Pilot informasjon</string>
     <string name="airmap_title_activity_custom_properties">Egendefinerte egenskaper</string>
     <string name="airmap_title_activity_profile">Pilot profil</string>
-    <string name="airspace_laanc_authorization_automated">FAA autorisasjon tilgjengelig</string>
+    <string name="airspace_laanc_authorization_automated">Autorisasjon tilgjengelig</string>
     <string name="airspace_type_ama">AMA-feltet</string>
     <string name="airspace_type_unknown">Ukjent</string>
     <string name="amas">AMA felt</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Regler du bryter</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Regler du bør se gjennom</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Regler som trenger mer informasjon</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Regler du følger</string>
     <string name="authorizations_header">Godkjenning og validering</string>
-    <string name="authorized_upon_submission">Godkjenning ved innlevering</string>
+    <string name="authorized_pending_submission">Godkjenning ved innlevering</string>
     <string name="call">Samtale</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Skriv inn din e-postadresse. Vi vil sende deg en e-post til å tilbakestille passordet.</string>

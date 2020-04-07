@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">Informazioni sul pilota</string>
     <string name="airmap_title_activity_custom_properties">Personalizza proprietà</string>
     <string name="airmap_title_activity_profile">Profilo del pilota</string>
-    <string name="airspace_laanc_authorization_automated">Autorizzazione FAA disponibile</string>
+    <string name="airspace_laanc_authorization_automated">Autorizzazion disponibile</string>
     <string name="airspace_type_ama">Campo AMA</string>
     <string name="airspace_type_unknown">Sconosciuto</string>
     <string name="amas">Campi AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Regole che stai violando</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Regole che dovreste rivedere</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Regole che necessitano di ulteriori informazioni</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Regole che stai seguendo</string>
     <string name="authorizations_header">Autorizzazione e conferma</string>
-    <string name="authorized_upon_submission">Autorizzazione in seguito a invio</string>
+    <string name="authorized_pending_submission">Autorizzazione in seguito a invio</string>
     <string name="call">Chiama</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Inserisci il tuo indirizzo e-mail. Ti invieremo un\'e-mail per reimpostare la password.</string>

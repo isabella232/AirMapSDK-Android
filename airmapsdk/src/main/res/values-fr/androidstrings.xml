@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">Informations pilote</string>
     <string name="airmap_title_activity_custom_properties">Propriétés personnalisées</string>
     <string name="airmap_title_activity_profile">Profil du pilote</string>
-    <string name="airspace_laanc_authorization_automated">Autorisation FAA disponible</string>
+    <string name="airspace_laanc_authorization_automated">Autorisation disponible</string>
     <string name="airspace_type_ama">Champ AMA</string>
     <string name="airspace_type_unknown">Inconnu</string>
     <string name="amas">Champs AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Règles que vous violez</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Règles que vous devriez examiner</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Règles nécessitant plus d\'informations</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Règles que vous suivez</string>
     <string name="authorizations_header">Autorisation et validation</string>
-    <string name="authorized_upon_submission">Autorisé après demande</string>
+    <string name="authorized_pending_submission">Autorisé après demande</string>
     <string name="call">Appeler</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Veuillez saisir votre adresse e-mail. Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.</string>
@@ -102,7 +110,7 @@
     <string name="tile_layer_class_f">Classe F</string>
     <string name="tile_layer_did">Région densément peuplée</string>
     <string name="tile_layer_other_cautionary_areas">Autres zones d\'avertissement</string>
-    <string name="tile_layer_seaplane_base">Base pour hydravions</string>
+    <string name="tile_layer_seaplane_base">Base hydravions</string>
     <string name="tile_layer_unknown">Inconnu</string>
     <string name="tile_layer_wildfires">Feux de forêt</string>
     <string name="time">Heure</string>

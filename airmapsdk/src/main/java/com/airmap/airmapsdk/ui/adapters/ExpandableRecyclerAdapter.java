@@ -1,7 +1,8 @@
 package com.airmap.airmapsdk.ui.adapters;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 
 import java.util.HashSet;
@@ -90,6 +91,12 @@ public abstract class ExpandableRecyclerAdapter<P,C> extends RecyclerView.Adapte
 
     public void expandAll() {
         expandedParents.addAll(dataMap.keySet());
+        notifyDataSetChanged();
+    }
+
+    public void expandParentAt(int position) {
+        final P parent = (P) getItem(position);
+        expandedParents.add(parent);
         notifyDataSetChanged();
     }
 

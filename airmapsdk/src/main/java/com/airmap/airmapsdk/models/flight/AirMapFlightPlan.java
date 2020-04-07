@@ -104,8 +104,12 @@ public class AirMapFlightPlan implements Serializable, AirMapBaseModel {
                 while (featuresItr.hasNext()) {
                     String key = featuresItr.next();
                     Object value = flightFeaturesJSON.opt(key);
-                    FlightFeatureValue flightFeatureValue = new FlightFeatureValue(key, value);
-                    flightFeatureValues.put(key, flightFeatureValue);
+                    if (value instanceof Serializable) {
+                        FlightFeatureValue flightFeatureValue = new FlightFeatureValue(key, (Serializable) value);
+                        flightFeatureValues.put(key, flightFeatureValue);
+                    } else {
+                        Timber.e("Got non-Serializable object: %s", String.valueOf(value));
+                    }
                 }
             }
 

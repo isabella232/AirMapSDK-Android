@@ -1,251 +1,270 @@
 package com.airmap.airmapsdk.models.map;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.mapbox.mapboxsdk.style.functions.Function;
-import com.mapbox.mapboxsdk.style.functions.stops.Stop;
-import com.mapbox.mapboxsdk.style.functions.stops.Stops;
 import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.PropertyValue;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.airmap.airmapsdk.util.Utils.optString;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AirMapSymbolLayerStyle extends AirMapLayerStyle {
 
-    public final String iconImage;
-    public final Function iconImageFunction;
-    public final boolean avoidEdges;
-    public final int symbolSpacing;
-    public final double iconPadding;
-    public final Function iconSizeFunction;
-    public final String textField;
-    public final String[] textFont;
-    public final Function textSizeFunction;
-    public final Float[] textOffsets;
-    public final String textColor;
-    public final int textPadding;
-    public final boolean iconAllowOverlap;
-    public final boolean iconKeepUpright;
-    public final Function textOpacityFunction;
-    public final Function iconOpacityFunction;
-
-    protected AirMapSymbolLayerStyle(@NonNull JSONObject json) {
+    AirMapSymbolLayerStyle(@NonNull JSONObject json) {
         super(json);
-
-        JSONObject layoutJson = json.optJSONObject("layout");
-        JSONObject iconImageJson = layoutJson.optJSONObject("icon-image");
-        if (iconImageJson != null) {
-            iconImage = null;
-            iconImageFunction = getImageIconFunction(iconImageJson);
-        } else {
-            iconImage = optString(layoutJson, "icon-image");
-            iconImageFunction = null;
-        }
-        avoidEdges = layoutJson.optBoolean("symbol-avoid-edges");
-        symbolSpacing = layoutJson.optInt("symbol-spacing");
-        iconPadding = layoutJson.optDouble("icon-padding");
-
-        JSONObject iconSizeJson = layoutJson.optJSONObject("icon-size");
-        if (iconImageJson != null) {
-            iconSizeFunction = getZoomFunction(iconSizeJson);
-        } else {
-            iconSizeFunction = null;
-        }
-
-        textField = optString(layoutJson, "text-field");
-
-        JSONArray textFontArray = layoutJson.optJSONArray("text-font");
-        textFont = textFontArray != null ? new String[textFontArray.length()] : null;
-        for (int i = 0; textFontArray != null && i < textFontArray.length(); i++) {
-            textFont[i] = textFontArray.optString(i);
-        }
-
-        JSONObject textSizeJson = layoutJson.optJSONObject("text-size");
-        if (textSizeJson != null) {
-            textSizeFunction = getZoomFunction(textSizeJson);
-        } else {
-            textSizeFunction = null;
-        }
-
-        JSONArray textOffsetsArray = layoutJson.optJSONArray("text-offset");
-        if (textOffsetsArray != null) {
-            textOffsets = new Float[textOffsetsArray.length()];
-            for (int i = 0; i < textOffsetsArray.length(); i++) {
-                textOffsets[i] = (float) textOffsetsArray.optDouble(i);
-            }
-        } else {
-            textOffsets = null;
-        }
-
-        textPadding = layoutJson.optInt("text-padding");
-
-        JSONObject paintJson = json.optJSONObject("paint");
-        if (paintJson != null) {
-            textColor = optString(paintJson, "text-color");
-            JSONObject textOpacityJson = paintJson.optJSONObject("text-opacity");
-            if (textOpacityJson != null) {
-                textOpacityFunction = getOpacityFunction(textOpacityJson);
-            } else {
-                textOpacityFunction = null;
-            }
-
-            JSONObject iconOpacityJson = paintJson.optJSONObject("icon-opacity");
-            if (iconOpacityJson != null) {
-                iconOpacityFunction = getOpacityFunction(iconOpacityJson);
-            } else {
-                iconOpacityFunction = null;
-            }
-
-        } else {
-            textColor = "#000000";
-            textOpacityFunction = null;
-            iconOpacityFunction = null;
-        }
-
-        iconAllowOverlap = layoutJson.optBoolean("icon-allow-overlap");
-        iconKeepUpright = layoutJson.optBoolean("icon-keep-upright");
-    }
-
-    public boolean isBackgroundStyle() {
-        return id.contains("background");
-    }
-
-    public static Function getImageIconFunction(JSONObject imageIconJson) {
-        String property = optString(imageIconJson, "property");
-        String type = optString(imageIconJson, "type");
-        String defaultIcon = optString(imageIconJson, "default");
-        JSONArray stopsArray = imageIconJson.optJSONArray("stops");
-
-        switch (type) {
-            case "categorical": {
-                Stop[] stops;
-                if (stopsArray != null) {
-                    stops = new Stop[stopsArray.length()];
-                    for (int i = 0; i < stopsArray.length(); i++) {
-                        JSONArray stopArray = stopsArray.optJSONArray(i);
-                        if (stopArray != null) {
-                            Object value1 = stopArray.opt(0);
-                            Object value2 = stopArray.opt(1);
-                            stops[i] = (Stop.stop(value1, PropertyFactory.iconImage((String) value2)));
-                        }
-                    }
-                } else {
-                    stops = new Stop[0];
-                }
-
-                return Function.property(property, Stops.categorical(stops)).withDefaultValue(new PropertyValue("default", defaultIcon));
-            }
-        }
-
-        return null;
-    }
-
-    public static Function getZoomFunction(JSONObject iconSizeJson) {
-        float defaultSize = (float) iconSizeJson.optDouble("default", 1.0f);
-        float baseSize = (float) iconSizeJson.optDouble("base", 1f);
-        JSONArray stopsArray = iconSizeJson.optJSONArray("stops");
-        Stop[] stops;
-        if (stopsArray != null) {
-            stops = new Stop[stopsArray.length()];
-            for (int i = 0; i < stopsArray.length(); i++) {
-                JSONArray stopArray = stopsArray.optJSONArray(i);
-                if (stopArray != null) {
-                    Object value1 = stopArray.opt(0);
-                    float value2 = (float) stopArray.optDouble(1);
-                    stops[i] = Stop.stop(value1, PropertyFactory.iconSize(value2));
-                }
-            }
-        } else {
-            stops = new Stop[0];
-        }
-
-        return Function.zoom(Stops.exponential(stops));
-    }
-
-    public static Function getOpacityFunction(JSONObject opacityJson) {
-        float defaultSize = (float) opacityJson.optDouble("default", 1.0f);
-        float baseSize = (float) opacityJson.optDouble("base", 1f);
-        JSONArray stopsArray = opacityJson.optJSONArray("stops");
-        Stop[] stops;
-        if (stopsArray != null) {
-            stops = new Stop[stopsArray.length()];
-            for (int i = 0; i < stopsArray.length(); i++) {
-                JSONArray stopArray = stopsArray.optJSONArray(i);
-                if (stopArray != null) {
-                    Object value1 = stopArray.opt(0);
-                    float value2 = (float) stopArray.optDouble(1);
-                    stops[i] = Stop.stop(value1, PropertyFactory.textOpacity(value2));
-                }
-            }
-        } else {
-            stops = new Stop[0];
-        }
-
-        return Function.zoom(Stops.exponential(stops));
     }
 
     @Override
     public SymbolLayer toMapboxLayer(Layer layerToClone, String sourceId) {
-        SymbolLayer layer = new SymbolLayer(id + "|" + sourceId + "|new", sourceId);
-        layer.setSourceLayer(sourceId + "_" + sourceLayer);
+        SymbolLayer symbolLayer = new SymbolLayer(id + "|" + sourceId + "|new", sourceId);
+        symbolLayer.setSourceLayer(sourceId + "_" + sourceLayer);
 
-        if (iconImageFunction != null) {
-            layer.setProperties(PropertyFactory.iconImage(iconImageFunction));
-        } else {
-            layer.setProperties(PropertyFactory.iconImage(iconImage));
-        }
-        layer.setProperties(PropertyFactory.symbolAvoidEdges(avoidEdges));
-        layer.setProperties(PropertyFactory.symbolSpacing((float) symbolSpacing));
-        layer.setProperties(PropertyFactory.iconPadding((float) iconPadding));
+        SymbolLayer layer = (SymbolLayer) layerToClone;
+        List<PropertyValue> properties = new ArrayList<>();
 
-        if (iconSizeFunction != null) {
-            layer.setProperties(PropertyFactory.iconSize(iconSizeFunction));
+        PropertyValue symbolPlacement = getSymbolPlacement(layer.getSymbolPlacement());
+        if (symbolPlacement != null) {
+            properties.add(symbolPlacement);
         }
 
-        layer.setProperties(PropertyFactory.textField(textField));
+        PropertyValue symbolSpacing = getSymbolSpacing(layer.getSymbolSpacing());
+        if (symbolSpacing != null) {
+            properties.add(symbolSpacing);
+        }
 
+        PropertyValue iconImage = getIconImage(layer.getIconImage());
+        if (iconImage != null) {
+            properties.add(iconImage);
+        }
+
+        PropertyValue iconAllowOverlap = getIconAllowOverlap(layer.getIconAllowOverlap());
+        if (iconAllowOverlap != null) {
+            properties.add(iconAllowOverlap);
+        }
+
+        PropertyValue iconKeepUpright = getIconKeepUpright(layer.getIconKeepUpright());
+        if (iconKeepUpright != null) {
+            properties.add(iconKeepUpright);
+        }
+
+        PropertyValue avoidEdges = getAvoidEdges(layer.getSymbolAvoidEdges());
+        if (avoidEdges != null) {
+            properties.add(avoidEdges);
+        }
+
+        PropertyValue iconPadding = getIconPadding(layer.getIconPadding());
+        if (iconPadding != null) {
+            properties.add(iconPadding);
+        }
+
+        PropertyValue iconSize = getIconSize(layer.getIconSize());
+        if (iconSize != null) {
+            properties.add(iconSize);
+        }
+
+        PropertyValue iconOpacity = getIconOpacity(layer.getIconOpacity());
+        if (iconOpacity != null) {
+            properties.add(iconOpacity);
+        }
+
+        PropertyValue iconOffset = getIconOffset(layer.getIconOffset());
+        if (iconOffset != null) {
+            properties.add(iconOffset);
+        }
+
+        PropertyValue textField = getTextField(layer.getTextField());
+        if (textField != null) {
+            properties.add(textField);
+        }
+
+        PropertyValue textFont = getTextFont(layer.getTextFont());
         if (textFont != null) {
-            layer.setProperties(PropertyFactory.textFont(textFont));
+            properties.add(textFont);
         }
 
-        if (textSizeFunction != null) {
-            layer.setProperties(PropertyFactory.textSize(textSizeFunction));
+        PropertyValue textOffset = getTextOffset(layer.getTextOffset());
+        if (textOffset != null) {
+            properties.add(textOffset);
         }
 
-        if (textOffsets != null) {
-            layer.setProperties(PropertyFactory.textOffset(textOffsets));
-        }
-
-        layer.setProperties(PropertyFactory.textPadding((float) textPadding));
-
-        layer.setProperties(PropertyFactory.iconAllowOverlap(iconAllowOverlap));
-        layer.setProperties(PropertyFactory.iconKeepUpright(iconKeepUpright));
-
-        if (minZoom != 0) {
-            layer.setMinZoom(minZoom);
-        }
-
-        if (filter != null) {
-            layer.setFilter(filter);
-        }
-
+        PropertyValue textColor = getTextColor(layer.getTextColor());
         if (textColor != null) {
-            layer.setProperties(PropertyFactory.textColor(textColor));
+            properties.add(textColor);
         }
 
-        if (textOpacityFunction != null) {
-            layer.setProperties(PropertyFactory.textOpacity(textOpacityFunction));
+        PropertyValue textPadding = getTextPadding(layer.getTextPadding());
+        if (textPadding != null) {
+            properties.add(textPadding);
         }
 
-        if (iconOpacityFunction != null) {
-            layer.setProperties(PropertyFactory.iconOpacity(iconOpacityFunction));
+        PropertyValue textOpacity = getTextOpacity(layer.getTextOpacity());
+        if (textOpacity != null) {
+            properties.add(textOpacity);
         }
 
-        return layer;
+        // set all properties
+        symbolLayer.setProperties(properties.toArray(new PropertyValue[properties.size()]));
+
+        if (layer.getFilter() != null) {
+            symbolLayer.setFilter(layer.getFilter());
+        }
+
+        if (symbolLayer.getMaxZoom() != 0) {
+            symbolLayer.setMaxZoom(symbolLayer.getMaxZoom());
+        }
+
+        if (symbolLayer.getMinZoom() != 0) {
+            symbolLayer.setMinZoom(symbolLayer.getMinZoom());
+        }
+
+        return symbolLayer;
+    }
+
+    private PropertyValue getSymbolPlacement(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.symbolPlacement(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.symbolPlacement((String) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getSymbolSpacing(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.symbolSpacing(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.symbolSpacing((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconAllowOverlap(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconAllowOverlap(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconAllowOverlap((Boolean) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconKeepUpright(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconKeepUpright(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconKeepUpright((Boolean) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconImage(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconImage(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconImage((String) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getAvoidEdges(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.symbolAvoidEdges(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.symbolAvoidEdges((Boolean) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconPadding(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconPadding(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconPadding((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconSize(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconSize(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconSize((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconOpacity(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconOpacity(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconOpacity((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getIconOffset(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.iconOffset(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.iconOffset((Float[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextField(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textField(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textField((String) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextFont(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textFont(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textFont((String[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextOffset(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textOffset(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textOffset((Float[]) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextColor(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textColor(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textColor(pv.getColorInt());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextPadding(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textPadding(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textPadding((Float) pv.getValue());
+        }
+        return null;
+    }
+
+    private PropertyValue getTextOpacity(PropertyValue pv) {
+        if (pv.isExpression()) {
+            return PropertyFactory.textOpacity(pv.getExpression());
+        } else if (pv.isValue()) {
+            return PropertyFactory.textOpacity((Float) pv.getValue());
+        }
+        return null;
     }
 }

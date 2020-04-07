@@ -258,6 +258,10 @@ public class Analytics {
         public static final String DIALOG_NO_COVERAGE = "Dialog No Flight Coverage";
         public static final String DIALOG_ADD_COVERAGE = "Dialog Add Coverage";
 
+        public static final String RAKUTEN_INSURANCE_EXPAND = "Expand";
+        public static final String RAKUTEN_INSURANCE_FREE_INSURANCE = "Free insurance";
+        public static final String RAKUTEN_INSURANCE_PREMIUM_INSURANCE = "Premium insurance";
+
         public static final String IN_FLIGHT_SETTINGS_BUTTON = "In Flight Settings Button";
         public static final String FLIGHT_STATUS_AUDIBLE_ALERTS = "Flight Status Audible Alerts";
         public static final String FLIGHT_STATUS_VISUAL_ALERTS = "Flight Status Visual Alerts";
@@ -267,6 +271,9 @@ public class Analytics {
         public static final String GEO_AWARENESS_VISUAL_ALERTS = "Geo-Awareness Visual Alerts";
         public static final String GEOFENCE = "Keep Aircraft From Entering No-Fly Zones";
         public static final String GEOCAGE = "Keep Aircraft From Leaving Flight Plan";
+
+        public static final String TURN_ON_LOCATION_DIALOG = "Turn On Location Dialog";
+        public static final String LOCATION_PERMISSIONS = "Location Permissions";
     }
 
     public static final class Value {

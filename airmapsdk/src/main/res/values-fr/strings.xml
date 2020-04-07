@@ -25,7 +25,7 @@
     <!-- Call to action when a user has not selected an aircraft -->
     <string name="aircraft_select_aircraft">Sélectionner un appareil</string>
     <!-- Title to display for the view creating a new aircraft -->
-    <string name="airmap_title_activity_create_aircraft">Créer un avion</string>
+    <string name="airmap_title_activity_create_aircraft">Créer un appareil</string>
     <!-- Title to display for the view when updating an existing aircraft -->
     <string name="airmap_edit_aircraft">Mettre à jour appareil</string>
     <!-- Name for airspace type Aerial Recreational Area -->
@@ -89,7 +89,7 @@
     <!-- Name for airspace type School -->
     <string name="airspace_type_school">École</string>
     <!-- Name for airspace type Seaplane Base -->
-    <string name="airspace_type_seaplane_base">Base pour hydravion</string>
+    <string name="airspace_type_seaplane_base">Base pour hydravions</string>
     <!-- Name for airspace type Special Use Airspace -->
     <string name="airspace_type_special_use">Espace aérien à utilisation particulière (SUA)</string>
     <!-- Name for airspace type Stadium -->
@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Autorisée</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Autorisation annulée</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Autorisation non demandée</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Saisie invalide</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Merci de saisir un code à chiffres valide</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Code</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Mot de passe</string>
     <!-- invalid phone -->
@@ -487,7 +485,7 @@
     <!-- Call to action to drag the center position of a point-based flight. -->
     <string name="flight_drawing_tooltip_cta_postiion_point">Déplacez le point central pour positionner votre zone de vol.</string>
     <!-- Call to action to tap the icon to begin drawing a flight area. -->
-    <string name="airmap_freehand_tip_area">Cliquez sur l\'icône \"main\" pour dessiner une zone de vol.</string>
+    <string name="airmap_freehand_tip_area">Cliquez sur l\'icône main pour dessiner une zone de vol.</string>
     <!-- Call to action to tap the icon to begin drawing a flight path. -->
     <string name="airmap_freehand_tip_path">Cliquez sur l\'icône de la main pour dessiner une trajectoire de vol.</string>
     <!-- Displayed when the user has drawn an invalid shaping, overlapping with conflicting permitted zones -->
@@ -659,7 +657,7 @@
     <string name="ruleset_selection_type_required">Requis</string>
     <string name="rules_generic_title">Normes locales</string>
     <!-- Class = "UINavigationItem"; title = "Select Aircraft"; ObjectID = "7vR-GS-NPr"; Note = "SELECT_AIRCRAFT_TITLE|Title for the view where you can select an aircraft for a flight"; AirMapUIObjectId = "7vR-GS-NPr.title"; -->
-    <string name="select_aircraft">Sélectionner un avion</string>
+    <string name="select_aircraft">Sélectionner un appareil</string>
     <!-- Class = "UILabel"; text = "SMS Code"; ObjectID = "oG7-qM-t5D"; Note = "SMS_LOGIN_CODE_HEADER|Header text for view where a user can input their SMS verification code"; AirMapUIObjectId = "oG7-qM-t5D.text"; -->
     <string name="sms_login_code_header">Code SMS</string>
     <!-- Class = "UITextField"; placeholder = "Code"; ObjectID = "L0X-0f-Pm9"; Note = "SMS_LOGIN_CODE_PLACEHOLDER|Placeholder label for the textfield where a user can input their SMS verification code"; AirMapUIObjectId = "L0X-0f-Pm9.placeholder"; -->
@@ -712,9 +710,9 @@
     <string name="tile_layer_tfr_faa">Restrictions de vol temporaires</string>
     <string name="tile_layer_universities">Universités</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-    <string name="traffic_alert_with_aircraft_id_and_distance_format">Trafic %1$s\nAltitude %2$s\n%3$s %4$s %5$s</string>
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">Trafic %1$s Altitude %2$s %3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-    <string name="traffic_alert_with_aircraft_id_format">Trafic %1$s\nAltitude %2$s\n%3$s</string>
+    <string name="traffic_alert_with_aircraft_id_format">Trafic %1$s Altitude %2$s %3$s</string>
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">Impérial</string>
     <!-- Name for the metric system of measurement -->

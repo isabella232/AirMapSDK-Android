@@ -24,7 +24,7 @@
         android:padding="@dimen/fab_margin"
         android:clipToPadding="false">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/my_location_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

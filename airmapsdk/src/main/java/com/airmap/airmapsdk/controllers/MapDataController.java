@@ -2,7 +2,7 @@ package com.airmap.airmapsdk.controllers;
 
 import android.graphics.RectF;
 import android.os.Handler;
-import android.support.v4.util.Pair;
+import androidx.core.util.Pair;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
@@ -19,9 +19,9 @@ import com.airmap.airmapsdk.util.CopyCollections;
 import com.airmap.airmapsdk.util.RetryWithDelay;
 import com.airmap.airmapsdk.util.ThrottleablePublishSubject;
 import com.google.gson.JsonObject;
+import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.geometry.VisibleRegion;
-import com.mapbox.services.commons.geojson.Feature;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -256,14 +256,13 @@ public class MapDataController {
     protected Func1<AirMapPolygon, Observable<List<AirMapJurisdiction>>> getJurisdictions() {
         return new Func1<AirMapPolygon, Observable<List<AirMapJurisdiction>>>() {
             @Override
-            public Observable<List<AirMapJurisdiction>> call(AirMapPolygon polygon) {
+            public Observable<List<AirMapJurisdiction>> call(final AirMapPolygon polygon) {
                 return Observable.create(new Observable.OnSubscribe<List<AirMapJurisdiction>>() {
                     @Override
                     public void call(final Subscriber<? super List<AirMapJurisdiction>> subscriber) {
-
                         // query map for jurisdictions
-                        List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(map.getLeft(),
-                                map.getTop(), map.getRight(), map.getBottom()), "jurisdictions");
+                        List<Feature> features = map.getMap().queryRenderedFeatures(new RectF(0,
+                                0, map.getMeasuredWidth(), map.getMeasuredHeight()), "jurisdictions");
 
                         if (features.isEmpty()) {
                             Timber.d("Features are empty");
@@ -274,7 +273,7 @@ public class MapDataController {
                         List<AirMapJurisdiction> jurisdictions = new ArrayList<>();
                         for (Feature feature : features) {
                             try {
-                                JsonObject propertiesJSON = feature.getProperties();
+                                JsonObject propertiesJSON = feature.properties();
                                 JSONObject jurisdictionJSON = new JSONObject(propertiesJSON.get("jurisdiction").getAsString());
 
                                 jurisdictions.add(new AirMapJurisdiction(jurisdictionJSON));
@@ -282,7 +281,6 @@ public class MapDataController {
                                 Timber.e(e, "Unable to get jurisdiction json");
                             }
                         }
-
                         subscriber.onNext(jurisdictions);
                         subscriber.onCompleted();
                     }

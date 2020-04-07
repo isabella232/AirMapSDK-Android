@@ -2,10 +2,16 @@ package com.airmap.airmapsdk.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 
@@ -13,16 +19,13 @@ import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.models.Coordinate;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
-import com.airmap.airmapsdk.networking.services.AirMap;
 import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.services.commons.models.Position;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -175,9 +178,10 @@ public class Utils {
         }
 
         try {
-            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
-            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
-            return dateTime.toDate();
+//            DateTimeFormatter dateTimeFormatter = ISODateTimeFormat.dateTime().withZoneUTC();
+//            DateTime dateTime = dateTimeFormatter.parseDateTime(iso8601);
+//            return dateTime.toDate();
+            return new DateTime(iso8601).toDate();
         } catch (Exception e) {
             Timber.e(e, "Error parsing date: %s", iso8601);
         }
@@ -278,13 +282,13 @@ public class Utils {
      */
     public static double[] getBufferPresets() {
         return new double[]{
+                feetToMeters(10),
                 feetToMeters(25),
                 feetToMeters(50),
                 feetToMeters(75),
                 feetToMeters(100),
                 feetToMeters(125),
                 feetToMeters(150),
-                feetToMeters(175),
                 feetToMeters(200),
                 feetToMeters(250),
                 feetToMeters(300),
@@ -292,17 +296,14 @@ public class Utils {
                 feetToMeters(400),
                 feetToMeters(450),
                 feetToMeters(500),
-                feetToMeters(600),
-                feetToMeters(700),
-                feetToMeters(800),
-                feetToMeters(900),
+                feetToMeters(750),
                 feetToMeters(1000),
-                feetToMeters(1250),
                 feetToMeters(1500),
-                feetToMeters(1750),
                 feetToMeters(2000),
                 feetToMeters(2500),
-                feetToMeters(3000)
+                feetToMeters(3000),
+                feetToMeters(4000),
+                feetToMeters(5000)
         };
     }
 
@@ -311,29 +312,29 @@ public class Utils {
      */
     public static double[] getBufferPresetsMetric() {
         return new double[]{
+                5,
                 10,
                 15,
                 20,
                 25,
                 30,
+                40,
                 50,
-                60,
                 75,
                 100,
-                120,
+                125,
                 150,
                 175,
                 200,
-                225,
                 250,
-                275,
                 300,
                 350,
                 400,
                 500,
                 600,
                 750,
-                1000
+                1000,
+                1500
         };
     }
 
@@ -481,20 +482,6 @@ public class Utils {
         return false;
     }
 
-    public static List<Position> getPositionsFromFeature(ArrayList coordinates) {
-            List<Position> positions = new ArrayList<>();
-            for (Object o : coordinates) {
-                if (o instanceof ArrayList) {
-                    positions.addAll(getPositionsFromFeature((ArrayList) o));
-                } else if (o instanceof Position) {
-                    Position position = (Position) o;
-                    positions.add(position);
-                }
-            }
-
-            return positions;
-    }
-
     public static boolean useGPSForLocation(Context context) {
         // by default, GPS is not used
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(context.getString(R.string.setting_location_provider), true);
@@ -506,5 +493,25 @@ public class Utils {
         }
 
         return Locale.getDefault().getLanguage();
+    }
+
+    public static Bitmap getBitmapForDrawable(Context context, @DrawableRes int id) {
+        Drawable drawable = ContextCompat.getDrawable(context, id);
+        Bitmap bitmap;
+        if (drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            bitmap = bitmapDrawable.getBitmap();
+        } else {
+            if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+                bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            } else {
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            }
+
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+        }
+        return bitmap;
     }
 }

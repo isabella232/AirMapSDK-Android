@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Genehmigt</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Berechtigung aufgehoben</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Berechtigung nicht angefordert</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Ungültige Eingabe</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Es muss ein gültiger Zahlencode sein.</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Code</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Passwort</string>
     <!-- invalid phone -->
@@ -712,9 +710,9 @@
     <string name="tile_layer_tfr_faa">Vorübergehende Flugbeschränkungen</string>
     <string name="tile_layer_universities">Universitäten</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-    <string name="traffic_alert_with_aircraft_id_and_distance_format">Verkehr %1$s\nHöhe %2$s\n%3$s %4$s %5$s</string>
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">Verkehr %1$s Höhe %2$s %3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-    <string name="traffic_alert_with_aircraft_id_format">Verkehr %1$s\nHöhe %2$s\n%3$s</string>
+    <string name="traffic_alert_with_aircraft_id_format">Verkehr %1$s Höhe %2$s %3$s</string>
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">Imperial</string>
     <!-- Name for the metric system of measurement -->

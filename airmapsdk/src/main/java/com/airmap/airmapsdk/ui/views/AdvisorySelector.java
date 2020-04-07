@@ -2,15 +2,15 @@ package com.airmap.airmapsdk.ui.views;
 
 import android.graphics.PointF;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
 import com.airmap.airmapsdk.util.Utils;
+import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.style.layers.Filter;
-import com.mapbox.services.commons.geojson.Feature;
+import com.mapbox.mapboxsdk.style.expressions.Expression;
 
 import java.util.HashSet;
 import java.util.List;
@@ -38,7 +38,7 @@ public class AdvisorySelector {
         PointF clickPoint = mapView.getMap().getProjection().toScreenLocation(latLng);
         int slop = Utils.dpToPixels(mapView.getContext(), 10).intValue();
         RectF clickRect = new RectF(clickPoint.x - slop, clickPoint.y - slop, clickPoint.x + slop, clickPoint.y + slop);
-        Filter.Statement filter = Filter.has("id");
+        Expression filter = Expression.has("id");
 
         final List<Feature> selectedFeatures = mapView.getMap().queryRenderedFeatures(clickRect, filter);
         if (selectedFeatures.isEmpty()) {

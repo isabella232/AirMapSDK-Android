@@ -87,7 +87,7 @@
     <string name="kilometers_short">%d km</string>
     <string name="miles_short">%d mi</string>
 
-    <string name="authorizations_header">Authorization &amp; Validation</string>
+    <string name="authorizations_header">Authorization Requests</string>
     <string name="rules_header">Compliance Evaluation</string>
 
     <string name="time">Time</string>
@@ -97,7 +97,7 @@
     <string name="dew_point">Dew Point</string>
     <string name="pressure">Pressure</string>
 
-    <string name="airspace_laanc_authorization_automated">FAA authorization available</string>
+    <string name="airspace_laanc_authorization_automated">Authorization available</string>
 
     <string name="country">Country</string>
     <string name="county">County</string>
@@ -119,6 +119,7 @@
     <string name="ulm_field">Ulm Field</string>
     <string name="waterway">Waterway</string>
     <string name="japan_base_admin">Japan Base Admin</string>
+    <string name="airspace_type_notification">Notification</string>
 
 
     <string name="com_auth0_lock_description_change_password">Please enter your email address. We will send you an email to reset your password.</string>

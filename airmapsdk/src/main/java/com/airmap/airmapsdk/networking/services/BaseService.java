@@ -17,6 +17,7 @@ public class BaseService {
     protected static final String mapTilesVersion = "v1/";
     protected static final String mapTilesBaseUrl = apiUrl + "/maps/v4/tilejson/";
     protected static final String mapTilesRulesUrl = apiUrl + "/tiledata/" + mapTilesVersion;
+    protected static final String mapTilesBaseJurisdictionsUrl = mapTilesRulesUrl + "base-jurisdiction/{z}/{x}/{y}";
 
     //Aircraft
     protected static final String aircraftVersion = "v2/";
@@ -39,6 +40,7 @@ public class BaseService {
     protected static final String flightPlanUrl = getApiOverride("flightplan", flightBaseUrl + "plan/");
     protected static final String flightPlanByFlightIdUrl = flightBaseUrl + "%s/" + "plan/";
     protected static final String flightPlanPatchUrl = flightPlanUrl + "%s/";
+    protected static final String flightPlanBatchAuthorizationsUrl = flightBaseUrl + "plan/batch/authorizations";
     protected static final String flightPlanBriefingUrl = flightPlanPatchUrl + "briefing";
     protected static final String flightPlanSubmitUrl = flightPlanPatchUrl + "submit";
     protected static final String flightFeaturesByPlanIdUrl = flightPlanPatchUrl + "features";

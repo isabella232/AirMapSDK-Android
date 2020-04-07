@@ -1,11 +1,10 @@
 package com.airmap.airmapsdktest.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -16,6 +15,7 @@ import com.airmap.airmapsdktest.R;
 import com.airmap.airmapsdktest.fragments.AdvisoriesFragment;
 import com.airmap.airmapsdktest.fragments.MapFragment;
 import com.airmap.airmapsdktest.fragments.RulesetsFragment;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
@@ -25,6 +25,8 @@ public class MapDemoActivity extends MyLocationMapActivity {
     private TabLayout tabLayout;
     private MapPagerAdapter pagerAdapter;
     private SwipeDisableableViewPager viewPager;
+
+    private AirMapMapView mapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,11 +101,12 @@ public class MapDemoActivity extends MyLocationMapActivity {
 
     @Override
     protected AirMapMapView getMapView() {
-        if (getMapFragment() != null) {
-            return getMapFragment().getMapView();
-        }
+        return mapView;
+    }
 
-        return null;
+    public void setMapView(AirMapMapView mapView) {
+        this.mapView = mapView;
+        onMapViewCreated();
     }
 
     private class MapPagerAdapter extends FragmentPagerAdapter {

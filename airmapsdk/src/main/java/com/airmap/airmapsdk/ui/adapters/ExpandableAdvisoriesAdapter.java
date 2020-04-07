@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.ColorRes;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -147,13 +148,16 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case TFR: {
                         final AirMapTfrProperties tfr = advisory.getTfrProperties();
                         SimpleDateFormat dateFormat;
+                        if(tfr.getInfo() != null){
+                            info = tfr.getInfo() + "\n";
+                        }
                         if (tfr.getStartTime() != null && tfr.getEndTime() != null) {
-                            if (DateUtils.isToday(tfr.getStartTime().getTime())) {
-                                dateFormat = new SimpleDateFormat("h:mm a");
+                            dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
+                            if(tfr.getInfo() != null){
+                                info = info + dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                             } else {
-                                dateFormat = new SimpleDateFormat("MMM d h:mm a");
+                                info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                             }
-                            info = dateFormat.format(tfr.getStartTime()) + " - " + dateFormat.format(tfr.getEndTime());
                         }
 
                         if (!TextUtils.isEmpty(tfr.getUrl())) {
@@ -240,11 +244,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case Notam: {
                         final AirMapNotamProperties notam = advisory.getNotamProperties();
                         SimpleDateFormat dateFormat;
-                        if (notam.getStartTime() != null && DateUtils.isToday(notam.getStartTime().getTime())) {
-                            dateFormat = new SimpleDateFormat("h:mm a");
-                        } else {
-                            dateFormat = new SimpleDateFormat("MMM d h:mm a");
-                        }
+                        dateFormat = new SimpleDateFormat("MMM d YYYY h:mm a");
                         info = dateFormat.format(notam.getStartTime()) + " - " + dateFormat.format(notam.getEndTime());
 
                         if (!TextUtils.isEmpty(notam.getUrl())) {
@@ -268,8 +268,9 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                         AirMapControlledAirspaceProperties controlledAirspaceProperties = advisory.getControlledAirspaceProperties();
 
                         if (controlledAirspaceProperties.isLaanc() && controlledAirspaceProperties.isAuthorization()) {
-                            info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
-                            ((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
+                            //Remove "Authorization available" description
+                            //info = holder.itemView.getContext().getString(R.string.airspace_laanc_authorization_automated);
+                            //((AdvisoryViewHolder) holder).infoTextView.setTextColor(ContextCompat.getColor(((AdvisoryViewHolder) holder).infoTextView.getContext(), R.color.colorAccent));
                         }
                         break;
                     }
@@ -299,6 +300,10 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                                 ((AdvisoryViewHolder) holder).descriptionTextView.setVisibility(View.VISIBLE);
                             }
                         }
+                        break;
+                    }
+                    case Notification: {
+                        info = advisory.getNotificationProperties().getBody();
                     }
                 }
             }
@@ -336,7 +341,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
 
     private String formatPhoneNumber(Context context, String number) {
         if (TextUtils.isEmpty(number)) {
-            return context.getString(R.string.no_phone_number_provided);
+            return context.getString(R.string.no_known_number);
         }
 
         PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
@@ -344,7 +349,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
         String country = locale != null && locale.getCountry() != null && !TextUtils.isEmpty(locale.getCountry()) ? locale.getCountry() : "US";
         try {
             Phonenumber.PhoneNumber phoneNumber = phoneUtil.parse(number, country);
-            return phoneUtil.format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.NATIONAL);
+            return phoneUtil.format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL);
         } catch (NumberParseException e) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 return PhoneNumberUtils.formatNumber(number, country);

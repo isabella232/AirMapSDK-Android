@@ -1,10 +1,15 @@
 package com.airmap.airmapsdk.models;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.util.PointMath;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.LineString;
+import com.mapbox.geojson.MultiPoint;
+import com.mapbox.geojson.Point;
+import com.mapbox.geojson.Polygon;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -15,16 +20,7 @@ import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 import com.mapbox.mapboxsdk.style.sources.Source;
-import com.mapbox.services.api.utils.turf.TurfHelpers;
-import com.mapbox.services.api.utils.turf.TurfJoins;
-import com.mapbox.services.api.utils.turf.TurfMeasurement;
-import com.mapbox.services.api.utils.turf.TurfMisc;
-import com.mapbox.services.commons.geojson.Feature;
-import com.mapbox.services.commons.geojson.LineString;
-import com.mapbox.services.commons.geojson.MultiPoint;
-import com.mapbox.services.commons.geojson.Point;
-import com.mapbox.services.commons.geojson.Polygon;
-import com.mapbox.services.commons.models.Position;
+import com.mapbox.turf.TurfJoins;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,55 +40,55 @@ public class PolygonContainer extends Container {
         this.polygon = polygon;
         this.midpoints = PointMath.getMidpointsFromLatLngs(path);
 
-        List<Position> positions = latLngsToPositions(path);
-        List<Position> midPositions = latLngsToPositions(midpoints);
-        List<Position> lineString = new ArrayList<>(positions);
+        List<Point> positions = latLngsToPositions(path);
+        List<Point> midPositions = latLngsToPositions(midpoints);
+        List<Point> lineString = new ArrayList<>(positions);
 
         // if polygon layer doesn't exist, create and add to map
-        if (map.getLayer(POINT_LAYER) == null) {
-            Source pointSource = new GeoJsonSource(POINT_SOURCE, Feature.fromGeometry(MultiPoint.fromCoordinates(positions)));
-            map.addSource(pointSource);
+        if (map.getStyle().getLayer(POINT_LAYER) == null) {
+            Source pointSource = new GeoJsonSource(POINT_SOURCE, Feature.fromGeometry(MultiPoint.fromLngLats(positions)));
+            map.getStyle().addSource(pointSource);
             Layer pointLayer = new SymbolLayer(POINT_LAYER, POINT_SOURCE)
                     .withProperties(PropertyFactory.iconImage(CORNER_IMAGE));
-            map.addLayer(pointLayer);
+            map.getStyle().addLayer(pointLayer);
 
-            Source midpointSource = new GeoJsonSource(MIDPOINT_SOURCE, Feature.fromGeometry(MultiPoint.fromCoordinates(midPositions)));
-            map.addSource(midpointSource);
+            Source midpointSource = new GeoJsonSource(MIDPOINT_SOURCE, Feature.fromGeometry(MultiPoint.fromLngLats(midPositions)));
+            map.getStyle().addSource(midpointSource);
             Layer midpointLayer = new SymbolLayer(MIDPOINT_LAYER, MIDPOINT_SOURCE)
                     .withProperties(PropertyFactory.iconImage(MIDPOINT_IMAGE));
-            map.addLayer(midpointLayer);
+            map.getStyle().addLayer(midpointLayer);
 
             Source polygonSource = new GeoJsonSource(POLYGON_SOURCE, Feature.fromGeometry(polygon));
-            map.addSource(polygonSource);
+            map.getStyle().addSource(polygonSource);
             Layer polygonLayer = new FillLayer(POLYGON_LAYER, POLYGON_SOURCE)
                     .withProperties(PropertyFactory.fillColor(ContextCompat.getColor(context, R.color.colorAccent)), PropertyFactory.fillOpacity(0.5f));
-            map.addLayerBelow(polygonLayer, POINT_LAYER);
+            map.getStyle().addLayerBelow(polygonLayer, POINT_LAYER);
 
-            Source polylineSource = new GeoJsonSource(POLYLINE_SOURCE, Feature.fromGeometry(LineString.fromCoordinates(lineString)));
-            map.addSource(polylineSource);
+            Source polylineSource = new GeoJsonSource(POLYLINE_SOURCE, Feature.fromGeometry(LineString.fromLngLats(lineString)));
+            map.getStyle().addSource(polylineSource);
             Layer polylineLayer = new LineLayer(POLYLINE_LAYER, POLYLINE_SOURCE)
                     .withProperties(PropertyFactory.lineColor(ContextCompat.getColor(context, R.color.colorPrimary)), PropertyFactory.lineOpacity(0.9f));
-            map.addLayerAbove(polylineLayer, POLYGON_LAYER);
+            map.getStyle().addLayerAbove(polylineLayer, POLYGON_LAYER);
 
         // otherwise, update source
         } else {
-            GeoJsonSource pointsSource = map.getSourceAs(POINT_SOURCE);
-            pointsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromCoordinates(positions)));
+            GeoJsonSource pointsSource = map.getStyle().getSourceAs(POINT_SOURCE);
+            pointsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromLngLats(positions)));
 
-            GeoJsonSource midpointsSource = map.getSourceAs(MIDPOINT_SOURCE);
-            midpointsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromCoordinates(midPositions)));
+            GeoJsonSource midpointsSource = map.getStyle().getSourceAs(MIDPOINT_SOURCE);
+            midpointsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromLngLats(midPositions)));
 
-            map.removeLayer(INTERSECTION_LAYER);
-            map.removeSource(INTERSECTION_SOURCE);
+            map.getStyle().removeLayer(INTERSECTION_LAYER);
+            map.getStyle().removeSource(INTERSECTION_SOURCE);
 
-            GeoJsonSource polygonSource = map.getSourceAs(POLYGON_SOURCE);
+            GeoJsonSource polygonSource = map.getStyle().getSourceAs(POLYGON_SOURCE);
             polygonSource.setGeoJson(Feature.fromGeometry(polygon));
 
-            FillLayer polygonFill = map.getLayerAs(Container.POLYGON_LAYER);
+            FillLayer polygonFill = map.getStyle().getLayerAs(Container.POLYGON_LAYER);
             polygonFill.setProperties(PropertyFactory.fillColor(ContextCompat.getColor(context, R.color.colorAccent)));
 
-            GeoJsonSource polylineSource = map.getSourceAs(POLYLINE_SOURCE);
-            polylineSource.setGeoJson(Feature.fromGeometry(LineString.fromCoordinates(lineString)));
+            GeoJsonSource polylineSource = map.getStyle().getSourceAs(POLYLINE_SOURCE);
+            polylineSource.setGeoJson(Feature.fromGeometry(LineString.fromLngLats(lineString)));
         }
     }
 
@@ -102,16 +98,16 @@ public class PolygonContainer extends Container {
             return false;
         }
 
-        List<Position> intersections = latLngsToPositions(points);
-        if (map.getLayer(INTERSECTION_LAYER) == null) {
-            Source intersectionSource = new GeoJsonSource(INTERSECTION_SOURCE, Feature.fromGeometry(MultiPoint.fromCoordinates(intersections)));
-            map.addSource(intersectionSource);
+        List<Point> intersections = latLngsToPositions(points);
+        if (map.getStyle().getLayer(INTERSECTION_LAYER) == null) {
+            Source intersectionSource = new GeoJsonSource(INTERSECTION_SOURCE, Feature.fromGeometry(MultiPoint.fromLngLats(intersections)));
+            map.getStyle().addSource(intersectionSource);
             Layer intersectionLayer = new SymbolLayer(INTERSECTION_LAYER, INTERSECTION_SOURCE)
                     .withProperties(PropertyFactory.iconImage(INTERSECTION_IMAGE));
-            map.addLayer(intersectionLayer);
+            map.getStyle().addLayer(intersectionLayer);
         } else {
-            GeoJsonSource intersectionsSource = map.getSourceAs(INTERSECTION_SOURCE);
-            intersectionsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromCoordinates(intersections)));
+            GeoJsonSource intersectionsSource = map.getStyle().getSourceAs(INTERSECTION_SOURCE);
+            intersectionsSource.setGeoJson(Feature.fromGeometry(MultiPoint.fromLngLats(intersections)));
         }
 
         return true;
@@ -120,9 +116,9 @@ public class PolygonContainer extends Container {
     @Override
     public LatLngBounds getLatLngBoundsForZoom() {
         LatLngBounds.Builder latLngBounds = new LatLngBounds.Builder();
-        for (List<Position> list : polygon.getCoordinates()) {
-            for (Position position : list) {
-                latLngBounds.include(new LatLng(position.getLatitude(), position.getLongitude()));
+        for (List<Point> list : polygon.coordinates()) {
+            for (Point position : list) {
+                latLngBounds.include(new LatLng(position.latitude(), position.longitude()));
             }
         }
         return latLngBounds.build();
@@ -134,20 +130,20 @@ public class PolygonContainer extends Container {
         polygon = null;
         midpoints = null;
 
-        map.removeLayer(POINT_LAYER);
-        map.removeSource(POINT_SOURCE);
+        map.getStyle().removeLayer(POINT_LAYER);
+        map.getStyle().removeSource(POINT_SOURCE);
 
-        map.removeLayer(MIDPOINT_LAYER);
-        map.removeSource(MIDPOINT_SOURCE);
+        map.getStyle().removeLayer(MIDPOINT_LAYER);
+        map.getStyle().removeSource(MIDPOINT_SOURCE);
 
-        map.removeLayer(INTERSECTION_LAYER);
-        map.removeSource(INTERSECTION_SOURCE);
+        map.getStyle().removeLayer(INTERSECTION_LAYER);
+        map.getStyle().removeSource(INTERSECTION_SOURCE);
 
-        map.removeLayer(POLYGON_LAYER);
-        map.removeSource(POLYGON_SOURCE);
+        map.getStyle().removeLayer(POLYGON_LAYER);
+        map.getStyle().removeSource(POLYGON_SOURCE);
 
-        map.removeLayer(POLYLINE_LAYER);
-        map.removeSource(POLYLINE_SOURCE);
+        map.getStyle().removeLayer(POLYLINE_LAYER);
+        map.getStyle().removeSource(POLYLINE_SOURCE);
     }
 
     public boolean isTooComplex() {
@@ -245,7 +241,7 @@ public class PolygonContainer extends Container {
         LatLngBounds latLngBounds = new LatLngBounds.Builder().includes(path).build();
 
         LatLng center = latLngBounds.getCenter();
-        if (TurfJoins.inside(Point.fromCoordinates(Position.fromLngLat(center.getLongitude(), center.getLatitude())), polygon)) {
+        if (TurfJoins.inside(Point.fromLngLat(center.getLongitude(), center.getLatitude()), polygon)) {
             return center;
         }
 

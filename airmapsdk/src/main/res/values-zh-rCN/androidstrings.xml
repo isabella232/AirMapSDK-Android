@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">飞行员须知</string>
     <string name="airmap_title_activity_custom_properties">自定义属性</string>
     <string name="airmap_title_activity_profile">飞行</string>
-    <string name="airspace_laanc_authorization_automated">FAA授权可用</string>
+    <string name="airspace_laanc_authorization_automated">授权可用</string>
     <string name="airspace_type_ama">AMA场地</string>
     <string name="airspace_type_unknown">未知</string>
     <string name="amas">AMA场地</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">您违反的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">您应该审阅的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">需要更多信息的规则</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">您所遵循的规则</string>
     <string name="authorizations_header">授权和验证</string>
-    <string name="authorized_upon_submission">提交后授权</string>
+    <string name="authorized_pending_submission">提交后授权</string>
     <string name="call">致电</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">请输入您的电子邮件地址。我们会向您发送一封电子邮件，以便重置您的密码。</string>

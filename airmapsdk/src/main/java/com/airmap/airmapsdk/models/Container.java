@@ -1,16 +1,19 @@
 package com.airmap.airmapsdk.models;
 
 import android.content.Context;
+
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import android.util.DisplayMetrics;
 
 import com.airmap.airmapsdk.Analytics;
 import com.airmap.airmapsdk.R;
-import com.airmap.airmapsdk.util.AnnotationsFactory;
+import com.airmap.airmapsdk.util.Utils;
+import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.services.commons.models.Position;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,15 +45,15 @@ public abstract class Container {
         this.context = context;
         this.map = map;
 
-        map.addImage(CORNER_IMAGE, AnnotationsFactory.getBitmapForDrawable(context, R.drawable.white_circle));
-        map.addImage(MIDPOINT_IMAGE, AnnotationsFactory.getBitmapForDrawable(context, R.drawable.gray_circle));
-        map.addImage(INTERSECTION_IMAGE, AnnotationsFactory.getBitmapForDrawable(context, R.drawable.intersection_circle));
+        map.getStyle().addImage(CORNER_IMAGE, Utils.getBitmapForDrawable(context, R.drawable.white_circle));
+        map.getStyle().addImage(MIDPOINT_IMAGE, Utils.getBitmapForDrawable(context, R.drawable.gray_circle));
+        map.getStyle().addImage(INTERSECTION_IMAGE, Utils.getBitmapForDrawable(context, R.drawable.intersection_circle));
     }
 
-    protected List<Position> latLngsToPositions(List<LatLng> latLngs) {
-        List<Position> positions = new ArrayList<>();
+    protected List<Point> latLngsToPositions(List<LatLng> latLngs) {
+        List<Point> positions = new ArrayList<>();
         for (LatLng latLng : latLngs) {
-            positions.add(Position.fromLngLat(latLng.getLongitude(), latLng.getLatitude()));
+            positions.add(Point.fromLngLat(latLng.getLongitude(), latLng.getLatitude()));
         }
         return positions;
     }

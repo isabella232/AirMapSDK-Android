@@ -2,8 +2,10 @@ package com.airmap.airmapsdk.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationResponse;
@@ -68,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements AuthorizationSer
         // authorization failed, check exception
         } else {
             if (exception != null) {
-                Timber.e("Token request failed", exception);
+                Log.e("Token request failed", exception.toString());
             }
 
             //TODO: send failure via private broadcast back to callback?

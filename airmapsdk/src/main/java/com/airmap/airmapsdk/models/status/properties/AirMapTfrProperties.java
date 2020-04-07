@@ -13,6 +13,7 @@ import static com.airmap.airmapsdk.util.Utils.optString;
 @SuppressWarnings("unused")
 public class AirMapTfrProperties implements Serializable, AirMapBaseModel {
     private String url;
+    private String info;
     private Date startTime;
     private Date endTime;
 
@@ -33,6 +34,7 @@ public class AirMapTfrProperties implements Serializable, AirMapBaseModel {
     public AirMapTfrProperties constructFromJson(JSONObject json) {
         if (json != null) {
             setUrl(optString(json, "url"));
+            setInfo(optString(json, "body", null));
             setStartTime(Utils.getDateFromIso8601String(optString(json, "effective_start", null)));
             setEndTime(Utils.getDateFromIso8601String(optString(json, "effective_end", null)));
         }
@@ -63,6 +65,15 @@ public class AirMapTfrProperties implements Serializable, AirMapBaseModel {
 
     public AirMapTfrProperties setEndTime(Date endTime) {
         this.endTime = endTime;
+        return this;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public AirMapTfrProperties setInfo(String info) {
+        this.info = info;
         return this;
     }
 }

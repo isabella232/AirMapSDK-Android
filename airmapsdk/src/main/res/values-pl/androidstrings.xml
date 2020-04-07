@@ -5,12 +5,20 @@
     <string name="airmap_pilot_information">Informacje dla pilota</string>
     <string name="airmap_title_activity_custom_properties">Niestandardowe właściwości</string>
     <string name="airmap_title_activity_profile">Profil pilota</string>
-    <string name="airspace_laanc_authorization_automated">Dostępna autoryzacja FAA</string>
+    <string name="airspace_laanc_authorization_automated">Dostępna autoryzacja</string>
     <string name="airspace_type_ama">Pole AMA</string>
     <string name="airspace_type_unknown">Nieznane</string>
     <string name="amas">Pola AMA</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_conflicting_rules">Zasady, które naruszają</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_informational_rules">Zasady, które należy przejrzeć</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_missing_info_rules">Zasady wymagające dodatkowych informacji</string>
+    <!-- Rules section title in the flight plan brief -->
+    <string name="android_not_conflicting_rules">Reguły, które są następujące</string>
     <string name="authorizations_header">Autoryzacja i weryfikacja</string>
-    <string name="authorized_upon_submission">Autoryzowany po przesłaniu</string>
+    <string name="authorized_pending_submission">Autoryzowany po przesłaniu</string>
     <string name="call">Zadzwoń</string>
     <string name="celsius_temp">%d °C</string>
     <string name="com_auth0_lock_description_change_password">Podaj swój adres e-mailowy. Wyślemy do Ciebie wiadomość e-mail z prośbą o zresetowanie hasła.</string>

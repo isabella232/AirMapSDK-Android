@@ -116,7 +116,7 @@
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Aprobado</string>
-    <!-- The request with the authority has been cancelled -->
+    <!-- The request with the authority has been invalidated -->
     <string name="authorization_cancelled_submission">Autorización cancelada</string>
     <!-- The request with the authority has not been requested -->
     <string name="authorization_not_requested">Autorización no solicitada</string>
@@ -294,8 +294,6 @@
     <string name="com.auth0.lock.input.generic.error">Datos no válidos</string>
     <!-- invalid otp -->
     <string name="com.auth0.lock.input.otp.error">Debe ser un código numérico válido</string>
-    <!-- OTP placeholder -->
-    <string name="com.auth0.lock.input.otp.placeholder">Código</string>
     <!-- Password placeholder -->
     <string name="com_auth0_lock_hint_password">Contraseña</string>
     <!-- invalid phone -->
@@ -712,9 +710,9 @@
     <string name="tile_layer_tfr_faa">Restricciones temporales de vuelo</string>
     <string name="tile_layer_universities">Universidades</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) distance, 4) direction, 5) time -->
-    <string name="traffic_alert_with_aircraft_id_and_distance_format">Tráfico %1$s\nAltitud %2$s\n%3$s %4$s %5$s</string>
+    <string name="traffic_alert_with_aircraft_id_and_distance_format">Tráfico %1$s Altitud %2$s %3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
-    <string name="traffic_alert_with_aircraft_id_format">Tráfico %1$s\nAltitud %2$s\n%3$s</string>
+    <string name="traffic_alert_with_aircraft_id_format">Tráfico %1$s Altitud %2$s %3$s</string>
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">Imperial</string>
     <!-- Name for the metric system of measurement -->

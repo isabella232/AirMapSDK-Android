@@ -1,6 +1,7 @@
 package com.airmap.airmapsdk.networking.services;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
+import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.models.comm.AirMapComm;
@@ -171,6 +172,13 @@ class FlightService extends BaseService {
         return AirMap.getClient().get(url, new GenericListOkHttpCallback(callback, AirMapFlightFeature.class));
     }
 
+    static Call getFlightPlanAuthorizationsBatch(List<String> flightPlanIds, AirMapCallback<List<AirMapFlightBriefing>> callback) {
+        String url = flightPlanBatchAuthorizationsUrl;
+        Map<String, String> params = new HashMap<>();
+        params.put("flight_plan_ids", TextUtils.join(",", flightPlanIds));
+        return AirMap.getClient().get(url, params, new GenericListOkHttpCallback(callback, AirMapFlightBriefing.class));
+    }
+
     /**
      * Create a flight for the user
      *
@@ -196,7 +204,11 @@ class FlightService extends BaseService {
     }
 
     static Call deleteFlight(AirMapFlight flight, AirMapCallback<Void> listener) {
-        String url = String.format(flightDeleteUrl, flight.getFlightId());
+        return deleteFlight(flight.getFlightId(), listener);
+    }
+
+    static Call deleteFlight(String flightId, AirMapCallback<Void> listener) {
+        String url = String.format(flightDeleteUrl, flightId);
         return AirMap.getClient().post(url, new VoidCallback(listener));
     }
 
