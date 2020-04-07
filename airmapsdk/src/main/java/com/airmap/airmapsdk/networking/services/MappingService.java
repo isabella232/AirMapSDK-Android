@@ -353,6 +353,8 @@ public class MappingService extends BaseService {
                     return Subprefecture;
                 case "supercity":
                     return Supercity;
+                case "tma":
+                    return TMA;
                 case "ulm_field":
                     return UlmField;
                 case "waterway":
