@@ -338,6 +338,8 @@ public class MappingService extends BaseService {
                     return Highway;
                 case "industrial_property":
                     return IndustrialProperty;
+                case "landing_site":
+                    return LandingSite;
                 case "military_property":
                     return MilitaryProperty;
                 case "police_station":
@@ -356,6 +358,8 @@ public class MappingService extends BaseService {
                     return Subprefecture;
                 case "supercity":
                     return Supercity;
+                case "tma":
+                    return TMA;
                 case "ulm_field":
                     return UlmField;
                 case "waterway":
