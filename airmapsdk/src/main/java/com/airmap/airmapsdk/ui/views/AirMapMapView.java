@@ -185,6 +185,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
                 return chain.proceed(request.build());
             }
         }).build();
+        HttpRequestUtil.setOkHttpClient(mapboxHttpClient);
     }
 
     public void configure(Configuration configuration) {
