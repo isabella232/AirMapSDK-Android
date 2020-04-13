@@ -1034,7 +1034,11 @@ public final class AirMap {
     }
 
     public static String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements) {
-        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, AirMap.getAuthToken());
+        return getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, null, null);
+    }
+
+    public static String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, Date start, Date end) {
+        return airMapMapMappingService.getRulesetTileUrlTemplate(rulesetId, layers, useSIMeasurements, AirMap.getAuthToken(), start, end);
     }
 
     public static String getBaseJurisdictionsUrlTemplate() {
