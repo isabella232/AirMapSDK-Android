@@ -406,13 +406,13 @@ public class MappingService extends BaseService {
     @Deprecated
     protected String getTileSourceUrl(@Nullable List<AirMapLayerType> layers, AirMapMapTheme theme) {
         String tiles = (layers == null || layers.size() == 0) ? "_-_" : TextUtils.join(",", layers);
-        return mapTilesBaseUrl + tiles + "?&theme=" + theme.toString() + "&apikey=" + AirMap.getInstance().getApiKey() + "&token=" + AirMap.getInstance().getApiKey();
+        return mapTilesBaseUrl + "/" + tiles + "?&theme=" + theme.toString() + "&apikey=" + AirMap.getApiKey() + "&token=" + AirMap.getAuthToken();
     }
 
     protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken) {
         String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
-        String url = mapTilesRulesUrl + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
-        if (accessToken != null) {
+        String url = mapTilesRulesUrl + "/" + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "&access_token=" + accessToken;
         }
         return url;
