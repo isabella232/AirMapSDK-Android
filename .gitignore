@@ -13,3 +13,4 @@ airmapsdk/src/androidTest/assets/
 airmapsdk/src/main/assets/node_modules/
 .idea/markdown-navigator/
 .phraseapp.yml
+.idea/caches
