@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Auth;
+import com.airmap.airmapsdk.auth.AuthConstants;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 import com.airmap.airmapsdk.util.Utils;
 
