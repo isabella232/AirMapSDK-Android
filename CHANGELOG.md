@@ -1,3 +1,7 @@
+## `4.0.0-alpha.2 (4/20/20)`
+* Updated to support AndroidX (BREAKING)
+* Updated to Mapbox 8.4.0 (BREAKING)
+
 ## `4.0.0-alpha.1 (5/29/19)`
 * Updated to Mapbox 8.0.0
 
