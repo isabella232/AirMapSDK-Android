@@ -1,4 +1,4 @@
-## `4.0.0-alpha.2 (4/20/20)`
+## `4.0.0-alpha.3 (4/20/20)`
 * Updated to support AndroidX (BREAKING)
 * Updated to Mapbox 8.4.0 (BREAKING)
 * Remove outdated sample
