@@ -1013,18 +1013,6 @@ public final class AirMap {
         return RulesetService.getAdvisories(rulesetIds, geometry, start, end, null, AirMap.getAuthToken(), callback);
     }
 
-    /**
-     * Generates and returns map tile source url based upon map layers and theme
-     *
-     * @param layers The layers that the map should include
-     * @param theme  The theme of the map
-     * @return the map tile url
-     */
-    @Deprecated
-    public static String getTileSourceUrl(List<MappingService.AirMapLayerType> layers, MappingService.AirMapMapTheme theme) {
-        return airMapMapMappingService.getTileSourceUrl(layers, theme);
-    }
-
     public static String getMapStylesUrl(MappingService.AirMapMapTheme theme) {
         return airMapMapMappingService.getStylesUrl(theme);
     }
