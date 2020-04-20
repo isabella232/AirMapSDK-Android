@@ -49,6 +49,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.module.http.HttpRequestUtil;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
+import com.mapbox.mapboxsdk.style.layers.Layer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -392,10 +393,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     }
 
     @Override
-    public void onRulesetsUpdated(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets, List<AirMapRuleset> previouslySelectedRulesetsSelectedRulesets) {
-        Timber.i("onRulesetsUpdated to: %s from: %s", selectedRulesets, previouslySelectedRulesetsSelectedRulesets);
+    public void onRulesetsUpdated(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets, List<AirMapRuleset> previouslySelectedRulesets) {
+        Timber.i("onRulesetsUpdated to: %s from: %s", selectedRulesets, previouslySelectedRulesets);
 
-        setLayers(selectedRulesets, previouslySelectedRulesetsSelectedRulesets);
+        setLayers(selectedRulesets, previouslySelectedRulesets);
 
         for (OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
             mapDataChangeListener.onRulesetsChanged(availableRulesets, selectedRulesets);
@@ -428,7 +429,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
         for (AirMapRuleset newRuleset : newRulesets) {
             if (oldRulesets == null || !oldRulesets.contains(newRuleset)) {
-                mapStyleController.addMapLayers(newRuleset.getId(), newRuleset.getLayers(), useSIMeasurements);
+                mapStyleController.addMapLayers(newRuleset, useSIMeasurements);
             }
         }
     }
@@ -494,22 +495,32 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         advisoryClickListeners.remove(listener);
     }
 
+    public void addAirspaceTypeListener(AirspaceTypeListener airspaceTypeListener) {
+        mapStyleController.setAirspaceTypeListener(airspaceTypeListener);
+    }
+
+    public void removeAirspaceTypeListener() {
+        mapStyleController.setAirspaceTypeListener(null);
+    }
+
     public interface OnMapLoadListener {
         void onMapLoaded();
-
-        void onMapFailed(MapFailure reason);
+        default void onMapFailed(MapFailure reason) {}
     }
 
     public interface OnMapDataChangeListener {
         void onRulesetsChanged(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets);
-
         void onAdvisoryStatusChanged(AirMapAirspaceStatus status);
-
         void onAdvisoryStatusLoading();
     }
 
     public interface OnAdvisoryClickListener {
         void onAdvisoryClicked(@Nullable AirMapAdvisory advisoryClicked, @Nullable List<AirMapAdvisory> advisoriesFiltered);
+    }
+
+    public interface AirspaceTypeListener {
+        void onAirspaceTypeAdded(AirMapRuleset ruleset, MappingService.AirMapAirspaceType type, Layer layer);
+        void onAirspaceTypeRemoved(MappingService.AirMapAirspaceType type);
     }
 
     public enum MapFailure {
