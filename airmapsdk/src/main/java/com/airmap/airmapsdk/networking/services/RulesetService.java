@@ -67,7 +67,7 @@ public class RulesetService extends BaseService {
         params.put("geometry", geometry);
 
         String url = rulesetBaseUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
 
@@ -104,7 +104,7 @@ public class RulesetService extends BaseService {
         params.put("latitude", String.valueOf(coordinate.getLatitude()));
         params.put("longitude", String.valueOf(coordinate.getLongitude()));
         String url = rulesetBaseUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().postWithJsonBody(url, params, new GenericListOkHttpCallback(listener, AirMapRuleset.class));
@@ -114,7 +114,7 @@ public class RulesetService extends BaseService {
         Map<String, Object> params = new HashMap<>();
         params.put("geometry", geometry);
         String url = rulesetBaseUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().postWithJsonBody(url, params, new GenericListOkHttpCallback(listener, AirMapRuleset.class));
@@ -124,7 +124,7 @@ public class RulesetService extends BaseService {
         Map<String, String> params = new HashMap<>();
         params.put("rulesets", TextUtils.join(",",rulesetIds));
         String url = rulesetBaseUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().get(url, params, new GenericListOkHttpCallback(listener, AirMapRuleset.class));
@@ -132,7 +132,7 @@ public class RulesetService extends BaseService {
 
     static Call getRuleset(String rulesetId, @Nullable String accessToken, AirMapCallback<AirMapRuleset> callback) {
         String url = String.format(rulesetByIdUrl, rulesetId);
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().get(url, new GenericOkHttpCallback(callback, AirMapRuleset.class));
@@ -140,7 +140,7 @@ public class RulesetService extends BaseService {
 
     static Call getRules(String rulesetId, @Nullable String accessToken, AirMapCallback<AirMapRuleset> listener) {
         String url = String.format(rulesByIdUrl, rulesetId);
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().get(url, new GenericOkHttpCallback(listener, AirMapRuleset.class));
@@ -172,7 +172,7 @@ public class RulesetService extends BaseService {
         }
 
         String url = advisoriesUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().postWithJsonBody(url, params, new GenericOkHttpCallback(listener, AirMapAirspaceStatus.class));
@@ -208,7 +208,7 @@ public class RulesetService extends BaseService {
         }
 
         String url = advisoriesUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().postWithJsonBody(url, params, new GenericOkHttpCallback(listener, AirMapAirspaceStatus.class));
@@ -219,7 +219,7 @@ public class RulesetService extends BaseService {
         params.put("rulesets", TextUtils.join(",", rulesets));
         params.put("geometry", geometry);
         String url = evaluationUrl;
-        if (accessToken != null) {
+        if (!TextUtils.isEmpty(accessToken)) {
             url += "?access_token=" + accessToken;
         }
         return AirMap.getClient().postWithJsonBody(url, params, new GenericOkHttpCallback(callback, AirMapEvaluation.class));
