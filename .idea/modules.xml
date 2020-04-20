@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AirMapSDK-Android-Dev.iml" filepath="$PROJECT_DIR$/AirMapSDK-Android-Dev.iml" />
-      <module fileurl="file://$PROJECT_DIR$/airmapsdk/airmapsdk.iml" filepath="$PROJECT_DIR$/airmapsdk/airmapsdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AirMapSDK-Android-Dev.iml" filepath="$PROJECT_DIR$/AirMapSDK-Android-Dev.iml" group="AirMapSDK-Android-Dev" />
+      <module fileurl="file://$PROJECT_DIR$/airmapsdk/airmapsdk.iml" filepath="$PROJECT_DIR$/airmapsdk/airmapsdk.iml" group="AirMapSDK-Android-Dev/airmapsdk" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" group="AirMapSDK-Android-Dev/sample" />
     </modules>
   </component>
 </project>
