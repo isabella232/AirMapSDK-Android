@@ -53,6 +53,24 @@ public class AirMapConfig {
         }
     }
 
+    public static String getStatusPageUrl(){
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("status_page");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting status page domain from airmap.config.json. Using fallback");
+                return "https://status.airmap.com/";
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("app").getString("status_page");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting status page domain from airmap.config.json. Using fallback");
+                return "https://status.airmap.com/";
+            }
+        }
+    }
+
     public static String getDomain() {
         if(isCustomEnvironment){
             try {
