@@ -68,12 +68,20 @@
     <string name="airspace_type_industrial_property">Industrial Property</string>
     <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
     <string name="airspace_type_japan_base">Japan Base Admin</string>
+    <!-- Name for airspace type landing site -->
+    <string name="airspace_type_landing_site">Landing Site</string>
     <!-- Name for airspace type Military Property -->
     <string name="airspace_type_military_property">Military Property</string>
     <!-- Name for airspace type National Park -->
     <string name="airspace_type_national_park">National Park</string>
     <!-- Name for airspace type NOTAM -->
     <string name="airspace_type_notam">NOTAM</string>
+    <!-- Name for airspace type Notification -->
+    <string name="airspace_type_notification">Notification</string>
+    <!-- Name for airspace type National Security UAS Flight Restriction -->
+    <string name="airspace_type_nsufr">National Security UAS Flight Restriction</string>
+    <!-- Name for airspace type Obstacle -->
+    <string name="airspace_type_obstacle">Obstacle</string>
     <!-- Name for airspace type Police Station -->
     <string name="airspace_type_police_station">Police Station</string>
     <!-- Name for airspace type Powerline -->
@@ -102,6 +110,8 @@
     <string name="airspace_type_supercity">Supercity</string>
     <!-- Name for airspace type FAA Temporary Flight Restriction -->
     <string name="airspace_type_tfr_faa">Temporary Flight Restriction</string>
+    <!-- Name for airspace type Terminal Maneuvering Area -->
+    <string name="airspace_type_tma">Terminal Maneuvering Area</string>
     <!-- Name for airspace type Ultralight Field -->
     <string name="airspace_type_ulm_field">Ultralight Field</string>
     <!-- Generic catchall placeholder/name for airspace type is new and unknown at time of development but present via the advisories or map sources -->
@@ -112,7 +122,9 @@
     <string name="airspace_type_waterway">Waterway</string>
     <!-- Name for airspace type WildFire -->
     <string name="airspace_type_wildfire">WildFire</string>
+    <!-- Error message -->
     <!-- No comment provided by engineer. -->
+    <!-- Error reason message when API key is missing -->
     <!-- 1Password Extension Error Message -->
     <!-- The request with the authority has been accepted -->
     <string name="authorization_accepted">Approved</string>
@@ -168,6 +180,8 @@
     <string name="cardinal_direction_wnw">WNW</string>
     <!-- Abbreviation for West South West -->
     <string name="cardinal_direction_wsw">WSW</string>
+    <!-- No comment provided by engineer. -->
+    <string name="cellular">Cellular</string>
     <!-- Forgot password -->
     <string name="com_auth0_lock_action_forgot_password">Don’t remember your password?</string>
     <!-- tos & privacy -->
@@ -539,6 +553,7 @@
     <string name="gcdasyncudpsocketsendtimeouterror">Send operation timed out</string>
     <!-- No comment provided by engineer. -->
     <string name="import_album_name">import_album_name</string>
+    <!-- Error message -->
     <!-- Invalid amount of jwt parts -->
     <!-- Invalid amount of jwt parts -->
     <!-- Invalid JWT token base64Url value -->
@@ -551,6 +566,8 @@
     <string name="manufacturers_title">Manufacturers</string>
     <!-- Class = "UINavigationItem"; title = "Models"; ObjectID = "9xB-Yl-FrO"; Note = "MODELS_TITLE|Title for the view that displays a list of all aircraft models"; AirMapUIObjectId = "9xB-Yl-FrO.title"; -->
     <string name="models_title">Models</string>
+    <!-- No comment provided by engineer. -->
+    <!-- Message when dynamic link was not found -->
     <!-- No comment provided by engineer. -->
     <!-- Table section title for other selectable countries -->
     <string name="phone_country_section_other_country">Other</string>
@@ -604,6 +621,8 @@
     <string name="pilot_profile_statistics_format">%1$s Aircraft, %2$s Flights</string>
     <!-- Class = "UINavigationItem"; title = "Pilot Profile"; ObjectID = "q0o-oq-I1W"; Note = "PILOT_PROFILE_TITLE|Title for view where a user can modify their user profile"; AirMapUIObjectId = "q0o-oq-I1W.title"; -->
     <string name="pilot_profile_title">Pilot Profile</string>
+    <!-- No comment provided by engineer. -->
+    <string name="profiler">Profiler</string>
     <string name="review_flight_plane_title">Flight Plan</string>
     <!-- Class = "UIButton"; normalTitle = "Next"; ObjectID = "tCa-zT-0iZ"; Note = "REVIEW_FLIGHT_PLAN_DETAILS_NEXT_BUTTON|Button that allows a user to advance to the next step of flight planning"; AirMapUIObjectId = "tCa-zT-0iZ.normalTitle"; -->
     <string name="review_flight_plan_details_next_button">Next</string>
@@ -680,6 +699,16 @@
     <string name="flight_strictly_regulated">Flight Strictly Regulated</string>
     <!-- Description for status advisory color Yellow -->
     <string name="advisories">Advisories</string>
+    <!-- System status value when the status is degraded -->
+    <string name="system_status_degraded_level">Degraded</string>
+    <!-- System status value when the status is failed -->
+    <string name="system_status_failed_level">Failed</string>
+    <!-- System status value when the status is maintenance -->
+    <string name="system_status_maintenance_level">Maintenance</string>
+    <!-- System status value when the status is normal -->
+    <string name="system_status_normal_level">Normal</string>
+    <!-- System status value when the status is unknown -->
+    <string name="system_status_unknown_level">Unknown</string>
     <!-- No comment provided by engineer. -->
     <!-- No comment provided by engineer. -->
     <!-- No comment provided by engineer. -->
@@ -713,6 +742,7 @@
     <string name="traffic_alert_with_aircraft_id_and_distance_format">Traffic %1$s\nAltitude %2$s\n%3$s %4$s %5$s</string>
     <!-- Format for traffic alerts. 1) aircraft id, 2) altitude, 3) ground speed -->
     <string name="traffic_alert_with_aircraft_id_format">Traffic %1$s\nAltitude %2$s\n%3$s</string>
+    <!-- Error reason when long url can't be produced -->
     <!-- Name for the imperial system of measurement -->
     <string name="units_imperial">Imperial</string>
     <!-- Name for the metric system of measurement -->
@@ -734,6 +764,7 @@
     <!-- Unit and format for displaying temperature in Fahrenheit -->
     <string name="units_temperature_fahrenheit_format">%1$s°F</string>
     <!-- Possible error from keychain. -->
+    <!-- Error reason message when server response can't be parsed -->
     <!-- No comment provided by engineer. -->
     <!-- The request with the authority has been accepted -->
     <string name="validation_accepted">Validated</string>
@@ -743,4 +774,6 @@
     <string name="validation_pending">Validation Pending</string>
     <!-- The request with the authority has been rejected -->
     <string name="validation_rejected">Rejected Missing Info</string>
+    <!-- No comment provided by engineer. -->
+    <string name="wifi">WiFi</string>
 </resources>
