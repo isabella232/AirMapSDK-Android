@@ -3,6 +3,7 @@ package com.airmap.airmapsdk.ui.adapters;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -14,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,8 +54,11 @@ import static com.airmap.airmapsdk.util.Utils.checkAndStartIntent;
 
 public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<MappingService.AirMapAirspaceType, AirMapColor>, AirMapAdvisory> {
 
-    public ExpandableAdvisoriesAdapter(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> advisories) {
+    Intent scheduleActivityIntent;
+
+    public ExpandableAdvisoriesAdapter(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> advisories, Intent intent) {
         super(separateByColor(advisories));
+        scheduleActivityIntent = intent;
     }
 
     public void setDataUnseparated(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> data) {
@@ -332,6 +335,18 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     ((AdvisoryViewHolder) holder).linkButton.setColorFilter(ContextCompat.getColor(holder.itemView.getContext(), R.color.font_white), PorterDuff.Mode.SRC_ATOP);
                     ((AdvisoryViewHolder) holder).linkButton.setVisibility(View.VISIBLE);
                 }
+            }
+
+            if (advisory.getSchedule() != null){
+                Timber.wtf("hey I have a timesheet in the adapter: " + advisory.getName());
+                ((AdvisoryViewHolder) holder).titleTextView.setTextColor(Color.RED);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        scheduleActivityIntent.putExtra("AirMapAdvisory", advisory);
+                        holder.itemView.getContext().startActivity(scheduleActivityIntent);
+                    }
+                });
             }
 
             ((AdvisoryViewHolder) holder).infoTextView.setText(info);
