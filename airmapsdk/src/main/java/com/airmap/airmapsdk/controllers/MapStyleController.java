@@ -4,10 +4,13 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import android.provider.Settings;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
+import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
@@ -34,6 +37,8 @@ import com.mapbox.mapboxsdk.style.sources.VectorSource;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -58,6 +63,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     private String highlightLayerId;
 
     private static String tileJsonSpecVersion = "2.2.0";
+    private TemporalFilter temporalFilter = null;
 
     public MapStyleController(AirMapMapView map, @Nullable MappingService.AirMapMapTheme mapTheme, Callback callback) {
         this.map = map;
@@ -188,10 +194,49 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
     public void addMapLayers(String sourceId, List<String> layers, boolean useSIMeasurements) {
         // check if source is already added to map
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        if(temporalFilter != null){
+            switch (temporalFilter.getType()){
+                case NOW:
+                    switch (temporalFilter.getRange()){
+
+                        case ONE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 1);
+                            break;
+                        case FOUR_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 4);
+                            break;
+                        case EIGHT_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 8);
+                            break;
+                        case TWELVE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 12);
+                            break;
+                    }
+                    break;
+                case CUSTOM:
+                    cal1.setTime(temporalFilter.getFutureDate());
+                    cal2.setTime(temporalFilter.getFutureDate());
+
+                    cal1.set(Calendar.HOUR_OF_DAY, temporalFilter.getStartHour());
+                    cal1.set(Calendar.MINUTE, temporalFilter.getStartMinute());
+
+                    cal2.set(Calendar.HOUR_OF_DAY, temporalFilter.getEndHour());
+                    cal2.set(Calendar.MINUTE, temporalFilter.getEndMinute());
+                    break;
+            }
+        }
+
         if (map.getMap().getStyle().getSource(sourceId) != null) {
             Timber.e("Source already added for: %s", sourceId);
         } else {
-            String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
+            String urlTemplates;
+            if(temporalFilter == null){
+                urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
+            } else {
+                urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements, cal1.getTime(), cal2.getTime());
+            }
             TileSet tileSet = new TileSet(tileJsonSpecVersion, urlTemplates);
             tileSet.setMaxZoom(12f);
             tileSet.setMinZoom(8f);
@@ -242,10 +287,49 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     }
 
     private void addTemporalFilter(Layer layer) {
-        long now = System.currentTimeMillis() / 1000;
-        long in4Hrs = now + (4 * 60 * 60);
-        Expression validNowFilter = Expression.all(Expression.lt(Expression.get("start"), now), Expression.gt(Expression.get("end"), now));
-        Expression startsSoonFilter = Expression.all(Expression.gt(Expression.get("start"), now), Expression.lt(Expression.get("start"), in4Hrs));
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+
+        long start = System.currentTimeMillis() / 1000;
+        long end = start + (4 * 60 * 60);
+
+        if(temporalFilter != null){
+            switch (temporalFilter.getType()){
+                case NOW:
+                    switch (temporalFilter.getRange()){
+
+                        case ONE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 1);
+                            break;
+                        case FOUR_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 4);
+                            break;
+                        case EIGHT_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 8);
+                            break;
+                        case TWELVE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 12);
+                            break;
+                    }
+                    break;
+                case CUSTOM:
+                    cal1.setTime(temporalFilter.getFutureDate());
+                    cal2.setTime(temporalFilter.getFutureDate());
+
+                    cal1.set(Calendar.HOUR_OF_DAY, temporalFilter.getStartHour());
+                    cal1.set(Calendar.MINUTE, temporalFilter.getStartMinute());
+
+                    cal2.set(Calendar.HOUR_OF_DAY, temporalFilter.getEndHour());
+                    cal2.set(Calendar.MINUTE, temporalFilter.getEndMinute());
+                    break;
+            }
+
+            start = cal1.getTime().getTime() / 1000;
+            end = cal2.getTime().getTime() / 1000;
+        }
+
+        Expression validNowFilter = Expression.all(Expression.lt(Expression.get("start"), start), Expression.gt(Expression.get("end"), start));
+        Expression startsSoonFilter = Expression.all(Expression.gt(Expression.get("start"), start), Expression.lt(Expression.get("start"), end));
         Expression permanent = Expression.all(Expression.has("permanent"), Expression.eq(Expression.get("permanent"), "true"));
         Expression hasNoEnd = Expression.all(Expression.not(Expression.has("end")), Expression.not(Expression.has("base")));
         Expression filter = Expression.any(permanent, hasNoEnd, validNowFilter, startsSoonFilter);
@@ -342,6 +426,12 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                 Analytics.report(e);
             }
         }
+    }
+
+    public void setTemporalFilter(TemporalFilter temporalFilter){
+        this.temporalFilter = temporalFilter;
+        callback.onMapStyleReset();
+        loadStyleJSON();
     }
 
     private void loadStyleJSON() {

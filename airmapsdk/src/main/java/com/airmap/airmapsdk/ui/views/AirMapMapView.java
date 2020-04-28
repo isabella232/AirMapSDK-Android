@@ -26,6 +26,7 @@ import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.controllers.MapDataController;
 import com.airmap.airmapsdk.controllers.MapStyleController;
 import com.airmap.airmapsdk.models.Container;
+import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -81,9 +82,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     private boolean useSIMeasurements;
 
+    private TemporalFilter temporalFilter;
+
     public AirMapMapView(@NonNull Context context, Configuration configuration, @Nullable MappingService.AirMapMapTheme mapTheme) {
         super(context);
-
         init(configuration, mapTheme);
     }
 
@@ -97,6 +99,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     public AirMapMapView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
@@ -448,6 +451,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     public void disableAdvisories() {
         mapDataController.disableAdvisories();
+    }
+
+    public void setMapStyleControllerTemporalFilter(TemporalFilter temporalFilter){
+        mapStyleController.setTemporalFilter(temporalFilter);
     }
 
     @Override

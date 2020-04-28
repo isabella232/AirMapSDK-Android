@@ -7,6 +7,7 @@ import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.models.Coordinate;
+import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.rules.AirMapJurisdiction;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.shapes.AirMapPolygon;
@@ -26,7 +27,9 @@ import com.mapbox.mapboxsdk.geometry.VisibleRegion;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -64,13 +67,19 @@ public class MapDataController {
     private AirMapAirspaceStatus airspaceStatus;
 
     private Callback callback;
+    private TemporalFilter temporalFilter = null;
 
     public MapDataController(AirMapMapView map, AirMapMapView.Configuration configuration) {
+        this(map, configuration, new TemporalFilter(TemporalFilter.Range.FOUR_HOUR));
+    }
+
+    public MapDataController(AirMapMapView map, AirMapMapView.Configuration configuration, TemporalFilter temporalFilter){
         this.map = map;
         this.callback = map;
 
         jurisdictionsPublishSubject = ThrottleablePublishSubject.create();
         configurationPublishSubject = PublishSubject.create();
+        this.temporalFilter = temporalFilter;
         fetchAdvisories = true;
 
         setupSubscriptions(configuration);
@@ -335,8 +344,46 @@ public class MapDataController {
         return Observable.create(new Observable.OnSubscribe<AirMapAirspaceStatus>() {
             @Override
             public void call(final Subscriber<? super AirMapAirspaceStatus> subscriber) {
+                Calendar cal1 = Calendar.getInstance();
+                Calendar cal2 = Calendar.getInstance();
+
                 Date start = new Date();
                 Date end = new Date(start.getTime() + (4 * 60 * 60 * 1000));
+
+                if(temporalFilter != null){
+                    switch (temporalFilter.getType()){
+                        case NOW:
+                            switch (temporalFilter.getRange()){
+
+                                case ONE_HOUR:
+                                    cal2.roll(Calendar.HOUR_OF_DAY, 1);
+                                    break;
+                                case FOUR_HOUR:
+                                    cal2.roll(Calendar.HOUR_OF_DAY, 4);
+                                    break;
+                                case EIGHT_HOUR:
+                                    cal2.roll(Calendar.HOUR_OF_DAY, 8);
+                                    break;
+                                case TWELVE_HOUR:
+                                    cal2.roll(Calendar.HOUR_OF_DAY, 12);
+                                    break;
+                            }
+                            break;
+                        case CUSTOM:
+                            cal1.setTime(temporalFilter.getFutureDate());
+                            cal2.setTime(temporalFilter.getFutureDate());
+
+                            cal1.set(Calendar.HOUR_OF_DAY, temporalFilter.getStartHour());
+                            cal1.set(Calendar.MINUTE, temporalFilter.getStartMinute());
+
+                            cal2.set(Calendar.HOUR_OF_DAY, temporalFilter.getEndHour());
+                            cal2.set(Calendar.MINUTE, temporalFilter.getEndMinute());
+                            break;
+                    }
+
+                    start = cal1.getTime();
+                    end = cal2.getTime();
+                }
 
                 List<String> rulesetIds = new ArrayList<>();
                 for (AirMapRuleset ruleset : rulesets) {
