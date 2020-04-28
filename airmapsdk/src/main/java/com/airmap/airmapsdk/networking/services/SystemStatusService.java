@@ -107,8 +107,6 @@ public class SystemStatusService extends BaseService {
                 notNormalComponents.add(components.get(systemStatusComponent.getId()));
             }
         }
-
-        Timber.wtf(components.toString());
         notifyBrokenComponents();
     }
 
