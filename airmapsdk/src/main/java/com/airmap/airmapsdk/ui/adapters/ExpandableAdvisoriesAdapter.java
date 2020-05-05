@@ -278,6 +278,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
                     case Custom:
                     case University:
                     case City:
+                    case NSUFR:
                     case Park: {
                         if (advisory.getOptionalProperties() != null) {
                             if (!TextUtils.isEmpty(advisory.getOptionalProperties().getUrl())) {
