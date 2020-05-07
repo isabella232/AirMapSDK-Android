@@ -69,6 +69,8 @@ public class MapDataController {
     private Callback callback;
     private TemporalFilter temporalFilter = null;
 
+    private AirMapMapView.Configuration configuration;
+
     public MapDataController(AirMapMapView map, AirMapMapView.Configuration configuration) {
         this(map, configuration, new TemporalFilter(TemporalFilter.Range.FOUR_HOUR));
     }
@@ -80,6 +82,7 @@ public class MapDataController {
         jurisdictionsPublishSubject = ThrottleablePublishSubject.create();
         configurationPublishSubject = PublishSubject.create();
         this.temporalFilter = temporalFilter;
+        this.configuration = configuration;
         fetchAdvisories = true;
 
         setupSubscriptions(configuration);
@@ -432,6 +435,10 @@ public class MapDataController {
 
     public List<AirMapRuleset> getSelectedRulesets() {
         return CopyCollections.copy(selectedRulesets);
+    }
+
+    public AirMapMapView.Configuration getConfiguration() {
+        return configuration;
     }
 
     public void disableAdvisories() {
