@@ -449,6 +449,11 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         return mapDataController.getSelectedRulesets();
     }
 
+    public void setTemporalFilter(TemporalFilter temporalFilter){
+        mapStyleController.setTemporalFilter(temporalFilter);
+        setMapDataController(new MapDataController(this, mapDataController.getConfiguration(), temporalFilter));
+    }
+
     public void disableAdvisories() {
         mapDataController.disableAdvisories();
     }
