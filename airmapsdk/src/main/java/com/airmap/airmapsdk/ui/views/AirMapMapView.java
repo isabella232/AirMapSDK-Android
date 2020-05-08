@@ -447,6 +447,12 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         return mapDataController.getSelectedRulesets();
     }
 
+    public void raiseError(MapFailure mapFailure){
+        for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
+            mapLoadListener.onMapFailed(mapFailure);
+        }
+    }
+
     public void disableAdvisories() {
         mapDataController.disableAdvisories();
     }
@@ -479,7 +485,11 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         if (getMap() != null) {
             listener.onRulesetsChanged(mapDataController.getAvailableRulesets(), mapDataController.getSelectedRulesets());
 
-            listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            if(mapDataController.getAirspaceStatus() != null){
+                listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            } else {
+                raiseError(MapFailure.REQUEST_AIRSPACE_STATUS_NULL);
+            }
         }
     }
 
@@ -524,7 +534,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     }
 
     public enum MapFailure {
-        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE
+        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE, REQUEST_RETURNED_5XX, REQUEST_RETURNED_4XX, REQUEST_AIRSPACE_STATUS_NULL
     }
 
     public abstract static class Configuration {
