@@ -372,10 +372,14 @@ public class AirMapClient {
         });
 
         builder.addInterceptor(chain -> {
+
             Request request = chain.request();
             Response response = chain.proceed(request);
-            if (response.code() >= 500) {
-                // Retry 1 time on a 5xx status code
+
+            int tryCount = 0;
+            while (response.code() >= 500 && tryCount < 3) {
+                // Retry 3 times on a 5xx status code
+                tryCount++;
                 response = chain.proceed(request);
             }
             return response;
