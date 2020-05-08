@@ -371,20 +371,6 @@ public class AirMapClient {
             }
         });
 
-        builder.addInterceptor(chain -> {
-
-            Request request = chain.request();
-            Response response = chain.proceed(request);
-
-            int tryCount = 0;
-            while (response.code() >= 500 && tryCount < 3) {
-                // Retry 3 times on a 5xx status code
-                tryCount++;
-                response = chain.proceed(request);
-            }
-            return response;
-        });
-
         //TODO: Check for active connections before reassigning client
         client = builder.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS).writeTimeout(60, TimeUnit.SECONDS).build();
     }
