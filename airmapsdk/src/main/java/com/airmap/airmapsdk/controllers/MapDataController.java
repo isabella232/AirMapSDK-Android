@@ -227,7 +227,8 @@ public class MapDataController {
                         if(airspaceStatus != null){
                             callback.onAdvisoryStatusUpdated(advisoryStatus);
                         } else {
-                            map.raiseError(AirMapMapView.MapFailure.REQUEST_AIRSPACE_STATUS_NULL);
+                            callback.onAdvisoryStatusError(AirMapMapView.MapFailure.ADVISORY_STATUS_NULL);
+                            //map.raiseError(AirMapMapView.MapFailure.ADVISRORY_STATUS_NULL);
                         }
                     }
                 }, new Action1<Throwable>() {
@@ -411,5 +412,7 @@ public class MapDataController {
         void onAdvisoryStatusUpdated(AirMapAirspaceStatus advisoryStatus);
 
         void onAdvisoryStatusLoading();
+
+        void onAdvisoryStatusError(AirMapMapView.MapFailure mapFailure);
     }
 }
