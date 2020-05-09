@@ -489,4 +489,5 @@
   <string name="authorization_cancelled">Authorization Invalidated</string>
   <string name="airspace_type_tma">Terminal Maneuvering Area</string>
   <string name="airspace_type_landing_site">Landing Site</string>
+  <string name="airspace_type_nsufr">National Security UAS Flight Restriction</string>
 </resources>

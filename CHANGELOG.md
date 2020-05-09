@@ -1,3 +1,6 @@
+## `4.0.0-beta.1 (5/08/20)`
+* Updated OnMapDataChangeListener with onAdvisoryStatusError
+
 ## `4.0.0-alpha.3 (4/20/20)`
 * Updated to support AndroidX (BREAKING)
 * Updated to Mapbox 8.4.0 (BREAKING)

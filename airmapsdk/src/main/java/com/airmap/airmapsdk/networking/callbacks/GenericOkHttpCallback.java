@@ -1,5 +1,6 @@
 package com.airmap.airmapsdk.networking.callbacks;
 
+import com.airmap.airmapsdk.Analytics;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 import com.airmap.airmapsdk.util.Utils;
 
@@ -46,6 +47,7 @@ public class GenericOkHttpCallback extends GenericBaseOkHttpCallback {
             result = new JSONObject(jsonString);
         } catch (JSONException e) {
             Timber.e(e, "JSON parsing error for jsonString: %s", jsonString);
+            Analytics.report(new Exception("JSON parsing error: " + jsonString + " | " + call.request().url().url().getPath() + " | " + response.code()));
         }
 
         if (!response.isSuccessful() || !Utils.statusSuccessful(result)) {

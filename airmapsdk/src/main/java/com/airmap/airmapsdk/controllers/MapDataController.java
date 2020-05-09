@@ -224,12 +224,18 @@ public class MapDataController {
                     @Override
                     public void call(AirMapAirspaceStatus advisoryStatus) {
                         airspaceStatus = advisoryStatus;
-                        callback.onAdvisoryStatusUpdated(advisoryStatus);
+                        if(airspaceStatus != null){
+                            callback.onAdvisoryStatusUpdated(advisoryStatus);
+                        } else {
+                            callback.onAdvisoryStatusError(AirMapMapView.MapFailure.ADVISORY_STATUS_NULL);
+                            //map.raiseError(AirMapMapView.MapFailure.ADVISRORY_STATUS_NULL);
+                        }
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
                         Timber.e(throwable, "Unknown error on jurisdictions observable");
+                        map.raiseError(AirMapMapView.MapFailure.UNKNOWN_FAILURE);
                     }
                 });
     }
@@ -406,5 +412,7 @@ public class MapDataController {
         void onAdvisoryStatusUpdated(AirMapAirspaceStatus advisoryStatus);
 
         void onAdvisoryStatusLoading();
+
+        void onAdvisoryStatusError(AirMapMapView.MapFailure mapFailure);
     }
 }

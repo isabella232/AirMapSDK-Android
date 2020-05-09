@@ -71,6 +71,7 @@ public class MappingService extends BaseService {
         Notification("notification", R.string.airspace_type_notification),
         TMA("tma", R.string.airspace_type_tma),
         LandingSite("landing_site", R.string.airspace_type_landing_site),
+        NSUFR("nsufr", R.string.airspace_type_nsufr),
         Unknown("unknown", R.string.airspace_type_unknown);
 
         private final String text;
@@ -157,6 +158,8 @@ public class MappingService extends BaseService {
                     return LandingSite;
                 case "military_property":
                     return MilitaryProperty;
+                case "nsufr":
+                    return NSUFR;
                 case "police_station":
                     return PoliceStation;
                 case "powerline":
