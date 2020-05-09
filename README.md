@@ -21,7 +21,7 @@ Start by adding the Android SDK to your project:
 
 * Add 
 ```groovy
-implementation 'com.airmap.airmapsdk:airmapsdk:4.0.0-alpha.4'
+implementation 'com.airmap.airmapsdk:airmapsdk:3.0.0'
 ``` 
 
 to the dependencies section of your module level `build.gradle` file
@@ -47,6 +47,15 @@ Simply add this line in your Application or Activity's `onCreate`
 ```java
 AirMap.init(this);
 ```
+
+### v4 Beta
+
+v4 of the SDK is available in beta. This updated version of the SDK utilizes AndroidX and Mapbox 8.
+**There are breaking changes from v3 of the SDK.**
+
+```groovy
+implementation 'com.airmap.airmapsdk:airmapsdk:4.0.0-beta.1'
+``` 
 
 ### Migration from 2.0
 See [MIGRATION GUIDE](https://raw.githubusercontent.com/airmap/AirMapSDK-Android/master/MIGRATION.md) for details.
