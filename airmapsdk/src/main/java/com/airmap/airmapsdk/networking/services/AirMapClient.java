@@ -371,6 +371,17 @@ public class AirMapClient {
             }
         });
 
+        builder.addInterceptor(chain -> {
+            Request request = chain.request();
+            Response response = chain.proceed(request);
+            if (response.code() >= 500) {
+                // Retry 1 time on a 5xx status code
+                response.close();
+                response = chain.proceed(request);
+            }
+            return response;
+        });
+
         //TODO: Check for active connections before reassigning client
         client = builder.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS).writeTimeout(60, TimeUnit.SECONDS).build();
     }
