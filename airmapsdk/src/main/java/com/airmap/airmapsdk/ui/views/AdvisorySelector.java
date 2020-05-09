@@ -127,6 +127,11 @@ public class AdvisorySelector {
 
             @Override
             public void onAdvisoryStatusLoading() {}
+
+            @Override
+            public void onAdvisoryStatusError(AirMapMapView.MapFailure mapFailure) {
+                Timber.e(mapFailure.toString());
+            }
         });
     }
 

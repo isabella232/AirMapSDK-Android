@@ -417,6 +417,13 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
     }
 
+    @Override
+    public void onAdvisoryStatusError(MapFailure mapFailure) {
+        for (OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
+            mapDataChangeListener.onAdvisoryStatusError(mapFailure);
+        }
+    }
+
     private void setLayers(List<AirMapRuleset> newRulesets, List<AirMapRuleset> oldRulesets) {
         if (oldRulesets != null) {
             for (AirMapRuleset oldRuleset : oldRulesets) {
@@ -445,6 +452,12 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     public List<AirMapRuleset> getSelectedRulesets() {
         return mapDataController.getSelectedRulesets();
+    }
+
+    public void raiseError(MapFailure mapFailure){
+        for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
+            mapLoadListener.onMapFailed(mapFailure);
+        }
     }
 
     public void disableAdvisories() {
@@ -479,7 +492,11 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         if (getMap() != null) {
             listener.onRulesetsChanged(mapDataController.getAvailableRulesets(), mapDataController.getSelectedRulesets());
 
-            listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            if(mapDataController.getAirspaceStatus() != null){
+                listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            } else {
+                listener.onAdvisoryStatusError(MapFailure.ADVISORY_STATUS_NULL);
+            }
         }
     }
 
@@ -512,6 +529,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         void onRulesetsChanged(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets);
         void onAdvisoryStatusChanged(AirMapAirspaceStatus status);
         void onAdvisoryStatusLoading();
+        void onAdvisoryStatusError(MapFailure mapFailure);
     }
 
     public interface OnAdvisoryClickListener {
@@ -524,7 +542,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     }
 
     public enum MapFailure {
-        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE
+        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE, REQUEST_RETURNED_5XX, REQUEST_RETURNED_4XX, ADVISORY_STATUS_NULL
     }
 
     public abstract static class Configuration {
