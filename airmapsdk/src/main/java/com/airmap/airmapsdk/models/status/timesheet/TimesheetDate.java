@@ -25,8 +25,10 @@ public class TimesheetDate implements Serializable, AirMapBaseModel {
 
     @Override
     public TimesheetDate constructFromJson(JSONObject json) {
-        setMonth(json.optInt("month"));
-        setDay(json.optInt("day"));
+        if(json != null){
+            setMonth(json.optInt("month"));
+            setDay(json.optInt("day"));
+        }
         return this;
     }
 

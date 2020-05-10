@@ -25,8 +25,10 @@ public class TimesheetTime implements Serializable, AirMapBaseModel {
 
     @Override
     public TimesheetTime constructFromJson(JSONObject json) {
-        setHour(json.optInt("hour"));
-        setMinute(json.optInt("minute"));
+        if(json != null){
+            setHour(json.optInt("hour"));
+            setMinute(json.optInt("minute"));
+        }
         return this;
     }
 

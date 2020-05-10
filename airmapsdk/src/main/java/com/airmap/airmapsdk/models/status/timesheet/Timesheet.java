@@ -23,9 +23,12 @@ public class Timesheet implements Serializable, AirMapBaseModel {
     }
 
     @Override
-    public Timesheet constructFromJson(JSONObject json) {
-        setActive(json.optBoolean("active"));
-        setData(new TimesheetData(json.optJSONObject("data")));
+    public Timesheet constructFromJson(JSONObject json)
+    {
+        if(json != null){
+            setActive(json.optBoolean("active"));
+            setData(new TimesheetData(json.optJSONObject("data")));
+        }
         return this;
     }
 
