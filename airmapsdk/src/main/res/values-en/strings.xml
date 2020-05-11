@@ -68,7 +68,7 @@
     <string name="airspace_type_industrial_property">Industrial Property</string>
     <!-- Name for airspace type Japan Base Admin (Smallest unit of Japanse administrative units) -->
     <string name="airspace_type_japan_base">Japan Base Admin</string>
-    <!-- Name for airspace type landing site -->
+    <!-- Name for airspace type Landing Site -->
     <string name="airspace_type_landing_site">Landing Site</string>
     <!-- Name for airspace type Military Property -->
     <string name="airspace_type_military_property">Military Property</string>
@@ -582,7 +582,7 @@
     <!-- Class = "UINavigationItem"; title = "Verify Phone Number"; ObjectID = "MVj-Qg-sch"; Note = "PHONE_VERIFICATION_CODE_TITLE|Title for the view where a user can verify an SMS token"; AirMapUIObjectId = "MVj-Qg-sch.title"; -->
     <string name="phone_verification_code_title">Verify Phone Number</string>
     <!-- Class = "UILabel"; text = "By providing your number, you agree to receive texts about your flights at this number. Carrier message & data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n"; ObjectID = "2Na-rR-yZi"; Note = "PHONE_VERIFICATION_HEADER|Copy describing the process of verifying your phone number"; AirMapUIObjectId = "2Na-rR-yZi.text"; -->
-    <string name="airmap_phone_number_disclaimer">By providing your number, you agree to receive texts about your flights at this number. Carrier message &amp; data rates may apply.\n\nAirMap will send you a text message when your digital notice has been successfully submitted.\n</string>
+    <string name="airmap_phone_number_disclaimer">By providing your number, you agree to receive texts about your flights at this number. Carrier message &amp; data rates may apply. AirMap will send you a text message when your digital notice has been successfully submitted.</string>
     <!-- Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "vme-QM-SG8"; Note = "PHONE_VERIFICATION_PHONE|Placeholder label for the text field where a user types their phone number"; AirMapUIObjectId = "vme-QM-SG8.placeholder"; -->
     <string name="phone_verification_phone">Phone Number</string>
     <!-- Message that is presented after a phone verification has failed, encouraging the user to send a new code to the phone number provided -->
