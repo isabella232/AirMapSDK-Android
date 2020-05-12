@@ -117,7 +117,6 @@ public class MapDataController {
                         // If jurisdictionAllowed is null, it means no whitelist (allow all)
                         if (jurisdictionAllowed == null || jurisdictionAllowed.contains(jurisdiction.getId())) {
                             for (AirMapRuleset ruleset : jurisdiction.getRulesets()) {
-                                Timber.v("AMMDC - Allowing: %s %s", jurisdiction.getId(), ruleset.getId());
                                 jurisdictionRulesets.put(ruleset.getId(), ruleset);
                             }
                         }
@@ -132,39 +131,30 @@ public class MapDataController {
         Observable<AirMapMapView.Configuration> configurationObservable = configurationPublishSubject
                 .startWith(configuration)
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnNext(new Action1<AirMapMapView.Configuration>() {
-                    @Override
-                    public void call(AirMapMapView.Configuration configuration) {
-                        if (callback != null) {
-                            callback.onAdvisoryStatusLoading();
-                        }
-
-                        switch (configuration.type) {
-                            case AUTOMATIC:
-                                Timber.i("AirMapMapView updated to automatic configuration");
-                                break;
-                            case DYNAMIC:
-                                Timber.i("AirMapMapView updated to dynamic configuration w/ preferred rulesets: %s", TextUtils.join(",", ((AirMapMapView.DynamicConfiguration) configuration).preferredRulesetIds));
-                                break;
-                            case MANUAL:
-                                Timber.i("AirMapMapView updated to manual configuration w/ preferred rulesets: %s", TextUtils.join(",", ((AirMapMapView.ManualConfiguration) configuration).selectedRulesets));
-                                break;
-                        }
+                .doOnNext(config -> {
+                    if (callback != null) callback.onAdvisoryStatusLoading();
+                    switch (config.type) {
+                        case AUTOMATIC:
+                            Timber.i("AirMapMapView updated to automatic configuration");
+                            break;
+                        case DYNAMIC:
+                            Timber.i("AirMapMapView updated to dynamic configuration w/ preferred rulesets: %s", TextUtils.join(",", ((AirMapMapView.DynamicConfiguration) config).preferredRulesetIds));
+                            break;
+                        case MANUAL:
+                            Timber.i("AirMapMapView updated to manual configuration w/ preferred rulesets: %s", TextUtils.join(",", ((AirMapMapView.ManualConfiguration) config).selectedRulesets));
+                            break;
                     }
                 });
 
         // combines preferred rulesets and available rulesets changes
         // to calculate selected rulesets and advisories
         rulesetsSubscription = Observable.combineLatest(jurisdictionsObservable, configurationObservable,
-                new Func2<Map<String, AirMapRuleset>, AirMapMapView.Configuration, Pair<List<AirMapRuleset>, List<AirMapRuleset>>>() {
-                    @Override
-                    public Pair<List<AirMapRuleset>, List<AirMapRuleset>> call(Map<String, AirMapRuleset> availableRulesetsMap, AirMapMapView.Configuration configuration) {
-                        Timber.i("combine available rulesets & configuration");
-                        List<AirMapRuleset> availableRulesets = new ArrayList<>(availableRulesetsMap.values());
-                        List<AirMapRuleset> selectedRulesets = RulesetsEvaluator.computeSelectedRulesets(availableRulesets, configuration);
+                (availableRulesetsMap, config) -> {
+                    Timber.i("combine available rulesets & configuration");
+                    List<AirMapRuleset> availableRulesets = new ArrayList<>(availableRulesetsMap.values());
+                    List<AirMapRuleset> selectedRulesets = RulesetsEvaluator.computeSelectedRulesets(availableRulesets, config);
 
-                        return new Pair<>(availableRulesets, selectedRulesets);
-                    }
+                    return new Pair<>(availableRulesets, selectedRulesets);
                 })
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
