@@ -96,6 +96,8 @@
     <string name="retry">Retry</string>
     <string name="rules_header">Rules &amp; Compliance</string>
     <string name="rules_hint">Learn about federal, state, and local rules that may impact operations in this area</string>
+    <string name="schedule">Schedule</string>
+    <string name="schedule_inactive">Inactive</string>
     <string name="select_manufacturer">Select Manufacturer</string>
     <string name="select_model">Select Model</string>
     <string name="sent_email">Sent email</string>
