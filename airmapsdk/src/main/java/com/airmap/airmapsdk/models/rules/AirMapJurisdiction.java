@@ -1,5 +1,8 @@
 package com.airmap.airmapsdk.models.rules;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 
 import org.json.JSONArray;
@@ -13,7 +16,52 @@ import java.util.Set;
 
 import static com.airmap.airmapsdk.util.Utils.optString;
 
-public class AirMapJurisdiction implements Serializable, AirMapBaseModel {
+public class AirMapJurisdiction implements Serializable, AirMapBaseModel, Parcelable {
+
+    protected AirMapJurisdiction(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+    }
+
+    public static final Creator<AirMapJurisdiction> CREATOR = new Creator<AirMapJurisdiction>() {
+        @Override
+        public AirMapJurisdiction createFromParcel(Parcel in) {
+            return new AirMapJurisdiction(in);
+        }
+
+        @Override
+        public AirMapJurisdiction[] newArray(int size) {
+            return new AirMapJurisdiction[size];
+        }
+    };
+
+    /**
+     * Describe the kinds of special objects contained in this Parcelable
+     * instance's marshaled representation. For example, if the object will
+     * include a file descriptor in the output of {@link #writeToParcel(Parcel, int)},
+     * the return value of this method must include the
+     * {@link #CONTENTS_FILE_DESCRIPTOR} bit.
+     *
+     * @return a bitmask indicating the set of special object types marshaled
+     * by this Parcelable object instance.
+     */
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * Flatten this object in to a Parcel.
+     *
+     * @param dest  The Parcel in which the object should be written.
+     * @param flags Additional flags about how the object should be written.
+     *              May be 0 or {@link #PARCELABLE_WRITE_RETURN_VALUE}.
+     */
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+    }
 
     public enum RegionCategory {
         National("national"), State("state"), County("county"), City("city"), Local("local");

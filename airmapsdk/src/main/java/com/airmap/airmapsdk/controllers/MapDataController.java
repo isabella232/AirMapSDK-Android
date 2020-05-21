@@ -17,6 +17,7 @@ import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
+import com.airmap.airmapsdk.util.AirMapConfig;
 import com.airmap.airmapsdk.util.CopyCollections;
 import com.airmap.airmapsdk.util.RetryWithDelay;
 import com.airmap.airmapsdk.util.ThrottleablePublishSubject;
@@ -85,9 +86,8 @@ public class MapDataController {
         this.temporalFilter = temporalFilter;
         this.configuration = configuration;
         fetchAdvisories = true;
-        JSONObject config = AirMap.getConfig();
-        if (config.has("app") && config.optJSONObject("app").has("map") && config.optJSONObject("app").optJSONObject("map").has("allowed_jurisdictions")) {
-            JSONArray whitelist = config.optJSONObject("app").optJSONObject("map").optJSONArray("allowed_jurisdictions");
+        JSONArray whitelist = AirMapConfig.getMapAllowedJurisdictions();
+        if(whitelist != null){
             jurisdictionAllowed = new ArrayList<>();
             for (int i = 0; i < whitelist.length(); i++) {
                 jurisdictionAllowed.add(whitelist.optInt(i));
@@ -113,16 +113,28 @@ public class MapDataController {
                 .doOnNext(jurisdictions -> hasJurisdictions = true)
                 .map(jurisdictions -> {
                     Map<String, AirMapRuleset> jurisdictionRulesets = new HashMap<>();
+                    ArrayList<AirMapJurisdiction> unsupportedJurisdictions = new ArrayList<>();
+                    ArrayList<AirMapJurisdiction> supportedJurisdictions = new ArrayList<>();
                     for (AirMapJurisdiction jurisdiction : jurisdictions) {
                         // If jurisdictionAllowed is null, it means no whitelist (allow all)
                         if (jurisdictionAllowed == null || jurisdictionAllowed.contains(jurisdiction.getId())) {
+                            supportedJurisdictions.add(jurisdiction);
                             for (AirMapRuleset ruleset : jurisdiction.getRulesets()) {
                                 jurisdictionRulesets.put(ruleset.getId(), ruleset);
                             }
                         }
+
+                        // If jurisdiction is not in supported jurisdictions list, add to unsupported jurisdictions list.
+                        if(!supportedJurisdictions.contains(jurisdiction)){
+                            if(!unsupportedJurisdictions.contains(jurisdiction)){
+                                unsupportedJurisdictions.add(jurisdiction);
+                            }
+                        }
                     }
                     Timber.i("Jurisdictions loaded: %s", TextUtils.join(",", jurisdictionRulesets.keySet()));
-
+                    if(unsupportedJurisdictions.size() > 0){
+                        callback.onUnsupportedJurisdictions(unsupportedJurisdictions);
+                    }
                     return new Pair<>(jurisdictionRulesets, jurisdictions);
                 })
                 .map(pair -> pair.first);
@@ -367,5 +379,7 @@ public class MapDataController {
         void onAdvisoryStatusUpdated(AirMapAirspaceStatus advisoryStatus);
 
         void onAdvisoryStatusLoading();
+
+        void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions);
     }
 }

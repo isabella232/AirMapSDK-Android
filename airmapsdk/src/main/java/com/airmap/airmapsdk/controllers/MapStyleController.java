@@ -10,6 +10,7 @@ import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
+import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
@@ -18,6 +19,7 @@ import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
+import com.airmap.airmapsdk.util.AirMapConfig;
 import com.airmap.airmapsdk.util.AirMapConstants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -34,10 +36,12 @@ import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -51,6 +55,9 @@ import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapT
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Standard;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillPattern;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 
 public class MapStyleController implements MapView.OnDidFinishLoadingStyleListener {
 
@@ -65,6 +72,9 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     private static String tileJsonSpecVersion = "2.2.0";
     private TemporalFilter temporalFilter = null;
 
+    // If jurisdictionAllowed is null, it means no whitelist (allow all)
+    private List<Integer> jurisdictionAllowed = null;
+
     public MapStyleController(AirMapMapView map, @Nullable MappingService.AirMapMapTheme mapTheme, Callback callback) {
         this.map = map;
         this.callback = callback;
@@ -76,6 +86,14 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(map.getContext());
             String savedTheme = prefs.getString(AirMapConstants.MAP_STYLE, MappingService.AirMapMapTheme.Standard.toString());
             currentTheme = MappingService.AirMapMapTheme.fromString(savedTheme);
+        }
+
+        JSONArray whitelist = AirMapConfig.getMapAllowedJurisdictions();
+        if(whitelist != null){
+            jurisdictionAllowed = new ArrayList<>();
+            for (int i = 0; i < whitelist.length(); i++) {
+                jurisdictionAllowed.add(whitelist.optInt(i));
+            }
         }
 
         // On the receipt of a new Auth Token, reload the current style to populate Enterprise
@@ -435,7 +453,65 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     }
 
     private void loadStyleJSON() {
-        map.getMap().setStyle(AirMap.getMapStylesUrl(currentTheme));
+        map.getMap().setStyle(AirMap.getMapStylesUrl(currentTheme), new Style.OnStyleLoaded() {
+            @Override
+            public void onStyleLoaded(@NonNull Style style) {
+                String jurisdictionsId = "jurisdictions";
+
+                if (style.getLayer(jurisdictionsId) != null) {
+                    style.removeLayer(jurisdictionsId);
+                }
+
+                if (style.getSource(jurisdictionsId) != null) {
+                    style.removeSource(jurisdictionsId);
+                }
+
+                TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getBaseJurisdictionsUrlTemplate());
+                tileSet.setMaxZoom(12f);
+                tileSet.setMinZoom(8f);
+                Source source = new VectorSource(jurisdictionsId, tileSet);
+                style.addSource(source);
+                Layer layer = new FillLayer(jurisdictionsId, jurisdictionsId)
+                        .withSourceLayer(jurisdictionsId)
+                        .withProperties(fillColor(TRANSPARENT), fillOpacity(1f));
+                style.addLayerAt(layer, 0);
+
+                if(jurisdictionAllowed != null){
+
+                    /*
+                    String disabledLayerPrefix = "airmap|disabled_jurisdictions|";
+                    Expression isFederalFilter = Expression.eq(Expression.get("region"), "federal");
+                    Expression jurisdictionArray = Expression.literal(jurisdictionAllowed);
+                    Expression idInJurisdictionArray = Expression.in(Expression.get("id"), jurisdictionArray);
+                    Expression notIdInJurisdictionArray = Expression.not(idInJurisdictionArray);
+                    Expression filter1 = Expression.all(isFederalFilter, notIdInJurisdictionArray);
+
+                    BackgroundLayer background = (BackgroundLayer) style.getLayer("background");
+
+                    FillLayer boundsFill1 = new FillLayer(disabledLayerPrefix + "fill|0", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(fillColor(background.getBackgroundColor().getExpression()), fillOpacity(0.8f))
+                            .withFilter(filter1);
+
+                    FillLayer boundsFill2 = new FillLayer(disabledLayerPrefix + "fill|1", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(fillPattern("heliports_lines_pattern"))
+                            .withFilter(filter1);
+
+                    style.addLayer(boundsFill2);
+
+                    LineLayer boundsLine = new LineLayer(disabledLayerPrefix + "line|0", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(lineWidth((float) 2), lineColor(android.R.color.darker_gray))
+                            .withFilter(idInJurisdictionArray);
+
+                    style.addLayer(boundsLine);
+
+
+                     */
+                }
+            }
+        });
     }
 
     public void checkConnection(final AirMapCallback<Void> callback) {
