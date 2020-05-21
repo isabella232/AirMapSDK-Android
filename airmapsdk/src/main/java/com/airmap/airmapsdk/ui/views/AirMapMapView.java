@@ -27,6 +27,7 @@ import com.airmap.airmapsdk.controllers.MapDataController;
 import com.airmap.airmapsdk.controllers.MapStyleController;
 import com.airmap.airmapsdk.models.Container;
 import com.airmap.airmapsdk.models.TemporalFilter;
+import com.airmap.airmapsdk.models.rules.AirMapJurisdiction;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -419,6 +420,14 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
     }
 
+    @Override
+    public void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions) {
+        for(OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
+            mapDataChangeListener.onUnsupportedJurisdictions(unsupportedJurisdictions);
+        }
+    }
+
+
     private void setLayers(List<AirMapRuleset> newRulesets, List<AirMapRuleset> oldRulesets) {
         if (oldRulesets != null) {
             for (AirMapRuleset oldRuleset : oldRulesets) {
@@ -518,6 +527,8 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         void onAdvisoryStatusChanged(AirMapAirspaceStatus status);
 
         void onAdvisoryStatusLoading();
+
+        void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions);
     }
 
     public interface OnAdvisoryClickListener {

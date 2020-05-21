@@ -4,6 +4,7 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import androidx.annotation.Nullable;
 
+import com.airmap.airmapsdk.models.rules.AirMapJurisdiction;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -12,6 +13,7 @@ import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -127,6 +129,11 @@ public class AdvisorySelector {
 
             @Override
             public void onAdvisoryStatusLoading() {}
+
+            @Override
+            public void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions) {
+
+            }
         });
     }
 
