@@ -445,6 +445,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
     }
 
+    public void hideInactiveAirspaces(){
+        mapStyleController.hideInactiveAirspace();
+    }
+
     @UiThread
     public MapboxMap getMap() {
         if (Looper.getMainLooper() != Looper.myLooper()) {

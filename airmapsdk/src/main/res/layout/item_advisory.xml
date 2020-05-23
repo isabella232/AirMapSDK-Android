@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:minHeight="56dp"
         android:background="?selectableItemBackground"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
 
             </TextView>
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/schedule_tag_holder"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
@@ -108,7 +108,7 @@
                     android:visibility="gone">
                 </TextView>
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,6 +46,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -208,6 +210,43 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         loadStyleJSON();
 
         PreferenceManager.getDefaultSharedPreferences(map.getContext()).edit().putString(AirMapConstants.MAP_STYLE, currentTheme.toString()).apply();
+    }
+
+    public void hideInactiveAirspace(){
+        Expression hasActive = Expression.has("active");
+        Expression activeIsTrue = Expression.eq(Expression.get("active"), true);
+        Expression active = Expression.all(hasActive, activeIsTrue);
+        map.getMap().getStyle(style -> {
+            for(Layer layer : Objects.requireNonNull(style.getLayers())){
+                if(layer.getId().contains("airmap")){
+                    if(layer instanceof FillLayer){
+                        if(((FillLayer) layer).getFilter() != null){
+                            ((FillLayer) layer).setFilter(Expression.all(((FillLayer) layer).getFilter(), active));
+                        } else {
+                            ((FillLayer) layer).setFilter(active);
+                        }
+
+                    } else if (layer instanceof  LineLayer){
+                        if(((LineLayer) layer).getFilter() != null){
+                            ((LineLayer) layer).setFilter(Expression.all(((LineLayer) layer).getFilter(), active));
+                        } else {
+                            ((LineLayer) layer).setFilter(active);
+                        }
+
+                    } else if(layer instanceof  SymbolLayer){
+                        if(((SymbolLayer) layer).getFilter() != null){
+                            ((SymbolLayer) layer).setFilter(Expression.all(((SymbolLayer) layer).getFilter(), active));
+                        } else {
+                            ((SymbolLayer) layer).setFilter(active);
+                        }
+
+                    } else {
+                        Timber.e("Unknown layer");
+
+                    }
+                }
+            }
+        });
     }
 
     public void addMapLayers(String sourceId, List<String> layers, boolean useSIMeasurements) {
@@ -448,8 +487,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
     public void setTemporalFilter(TemporalFilter temporalFilter){
         this.temporalFilter = temporalFilter;
-        callback.onMapStyleReset();
-        loadStyleJSON();
+        reset();
     }
 
     private void loadStyleJSON() {
@@ -478,20 +516,25 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
                 if(jurisdictionAllowed != null){
 
-                    /*
+                    Integer[] jurisdictionsIdArray = new Integer[jurisdictionAllowed.size()];
+                    jurisdictionsIdArray = jurisdictionAllowed.toArray(jurisdictionsIdArray);
+
                     String disabledLayerPrefix = "airmap|disabled_jurisdictions|";
                     Expression isFederalFilter = Expression.eq(Expression.get("region"), "federal");
-                    Expression jurisdictionArray = Expression.literal(jurisdictionAllowed);
+                    Expression jurisdictionArray = Expression.literal(jurisdictionsIdArray);
                     Expression idInJurisdictionArray = Expression.in(Expression.get("id"), jurisdictionArray);
                     Expression notIdInJurisdictionArray = Expression.not(idInJurisdictionArray);
                     Expression filter1 = Expression.all(isFederalFilter, notIdInJurisdictionArray);
 
                     BackgroundLayer background = (BackgroundLayer) style.getLayer("background");
 
+                    assert background != null;
                     FillLayer boundsFill1 = new FillLayer(disabledLayerPrefix + "fill|0", source.getId())
                             .withSourceLayer(source.getId())
                             .withProperties(fillColor(background.getBackgroundColor().getExpression()), fillOpacity(0.8f))
                             .withFilter(filter1);
+
+                    style.addLayer(boundsFill1);
 
                     FillLayer boundsFill2 = new FillLayer(disabledLayerPrefix + "fill|1", source.getId())
                             .withSourceLayer(source.getId())
@@ -502,13 +545,10 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
                     LineLayer boundsLine = new LineLayer(disabledLayerPrefix + "line|0", source.getId())
                             .withSourceLayer(source.getId())
-                            .withProperties(lineWidth((float) 2), lineColor(android.R.color.darker_gray))
+                            .withProperties(lineWidth((float) 2), lineColor(Color.DKGRAY))
                             .withFilter(idInJurisdictionArray);
 
                     style.addLayer(boundsLine);
-
-
-                     */
                 }
             }
         });

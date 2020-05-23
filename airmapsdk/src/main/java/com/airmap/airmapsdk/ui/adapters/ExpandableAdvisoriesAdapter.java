@@ -65,6 +65,7 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
 
     public void setDataUnseparated(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> data) {
         super.setData(data == null ? null : separateByColor(data));
+        notifyDataSetChanged();
     }
 
     @Override
