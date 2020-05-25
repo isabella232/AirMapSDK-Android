@@ -15,12 +15,18 @@ import com.airmap.airmapsdk.models.status.properties.AirMapSchoolProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapSpecialUseProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapTfrProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapWildfireProperties;
+import com.airmap.airmapsdk.models.status.timesheet.Timesheet;
 import com.airmap.airmapsdk.networking.services.MappingService;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import timber.log.Timber;
 
 import static com.airmap.airmapsdk.util.Utils.getDateFromIso8601String;
 import static com.airmap.airmapsdk.util.Utils.optString;
@@ -39,6 +45,7 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
     private Coordinate coordinate;
     private String geometryString;
     private AirMapStatusRequirement requirements;
+    private List<Timesheet> schedule;
 
     private AirMapOptionalProperties optionalProperties;
 
@@ -157,6 +164,18 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
                     }
                 }
             }
+
+            if(!json.isNull("schedule")){
+                Timber.wtf("hey a schedule: " + json.optString("name"));
+                List<Timesheet> timesheetList = new ArrayList<>();
+                JSONArray timeSheetJson = json.optJSONArray("schedule");
+                for(int i = 0; timeSheetJson != null && i < timeSheetJson.length(); i++){
+                    timesheetList.add(new Timesheet(timeSheetJson.optJSONObject(i)));
+                }
+                setSchedule(timesheetList);
+                Timber.wtf(this.getSchedule().toString());
+            }
+
         }
         return this;
     }
@@ -390,6 +409,15 @@ public class AirMapAdvisory implements Serializable, AirMapBaseModel {
 
     public AirMapAdvisory setOptionalProperties(AirMapOptionalProperties optionalProperties) {
         this.optionalProperties = optionalProperties;
+        return this;
+    }
+
+    public List<Timesheet> getSchedule() {
+        return schedule;
+    }
+
+    public AirMapAdvisory setSchedule(List<Timesheet> timesheets) {
+        this.schedule = timesheets;
         return this;
     }
 

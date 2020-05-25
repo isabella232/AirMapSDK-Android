@@ -37,4 +37,7 @@
     <color name="airmap_navy_light">#444d54</color>
     <color name="airmap_orange">#FC4C02</color>
     <color name="airmap_yellow">#F9E547</color>
+    
+    <color name="airmap_orange_50">#80FC4C02</color>
+    <color name="airmap_orange_75">#BFFC4C02</color>
 </resources>

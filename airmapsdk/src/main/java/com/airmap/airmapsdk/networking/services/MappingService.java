@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import okhttp3.Call;
@@ -221,11 +222,17 @@ public class MappingService extends BaseService {
         }
     }
 
-    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken) {
+    protected String getRulesetTileUrlTemplate(String rulesetId, List<String> layers, boolean useSIMeasurements, @Nullable String accessToken, @Nullable Date start, @Nullable Date end) {
         String units = "?units=" + (useSIMeasurements ? "si" : "airmap");
         String url = mapTilesRulesUrl + "/" + rulesetId + "/" + TextUtils.join(",", layers) + "/{z}/{x}/{y}" + units;
         if (!TextUtils.isEmpty(accessToken)) {
             url += "&access_token=" + accessToken;
+        }
+        if (start != null) {
+            url += "&end=" + Utils.getIso8601StringFromDate(end);
+        }
+        if (end != null) {
+            url += "&start=" + Utils.getIso8601StringFromDate(start);
         }
         return url;
     }

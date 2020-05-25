@@ -97,6 +97,12 @@ public class BaseService {
     protected static final String advisoriesUrl = apiUrl + "/advisory" + rulesetsVersion + "/airspace";
     protected static final String evaluationUrl = rulesetBaseUrl + "/evaluation";
 
+    //System Status
+    public static final String systemStatusVersion = "v1/";
+    public static final String systemStatusEndpoint = "/system/" + systemStatusVersion + "status";
+    public static final String systemStatusBaseUrl = apiUrl + systemStatusEndpoint;
+    public static final String systemStatusSocketUrl = getHost("wss", "api") + systemStatusEndpoint + "/monitor";
+
 
     private static String getHost(String service) {
         return getHost("https", service);

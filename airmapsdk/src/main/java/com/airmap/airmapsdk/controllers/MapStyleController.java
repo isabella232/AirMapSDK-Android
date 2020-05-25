@@ -1,13 +1,18 @@
 package com.airmap.airmapsdk.controllers;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import android.provider.Settings;
 import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Analytics;
+import com.airmap.airmapsdk.R;
+import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
@@ -17,6 +22,7 @@ import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.airmap.airmapsdk.networking.services.MappingService.AirMapAirspaceType;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
+import com.airmap.airmapsdk.util.AirMapConfig;
 import com.airmap.airmapsdk.util.AirMapConstants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -33,11 +39,16 @@ import com.mapbox.mapboxsdk.style.sources.Source;
 import com.mapbox.mapboxsdk.style.sources.TileSet;
 import com.mapbox.mapboxsdk.style.sources.VectorSource;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -48,6 +59,9 @@ import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapT
 import static com.airmap.airmapsdk.networking.services.MappingService.AirMapMapTheme.Standard;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillPattern;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 
 public class MapStyleController implements MapView.OnDidFinishLoadingStyleListener {
 
@@ -61,6 +75,10 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     private String highlightLayerId;
 
     private static String tileJsonSpecVersion = "2.2.0";
+    private TemporalFilter temporalFilter = null;
+
+    // If jurisdictionAllowed is null, it means no whitelist (allow all)
+    private List<Integer> jurisdictionAllowed = null;
 
     public MapStyleController(AirMapMapView map, @Nullable MappingService.AirMapMapTheme mapTheme, Callback callback) {
         this.map = map;
@@ -75,8 +93,16 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
             currentTheme = MappingService.AirMapMapTheme.fromString(savedTheme);
         }
 
+        JSONArray whitelist = AirMapConfig.getMapAllowedJurisdictions();
+        if(whitelist != null){
+            jurisdictionAllowed = new ArrayList<>();
+            for (int i = 0; i < whitelist.length(); i++) {
+                jurisdictionAllowed.add(whitelist.optInt(i));
+            }
+        }
+
         // On the receipt of a new Auth Token, reload the current style to populate Enterprise
-        AirMap.setAuthTokenListener(() -> map.post(this::setupJurisdictionsForEnterprise));
+        // AirMap.setAuthTokenListener(() -> map.post(this::setupJurisdictionsForEnterprise));
     }
 
     public void onMapReady() {
@@ -189,14 +215,90 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         PreferenceManager.getDefaultSharedPreferences(map.getContext()).edit().putString(AirMapConstants.MAP_STYLE, currentTheme.toString()).apply();
     }
 
+    public void hideInactiveAirspace(){
+        Expression hasActive = Expression.has("active");
+        Expression activeIsTrue = Expression.eq(Expression.get("active"), true);
+        Expression active = Expression.all(hasActive, activeIsTrue);
+        map.getMap().getStyle(style -> {
+            for(Layer layer : Objects.requireNonNull(style.getLayers())){
+                if(layer.getId().contains("airmap")){
+                    if(layer instanceof FillLayer){
+                        if(((FillLayer) layer).getFilter() != null){
+                            ((FillLayer) layer).setFilter(Expression.any(((FillLayer) layer).getFilter(), active));
+                        } else {
+                            ((FillLayer) layer).setFilter(active);
+                        }
+
+                    } else if (layer instanceof  LineLayer){
+                        if(((LineLayer) layer).getFilter() != null){
+                            ((LineLayer) layer).setFilter(Expression.any(((LineLayer) layer).getFilter(), active));
+                        } else {
+                            ((LineLayer) layer).setFilter(active);
+                        }
+
+                    } else if(layer instanceof  SymbolLayer){
+                        if(((SymbolLayer) layer).getFilter() != null){
+                            ((SymbolLayer) layer).setFilter(Expression.any(((SymbolLayer) layer).getFilter(), active));
+                        } else {
+                            ((SymbolLayer) layer).setFilter(active);
+                        }
+
+                    } else {
+                        Timber.e("Unknown layer");
+
+                    }
+                }
+            }
+        });
+    }
+
     public void addMapLayers(AirMapRuleset ruleset, boolean useSIMeasurements) {
         String sourceId = ruleset.getId();
         List<String> layers = ruleset.getLayers();
         // check if source is already added to map
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        if(temporalFilter != null){
+            switch (temporalFilter.getType()){
+                case NOW:
+                    switch (temporalFilter.getRange()){
+
+                        case ONE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 1);
+                            break;
+                        case FOUR_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 4);
+                            break;
+                        case EIGHT_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 8);
+                            break;
+                        case TWELVE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 12);
+                            break;
+                    }
+                    break;
+                case CUSTOM:
+                    cal1.setTime(temporalFilter.getFutureDate());
+                    cal2.setTime(temporalFilter.getFutureDate());
+
+                    cal1.set(Calendar.HOUR_OF_DAY, temporalFilter.getStartHour());
+                    cal1.set(Calendar.MINUTE, temporalFilter.getStartMinute());
+
+                    cal2.set(Calendar.HOUR_OF_DAY, temporalFilter.getEndHour());
+                    cal2.set(Calendar.MINUTE, temporalFilter.getEndMinute());
+                    break;
+            }
+        }
+
         if (map.getMap().getStyle().getSource(sourceId) != null) {
             Timber.e("Source already added for: %s", sourceId);
         } else {
-            String urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
+            String urlTemplates;
+            if(temporalFilter == null){
+                urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements);
+            } else {
+                urlTemplates = AirMap.getRulesetTileUrlTemplate(sourceId, layers, useSIMeasurements, cal1.getTime(), cal2.getTime());
+            }
             TileSet tileSet = new TileSet(tileJsonSpecVersion, urlTemplates);
             tileSet.setMaxZoom(12f);
             tileSet.setMinZoom(8f);
@@ -252,10 +354,49 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     }
 
     private void addTemporalFilter(Layer layer) {
-        long now = System.currentTimeMillis() / 1000;
-        long in4Hrs = now + (4 * 60 * 60);
-        Expression validNowFilter = Expression.all(Expression.lt(Expression.get("start"), now), Expression.gt(Expression.get("end"), now));
-        Expression startsSoonFilter = Expression.all(Expression.gt(Expression.get("start"), now), Expression.lt(Expression.get("start"), in4Hrs));
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+
+        long start = System.currentTimeMillis() / 1000;
+        long end = start + (4 * 60 * 60);
+
+        if(temporalFilter != null){
+            switch (temporalFilter.getType()){
+                case NOW:
+                    switch (temporalFilter.getRange()){
+
+                        case ONE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 1);
+                            break;
+                        case FOUR_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 4);
+                            break;
+                        case EIGHT_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 8);
+                            break;
+                        case TWELVE_HOUR:
+                            cal2.roll(Calendar.HOUR_OF_DAY, 12);
+                            break;
+                    }
+                    break;
+                case CUSTOM:
+                    cal1.setTime(temporalFilter.getFutureDate());
+                    cal2.setTime(temporalFilter.getFutureDate());
+
+                    cal1.set(Calendar.HOUR_OF_DAY, temporalFilter.getStartHour());
+                    cal1.set(Calendar.MINUTE, temporalFilter.getStartMinute());
+
+                    cal2.set(Calendar.HOUR_OF_DAY, temporalFilter.getEndHour());
+                    cal2.set(Calendar.MINUTE, temporalFilter.getEndMinute());
+                    break;
+            }
+
+            start = cal1.getTime().getTime() / 1000;
+            end = cal2.getTime().getTime() / 1000;
+        }
+
+        Expression validNowFilter = Expression.all(Expression.lt(Expression.get("start"), start), Expression.gt(Expression.get("end"), start));
+        Expression startsSoonFilter = Expression.all(Expression.gt(Expression.get("start"), start), Expression.lt(Expression.get("start"), end));
         Expression permanent = Expression.all(Expression.has("permanent"), Expression.eq(Expression.get("permanent"), "true"));
         Expression hasNoEnd = Expression.all(Expression.not(Expression.has("end")), Expression.not(Expression.has("base")));
         Expression filter = Expression.any(permanent, hasNoEnd, validNowFilter, startsSoonFilter);
@@ -359,8 +500,73 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         }
     }
 
+    public void setTemporalFilter(TemporalFilter temporalFilter){
+        this.temporalFilter = temporalFilter;
+        reset();
+    }
+
     private void loadStyleJSON() {
-        map.getMap().setStyle(AirMap.getMapStylesUrl(currentTheme));
+        map.getMap().setStyle(AirMap.getMapStylesUrl(currentTheme), new Style.OnStyleLoaded() {
+            @Override
+            public void onStyleLoaded(@NonNull Style style) {
+                String jurisdictionsId = "jurisdictions";
+
+                if (style.getLayer(jurisdictionsId) != null) {
+                    style.removeLayer(jurisdictionsId);
+                }
+
+                if (style.getSource(jurisdictionsId) != null) {
+                    style.removeSource(jurisdictionsId);
+                }
+
+                TileSet tileSet = new TileSet(tileJsonSpecVersion, AirMap.getBaseJurisdictionsUrlTemplate());
+                tileSet.setMaxZoom(12f);
+                tileSet.setMinZoom(8f);
+                Source source = new VectorSource(jurisdictionsId, tileSet);
+                style.addSource(source);
+                Layer layer = new FillLayer(jurisdictionsId, jurisdictionsId)
+                        .withSourceLayer(jurisdictionsId)
+                        .withProperties(fillColor(TRANSPARENT), fillOpacity(1f));
+                style.addLayerAt(layer, 0);
+
+                if(jurisdictionAllowed != null){
+
+                    Integer[] jurisdictionsIdArray = new Integer[jurisdictionAllowed.size()];
+                    jurisdictionsIdArray = jurisdictionAllowed.toArray(jurisdictionsIdArray);
+
+                    String disabledLayerPrefix = "airmap|disabled_jurisdictions|";
+                    Expression isFederalFilter = Expression.eq(Expression.get("region"), "federal");
+                    Expression jurisdictionArray = Expression.literal(jurisdictionsIdArray);
+                    Expression idInJurisdictionArray = Expression.in(Expression.get("id"), jurisdictionArray);
+                    Expression notIdInJurisdictionArray = Expression.not(idInJurisdictionArray);
+                    Expression filter1 = Expression.all(isFederalFilter, notIdInJurisdictionArray);
+
+                    BackgroundLayer background = (BackgroundLayer) style.getLayer("background");
+
+                    assert background != null;
+                    FillLayer boundsFill1 = new FillLayer(disabledLayerPrefix + "fill|0", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(fillColor(background.getBackgroundColor().getExpression()), fillOpacity(0.8f))
+                            .withFilter(filter1);
+
+                    style.addLayer(boundsFill1);
+
+                    FillLayer boundsFill2 = new FillLayer(disabledLayerPrefix + "fill|1", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(fillPattern("heliports_lines_pattern"))
+                            .withFilter(filter1);
+
+                    style.addLayer(boundsFill2);
+
+                    LineLayer boundsLine = new LineLayer(disabledLayerPrefix + "line|0", source.getId())
+                            .withSourceLayer(source.getId())
+                            .withProperties(lineWidth((float) 2), lineColor(Color.DKGRAY))
+                            .withFilter(idInJurisdictionArray);
+
+                    style.addLayer(boundsLine);
+                }
+            }
+        });
     }
 
     public void checkConnection(final AirMapCallback<Void> callback) {

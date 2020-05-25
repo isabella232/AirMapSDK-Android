@@ -1,6 +1,8 @@
 package com.airmap.airmapsdk.util;
 
 import com.airmap.airmapsdk.networking.services.AirMap;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +52,24 @@ public class AirMapConfig {
         } catch (JSONException e) {
             Timber.e(e, "No Airship productionAppSecret from airmap.config.json");
             return "";
+        }
+    }
+
+    public static String getStatusPageUrl(){
+        if(isCustomEnvironment){
+            try {
+                return AirMap.getConfig().getJSONObject("airmap").getJSONObject(AVAILABLE_ENVS).getJSONObject(customEnvironment).getString("status_page");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting status page domain from airmap.config.json. Using fallback");
+                return "https://status.airmap.com/";
+            }
+        } else {
+            try {
+                return AirMap.getConfig().getJSONObject("app").getString("status_page");
+            } catch (JSONException e) {
+                Timber.e(e, "Error getting status page domain from airmap.config.json. Using fallback");
+                return "https://status.airmap.com/";
+            }
         }
     }
 
@@ -277,6 +297,57 @@ public class AirMapConfig {
             return AirMap.getConfig().getJSONObject(key).getString("app_id");
         } catch (JSONException e) {
             Timber.e("Unable to get app id for third party: " + key);
+            return null;
+        }
+    }
+
+    public static JSONArray getMapAllowedJurisdictions(){
+        try {
+            return AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONArray("allowed_jurisdictions");
+        } catch (JSONException e){
+            Timber.e("Unable to get Map Allowed Jurisdictions");
+            return null;
+        }
+    }
+
+    public static LatLng getMapLocation(){
+        try{
+            return new LatLng(AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("location").getDouble("latitude"),
+                    AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("location").getDouble("longitude"));
+        } catch (JSONException e){
+            Timber.e(e);
+            return null;
+        }
+    }
+
+    public static int getMapZoom(){
+        try{
+            return AirMap.getConfig().getJSONObject("app").getJSONObject("map").getInt("zoom");
+        } catch (JSONException e){
+            Timber.e(e);
+            return 0;
+        }
+    }
+
+    public static int getMapMinZoom(){
+        try{
+            return AirMap.getConfig().getJSONObject("app").getJSONObject("map").getInt("min_zoom");
+        } catch (JSONException e){
+            Timber.e(e);
+            return 0;
+        }
+    }
+
+    public static LatLngBounds getMapBounds(){
+        try{
+            return new LatLngBounds.Builder()
+                    .include(new LatLng(AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("bounds").getJSONObject("northeast").getDouble("latitude"),
+                            AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("bounds").getJSONObject("northeast").getDouble("longitude")))
+                    .include(new LatLng(AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("bounds").getJSONObject("southwest").getDouble("latitude"),
+                            AirMap.getConfig().getJSONObject("app").getJSONObject("map").getJSONObject("bounds").getJSONObject("southwest").getDouble("longitude")))
+                    .build();
+        } catch (JSONException e){
+            Timber.e(e);
             return null;
         }
     }
