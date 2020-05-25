@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 
 
 group = 'com.airmap.airmapsdk'
-def libVersion = '4.0.0-alpha.1'
+def libVersion = '4.0.0-beta.1'
 
 android {
     compileSdkVersion 28
@@ -68,9 +68,9 @@ dependencies {
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'com.google.android.material:material:1.1.0'
     api 'androidx.cardview:cardview:1.0.0'
-    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
     api 'androidx.annotation:annotation:1.1.0'
-    api 'androidx.fragment:fragment:1.1.0'
+    api 'androidx.fragment:fragment:1.2.2'
     api 'androidx.legacy:legacy-support-v13:1.0.0'
 
     // Play services
@@ -94,7 +94,7 @@ dependencies {
 
 
     // other
-    api 'com.squareup.okhttp3:okhttp:3.12.3'
+    api 'com.squareup.okhttp3:okhttp:3.14.7'
     api 'com.auth0.android:jwtdecode:1.1.1'
     api 'com.google.protobuf:protobuf-lite:3.0.1'
     api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'

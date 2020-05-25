@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.airmap.airmapsdk.AirMapException;
 import com.airmap.airmapsdk.Auth;
+import com.airmap.airmapsdk.auth.AuthConstants;
 import com.airmap.airmapsdk.models.AirMapBaseModel;
 import com.airmap.airmapsdk.util.Utils;
 
@@ -368,6 +369,17 @@ public class AirMapClient {
                 }
                 return response;
             }
+        });
+
+        builder.addInterceptor(chain -> {
+            Request request = chain.request();
+            Response response = chain.proceed(request);
+            if (response.code() >= 500) {
+                // Retry 1 time on a 5xx status code
+                response.close();
+                response = chain.proceed(request);
+            }
+            return response;
         });
 
         //TODO: Check for active connections before reassigning client

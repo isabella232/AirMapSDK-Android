@@ -131,6 +131,11 @@ public class AdvisorySelector {
             public void onAdvisoryStatusLoading() {}
 
             @Override
+            public void onAdvisoryStatusError(AirMapMapView.MapFailure mapFailure) {
+                Timber.e(mapFailure.toString());
+            }
+
+            @Override
             public void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions) {
 
             }

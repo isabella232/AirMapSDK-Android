@@ -15,10 +15,12 @@ import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.models.TemporalFilter;
 import com.airmap.airmapsdk.models.map.AirMapLayerStyle;
 import com.airmap.airmapsdk.models.map.MapStyle;
+import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.networking.callbacks.AirMapCallback;
 import com.airmap.airmapsdk.networking.services.AirMap;
 import com.airmap.airmapsdk.networking.services.MappingService;
+import com.airmap.airmapsdk.networking.services.MappingService.AirMapAirspaceType;
 import com.airmap.airmapsdk.ui.views.AirMapMapView;
 import com.airmap.airmapsdk.util.AirMapConfig;
 import com.airmap.airmapsdk.util.AirMapConstants;
@@ -68,6 +70,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
     private MappingService.AirMapMapTheme currentTheme;
     private MapStyle mapStyle;
     private Callback callback;
+    private AirMapMapView.AirspaceTypeListener airspaceTypeListener;
 
     private String highlightLayerId;
 
@@ -249,7 +252,9 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         });
     }
 
-    public void addMapLayers(String sourceId, List<String> layers, boolean useSIMeasurements) {
+    public void addMapLayers(AirMapRuleset ruleset, boolean useSIMeasurements) {
+        String sourceId = ruleset.getId();
+        List<String> layers = ruleset.getLayers();
         // check if source is already added to map
         Calendar cal1 = Calendar.getInstance();
         Calendar cal2 = Calendar.getInstance();
@@ -309,7 +314,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                 }
 
                 // use layer from styles as a template
-                Layer layerToClone = map.getMap().getStyle().getLayerAs(layerStyle.id);
+                Layer layerToClone = map.getMap().getStyle().getLayer(layerStyle.id);
 
                 Layer layer = layerStyle.toMapboxLayer(layerToClone, sourceId);
 
@@ -318,6 +323,11 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                     addTemporalFilter(layer);
                 }
 
+                if (airspaceTypeListener != null) {
+                    String typeKey = layerStyle.id.split("\\|")[1];
+                    AirMapAirspaceType airspaceType = MappingService.AirMapAirspaceType.fromString(typeKey);
+                    airspaceTypeListener.onAirspaceTypeAdded(ruleset, airspaceType, layer);
+                }
                 map.getMap().getStyle().addLayerAbove(layer, layerStyle.id);
             }
         }
@@ -407,6 +417,11 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
 
         for (String sourceLayer : sourceLayers) {
             for (AirMapLayerStyle layerStyle : mapStyle.getLayerStyles(sourceLayer)) {
+                if (airspaceTypeListener != null) {
+                    String typeKey = layerStyle.id.split("\\|")[1];
+                    AirMapAirspaceType airspaceType = MappingService.AirMapAirspaceType.fromString(typeKey);
+                    airspaceTypeListener.onAirspaceTypeRemoved(airspaceType);
+                }
                 map.getMap().getStyle().removeLayer(layerStyle.id + "|" + sourceId + "|new");
             }
         }
@@ -566,6 +581,10 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                 callback.error(e);
             }
         });
+    }
+
+    public void setAirspaceTypeListener(AirMapMapView.AirspaceTypeListener airspaceTypeListener) {
+        this.airspaceTypeListener = airspaceTypeListener;
     }
 
     public interface Callback {

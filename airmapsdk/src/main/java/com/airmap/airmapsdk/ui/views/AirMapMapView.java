@@ -51,6 +51,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.module.http.HttpRequestUtil;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
+import com.mapbox.mapboxsdk.style.layers.Layer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -396,10 +397,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     }
 
     @Override
-    public void onRulesetsUpdated(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets, List<AirMapRuleset> previouslySelectedRulesetsSelectedRulesets) {
-        Timber.i("onRulesetsUpdated to: %s from: %s", selectedRulesets, previouslySelectedRulesetsSelectedRulesets);
+    public void onRulesetsUpdated(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets, List<AirMapRuleset> previouslySelectedRulesets) {
+        Timber.i("onRulesetsUpdated to: %s from: %s", selectedRulesets, previouslySelectedRulesets);
 
-        setLayers(selectedRulesets, previouslySelectedRulesetsSelectedRulesets);
+        setLayers(selectedRulesets, previouslySelectedRulesets);
 
         for (OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
             mapDataChangeListener.onRulesetsChanged(availableRulesets, selectedRulesets);
@@ -417,6 +418,13 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     public void onAdvisoryStatusLoading() {
         for (OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
             mapDataChangeListener.onAdvisoryStatusLoading();
+        }
+    }
+
+    @Override
+    public void onAdvisoryStatusError(MapFailure mapFailure) {
+        for (OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
+            mapDataChangeListener.onAdvisoryStatusError(mapFailure);
         }
     }
 
@@ -440,7 +448,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
         for (AirMapRuleset newRuleset : newRulesets) {
             if (oldRulesets == null || !oldRulesets.contains(newRuleset)) {
-                mapStyleController.addMapLayers(newRuleset.getId(), newRuleset.getLayers(), useSIMeasurements);
+                mapStyleController.addMapLayers(newRuleset, useSIMeasurements);
             }
         }
     }
@@ -465,6 +473,12 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     public void setTemporalFilter(TemporalFilter temporalFilter){
         mapStyleController.setTemporalFilter(temporalFilter);
         setMapDataController(new MapDataController(this, mapDataController.getConfiguration(), temporalFilter));
+    }
+
+    public void raiseError(MapFailure mapFailure){
+        for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
+            mapLoadListener.onMapFailed(mapFailure);
+        }
     }
 
     public void disableAdvisories() {
@@ -503,7 +517,11 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         if (getMap() != null) {
             listener.onRulesetsChanged(mapDataController.getAvailableRulesets(), mapDataController.getSelectedRulesets());
 
-            listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            if(mapDataController.getAirspaceStatus() != null){
+                listener.onAdvisoryStatusChanged(mapDataController.getAirspaceStatus());
+            } else {
+                listener.onAdvisoryStatusError(MapFailure.ADVISORY_STATUS_NULL);
+            }
         }
     }
 
@@ -519,19 +537,24 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         advisoryClickListeners.remove(listener);
     }
 
+    public void addAirspaceTypeListener(AirspaceTypeListener airspaceTypeListener) {
+        mapStyleController.setAirspaceTypeListener(airspaceTypeListener);
+    }
+
+    public void removeAirspaceTypeListener() {
+        mapStyleController.setAirspaceTypeListener(null);
+    }
+
     public interface OnMapLoadListener {
         void onMapLoaded();
-
-        void onMapFailed(MapFailure reason);
+        default void onMapFailed(MapFailure reason) {}
     }
 
     public interface OnMapDataChangeListener {
         void onRulesetsChanged(List<AirMapRuleset> availableRulesets, List<AirMapRuleset> selectedRulesets);
-
         void onAdvisoryStatusChanged(AirMapAirspaceStatus status);
-
         void onAdvisoryStatusLoading();
-
+        void onAdvisoryStatusError(MapFailure mapFailure);
         void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions);
     }
 
@@ -539,8 +562,13 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         void onAdvisoryClicked(@Nullable AirMapAdvisory advisoryClicked, @Nullable List<AirMapAdvisory> advisoriesFiltered);
     }
 
+    public interface AirspaceTypeListener {
+        void onAirspaceTypeAdded(AirMapRuleset ruleset, MappingService.AirMapAirspaceType type, Layer layer);
+        void onAirspaceTypeRemoved(MappingService.AirMapAirspaceType type);
+    }
+
     public enum MapFailure {
-        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE
+        INACCURATE_DATE_TIME_FAILURE, NETWORK_CONNECTION_FAILURE, UNKNOWN_FAILURE, REQUEST_RETURNED_5XX, REQUEST_RETURNED_4XX, ADVISORY_STATUS_NULL
     }
 
     public abstract static class Configuration {

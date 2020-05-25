@@ -14,62 +14,62 @@ public class BaseService {
     protected static final String apiUrl = getHost("api");
 
     //Map
-    protected static final String mapTilesVersion = "v1/";
-    protected static final String mapTilesBaseUrl = apiUrl + "/maps/v4/tilejson/";
-    protected static final String mapTilesRulesUrl = apiUrl + "/tiledata/" + mapTilesVersion;
-    protected static final String mapTilesBaseJurisdictionsUrl = mapTilesRulesUrl + "base-jurisdiction/{z}/{x}/{y}";
+    protected static final String mapTilesVersion = "/v1";
+    protected static final String mapTilesBaseUrl = apiUrl + "/maps/v4/tilejson";
+    protected static final String mapTilesRulesUrl = apiUrl + "/tiledata" + mapTilesVersion;
+    protected static final String mapTilesBaseJurisdictionsUrl = mapTilesRulesUrl + "/base-jurisdiction/{z}/{x}/{y}";
 
     //Aircraft
-    protected static final String aircraftVersion = "v2/";
-    protected static final String aircraftBaseUrl = apiUrl + "/aircraft/" + aircraftVersion;
-    protected static final String aircraftManufacturersUrl = aircraftBaseUrl + "manufacturer/";
-    protected static final String aircraftModelsUrl = aircraftBaseUrl + "model/";
-    protected static final String aircraftModelUrl = aircraftModelsUrl + "%s/"; //Replace %s with id using String.format
+    protected static final String aircraftVersion = "/v2";
+    protected static final String aircraftBaseUrl = apiUrl + "/aircraft" + aircraftVersion;
+    protected static final String aircraftManufacturersUrl = aircraftBaseUrl + "/manufacturer";
+    protected static final String aircraftModelsUrl = aircraftBaseUrl + "/model";
+    protected static final String aircraftModelUrl = aircraftModelsUrl + "/%s"; //Replace %s with id using String.format
 
     //Flight
-    protected static final String flightVersion = "v2/";
-    protected static final String flightBaseUrl = apiUrl + "/flight/" + flightVersion;
+    protected static final String flightVersion = "/v2";
+    protected static final String flightBaseUrl = apiUrl + "/flight" + flightVersion;
     protected static final String flightGetAllUrl = flightBaseUrl;
-    protected static final String flightByIdUrl = flightBaseUrl + "%s/"; //Replace %s with id using String.format
-    protected static final String flightDeleteUrl = flightByIdUrl + "delete/"; //Replace %s with id using String.format
-    protected static final String flightEndUrl = flightByIdUrl + "end/"; //Replace %s with id using String.format
-    protected static final String flightStartCommUrl = flightByIdUrl + "start-comm/"; //Replace %s with id using String.format
-    protected static final String flightEndCommUrl = flightByIdUrl + "end-comm/"; //Replace %s with id using String.format
+    protected static final String flightByIdUrl = flightBaseUrl + "/%s"; //Replace %s with id using String.format
+    protected static final String flightDeleteUrl = flightByIdUrl + "/delete"; //Replace %s with id using String.format
+    protected static final String flightEndUrl = flightByIdUrl + "/end"; //Replace %s with id using String.format
+    protected static final String flightStartCommUrl = flightByIdUrl + "/start-comm"; //Replace %s with id using String.format
+    protected static final String flightEndCommUrl = flightByIdUrl + "/end-comm"; //Replace %s with id using String.format
 
     //Flight Plan
-    protected static final String flightPlanUrl = getApiOverride("flightplan", flightBaseUrl + "plan/");
-    protected static final String flightPlanByFlightIdUrl = flightBaseUrl + "%s/" + "plan/";
-    protected static final String flightPlanPatchUrl = flightPlanUrl + "%s/";
-    protected static final String flightPlanBatchAuthorizationsUrl = flightBaseUrl + "plan/batch/authorizations";
-    protected static final String flightPlanBriefingUrl = flightPlanPatchUrl + "briefing";
-    protected static final String flightPlanSubmitUrl = flightPlanPatchUrl + "submit";
-    protected static final String flightFeaturesByPlanIdUrl = flightPlanPatchUrl + "features";
+    protected static final String flightPlanUrl = getApiOverride("flightplan", flightBaseUrl + "/plan");
+    protected static final String flightPlanByFlightIdUrl = flightBaseUrl + "/%s/plan";
+    protected static final String flightPlanPatchUrl = flightPlanUrl + "/%s";
+    protected static final String flightPlanBatchAuthorizationsUrl = flightBaseUrl + "/plan/batch/authorizations";
+    protected static final String flightPlanBriefingUrl = flightPlanPatchUrl + "/briefing";
+    protected static final String flightPlanSubmitUrl = flightPlanPatchUrl + "/submit";
+    protected static final String flightFeaturesByPlanIdUrl = flightPlanPatchUrl + "/features";
 
     //Weather
-    protected static final String weatherVersion = "v1/";
-    protected static final String weatherUrl = apiUrl + "/advisory/" + weatherVersion + "weather";
+    protected static final String weatherVersion = "/v1";
+    protected static final String weatherUrl = apiUrl + "/advisory" + weatherVersion + "/weather";
 
     //Pilot
-    protected static final String pilotVersion = "v2/";
-    protected static final String pilotBaseUrl = apiUrl + "/pilot/" + pilotVersion;
-    protected static final String pilotByIdUrl = pilotBaseUrl + "%s/"; //Replace %s with id using String.format
-    protected static final String pilotAircraftUrl = pilotByIdUrl + "aircraft/"; //Replace %s with id using String.format
-    protected static final String pilotAircraftByIdUrl = pilotAircraftUrl + "%s/"; //Replace BOTH occurrences of %s with user id and aircraft id, using String.format
-    protected static final String pilotSendVerifyUrl = pilotByIdUrl + "phone/send_token/"; //Replace %s with id using String.format
-    protected static final String pilotVerifyUrl = pilotByIdUrl + "phone/verify_token/"; //Replace %s with id using String.format
+    protected static final String pilotVersion = "/v2";
+    protected static final String pilotBaseUrl = apiUrl + "/pilot" + pilotVersion;
+    protected static final String pilotByIdUrl = pilotBaseUrl + "/%s"; //Replace %s with id using String.format
+    protected static final String pilotAircraftUrl = pilotByIdUrl + "/aircraft"; //Replace %s with id using String.format
+    protected static final String pilotAircraftByIdUrl = pilotAircraftUrl + "/%s"; //Replace BOTH occurrences of %s with user id and aircraft id, using String.format
+    protected static final String pilotSendVerifyUrl = pilotByIdUrl + "/phone/send_token"; //Replace %s with id using String.format
+    protected static final String pilotVerifyUrl = pilotByIdUrl + "/phone/verify_token"; //Replace %s with id using String.format
 
     //Status
-    protected static final String statusVersion = "v2/";
-    protected static final String statusBaseUrl = apiUrl + "/status/" + statusVersion;
-    protected static final String statusPointUrl = statusBaseUrl + "point/";
-    protected static final String statusPathUrl = statusBaseUrl + "path/";
-    protected static final String statusPolygonUrl = statusBaseUrl + "polygon/";
+    protected static final String statusVersion = "/v2";
+    protected static final String statusBaseUrl = apiUrl + "/status" + statusVersion;
+    protected static final String statusPointUrl = statusBaseUrl + "/point";
+    protected static final String statusPathUrl = statusBaseUrl + "/path";
+    protected static final String statusPolygonUrl = statusBaseUrl + "/polygon";
 
     //Airspace
-    protected static final String airspaceVersion = "v2/";
-    protected static final String airspaceBaseUrl = apiUrl + "/airspace/" + airspaceVersion;
-    protected static final String airspaceByIdUrl = airspaceBaseUrl + "%s/"; //Replace %s with id using String.format
-    protected static final String airspaceByIdsUrl = airspaceBaseUrl + "list/";
+    protected static final String airspaceVersion = "/v2";
+    protected static final String airspaceBaseUrl = apiUrl + "/airspace" + airspaceVersion;
+    protected static final String airspaceByIdUrl = airspaceBaseUrl + "/%s"; //Replace %s with id using String.format
+    protected static final String airspaceByIdsUrl = airspaceBaseUrl + "/list";
 
     //Traffic Alerts
     protected static final String mqttBaseUrl = getApiOverride("mqtt", getHost("ssl", "mqtt")) + ":8883";
@@ -89,13 +89,13 @@ public class BaseService {
     protected static final String logoutUrl = authBaseUrl + "logout";
 
     //Rules
-    protected static final String rulesetsVersion = "v1/";
-    protected static final String rulesetBaseUrl = getApiOverride("rules", apiUrl + "/rules/" + rulesetsVersion);
-    protected static final String rulesetsByIdUrl = rulesetBaseUrl + "rule/"; //Replace %s with id using String.format
-    protected static final String rulesetByIdUrl = rulesetBaseUrl + "%s/"; //Replace %s with id using String.format
-    protected static final String rulesByIdUrl = rulesetBaseUrl + "%s/"; //Replace %s with id using String.format
-    protected static final String advisoriesUrl = apiUrl + "/advisory/" + rulesetsVersion + "airspace";
-    protected static final String evaluationUrl = rulesetBaseUrl + "evaluation";
+    protected static final String rulesetsVersion = "/v1";
+    protected static final String rulesetBaseUrl = getApiOverride("rules", apiUrl + "/rules" + rulesetsVersion);
+    protected static final String rulesetsByIdUrl = rulesetBaseUrl + "/rule"; //Replace %s with id using String.format
+    protected static final String rulesetByIdUrl = rulesetBaseUrl + "/%s"; //Replace %s with id using String.format
+    protected static final String rulesByIdUrl = rulesetBaseUrl + "/%s"; //Replace %s with id using String.format
+    protected static final String advisoriesUrl = apiUrl + "/advisory" + rulesetsVersion + "/airspace";
+    protected static final String evaluationUrl = rulesetBaseUrl + "/evaluation";
 
     //System Status
     public static final String systemStatusVersion = "v1/";
