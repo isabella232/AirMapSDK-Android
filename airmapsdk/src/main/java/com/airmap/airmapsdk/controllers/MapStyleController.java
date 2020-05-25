@@ -99,7 +99,7 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
         }
 
         // On the receipt of a new Auth Token, reload the current style to populate Enterprise
-        AirMap.setAuthTokenListener(() -> map.post(this::setupJurisdictionsForEnterprise));
+        // AirMap.setAuthTokenListener(() -> map.post(this::setupJurisdictionsForEnterprise));
     }
 
     public void onMapReady() {
@@ -221,21 +221,21 @@ public class MapStyleController implements MapView.OnDidFinishLoadingStyleListen
                 if(layer.getId().contains("airmap")){
                     if(layer instanceof FillLayer){
                         if(((FillLayer) layer).getFilter() != null){
-                            ((FillLayer) layer).setFilter(Expression.all(((FillLayer) layer).getFilter(), active));
+                            ((FillLayer) layer).setFilter(Expression.any(((FillLayer) layer).getFilter(), active));
                         } else {
                             ((FillLayer) layer).setFilter(active);
                         }
 
                     } else if (layer instanceof  LineLayer){
                         if(((LineLayer) layer).getFilter() != null){
-                            ((LineLayer) layer).setFilter(Expression.all(((LineLayer) layer).getFilter(), active));
+                            ((LineLayer) layer).setFilter(Expression.any(((LineLayer) layer).getFilter(), active));
                         } else {
                             ((LineLayer) layer).setFilter(active);
                         }
 
                     } else if(layer instanceof  SymbolLayer){
                         if(((SymbolLayer) layer).getFilter() != null){
-                            ((SymbolLayer) layer).setFilter(Expression.all(((SymbolLayer) layer).getFilter(), active));
+                            ((SymbolLayer) layer).setFilter(Expression.any(((SymbolLayer) layer).getFilter(), active));
                         } else {
                             ((SymbolLayer) layer).setFilter(active);
                         }
