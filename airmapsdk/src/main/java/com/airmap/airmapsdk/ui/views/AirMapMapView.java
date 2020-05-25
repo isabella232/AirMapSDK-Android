@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 import androidx.annotation.AttrRes;
@@ -83,6 +84,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     private List<OnAdvisoryClickListener> advisoryClickListeners;
 
     private boolean useSIMeasurements;
+    private boolean isMapLoaded = false;
 
     private TemporalFilter temporalFilter;
 
@@ -157,6 +159,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
             public void onMapStyleLoaded() {
                 Timber.v("onMapStyleLoaded: %s", getMap().getCameraPosition());
                 mapDataController.onMapLoaded();
+                isMapLoaded = true;
 
                 for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
                     mapLoadListener.onMapLoaded();
@@ -471,8 +474,18 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     }
 
     public void setTemporalFilter(TemporalFilter temporalFilter){
-        mapStyleController.setTemporalFilter(temporalFilter);
-        setMapDataController(new MapDataController(this, mapDataController.getConfiguration(), temporalFilter));
+        if(isMapLoaded){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mapStyleController.setTemporalFilter(temporalFilter);
+                    setMapDataController(new MapDataController(AirMapMapView.this, mapDataController.getConfiguration(), temporalFilter));
+                }
+            }, 1000);
+        } else {
+            Timber.wtf("Should not be calling setTemporalFilter before map is loaded");
+            throw new RuntimeException("please call setTemporalFilter after onMapLoaded callback");
+        }
     }
 
     public void raiseError(MapFailure mapFailure){
@@ -503,6 +516,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
 
         if (getMap() != null) {
+            isMapLoaded = true;
             listener.onMapLoaded();
         }
     }
