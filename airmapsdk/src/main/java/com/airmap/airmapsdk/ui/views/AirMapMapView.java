@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 import androidx.annotation.AttrRes;
@@ -26,6 +27,8 @@ import com.airmap.airmapsdk.R;
 import com.airmap.airmapsdk.controllers.MapDataController;
 import com.airmap.airmapsdk.controllers.MapStyleController;
 import com.airmap.airmapsdk.models.Container;
+import com.airmap.airmapsdk.models.TemporalFilter;
+import com.airmap.airmapsdk.models.rules.AirMapJurisdiction;
 import com.airmap.airmapsdk.models.rules.AirMapRuleset;
 import com.airmap.airmapsdk.models.status.AirMapAdvisory;
 import com.airmap.airmapsdk.models.status.AirMapAirspaceStatus;
@@ -81,10 +84,12 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
     private List<OnAdvisoryClickListener> advisoryClickListeners;
 
     private boolean useSIMeasurements;
+    private boolean isMapLoaded = false;
+
+    private TemporalFilter temporalFilter;
 
     public AirMapMapView(@NonNull Context context, Configuration configuration, @Nullable MappingService.AirMapMapTheme mapTheme) {
         super(context);
-
         init(configuration, mapTheme);
     }
 
@@ -98,6 +103,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     public AirMapMapView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
@@ -153,6 +159,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
             public void onMapStyleLoaded() {
                 Timber.v("onMapStyleLoaded: %s", getMap().getCameraPosition());
                 mapDataController.onMapLoaded();
+                isMapLoaded = true;
 
                 for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
                     mapLoadListener.onMapLoaded();
@@ -424,6 +431,14 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
     }
 
+    @Override
+    public void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions) {
+        for(OnMapDataChangeListener mapDataChangeListener : mapDataChangeListeners) {
+            mapDataChangeListener.onUnsupportedJurisdictions(unsupportedJurisdictions);
+        }
+    }
+
+
     private void setLayers(List<AirMapRuleset> newRulesets, List<AirMapRuleset> oldRulesets) {
         if (oldRulesets != null) {
             for (AirMapRuleset oldRuleset : oldRulesets) {
@@ -441,6 +456,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
     }
 
+    public void hideInactiveAirspaces(){
+        mapStyleController.hideInactiveAirspace();
+    }
+
     @UiThread
     public MapboxMap getMap() {
         if (Looper.getMainLooper() != Looper.myLooper()) {
@@ -454,6 +473,21 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         return mapDataController.getSelectedRulesets();
     }
 
+    public void setTemporalFilter(TemporalFilter temporalFilter){
+        if(isMapLoaded){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mapStyleController.setTemporalFilter(temporalFilter);
+                    setMapDataController(new MapDataController(AirMapMapView.this, mapDataController.getConfiguration(), temporalFilter));
+                }
+            }, 1000);
+        } else {
+            Timber.wtf("Should not be calling setTemporalFilter before map is loaded");
+            throw new RuntimeException("please call setTemporalFilter after onMapLoaded callback");
+        }
+    }
+
     public void raiseError(MapFailure mapFailure){
         for (OnMapLoadListener mapLoadListener : mapLoadListeners) {
             mapLoadListener.onMapFailed(mapFailure);
@@ -462,6 +496,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
 
     public void disableAdvisories() {
         mapDataController.disableAdvisories();
+    }
+
+    public void setMapStyleControllerTemporalFilter(TemporalFilter temporalFilter){
+        mapStyleController.setTemporalFilter(temporalFilter);
     }
 
     @Override
@@ -478,6 +516,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         }
 
         if (getMap() != null) {
+            isMapLoaded = true;
             listener.onMapLoaded();
         }
     }
@@ -530,6 +569,7 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         void onAdvisoryStatusChanged(AirMapAirspaceStatus status);
         void onAdvisoryStatusLoading();
         void onAdvisoryStatusError(MapFailure mapFailure);
+        void onUnsupportedJurisdictions(ArrayList<AirMapJurisdiction> unsupportedJurisdictions);
     }
 
     public interface OnAdvisoryClickListener {

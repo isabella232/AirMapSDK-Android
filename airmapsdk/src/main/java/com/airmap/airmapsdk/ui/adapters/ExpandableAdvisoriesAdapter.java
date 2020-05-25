@@ -3,6 +3,7 @@ package com.airmap.airmapsdk.ui.adapters;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -14,12 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ import com.airmap.airmapsdk.models.status.properties.AirMapNotamProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapPowerPlantProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapTfrProperties;
 import com.airmap.airmapsdk.models.status.properties.AirMapWildfireProperties;
+import com.airmap.airmapsdk.models.status.timesheet.Timesheet;
 import com.airmap.airmapsdk.networking.services.MappingService;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -54,12 +56,16 @@ import static com.airmap.airmapsdk.util.Utils.checkAndStartIntent;
 
 public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<MappingService.AirMapAirspaceType, AirMapColor>, AirMapAdvisory> {
 
-    public ExpandableAdvisoriesAdapter(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> advisories) {
+    Intent scheduleActivityIntent;
+
+    public ExpandableAdvisoriesAdapter(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> advisories, Intent intent) {
         super(separateByColor(advisories));
+        scheduleActivityIntent = intent;
     }
 
     public void setDataUnseparated(LinkedHashMap<MappingService.AirMapAirspaceType, List<AirMapAdvisory>> data) {
         super.setData(data == null ? null : separateByColor(data));
+        notifyDataSetChanged();
     }
 
     @Override
@@ -134,6 +140,30 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
 
         } else if (holder instanceof AdvisoryViewHolder) {
             final AirMapAdvisory advisory = (AirMapAdvisory) getItem(position);
+
+            if(advisory.getSchedule() != null){
+                ((AdvisoryViewHolder) holder).backgroundView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), advisory.getColor().getColorRes()));
+                ((AdvisoryViewHolder) holder).nonScheduleAdvisoryLayout.setVisibility(View.GONE);
+                ((AdvisoryViewHolder) holder).scheduleAdvisoryLayout.setVisibility(View.VISIBLE);
+                ((AdvisoryViewHolder) holder).scheduleAirspaceType.setText(advisory.getType().getTitle());
+                ((AdvisoryViewHolder) holder).scheduleAirspaceName.setText(advisory.getName());
+
+                for(Timesheet timesheet : advisory.getSchedule()){
+                    if(!timesheet.isActive()){
+                        ((AdvisoryViewHolder) holder).scheduleAirspaceInactive.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        scheduleActivityIntent.putExtra("AirMapAdvisory", advisory);
+                        holder.itemView.getContext().startActivity(scheduleActivityIntent);
+                    }
+                });
+                return;
+            }
+
             ((AdvisoryViewHolder) holder).backgroundView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), advisory.getColor().getColorRes()));
             ((AdvisoryViewHolder) holder).titleTextView.setText(advisory.getName());
             ((AdvisoryViewHolder) holder).infoTextView.setOnClickListener(null);
@@ -433,6 +463,11 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
         TextView infoTextView;
         TextView descriptionTextView;
         ImageView linkButton;
+        RelativeLayout nonScheduleAdvisoryLayout;
+        RelativeLayout scheduleAdvisoryLayout;
+        TextView scheduleAirspaceType;
+        TextView scheduleAirspaceName;
+        TextView scheduleAirspaceInactive;
 
         AdvisoryViewHolder(View itemView) {
             super(itemView);
@@ -442,6 +477,11 @@ public class ExpandableAdvisoriesAdapter extends ExpandableRecyclerAdapter<Pair<
             infoTextView = itemView.findViewById(R.id.info_text_view);
             descriptionTextView = itemView.findViewById(R.id.description_text_view);
             linkButton = itemView.findViewById(R.id.link_button);
+            nonScheduleAdvisoryLayout = itemView.findViewById(R.id.non_schedule_view);
+            scheduleAdvisoryLayout = itemView.findViewById(R.id.schedule_view);
+            scheduleAirspaceType = itemView.findViewById(R.id.schedule_airspace_type);
+            scheduleAirspaceName = itemView.findViewById(R.id.schedule_airspace_name);
+            scheduleAirspaceInactive = itemView.findViewById(R.id.schedule_airspace_inactive);
         }
     }
 }
