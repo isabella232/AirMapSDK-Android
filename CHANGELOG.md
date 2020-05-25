@@ -1,3 +1,8 @@
+## `4.0.0-beta.2 (05/25/202)`
+* Updated Mapbox to 9.2.0
+* Add support for temporal filtering of AirMapMapView
+* New callbacks for onMapDataChangeListener
+
 ## `4.0.0-beta.1 (5/08/20)`
 * Updated OnMapDataChangeListener with onAdvisoryStatusError
 
