@@ -54,7 +54,7 @@ v4 of the SDK is available in beta. This updated version of the SDK utilizes And
 **There are breaking changes from v3 of the SDK.**
 
 ```groovy
-implementation 'com.airmap.airmapsdk:airmapsdk:4.0.0-beta.2'
+implementation 'com.airmap.airmapsdk:airmapsdk:4.0.0-beta.3'
 ``` 
 
 ### Migration from 2.0
