@@ -473,6 +473,10 @@ public class AirMapMapView extends MapView implements MapView.OnDidFailLoadingMa
         return mapDataController.getSelectedRulesets();
     }
 
+    public List<AirMapRuleset> getAvailableRulesets(){
+        return mapDataController.getAvailableRulesets();
+    }
+    
     public void setTemporalFilter(TemporalFilter temporalFilter){
         if(isMapLoaded){
             new Handler().postDelayed(new Runnable() {
