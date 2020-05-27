@@ -1,4 +1,7 @@
-## `4.0.0-beta.2 (05/25/202)`
+## `4.0.0-beta.3 (05/27/20)`
+* Adds getAvailableRulesets method to AirMapMapView
+
+## `4.0.0-beta.2 (05/25/20)`
 * Updated Mapbox to 9.2.0
 * Add support for temporal filtering of AirMapMapView
 * New callbacks for onMapDataChangeListener
